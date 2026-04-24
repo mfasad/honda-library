@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Полный привод Honda CR-V: Как работает система Real Time 4WD — Honda Library</title>
+    <meta name="description" content="Разбираем работу системы полного привода на Honda CR-V всех поколений. Особенности Real Time 4WD, отличия от конкурентов, диагностика и нюансы эксплуатации в зимний период.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/p/po/polnyj-privod-na-khonda-srv.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Полный привод Honda CR-V: Как работает система Real Time 4WD">
+    <meta property="og:description" content="Разбираем работу системы полного привода на Honda CR-V всех поколений. Особенности Real Time 4WD, отличия от конкурентов, диагностика и нюансы эксплуатации в зимний период.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Полный привод Honda CR-V: Как работает система Real Time 4WD</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Всё о системе полного привода Honda CR-V: от механики до электроники</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#эволюция-технологии-от-механики-к-электронике">Эволюция технологии: от механики к электронике</a></li><li><a href="#принцип-работы-системы-real-time-4wd">Принцип работы системы Real Time 4WD</a></li><li><a href="#отличия-поколений-и-модификаций">Отличия поколений и модификаций</a></li><li><a href="#эксплуатация-в-зимних-условиях">Эксплуатация в зимних условиях</a></li><li><a href="#диагностика-и-частые-неисправности">Диагностика и частые неисправности</a></li><li><a href="#обслуживание-и-уход-за-трансмиссией">Обслуживание и уход за трансмиссией</a></li><li><a href="#сравнение-с-конкурентами">Сравнение с конкурентами</a></li><li><a href="#частые-вопросы-владельцев">Частые вопросы владельцев</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Система полного привода на кроссоверах <em>Honda</em> всегда вызывала живой интерес у автовладельцев, так как инженеры компании пошли своим путём, отличаясь от классических решений конкурентов. В отличие от многих аналогов, где постоянный привод является стандартом, <em>Honda CR-V</em> исторически использовала схемы, ориентированные на экономию топлива и адаптивность к дорожным условиям.</p>
+
+<p>Владельцы часто задаются вопросом о реальной проходимости и надёжности агрегата, особенно при эксплуатации в суровых климатических условиях или на бездорожье. Понимание принципов работы трансмиссии поможет избежать ошибок при обслуживании и продлить срок службы дорогостоящих узлов автомобиля.</p>
+
+<p>В этой статье мы подробно разберем эволюцию технологий, отличия между поколениями и ключевые особенности эксплуатации системы <strong>Real Time 4WD</strong>. Вы узнаете, как правильно реагировать на срабатывание блокировок и почему некоторые модели ведут себя по-разному в снегу или грязи.</p>
+
+<h2 id="эволюция-технологии-от-механики-к-электронике">Эволюция технологии: от механики к электронике</h2>
+
+<p>История полноприводных версий <em>Honda CR-V</em> началась с первого поколения, когда инженеры внедрили инновационную для того времени схему подключения задней оси. В отличие от систем с постоянным полным приводом, здесь использовалась механическая муфта, которая активировалась только при пробуксовке передних колес. Это решение позволяло существенно снизить расход топлива в городском цикле.</p>
+
+<p>С каждым новым поколением, особенно с выходом третьего и четвертого вариантов модели, система становилась всё более сложной и управляемой электроникой. Если ранее процесс передачи крутящего момента зависел от вязкостной муфты, то современные версии <em>Real Time 4WD</em> используют многодисковую муфту с электромагнитным управлением. Это дает возможность мгновенно перераспределять тягу в зависимости от ситуации.</p>
+
+<p>Важно отметить, что даже при наличии сложной электроники принцип остаётся прежним: автомобиль по умолчанию является переднеприводным. Задняя ось подключается автоматически, когда датчики фиксируют потерю сцепления передней колесной пары с покрытием. Такая архитектура делает автомобиль более маневренным и предсказуемым на сухом асфальте.</p>
+
+<p>Однако стоит понимать, что это не внедорожник с понижающей передачей. Система создана для повышения безопасности и уверенности на скользкой дороге, а не для покорения горных вершин. <strong>Управляемая электроникой муфта</strong> реагирует быстрее механических аналогов, но имеет свои физические ограничения по перегреву при длительной пробуксовке.</p>
+
+<h2 id="принцип-работы-системы-real-time-4wd">Принцип работы системы Real Time 4WD</h2>
+
+<p>Суть работы системы заключается в непрерывном мониторинге разницы скоростей вращения передних и задних колес. Электронный блок управления (ЭБУ) получает данные с датчиков ABS и, при необходимости, подает сигнал на электромагнитную катушку муфты. Это приводит к сжатию пакета фрикционных дисков и передаче крутящего момента на задний мост.</p>
+
+<p>Процесс происходит практически незаметно для водителя, если система исправна. При резком старте с места или при движении по заснеженной трассе задние колеса получают до 50% тяги, что стабилизирует траекторию движения. Если же сцепление восстанавливается, муфта снова размыкается, и автомобиль возвращается в режим переднего привода.</p>
+
+<p>В современных версиях, таких как <em>CR-V пятого поколения</em>, алгоритмы стали еще умнее. Теперь система может предугадывать потерю сцепления на основе данных о положении педали газа и углу поворота руля. Это позволяет подготовить трансмиссию к нагрузке еще до того, как колеса начнут буксовать.</p>
+
+<p>Не стоит путать эту систему с полным приводом на базе дифференциала Torsen или постоянным приводом. Здесь нет жесткой связи между осями. <strong>Электромагнитная муфта</strong> является лишь посредником, который может передавать ограниченный крутящий момент. Если диск пробуксовки слишком велик, система может просто не успеть заблокироваться или перегреться.</p>
+
+<p>Интересный факт заключается в том, что при движении по сухому асфальту с постоянным поворотом руля система может отключаться, чтобы избежать лишнего износа и расхода топлива. Это нормальная работа логики управления.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Владеете ли вы полным приводом Honda CR-V?</strong><ul><li>Да, у меня 4WD</li><li>Нет, только передний</li><li>Рассматриваю покупку</li><li>Не знаю, как проверить</li></ul></div></div>
+
+<h2 id="отличия-поколений-и-модификаций">Отличия поколений и модификаций</h2>
+
+<p>Каждое поколение <em>Honda CR-V</em> предлагало свои уникальные решения в области трансмиссии. Первое и второе поколение базировались на проверенной временем механике. Вязкостная муфта была надежной, но медленной в реакции. Водителю приходилось заранее понимать, что при сильном заносе или глубоком снегу автомобиль может застрять, так как задняя ось подключается с задержкой.</p>
+
+<p>Третье поколение ознаменовало переход на более продвинутую систему с электромагнитной муфтой. Это позволило улучшить динамику разгона и стабильность на трассе. Однако именно в этот период появились первые жалобы на перегрев муфты при агрессивной езде по бездорожью. Инженеры учли эти замечания, усилив систему охлаждения в последующих ревизиях.</p>
+
+<p>Четвертое и пятое поколения оснащаются системой <strong>Real Time AWD</strong> с интеллектуальным управлением. В этих версиях используются более компактные и эффективные муфты, которые интегрированы в общий алгоритм работы электроники стабилизации (VSA). Теперь система не просто подключает задний мост, но и может подтормаживать отдельные колеса для улучшения проходимости.</p>
+
+<p>Также стоит отметить разницу в работе в зависимости от типа двигателя. Версии с турбированными моторами требуют более тонкой настройки муфты, чтобы избежать пробуксовки при резком старте. Владельцам гибридных версий <em>CR-V Hybrid</em> стоит знать, что там задняя ось приводится в движение отдельным электромотором, что меняет характер поведения машины на скользкой поверхности.</p>
+
+<h2 id="эксплуатация-в-зимних-условиях">Эксплуатация в зимних условиях</h2>
+
+<p>Зима — это главный тест для любого кроссовера, и <em>Honda CR-V</em> здесь не исключение. Система полного привода значительно повышает безопасность на укатанном снегу и гололеде, позволяя уверенно трогаться с места и преодолевать подъемы. Однако важно понимать, что полный привод не заменяет зимнюю резину. Без качественного сцепления колес с дорогой никакая электроника не поможет.</p>
+
+<p>При езде по заснеженным дорогам старайтесь избегать резких ускорений и торможений. Плавность действий позволяет системе <strong>Real Time 4WD</strong> работать в штатном режиме, не доводя муфту до предельных нагрузок. Если вы застряли, не стоит газовать в пол — это приведет к мгновенному перегреву и отключению системы защиты.</p>
+
+<p>В условиях глубокого снега или грязи система может работать неэффективно из-за отсутствия дифференциала межколесной блокировки. Если одно колесо висит в воздухе, крутящий момент будет передаваться именно на него, а не на то, что стоит на земле. В таких ситуациях поможет только лебедка или помощь посторонних транспортных средств.</p>
+
+<p>Для владельцев, живущих в регионах с суровой зимой, рекомендуется регулярно проверять состояние масла в трансмиссии. Низкие температуры могут делать жидкость густой, что замедляет работу муфты. <strong>Своевременная замена</strong> трансмиссионного масла гарантирует корректную работу всех гидравлических и электрических узлов.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Всегда держите в багажнике буксировочный трос и лопату. В условиях сильного снегопада даже полный привод не гарантирует свободу передвижения, и помощь может потребоваться немедленно.</p></div>
+
+<h2 id="диагностика-и-частые-неисправности">Диагностика и частые неисправности</h2>
+
+<p>Несмотря на надежность, система полного привода <em>Honda CR-V</em> требует внимания и периодической диагностики. Одной из самых распространенных проблем является износ электромагнитной муфты. Со временем фрикционные диски стираются, что приводит к проскальзыванию и потере тяги на задней оси. Симптомы этого — вибрация при разгоне или характерный запах гари из-под днища.</p>
+
+<p>Еще одной частой причиной проблем является загрязнение датчиков скорости. Если датчик ABS на заднем мосту забивается грязью или окисляется, ЭБУ получает некорректные данные и может отключить полный привод или, наоборот, заставить его работать постоянно. Это приводит к повышенному расходу топлива и ускоренному износу резины.</p>
+
+<p>В некоторых случаях владельцы сталкиваются с тем, что система не включается даже при пробуксовке. Это может быть связано с перегревом муфты или неисправностью блока управления. В таких ситуациях часто помогает перезагрузка системы путем отключения клеммы аккумулятора на несколько минут, но это лишь временная мера.</p>
+
+<p>Для точной диагностики необходимо использовать профессиональное оборудование для считывания ошибок. Самостоятельно выявить проблему сложно, так как индикатор на панели приборов может не загораться сразу. <strong>Компьютерная диагностика</strong> покажет реальный статус работы муфты и наличие ошибок в цепи управления.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Возможная причина</th>
+<th>Рекомендуемое действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вибрация при разгоне</td>
+<td>Износ фрикционов муфты</td>
+<td>Замена муфты в сборе</td>
+</tr>
+<tr>
+<td>Мигание значка 4WD</td>
+<td>Ошибка датчика ABS или проводки</td>
+<td>Чистка датчиков и проверка проводки</td>
+</tr>
+<tr>
+<td>Скрип при поворотах</td>
+<td>Перегрев муфты, заклинивание</td>
+<td>Диагностика, замена масла в редукторе</td>
+</tr>
+<tr>
+<td>Повышенный расход топлива</td>
+<td>Муфта не отключается</td>
+<td>Проверка ЭБУ и датчиков скорости</td>
+</tr>
+</tbody>
+</table>
+
+<div class="checklist-block"><h4>☑️ Проверка системы полного привода</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр муфты</span></label><label class="check-item"><input type="checkbox"><span>Проверка уровня масла в редукторе</span></label><label class="check-item"><input type="checkbox"><span>Сканирование ошибок OBD-II</span></label><label class="check-item"><input type="checkbox"><span>Тест-драйв на снегу</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="обслуживание-и-уход-за-трансмиссией">Обслуживание и уход за трансмиссией</h2>
+
+<p>Регулярное обслуживание является залогом долгой жизни системы полного привода. Производитель рекомендует менять трансмиссионное масло в заднем редукторе каждые 40-50 тысяч километров пробега. Пренебрежение этим правилом приводит к ускоренному износу шестерен и подшипников, а также к потере свойств смазки в муфте.</p>
+
+<p>Используйте только оригинальные масла или качественные аналоги, рекомендованные <em>Honda</em>. Неправильная вязкость масла может нарушить работу гидравлических клапанов муфты. <strong>Оригинальное масло</strong> имеет специальные присадки, которые защищают фрикционные диски от перегрева и износа.</p>
+
+<p>Также важно следить за состоянием защитных чехлов и сальников. Попадание грязи и воды внутрь редуктора или на муфту может вызвать коррозию и механические повреждения. При мойке автомобиля старайтесь не направлять струю воды под высоким давлением непосредственно на узлы трансмиссии.</p>
+
+<p>Владельцам, которые часто эксплуатируют автомобиль в условиях бездорожья, рекомендуется проводить более частую диагностику. Проверка зазоров, состояния креплений и отсутствия подтеков должна стать регулярной процедурой. Это поможет избежать дорогостоящего ремонта в будущем.</p>
+
+
+
+<blockquote>⚠️ Внимание: Никогда не пытайтесь принудительно включить полный привод на автомобиле, если на приборной панели горит предупреждающий значок. Это может привести к необратимому повреждению трансмиссии из-за отсутствия смазки или перегрева.</blockquote>
+
+<h2 id="сравнение-с-конкурентами">Сравнение с конкурентами</h2>
+
+<p>Система <em>Honda CR-V</em> имеет как преимущества, так и недостатки по сравнению с аналогами от Toyota, Nissan или Mazda. Главным плюсом является экономичность и простота конструкции. В отличие от систем с постоянным полным приводом, здесь нет лишнего трения и потерь энергии, что положительно сказывается на расходе топлива.</p>
+
+<p>Однако, если сравнивать с системами на базе планетарного дифференциала или многодисковыми муфтами с принудительной блокировкой (как у Subaru или Mitsubishi), <strong>Honda</strong> проигрывает в условиях серьезного бездорожья. Отсутствие жесткой связи между осями делает автомобиль менее проходимым в сложных ситуациях, таких как пересечение бродов или движение по крутым склонам.</p>
+
+<p>Для городской эксплуатации и загородных поездок по раскатанным дорогам система <em>Real Time 4WD</em> является идеальным выбором. Она обеспечивает необходимый уровень безопасности и комфорта, не усложняя конструкцию автомобиля. Но если вам нужен настоящий внедорожник, стоит рассмотреть другие варианты.</p>
+
+<p>Важно понимать, что каждая система имеет свои "фишки". У <em>Honda</em> это акцент на безопасность и управляемость, а не на проходимость. Это стоит учитывать при выборе автомобиля для конкретных целей использования.</p>
+
+<blockquote>⚠️ Внимание: Не пытайтесь использовать автомобиль с системой полного привода <em>Honda CR-V</em> для буксировки других автомобилей на жесткой сцепке. Это может привести к повреждению трансмиссии из-за отсутствия синхронизации скоростей вращения колес при движении.</blockquote>
+
+<h2 id="частые-вопросы-владельцев">Частые вопросы владельцев</h2>
+
+<details>
+<summary>Можно ли отключить полный привод на Honda CR-V вручную?</summary>
+<p>В большинстве моделей <em>Honda CR-V</em> нет специальной кнопки для ручного отключения или включения полного привода. Система работает автоматически. Однако в некоторых старых моделях или специфических модификациях может присутствовать кнопка блокировки дифференциала, но она не отключает систему полностью, а лишь изменяет алгоритм ее работы.</p>
+</details>
+
+<details>
+<summary>Как узнать, что полный привод включился?</summary>
+<p>На приборной панели обычно нет индикатора включения полного привода в реальном времени. Вы можете понять, что система сработала, по изменению поведения автомобиля при разгоне или по отсутствию пробуксовки передних колес. Некоторые современные модели могут показывать статус системы в информационном меню бортового компьютера.</p>
+</details>
+
+<details>
+<summary>Нужно ли прогревать полный привод зимой?</summary>
+<p>Прогревать трансмиссию перед началом движения не обязательно, но рекомендуется первые километры двигаться в щадящем режиме. Это позволит маслу нагреться и приобрести нужную вязкость. В сильные морозы рекомендуется дать двигателю поработать несколько минут, чтобы прогрелась и трансмиссионная жидкость.</p>
+</details>
+
+<details>
+<summary>Чем отличается система Real Time 4WD от AWD?</summary>
+<p>Терминология здесь часто смешивается. <em>Honda</em> использует термин "Real Time 4WD", чтобы подчеркнуть, что привод подключается только в нужный момент. AWD (All Wheel Drive) обычно подразумевает постоянный полный привод. Однако технически это одна и та же система, просто с разной маркетинговой подачей. В современных условиях разница практически незаметна для обычного водителя.</p>
+</details>
+
+<blockquote>⚠️ Внимание: <mark>Система полного привода Honda CR-V не предназначена для использования на пересеченной местности с камнями или корнями, так как это может привести к механическому повреждению редуктора и муфты.</mark></blockquote></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#эволюция-технологии-от-механики-к-электронике">Эволюция технологии: от механики к электронике</a></li><li><a href="#принцип-работы-системы-real-time-4wd">Принцип работы системы Real Time 4WD</a></li><li><a href="#отличия-поколений-и-модификаций">Отличия поколений и модификаций</a></li><li><a href="#эксплуатация-в-зимних-условиях">Эксплуатация в зимних условиях</a></li><li><a href="#диагностика-и-частые-неисправности">Диагностика и частые неисправности</a></li><li><a href="#обслуживание-и-уход-за-трансмиссией">Обслуживание и уход за трансмиссией</a></li><li><a href="#сравнение-с-конкурентами">Сравнение с конкурентами</a></li><li><a href="#частые-вопросы-владельцев">Частые вопросы владельцев</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/z/za/zamena-protivotumanok-khonda-srv-3.html" class="related-card">Замена противотуманок Honda CR-V 3: пошаговая инструкция и выбор ламп</a></li><li><a href="/articles/z/za/zadnyaya-podveska-khonda-srv-2.html" class="related-card">Задняя подвеска Honda CR-V 2: устройство, неисправности и ремонт</a></li><li><a href="/articles/d/dr/drom-khonda-srv-novosibirsk.html" class="related-card">Дром Хонда СРВ Новосибирск: Поиск, цены, отзывы и выбор авто</a></li><li><a href="/articles/k/ka/katushka-zazhiganiya-khonda-srv-rd1.html" class="related-card">Катушка зажигания Honda CR-V RD1: признаки неисправности и выбор</a></li><li><a href="/articles/d/dv/dveri-khonda-srv-rd1.html" class="related-card">Двери Honda CR-V RD1: Замена, ремонт и подбор замков</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/z/za/zamena-protivotumanok-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Замена противотуманок Honda CR-V 3: пошаговая инструкция и выбор ламп</span><span class="related-bottom-desc">Полное руководство по замене ПТФ на Honda CR-V третьего поколения. Подбор ламп, разборка бампера, сх</span></a><a href="/articles/z/za/zadnyaya-podveska-khonda-srv-2.html" class="related-bottom-card"><span class="related-bottom-title">Задняя подвеска Honda CR-V 2: устройство, неисправности и ремонт</span><span class="related-bottom-desc">Полный разбор задней подвески Honda CR-V второго поколения. Диагностика проблем, замена рычагов, сай</span></a><a href="/articles/d/dr/drom-khonda-srv-novosibirsk.html" class="related-bottom-card"><span class="related-bottom-title">Дром Хонда СРВ Новосибирск: Поиск, цены, отзывы и выбор авто</span><span class="related-bottom-desc">Ищете Honda CR-V на Дром в Новосибирске? Полное руководство по поиску, проверке продавцов, типичным </span></a><a href="/articles/k/ka/katushka-zazhiganiya-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Катушка зажигания Honda CR-V RD1: признаки неисправности и выбор</span><span class="related-bottom-desc">Полный разбор катушки зажигания для Honda CR-V первого поколения (RD1). Симптомы поломки, коды ошибо</span></a><a href="/articles/d/dv/dveri-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Двери Honda CR-V RD1: Замена, ремонт и подбор замков</span><span class="related-bottom-desc">Полный гид по ремонту дверей Honda CR-V первого поколения (RD1). Замена стеклоподъемников, замков, п</span></a><a href="/articles/f/fi/filtr-vozdushnyj-khonda-srv-4-20.html" class="related-bottom-card"><span class="related-bottom-title">Фильтр воздушный Honda CR-V 4 2.0: выбор, замена и артикулы</span><span class="related-bottom-desc">Полный гид по воздушному фильтру для Honda CR-V 4 2.0. Артикулы, интервалы замены, сравнение брендов</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

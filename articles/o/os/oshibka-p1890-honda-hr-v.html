@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Ошибка P1890 Honda HR-V: диагностика, причины и ремонт — Honda Library</title>
+    <meta name="description" content="Полный разбор кода P1890 на Honda HR-V. Причины сбоя, диагностика блокировки переключения передач, методы устранения неисправности без лишних затрат.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/o/os/oshibka-p1890-honda-hr-v.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ошибка P1890 Honda HR-V: диагностика, причины и ремонт">
+    <meta property="og:description" content="Полный разбор кода P1890 на Honda HR-V. Причины сбоя, диагностика блокировки переключения передач, методы устранения неисправности без лишних затрат.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/hr-v/">Hr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Ошибка P1890 Honda HR-V: диагностика, причины и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Ошибка P1890 Honda HR-V: Полный разбор неисправности и методы устранения</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#суть-ошибки-p1890-и-ее-влияние-на-трансмиссию">Суть ошибки P1890 и ее влияние на трансмиссию</a></li><li><a href="#основные-причины-возникновения-сбоя">Основные причины возникновения сбоя</a></li><li><a href="#диагностика-и-поиск-неисправности">Диагностика и поиск неисправности</a></li><li><a href="#пошаговая-инструкция-по-устранению-неисправности">Пошаговая инструкция по устранению неисправности</a></li><li><a href="#влияние-на-безопасность-и-эксплуатационные-характеристики">Влияние на безопасность и эксплуатационные характеристики</a></li><li><a href="#профилактика-и-рекомендации-по-обслуживанию">Профилактика и рекомендации по обслуживанию</a></li><li><a href="#стоимость-ремонта-и-выбор-сервиса">Стоимость ремонта и выбор сервиса</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Эксплуатация <em>Honda HR-V</em> с автоматической коробкой передач иногда сопровождается появлением тревожных сигналов на панели приборов. Одной из наиболее распространенных и критичных проблем является код ошибки <strong>P1890</strong>, который указывает на серьезный сбой в работе системы переключения передач. Этот код не появляется просто так: он сигнализирует о том, что блок управления двигателем или трансмиссией обнаружил несоответствие между командой на переключение и фактическим положением механизма.</p>
+
+<p>Игнорирование сигнала <strong>P1890</strong> может привести к полному отказу коробки передач перейти в режим движения, оставив автомобиль неподвижным. Владельцы <em>Honda HR-V</em> часто сталкиваются с тем, что после включения зажигания стрелка тахометра падает, а рычаг КПП блокируется в одном положении. Понимание природы этой ошибки — первый шаг к самостоятельной диагностике и экономии на услугах специализированных сервисов.</p>
+
+<h2 id="суть-ошибки-p1890-и-ее-влияние-на-трансмиссию">Суть ошибки P1890 и ее влияние на трансмиссию</h2>
+<p>Код <strong>P1890</strong> классифицируется как неисправность цепи управления блокировкой переключения передач. В современных автомобилях, таких как <em>Honda HR-V</em>, электроника постоянно мониторит положение соленоидов и датчиков, отслеживая реакцию гидроблока. Если система не получает подтверждения отключения блокировки при попытке переключить передачу, она фиксирует ошибку.</p>
+
+<p>Это не просто программный сбой, а указание на физическую проблему в гидравлической или электрической части трансмиссии. Часто проблема кроется в заклинивании клапана или обрыве проводки, ведущей к <strong>соленоиду блокировки</strong>. Когда это происходит, автомобиль переходит в аварийный режим, ограничивая диапазон доступных передач, чтобы предотвратить механическое разрушение узлов.</p>
+
+<p>Вам необходимо понимать, что <strong>P1890</strong> может проявляться по-разному: от легкого рывка при старте до полной блокировки рычага. В некоторых случаях машина может двигаться только на второй передаче, игнорируя попытки переключения. Это защитный механизм, который не позволяет водителю усугубить ситуацию.</p>
+
+<blockquote>⚠️ Внимание: Если ошибка P1890 сопровождается загоранием индикатора «Check Engine» и блокировкой рычага КПП, не пытайтесь принудительно переводить селектор в другие положения. Это может привести к повреждению механизма блокировки или сгоранию соленоидов.</blockquote>
+
+<h2 id="основные-причины-возникновения-сбоя">Основные причины возникновения сбоя</h2>
+<p>Диагностика <em>Honda HR-V</em> показывает, что причины появления кода <strong>P1890</strong> можно разделить на три основные группы: электрические, гидравлические и механические. Наиболее частым виновником становится выход из строя электрических компонентов, таких как проводка или сами соленоиды. Из-за вибраций и перепадов температур изоляция проводов может повреждаться, вызывая короткое замыкание или обрыв.</p>
+
+<p>Вторая группа причин связана с качеством трансмиссионной жидкости. Если масло в коробке передач давно не менялось, оно теряет свои свойства и загрязняется продуктами износа. Грязное масло забивает <strong>гидроблок</strong>, мешая клапанам свободно перемещаться. В результате механизм блокировки не может сработать корректно, и система фиксирует ошибку.</p>
+
+<p>Третья причина — износ механических частей трансмиссии. Износ фрикционов или повреждение поршней блокировки может привести к тому, что даже при исправной электронике физическое переключение не происходит. В таких случаях код <strong>P1890</strong> является лишь следствием более глубокой механической проблемы.</p>
+
+<ul>
+<li>🔌 Обрыв или короткое замыкание в жгуте проводов, идущем к трансмиссии.</li>
+<li>🛠️ Неисправность соленоида блокировки переключения передач.</li>
+<li>⚙️ Засорение гидравлического блока из-за старого масла.</li>
+<li>📉 Износ внутренних механизмов АКПП, требующий капитального ремонта.</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая проблема чаще всего возникает у вашего Honda HR-V?</strong><ul><li>Ошибка P1890</li><li>Потеря мощности</li><li>Стук подвеской</li><li>Другая проблема</li></ul></div></div>
+
+<h2 id="диагностика-и-поиск-неисправности">Диагностика и поиск неисправности</h2>
+<p>Для точного определения причины ошибки <strong>P1890</strong> необходимо провести комплексную диагностику. Начинать стоит с подключения сканера OBD-II к разъему автомобиля. Это позволит не только считать код, но и увидеть текущие параметры работы соленоидов и датчиков скорости. Часто сканер покажет, что сопротивление цепи находится вне допустимого диапазона.</p>
+
+<p>Визуальный осмотр проводки также является обязательным этапом. Вам нужно найти разъемы, идущие к коробке передач, и проверить их на наличие окисления или повреждений. Если контакты загрязнены, их следует очистить и обработать защитным составом. Иногда проблема решается простым восстановлением контакта в разъемной колодке.</p>
+
+<p>Если электрическая часть в порядке, следующим шагом станет проверка уровня и состояния трансмиссионной жидкости. Жидкость должна быть прозрачной и иметь характерный красный цвет. Если она темная, пахнет гари или содержит металлическую стружку, это верный признак износа внутренних узлов. В таком случае простая замена масла может не помочь.</p>
+
+<div class="checklist-block"><h4>☑️ План первичной диагностики</h4><label class="check-item"><input type="checkbox"><span>Подключить OBD-II сканер</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть разъемы АКПП</span></label><label class="check-item"><input type="checkbox"><span>Проверить уровень масла</span></label><label class="check-item"><input type="checkbox"><span>Измерить сопротивление соленоидов</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Измерение сопротивления соленоидов мультиметром дает наиболее точные данные. Для этого нужно снять разъем с коробки передач и измерить параметры каждого соленоида. Сравните полученные значения с заводскими спецификациями для <em>Honda HR-V</em>. Значительное отклонение укажет на необходимость замены конкретного узла.</p>
+
+<blockquote>⚠️ Внимание: Перед проведением измерений сопротивления обязательно отключите клемму аккумулятора. Работа с электрической системой под напряжением может привести к повреждению электронных блоков управления и получить травму.</blockquote>
+
+<h2 id="пошаговая-инструкция-по-устранению-неисправности">Пошаговая инструкция по устранению неисправности</h2>
+<p>Устранение ошибки <strong>P1890</strong> начинается с самых простых и дешевых методов. Если диагностика показала, что проблема в проводке, потребуется ремонт жгута или замена разъемов. Используйте качественный паяльник и термоусадочную трубку для восстановления целостности изоляции. Не используйте обычную изоленту, так как она быстро отклеивается в условиях подкапотного пространства.</p>
+
+<p>В случае неисправности соленоида, его замена часто решает проблему. Процесс замены не требует демонтажа всей коробки передач, достаточно снять поддон АКПП и открутить неисправный клапан. Важно использовать оригинальные запчасти или качественные аналоги, так как дешевые соленоиды могут быстро выйти из строя снова.</p>
+
+<p>Если проблема кроется в гидроблоке, потребуется его снятие и чистка. Это более трудоемкая процедура, требующая аккуратности. Все каналы должны быть продуваны сжатым воздухом, а фильтры заменены. После сборки необходимо залить свежее трансмиссионное масло и провести адаптацию коробки передач через диагностический прибор.</p>
+
+<ul>
+<li>🛠️ Замените неисправный соленоид на оригинальный компонент Honda.</li>
+<li>🧼 Очистите гидроблок от шлама и металлической пыли.</li>
+<li>🔌 Восстановите поврежденные участки проводки с использованием термоусадки.</li>
+<li>💧 Замените трансмиссионную жидкость и фильтр АКПП.</li>
+</ul>
+
+<details class="faq-item"><summary>Что делать, если ошибка возвращается после сброса?</summary><div class="faq-answer"><p>Если ошибка P1890 появляется снова сразу после сброса, значит, проблема носит постоянный характер. Скорее всего, вышел из строя сам соленоид или произошел внутренний обрыв внутри катушки. В этом случае чистка контактов не поможет, необходима замена детали.</p></div></details>
+
+<p>После проведения ремонтных работ обязательно выполните процедуру сброса адаптаций. Для этого можно использовать сканер или отключить аккумулятор на несколько минут. Заведите двигатель и дайте ему поработать на холостом ходу, чтобы коробка прогрелась. Затем проедьте на автомобиле, плавно переключая передачи, чтобы система записала новые параметры работы.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная диагностика начинается с проверки электрических цепей, так как они являются самой частой причиной ошибки P1890. Замена соленоида часто решает проблему без необходимости дорогостоящего ремонта АКПП.</p></div>
+
+<h2 id="влияние-на-безопасность-и-эксплуатационные-характеристики">Влияние на безопасность и эксплуатационные характеристики</h2>
+<p>Эксплуатация <em>Honda HR-V</em> с ошибкой <strong>P1890</strong> несет серьезные риски для безопасности и долговечности автомобиля. В аварийном режиме коробка передач не может адекватно реагировать на изменение скорости, что делает маневрирование на оживленных дорогах опасным. Автомобиль может потерять мощность при обгоне, что в критической ситуации приведет к аварии.</p>
+
+<p>Кроме того, постоянная работа в режиме ограниченного диапазона передач приводит к повышенному нагреву трансмиссии. Перегрев ускоряет износ фрикционов и уплотнителей, что в конечном итоге может привести к полной замене коробки передач. Экономия на ремонте сейчас обернется огромными затратами в будущем.</p>
+
+<p>Владельцы часто пытаются игнорировать ошибку, просто сбрасывая код сканером. Однако без устранения физической причины проблема вернется в ближайшее время. Более того, постоянные попытки переключения передач в заблокированном состоянии могут привести к механическому повреждению зубчатых колес и валов.</p>
+
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Симптомы неисправности</th>
+<th>Сложность ремонта</th>
+<th>Примерная стоимость (запчасти)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Соленоид блокировки</td>
+<td>Ошибка P1890, рывки</td>
+<td>Низкая</td>
+<td>2000–5000 руб.</td>
+</tr>
+<tr>
+<td>Проводка АКПП</td>
+<td>Случайные пропуски</td>
+<td>Средняя</td>
+<td>1000–3000 руб.</td>
+</tr>
+<tr>
+<td>Гидроблок</td>
+<td>Задержка переключений</td>
+<td>Высокая</td>
+<td>15000–30000 руб.</td>
+</tr>
+<tr>
+<td>Датчик скорости</td>
+<td>Неверные показания</td>
+<td>Средняя</td>
+<td>1500–4000 руб.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При замене соленоида обязательно замените и уплотнительное кольцо. Старое кольцо может дать течь даже при новом соленоиде, что приведет к падению давления в системе.</p></div>
+
+<h2 id="профилактика-и-рекомендации-по-обслуживанию">Профилактика и рекомендации по обслуживанию</h2>
+<p>Чтобы избежать появления ошибки <strong>P1890</strong> в будущем, необходимо соблюдать регламент технического обслуживания <em>Honda HR-V</em>. Регулярная замена трансмиссионной жидкости — это залог долгой жизни коробки передач. Меняйте масло каждые 40-60 тысяч километров, даже если производитель заявляет о «необслуживаемости» АКПП.</p>
+
+<p>Также важно следить за состоянием проводки. Периодически осматривайте разъемы, идущие к трансмиссии, на предмет окисления или повреждений. При обнаружении следов коррозии сразу очищайте контакты и обрабатывайте их защитным спреем. Это простая процедура, которая может спасти вас от дорогостоящего ремонта.</p>
+
+<p>Избегайте агрессивного вождения, особенно в холодную погоду. Прогрев трансмиссии перед началом движения позволяет маслу достичь нужной вязкости и смазать все узлы. Резкие старты и торможения создают избыточную нагрузку на соленоиды и гидроблок, ускоряя их износ.</p>
+
+<ul>
+<li>🛢️ Меняйте трансмиссионное масло каждые 50 000 км пробега.</li>
+<li>🔍 Проводите визуальный осмотр проводки АКПП раз в год.</li>
+<li>🌡️ Прогревайте коробку передач перед поездкой зимой.</li>
+<li>📉 Следите за уровнем масла и доливайте его при необходимости.</li>
+</ul>
+
+<details class="faq-item"><summary>Можно ли доехать до сервиса при ошибке P1890?</summary><div class="faq-answer"><p>Технически доехать можно, но крайне нежелательно. Машина будет ехать только на одной передаче с ограниченным диапазоном скоростей. Это создает риск создания аварийной ситуации и может привести к перегреву АКПП, если поездка будет долгой.</p></div></details>
+
+<h2 id="стоимость-ремонта-и-выбор-сервиса">Стоимость ремонта и выбор сервиса</h2>
+<p>Стоимость устранения ошибки <strong>P1890</strong> сильно варьируется в зависимости от причины. Если проблема в проводке или одном соленоиде, ремонт обойдется недорого и займет несколько часов. В этом случае можно обратиться к частному мастеру или в специализированный сервис по ремонту АКПП.</p>
+
+<p>Если же неисправность затрагивает гидроблок или требует разборки трансмиссии, стоимость работ возрастет. В таких случаях лучше доверять крупным специализированным центрам, имеющим опыт работы с <em>Honda HR-V</em>. Они обладают необходимым оборудованием для точной диагностики и качественной сборки.</p>
+
+<p>Не пытайтесь сэкономить на диагностике, обращаясь в гаражные мастерские без оборудования. Неправильная диагностика может привести к замене исправных деталей и потере времени. Профессиональный сканер и грамотный инженер — это гарантия того, что вы устраните именно ту проблему, которая вызвала ошибку.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярное обслуживание и своевременная замена масла — самые эффективные способы предотвратить появление ошибки P1890 и избежать капитального ремонта АКПП.</p></div>
+
+<p>В конечном итоге, ошибка <strong>P1890</strong> — это сигнал, который нельзя игнорировать. Своевременное внимание к проблеме позволит сохранить трансмиссию <em>Honda HR-V</em> в исправном состоянии и избежать крупных финансовых потерь. Помните, что профилактика всегда дешевле и проще, чем ремонт.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+<summary>Можно ли ездить с ошибкой P1890?</summary>
+<p>Кратковременная поездка до сервиса возможна, но только в аварийном режиме. Длительная эксплуатация с этой ошибкой приведет к перегреву и выходу АКПП из строя. Машина будет иметь ограниченный диапазон передач и низкую динамику.</p>
+</details>
+<details>
+<summary>Сколько стоит замена соленоида блокировки?</summary>
+<p>Стоимость запчасти варьируется от 2000 до 5000 рублей, в зависимости от производителя. Работы по замене занимают 2-4 часа и стоят дополнительно. Итоговая цена ремонта обычно не превышает 15000 рублей.</p>
+</details>
+<details>
+<summary>Поможет ли замена масла избавиться от ошибки?</summary>
+<p>Замена масла может помочь, если проблема вызвана загрязнением гидроблока. Однако если соленоид или проводка неисправны, одна лишь замена масла не устранит ошибку P1890. Необходима комплексная диагностика.</p>
+</details>
+<details>
+<summary>Как сбросить ошибку P1890 после ремонта?</summary>
+<p>Ошибка сбрасывается через диагностический сканер OBD-II. Можно также отключить аккумулятор на 10-15 минут, но это менее эффективно, так как адаптация коробки может потребовать повторного обучения.</p>
+</details>
+<details>
+<summary>Какая модель Honda чаще всего страдает от этой ошибки?</summary>
+<p>Ошибка P1890 наиболее распространена на моделях с автоматической коробкой передач 5-го и 6-го поколения, включая <em>Honda HR-V</em>, <em>Civic</em> и <em>CR-V</em>, выпущенных в период с 2010 по 2018 год.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#суть-ошибки-p1890-и-ее-влияние-на-трансмиссию">Суть ошибки P1890 и ее влияние на трансмиссию</a></li><li><a href="#основные-причины-возникновения-сбоя">Основные причины возникновения сбоя</a></li><li><a href="#диагностика-и-поиск-неисправности">Диагностика и поиск неисправности</a></li><li><a href="#пошаговая-инструкция-по-устранению-неисправности">Пошаговая инструкция по устранению неисправности</a></li><li><a href="#влияние-на-безопасность-и-эксплуатационные-характеристики">Влияние на безопасность и эксплуатационные характеристики</a></li><li><a href="#профилактика-и-рекомендации-по-обслуживанию">Профилактика и рекомендации по обслуживанию</a></li><li><a href="#стоимость-ремонта-и-выбор-сервиса">Стоимость ремонта и выбор сервиса</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-hr-v-zamena-zadnikh-amortizatorov.html" class="related-card">Замена задних амортизаторов Honda HR-V: Инструкция и цены</a></li><li><a href="/articles/h/ho/honda-hr-v-otzyvy-vladeltsev.html" class="related-card">Honda HR-V отзывы владельцев: реальные плюсы, минусы и нюансы</a></li><li><a href="/articles/p/po/polka-bagazhnika-khonda-vezel.html" class="related-card">Полка багажника Honda Vezel: выбор, установка и нюансы</a></li><li><a href="/articles/m/mk/mkpp-na-honda-hr-v.html" class="related-card">Механическая КПП на Honda HR-V: Выбор, Обслуживание, Ремонт</a></li><li><a href="/articles/p/pr/prokladka-poddona-khonda-hr-v.html" class="related-card">Прокладка поддона Honda HR-V: выбор, замена и нюансы монтажа</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-hr-v-zamena-zadnikh-amortizatorov.html" class="related-bottom-card"><span class="related-bottom-title">Замена задних амортизаторов Honda HR-V: Инструкция и цены</span><span class="related-bottom-desc">Полное руководство по замене задних амортизаторов на Honda HR-V. Причины износа, выбор запчастей, по</span></a><a href="/articles/h/ho/honda-hr-v-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Honda HR-V отзывы владельцев: реальные плюсы, минусы и нюансы</span><span class="related-bottom-desc">Честные отзывы владельцев Honda HR-V. Разбор надежности, расхода топлива, проблем с вариатором и ком</span></a><a href="/articles/p/po/polka-bagazhnika-khonda-vezel.html" class="related-bottom-card"><span class="related-bottom-title">Полка багажника Honda Vezel: выбор, установка и нюансы</span><span class="related-bottom-desc">Полный гид по выбору полки багажника для Honda Vezel (XR-V). Обзор типов перегородок, сравнение мате</span></a><a href="/articles/m/mk/mkpp-na-honda-hr-v.html" class="related-bottom-card"><span class="related-bottom-title">Механическая КПП на Honda HR-V: Выбор, Обслуживание, Ремонт</span><span class="related-bottom-desc">Полный гайд по механической коробке передач на Honda HR-V. Разбор надежности, типичных неисправносте</span></a><a href="/articles/p/pr/prokladka-poddona-khonda-hr-v.html" class="related-bottom-card"><span class="related-bottom-title">Прокладка поддона Honda HR-V: выбор, замена и нюансы монтажа</span><span class="related-bottom-desc">Полное руководство по замене прокладки поддона картера на Honda HR-V. Обзор материалов, пошаговая ин</span></a><a href="/articles/k/kh/khonda-vezel-obem-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Honda Vezel: объем двигателя и характеристики моторов</span><span class="related-bottom-desc">Полный обзор двигателей Honda Vezel. Узнайте реальный объем, мощность, расход топлива и особенности </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

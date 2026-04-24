@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Honda Japan каталог запчастей: Полный гид по VIN и OEM кодам — Honda Library</title>
+    <meta name="description" content="Как найти оригинальные запчасти Honda через японский каталог. Инструкция по поиску по VIN, расшифровка номеров и отличия спецификаций.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/h/ho/honda-japan-katalog-zapchastej.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Honda Japan каталог запчастей: Полный гид по VIN и OEM кодам">
+    <meta property="og:description" content="Как найти оригинальные запчасти Honda через японский каталог. Инструкция по поиску по VIN, расшифровка номеров и отличия спецификаций.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Honda Japan каталог запчастей: Полный гид по VIN и OEM кодам</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полный гид по поиску запчастей в каталоге Honda Japan</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#основы-работы-с-японскими-базами-запчастей">Основы работы с японскими базами запчастей</a></li><li><a href="#пошаговая-инструкция-поиска-по-vin-коду">Пошаговая инструкция поиска по VIN-коду</a></li><li><a href="#расшифровка-кодов-и-спецификаций">Расшифровка кодов и спецификаций</a></li><li><a href="#различия-между-jdm-и-экспортными-версиями">Различия между JDM и экспортными версиями</a></li><li><a href="#типичные-ошибки-при-выборе-запчастей">Типичные ошибки при выборе запчастей</a></li><li><a href="#где-искать-надежные-поставщики">Где искать надежные поставщики</a></li><li><a href="#таблица-популярных-кодов-групп-деталей">Таблица популярных кодов групп деталей</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Поиск деталей для японских автомобилей часто превращается в сложную логическую задачу, особенно если вы не владеете базовыми навыками работы с официальными базами данных. Владельцы машин из поднебесной или тех, кто планирует привезти авто из Японии, сталкиваются с необходимостью найти точный аналог, который гарантированно подойдет к их конкретному экземпляру. Ошибка в выборе может стоить дорого, поэтому подход к поиску должен быть системным и максимально детализированным.</p>
+
+<p>Работа с <strong>Honda Japan каталог запчастей</strong> требует понимания специфики внутреннего рынка, где существуют тонкие различия даже между машинами одной модели, выпущенными в разные месяцы. Вы должны осознавать, что внешний вид агрегата не всегда гарантирует его совместимость с вашим автомобилем, так как инженеры могут менять внутренние характеристики без изменения дизайна корпуса. Только правильный алгоритм поиска и знание структуры нумерации помогут вам избежать покупки ненужного узла.</p>
+
+<h2 id="основы-работы-с-японскими-базами-запчастей">Основы работы с японскими базами запчастей</h2>
+
+<p>Японский рынок запчастей уникален своей структурированностью и точностью, где каждый винтик имеет свой код, привязанный к VIN-номеру автомобиля. Когда вы открываете <em>Honda Japan каталог запчастей</em>, вы попадаете в сложную систему взаимосвязей, где ошибка в одной цифре может перенаправить вас на совершенно другой узел. <strong>Оригинальный номер</strong> — это ваш главный ключ к успеху, позволяющий отсеять все неподходящие варианты и китайские аналоги низкого качества.</p>
+
+<p>Вам необходимо понимать разницу между каталогами для внутреннего рынка Японии (JDM) и экспортными версиями. Часто бывает так, что под капотом одной и той же модели <em>Civic</em> в Японии стоит двигатель с индексом K20A, а в европейской версии может быть установлен K20Z3, что требует разных прокладок и ремней. Покупка детали по внешнему описанию без сверки с <strong>VIN-кодом</strong> часто приводит к тому, что деталь просто не встанет на свое место или не обеспечит нужной герметичности.</p>
+
+<p>
+<p>Существует несколько крупных ресурсов, агрегирующих данные от официального производителя, но не все они одинаково удобны для пользователя, не владеющего японским языком. Интерфейс может быть перегружен иерархическими меню, где нужно последовательно выбирать регион, модель, кузов и год выпуска.</p>
+</p>
+
+<p>
+
+</p>
+
+<ul>
+<li>🔍 Всегда проверяйте <strong>код кузова</strong> перед началом поиска, так как он определяет архитектуру подвески и тормозной системы.</li>
+<li>🔧 Используйте <em>официальные VIN-расшифровщики</em> для получения точной спецификации двигателя и трансмиссии.</li>
+<li>📄 Сохраняйте скриншоты страниц каталога с номерами деталей, чтобы не потерять их при переходе между вкладками.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не покупайте запчасти, опираясь только на визуальное сходство на фото, так как японские производители часто меняют поставщиков комплектующих без изменения внешнего вида.</p>
+</blockquote>
+
+<h2 id="пошаговая-инструкция-поиска-по-vin-коду">Пошаговая инструкция поиска по VIN-коду</h2>
+
+<p>Первым и самым важным этапом является корректная идентификация автомобиля. Введите ваш <code>17-значный VIN-номер</code> в поле поиска выбранной базы данных. Система автоматически подтянет все доступные данные о вашей машине, включая дату производства, код цвета и тип привода. Если система не находит автомобиль по VIN, попробуйте ввести <strong>код модели</strong> и выбрать год выпуска вручную, но это менее точно.</p>
+
+<p>После успешного определения модели вам откроется список основных узлов: двигатель, кузов, электрика, ходовая часть. Выбирайте нужный раздел, и перед вами появится схема (эскиз) с разобранной деталью. Каждая часть на схеме пронумерована, и рядом с цифрой находится <em>OEM-код</strong> детали. Именно этот код нужно копировать для заказа. Обратите внимание, что некоторые узлы могут иметь несколько вариантов исполнения для одной модели.</p>
+
+<p>
+<p>Если вы видите несколько схем для одного узла (например, передняя подвеска для праворульных и леворульных версий), внимательно изучите примечания на японском или английском языке.</p>
+</p>
+
+<p>
+<p>Иногда одна и та же деталь может иметь несколько номеров в зависимости от года выпуска, при этом визуально они могут быть идентичны, но иметь разные допуски по материалам.</p>
+</p>
+
+<ul>
+<li>✅ Сверяйте <strong>код двигателя</em> (например, <code>B16A</code> или <code>R18A</code>) с данными в вашем ПТС или на шильдике под капотом.</li>
+<li>🚗 Уточняйте <em>тип коробки передач</em> (АКПП, МКПП, CVT), так как многие детали сцепления и маховика не взаимозаменяемы.</li>
+<li>🌏 Проверяйте регион поставки: детали для внутреннего рынка часто дешевле, но могут не подходить по креплениям для экспортных версий.</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Как часто вы меняете запчасти?</strong><ul><li>Раз в полгода</li><li>Раз в год</li><li>Только при поломке</li><li>По регламенту ТО</li></ul></div></div>
+
+<h2 id="расшифровка-кодов-и-спецификаций">Расшифровка кодов и спецификаций</h2>
+
+<p>Понимание структуры кода запчасти поможет вам избежать ошибок при заказе. Стандартный номер детали Honda состоит из 10 символов, разделенных дефисом, например <code>17210-P2F-A01</code>. Первые пять цифр указывают на группу деталей, следующие две буквы обозначают модельный ряд или тип агрегата, а последние три символа — это модификация. Изменение последних трех цифр часто означает изменение материала, цвета или конструктивного нюанса.</p>
+
+<p>Часто встречается ситуация, когда каталог предлагает несколько вариантов одной и той же детали с разными кодами. Это может быть связано с изменением конструкции в процессе производства или с поставкой от разных субподрядчиков. <strong>Ключевая модификация</strong> может означать, что деталь подходит только для автомобилей, выпущенных до определенной даты. Всегда обращайте внимание на колонку с备注 (примечаниями), где может быть указана дата начала применения детали.</p>
+
+<p>
+<p>Игнорирование модификации может привести к тому, что вы получите деталь, которая физически подойдет, но не будет работать корректно из-за различий в плотности резины или сплавов металла.</p>
+</p>
+
+<p>
+<p>В некоторых случаях производитель выпускает обновленную версию детали с новым номером, которая полностью заменяет старую, но обратная совместимость не всегда гарантирована без доработок.</p>
+</p>
+
+<ul>
+<li>🔢 Внимательно следите за последними цифрами кода: <code>-A01</code> и <code>-A02</code> могут означать разные поставщики.</li>
+<li>📅 Проверяйте <em>дату производства</em> вашего автомобиля относительно даты внедрения новой модификации детали.</li>
+<li>🔄 Используйте функцию поиска по <strong>аналогам</strong>, если оригинал снят с производства, но убедитесь в совместимости.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Проверка перед заказом</h4><label class="check-item"><input type="checkbox"><span>Сверить VIN-код</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в наличии на складе</span></label><label class="check-item"><input type="checkbox"><span>Проверить цену за единицу</span></label><label class="check-item"><input type="checkbox"><span>Узнать срок доставки</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="различия-между-jdm-и-экспортными-версиями">Различия между JDM и экспортными версиями</h2>
+
+<p>Одним из самых сложных аспектов является различие между автомобилями для внутреннего рынка Японии (JDM) и экспортными версиями. В каталоге <em>Honda Japan</em> вы можете найти детали, которые физически не подойдут к вашему автомобилю, если он был собран для рынка США или Европы. Это касается не только кузова, но и электроники, систем безопасности и даже простых расходников. Например, радиаторы могут иметь разное количество рядов для охлаждения из-за климатических различий.</p>
+
+<p>
+<p>Важно понимать, что японские стандарты качества часто выше, но и требования к установке могут быть более специфичными.</p>
+</p>
+
+<p>
+<p>Экспортные версии часто имеют упрощенную конструкцию некоторых узлов для снижения стоимости или соответствия местным нормам безопасности.</p>
+</p>
+
+<p>
+<p>При заказе деталей из каталога JDM для европейского автомобиля обязательно уточняйте у продавца возможность возврата в случае несоответствия.</p>
+</p>
+
+<ul>
+<li>⚙️ Различия в <strong>креплениях</strong>: болты и кронштейны могут иметь разную длину и шаг резьбы.</li>
+<li>💡 Электрика: разъемы и распиновка жгутов проводки часто несовместимы без использования переходников.</li>
+<li>🛑 Тормозная система: размеры дисков и колодок могут отличаться, а также характеристики ABS-модуля.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Не пытайтесь установить детали от JDM-версии на экспортный автомобиль без предварительной примерки, так как это может нарушить работу систем безопасности.</p>
+</blockquote>
+
+<details class="faq-item"><summary>Почему детали JDM часто дешевле?</summary><div class="faq-answer"><p>В Японии рынок запчастей очень конкурентный, а объем производства огромен, что позволяет поддерживать низкие цены на оригинальные детали. Кроме того, японские владельцы часто меняют машины каждые 3-5 лет, создавая огромный поток запчастей на вторичный рынок, что стимулирует производителей держать цены низкими.</p></div></details>
+
+<h2 id="типичные-ошибки-при-выборе-запчастей">Типичные ошибки при выборе запчастей</h2>
+
+<p>Самая распространенная ошибка — покупка детали по внешнему виду или названию без проверки каталожного номера. Даже если деталь выглядит точно так же, как ваша сломанная, она может не подходить из-за скрытых изменений в конструкции. Вторая ошибка — игнорирование даты производства автомобиля. Производители часто вносят изменения в конструкцию без объявления, и деталь, выпущенная в 2018 году, может не подойти к машине 2017 года, несмотря на одну и ту же модель.</p>
+
+<p>
+<p>Многие пользователи ошибочно полагают, что все детали для одной модели полностью взаимозаменяемы, что в корне неверно для современных автомобилей с высокой степенью интеграции систем.</p>
+</p>
+
+<p>
+<p>Не стоит также доверять слепо фотографиям в интернет-магазинах, так как они могут быть взяты из другого контекста или относиться к другой модификации.</p>
+</p>
+
+<ul>
+<li>❌ Не покупайте детали без проверки <strong>OEM-номера</strong> в официальном каталоге.</li>
+<li>❌ Игнорируйте советы продавцов, которые не видят ваш VIN-номер и опираются только на модель.</li>
+<li>❌ Не экономьте на диагностике, если деталь не подходит — это может привести к поломке соседних узлов.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед заказом всегда запрашивайте у продавца фото детали с биркой, на которой указан номер, чтобы визуально сверить его с каталогом.</p></div>
+
+<h2 id="где-искать-надежные-поставщики">Где искать надежные поставщики</h2>
+
+<p>После того как вы нашли правильный номер детали в каталоге, возникает вопрос: где ее купить. Существует множество площадок, специализирующихся на поставке запчастей из Японии, но не все из них гарантируют качество и подлинность. Официальные дилеры в Японии предлагают лучшие цены, но могут не иметь прямого доступа к зарубежным покупателям. В таком случае приходится использовать посредников или специализированные магазины.</p>
+
+<p>
+<p>При выборе поставщика обратите внимание на его репутацию, отзывы и условия доставки. Некоторые магазины предлагают услуги по проверке совместимости перед отправкой, что значительно снижает риски.</p>
+</p>
+
+<p>
+<p>Также стоит учитывать сроки доставки и стоимость таможенного оформления, если вы заказываете детали напрямую из Японии.</p>
+</p>
+
+<ul>
+<li>🏭 Прямые поставки от <strong>официальных дилеров</strong> в Японии — самый надежный, но часто медленный способ.</li>
+<li>🚚 Специализированные магазины в вашей стране могут предложить быструю доставку, но цены будут выше.</li>
+<li>🌐 Аукционы запчастей подходят для поиска редких или снятых с производства деталей, но требуют опыта.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Надежный поставщик — это тот, кто может предоставить подтверждение совместимости детали с вашим конкретным VIN-номером до момента оплаты заказа.</p></div>
+
+<h2 id="таблица-популярных-кодов-групп-деталей">Таблица популярных кодов групп деталей</h2>
+
+<p>Для удобства навигации по каталогу полезно знать основные коды групп деталей. Это поможет вам быстрее ориентироваться в огромном массиве данных и находить нужные разделы без лишних кликов. Ниже приведена таблица с основными группами и их кодами, которые часто встречаются в каталогах Honda.</p>
+
+<table>
+<thead>
+<tr>
+<th>Код группы</th>
+<th>Название группы</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11000</td>
+<td>Двигатель</td>
+<td>Блок цилиндров, поршни, клапаны</td>
+</tr>
+<tr>
+<td>17000</td>
+<td>Трансмиссия</td>
+<td>Коробка передач, сцепление, дифференциал</td>
+</tr>
+<tr>
+<td>21000</td>
+<td>Передняя подвеска</td>
+<td>Амортизаторы, рычаги, стабилизаторы</td>
+</tr>
+<tr>
+<td>31000</td>
+<td>Тормозная система</td>
+<td>Колодки, диски, суппорты, ABS</td>
+</tr>
+<tr>
+<td>61000</td>
+<td>Электрика</td>
+<td>Проводка, датчики, блоки управления</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<p>Знание этих кодов поможет вам быстрее находить нужные разделы в каталоге, особенно если интерфейс не поддерживает поиск по названию на вашем языке.</p>
+</p>
+
+<p>
+<p>Иногда в каталоге могут встречаться дополнительные подразделы, которые не указаны в основной таблице, но они обычно логически вытекают из основных групп.</p>
+</p>
+
+<details class="faq-item"><summary>Что делать, если код детали не найден?</summary><div class="faq-answer"><p>Если код детали не находится в каталоге, это может означать, что деталь была заменена на новую модификацию или снята с производства. В этом случае попробуйте поискать по старому коду или обратитесь к специалисту для подбора аналога.</p></div></details>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Как точно определить год выпуска автомобиля по VIN?</summary>
+<p>
+<p>В 10-м символе VIN-кода зашифрован год выпуска. Для автомобилей Honda это буква или цифра, соответствующая определенному году по международному стандарту. Вы можете воспользоваться онлайн-калькуляторами расшифровки VIN, чтобы узнать точную дату.</p>
+</p>
+</details>
+
+<details>
+<summary>Можно ли использовать детали от праворульных машин для леворульных?</summary>
+<p>
+<p>В большинстве случаев нет. Системы рулевого управления, тормозные трубки и даже расположение некоторых агрегатов могут отличаться. Однако некоторые детали двигателя или подвески могут быть универсальными, но это нужно проверять по каталогу.</p>
+</p>
+</details>
+
+<details>
+<summary>Что означает пометка "OEM" на детали?</summary>
+<p>
+<p>OEM (Original Equipment Manufacturer) означает, что деталь произведена тем же заводом, что и оригинальная деталь для автомобиля. Это не всегда бренд Honda, но качество и допуски полностью соответствуют заводским требованиям.</p>
+</p>
+</details>
+
+<details>
+<summary>Как узнать, подходит ли деталь, если каталог не показывает совместимость?</summary>
+<p>
+<p>Необходимо сверить номер детали с номером на вашей старой детали или проконсультироваться с профессиональным менеджером по запчастям, который имеет доступ к расширенным базам данных.</p>
+</p>
+</details>
+
+<details>
+<summary>Сколько времени занимает доставка запчастей из Японии?</summary>
+<p>
+<p>Сроки доставки зависят от выбранного способа (авиа, море) и таможенного оформления. Обычно авиадоставка занимает 2-3 недели, а морская — от 1 до 2 месяцев.</p>
+</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#основы-работы-с-японскими-базами-запчастей">Основы работы с японскими базами запчастей</a></li><li><a href="#пошаговая-инструкция-поиска-по-vin-коду">Пошаговая инструкция поиска по VIN-коду</a></li><li><a href="#расшифровка-кодов-и-спецификаций">Расшифровка кодов и спецификаций</a></li><li><a href="#различия-между-jdm-и-экспортными-версиями">Различия между JDM и экспортными версиями</a></li><li><a href="#типичные-ошибки-при-выборе-запчастей">Типичные ошибки при выборе запчастей</a></li><li><a href="#где-искать-надежные-поставщики">Где искать надежные поставщики</a></li><li><a href="#таблица-популярных-кодов-групп-деталей">Таблица популярных кодов групп деталей</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-tsivik-otzyvy-2008.html" class="related-card">Honda Civic 2008: Отзывы владельцев, надежность и нюансы эксплуатации</a></li><li><a href="/articles/h/ho/honda-civic-type-r-2021.html" class="related-card">Honda Civic Type R 2021: Полный обзор, характеристики и особенности</a></li><li><a href="/articles/k/kh/khonda-tsivik-11-pokoleniya-khetchbek.html" class="related-card">Honda Civic 11 хэтчбек: обзор, характеристики и тест-драйв</a></li><li><a href="/articles/k/kh/khonda-tsivik-10-pokoleniya-komplektatsii.html" class="related-card">Honda Civic 10 поколение: полный разбор комплектаций и опций</a></li><li><a href="/articles/m/mo/moment-zatyazhki-gbts-d15b-honda.html" class="related-card">Момент затяжки ГБЦ D15B Honda: Пошаговая инструкция и таблица</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-tsivik-otzyvy-2008.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic 2008: Отзывы владельцев, надежность и нюансы эксплуатации</span><span class="related-bottom-desc">Полный обзор Honda Civic 2008 года. Реальные отзывы владельцев, слабые места, расход топлива, особен</span></a><a href="/articles/h/ho/honda-civic-type-r-2021.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic Type R 2021: Полный обзор, характеристики и особенности</span><span class="related-bottom-desc">Глубокий анализ Honda Civic Type R 2021 года. Технические характеристики, динамические тесты, интерь</span></a><a href="/articles/k/kh/khonda-tsivik-11-pokoleniya-khetchbek.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic 11 хэтчбек: обзор, характеристики и тест-драйв</span><span class="related-bottom-desc">Полный разбор Honda Civic 11 поколения в кузове хэтчбек. Технические данные, расход топлива, комплек</span></a><a href="/articles/k/kh/khonda-tsivik-10-pokoleniya-komplektatsii.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic 10 поколение: полный разбор комплектаций и опций</span><span class="related-bottom-desc">Подробный гид по выбору Honda Civic 10 поколения. Разбор всех комплектаций, двигателей, коробок пере</span></a><a href="/articles/m/mo/moment-zatyazhki-gbts-d15b-honda.html" class="related-bottom-card"><span class="related-bottom-title">Момент затяжки ГБЦ D15B Honda: Пошаговая инструкция и таблица</span><span class="related-bottom-desc">Полное руководство по моменту затяжки болтов ГБЦ двигателя D15B. Таблица значений, порядок затяжки и</span></a><a href="/articles/g/ga/gajki-kolesnye-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Гайки колесные Honda Civic 4D: выбор, размеры и правила затяжки</span><span class="related-bottom-desc">Полный гид по колесным гайкам для Honda Civic 4D. Размеры резьбы, моменты затяжки, типы конусов и со</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

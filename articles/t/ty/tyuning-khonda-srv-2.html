@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Тюнинг Honda CR-V 2: Чип-тюнинг, подвеска и стайлинг — Honda Library</title>
+    <meta name="description" content="Полное руководство по тюнингу Honda CR-V второго поколения. Обзор чип-тюнинга двигателя K24, модернизации подвески, выхлопной системы и внешнего стайлинга.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/t/ty/tyuning-khonda-srv-2.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Тюнинг Honda CR-V 2: Чип-тюнинг, подвеска и стайлинг">
+    <meta property="og:description" content="Полное руководство по тюнингу Honda CR-V второго поколения. Обзор чип-тюнинга двигателя K24, модернизации подвески, выхлопной системы и внешнего стайлинга.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Тюнинг Honda CR-V 2: Чип-тюнинг, подвеска и стайлинг</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Комплексный тюнинг Honda CR-V второго поколения: от двигателя до экстерьера</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#двигатель-и-система-выхлопа-как-получить-больше-мощности">Двигатель и система выхлопа: как получить больше мощности</a></li><li><a href="#улучшение-управляемости-и-подвески">Улучшение управляемости и подвески</a></li><li><a href="#внешний-стайлинг-и-аэродинамика">Внешний стайлинг и аэродинамика</a></li><li><a href="#технические-характеристики-и-сравнение">Технические характеристики и сравнение</a></li><li><a href="#интерьер-и-комфорт">Интерьер и комфорт</a></li><li><a href="#юридические-аспекты-и-безопасность">Юридические аспекты и безопасность</a></li><li><a href="#частые-вопросы-владельцев">Частые вопросы владельцев</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Владельцы второго поколения кроссовера <em>Honda CR-V</em> (рекламация 2002–2006 годов) часто сталкиваются с необходимостью обновления своих машин, так как заводские характеристики со временем кажутся недостаточными для современных реалий дорожного движения. Этот автомобиль обладает отличной базой, но именно грамотный <strong>тюнинг</strong> способен раскрыть его истинный потенциал, превратив семейный кроссовер в динамичный и стильный автомобиль.</p>
+
+<p>Модернизация <em>Honda CR-V 2</em> требует комплексного подхода, затрагивающего не только внешнюю эстетику, но и технические узлы, такие как двигатель <em>K24A</em>, трансмиссия и ходовая часть. Важно понимать, что любое вмешательство должно быть сбалансированным, чтобы не нарушить надежность, за которую этот кроссовер ценится по всему миру.</p>
+
+<h2 id="двигатель-и-система-выхлопа-как-получить-больше-мощности">Двигатель и система выхлопа: как получить больше мощности</h2>
+<p>Сердцем большинства версий <em>Honda CR-V 2</em> является атмосферный бензиновый двигатель <em>K24A</em> объемом 2.4 литра. Заводская настройка этого агрегата консервативна, что оставляет значительный запас для <strong>чип-тюнинга</strong>. Современные программы прошивки ЭБУ позволяют снять лишние ограничения, увеличив мощность на 10-15% без физического вмешательства в мотор.</p>
+
+<p>После перепрошивки вы сразу заметите улучшение реакции на педаль газа и устранение «провалов» при обгоне. Однако одна лишь прошивка не даст максимального эффекта, поэтому часто владельцы дополняют её установкой <strong>прямоточного выхлопа</strong>. Это не только добавляет приятный звук, но и снижает противодавление, позволяя мотору «дышать» свободнее.</p>
+
+<p>Не стоит забывать о системе впуска. Установка <strong>холодного забора воздуха</strong> (интеркулера) или фильтра нулевого сопротивления может дополнительно повысить КПД двигателя. В сочетании с выхлопом эти меры делают вождение более отзывчивым и динамичным.</p>
+
+<blockquote>⚠️ Внимание: При установке прямоточного выхлопа убедитесь, что система соответствует экологическим нормам вашего региона, так как некоторые тюнинговые решения могут вызвать проблемы при прохождении технического осмотра.</blockquote>
+
+<p> Масляные интервалы должны быть сокращены, а качество расходных материалов — соответствовать возросшим нагрузкам.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какое направление тюнинга вам интереснее всего?</strong><ul><li>Мощность двигателя</li><li>Подвеска и управляемость</li><li>Внешний вид и стайлинг</li><li>Комфорт и салон</li></ul></div></div>
+
+<h2 id="улучшение-управляемости-и-подвески">Улучшение управляемости и подвески</h2>
+<p>Заводская подвеска <em>Honda CR-V 2</em> настроена на комфорт, что иногда приводит к значительным кренам в поворотах. Для тех, кто предпочитает активный стиль вождения, замена штатных амортизаторов на <strong>спортивные</strong> или установка <strong>понижающих пружин</strong> станет отличным решением. Это не только улучшит внешний вид, но и снизит центр тяжести автомобиля.</p>
+
+<p>Особое внимание следует уделить стабилизаторам поперечной устойчивости. Установка <strong>более толстых стабилизаторов</strong> или разрезных рычагов (разрезных сайлентблоков) позволит сделать рулевое управление более острым и предсказуемым. В поворотах кроссовер будет вести себя как более собранный автомобиль.</p>
+
+<p>Не забывайте о колесах. Увеличение диаметра дисков до 17 или 18 дюймов с низкопрофильной резиной улучшит реакцию на руль, но может снизить комфорт на плохих дорогах. <strong>Кованые диски</strong> будут предпочтительнее, так как они легче штампованных и снижают неподрессоренные массы.</p>
+
+<ul>
+<li>🔧 Замена амортизаторов на койловеры для регулировки клиренса и жесткости</li>
+<li>🛞 Установка легкосплавных дисков R17-R18 с правильным вылетом</li>
+<li>⚙️ Установка распорки передних стоек для усиления кузова</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Подготовка к модернизации подвески</h4><label class="check-item"><input type="checkbox"><span>Снять старые пружины и амортизаторы</span></label><label class="check-item"><input type="checkbox"><span>Проверить состояние сайлентблоков</span></label><label class="check-item"><input type="checkbox"><span>Закупить новые запчасти</span></label><label class="check-item"><input type="checkbox"><span>Проверить геометрию после установки</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="внешний-стайлинг-и-аэродинамика">Внешний стайлинг и аэродинамика</h2>
+<p>Внешний вид <em>Honda CR-V 2</em> можно кардинально изменить, используя готовые аэродинамические комплекты. Спойлеры, накладки на пороги и передние бамперы с увеличенными воздухозаборниками не только улучшают эстетику, но и могут положительно влиять на аэродинамику при правильной установке.</p>
+
+<p>Тонировка стекол и установка <strong>линзованной оптики</strong> добавят автомобилю агрессии и современности. Многие владельцы заменяют штатные фары на ксеноновые или светодиодные модули с правильным пучком света, что критически важно для безопасности ночных поездок.</p>
+
+<p>Заднее крыло (спойлер) — это классический элемент тюнинга для этой модели. Оно не только визуально укорачивает корму, но и создает прижимную силу на высоких скоростях. Однако не стоит перебарщивать с размером, чтобы не нарушить баланс аэродинамики.</p>
+
+<blockquote>⚠️ Внимание: При установке спойлеров и обвесов используйте качественные материалы (ABS-пластик, стекловолокно) и надежный крепеж, чтобы избежать отрыва деталей на высокой скорости.</blockquote>
+
+<ul>
+<li>🎨 Покраска в цвет кузова или установка защитной пленки (антигравий)</li>
+<li>💡 Замена штатной оптики на LED или ксеноновые модули с линзами</li>
+<li>🏎️ Установка аэродинамического обвеса (бамперы, пороги, спойлер)</li>
+</ul>
+
+<details class="faq-item"><summary>Влияние аэродинамики на расход топлива</summary><div class="faq-answer"><p>Установка крупных аэродинамических элементов может увеличить лобовое сопротивление, что приведет к росту расхода топлива на скоростях выше 100 км/ч.</p></div></details>
+
+<h2 id="технические-характеристики-и-сравнение">Технические характеристики и сравнение</h2>
+<p>Чтобы понять масштаб изменений, полезно сравнить базовые характеристики автомобиля с вариантами после модернизации. Ниже приведена таблица, демонстрирующая разницу между стоковой конфигурацией и тюнингованным вариантом.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Штатная версия</th>
+<th>Тюнингованная версия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Мощность двигателя</td>
+<td>160 л.с.</td>
+<td>175–180 л.с.</td>
+</tr>
+<tr>
+<td>Разгон 0–100 км/ч</td>
+<td>9.8 сек</td>
+<td>8.5–9.0 сек</td>
+</tr>
+<tr>
+<td>Диаметр колес</td>
+<td>16 дюймов</td>
+<td>17–18 дюймов</td>
+</tr>
+<tr>
+<td>Клиренс</td>
+<td>200 мм</td>
+<td>160–180 мм</td>
+</tr>
+<tr>
+<td>Тип выхлопа</td>
+<td>Стандартный</td>
+<td>Прямоточный</td>
+</tr>
+</tbody>
+</table>
+
+<p>Важно отметить, что снижение клиренса и увеличение мощности влияют не только на динамику, но и на проходимость. <em>Honda CR-V 2</em> с занижением теряет часть своих внедорожных качеств, поэтому такой тюнинг подходит преимущественно для городских условий.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Баланс между внешним видом и функциональностью — залог успешного тюнинга. Не жертвуйте надежностью ради эстетики.</p></div>
+
+<h2 id="интерьер-и-комфорт">Интерьер и комфорт</h2>
+<p>Салон <em>Honda CR-V 2</em> отличается практичностью, но часто требует модернизации для повышения комфорта. Установка <strong>кожаного салона</strong> или чехлов премиум-класса, замена штатной мультимедийной системы на современную с поддержкой Android Auto/Apple CarPlay значительно улучшат впечатления от поездки.</p>
+
+<p>Дополнительная шумоизоляция — это обязательный этап для тех, кто хочет насладиться тишиной в салоне. Использование качественных вибро- и шумоизоляционных материалов снижает уровень шума от дороги и двигателя, делая поездку более спокойной.</p>
+
+<p>Рулевое колесо также можно заменить на спортивное, обтянутое кожей или алькантарой. Это улучшает эргономику и добавляет автомобилю спортивного характера. Не забывайте и о педалях — спортивный набор из алюминия добавит удобства при управлении.</p>
+
+<ul>
+<li>🎶 Замена штатной магнитолы на современную мультимедиа систему</li>
+<li>🛋️ Установка кожаного салона или качественных чехлов</li>
+<li>🔇 Полная шумоизоляция салона и колесных арок</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед установкой новой мультимедийной системы проверьте совместимость разъемов с вашей версией автомобиля, чтобы избежать проблем с проводкой.</p></div>
+
+<h2 id="юридические-аспекты-и-безопасность">Юридические аспекты и безопасность</h2>
+<p>Важно учитывать, что любые изменения в конструкции автомобиля должны быть зарегистрированы в соответствующих органах. <strong>Чип-тюнинг</strong> и установка спортивного выхлопа могут вызвать вопросы у инспекторов ГИБДД, если они не внесены в документы.</p>
+
+<p>Изменение клиренса и установка нестандартных дисков также требуют регистрации. В противном случае вы рискуете получить штраф и предписание вернуть автомобиль в заводское состояние. Всегда консультируйтесь с юристами или специалистами по регистрации изменений.</p>
+
+<p>Безопасность — приоритет номер один. Усиление кузова и установка качественных тормозных дисков обязательны при увеличении мощности двигателя. <strong>Тормозная система</strong> должна соответствовать новым характеристикам автомобиля, чтобы обеспечить безопасное замедление.</p>
+
+<blockquote>⚠️ Внимание: Нелегальный тюнинг может стать причиной отказа в выплате страховки при ДТП, если будет доказано, что авария произошла из-за несогласованных изменений в конструкции.</blockquote>
+
+<p>Не забывайте, что тюнинг должен быть не только красивым, но и безопасным для всех участников движения. Регулярные проверки технических узлов после установки новых элементов помогут избежать аварийных ситуаций.</p>
+
+<details class="faq-item"><summary>Регистрация изменений</summary><div class="faq-answer"><p>Для легализации изменений необходимо пройти техническую экспертизу, получить разрешение и внести изменения в ПТС и СТС автомобиля.</p></div></details>
+
+<h2 id="частые-вопросы-владельцев">Частые вопросы владельцев</h2>
+<details>
+<summary>Сколько времени занимает чип-тюнинг двигателя?</summary>
+<p>Процесс перепрошивки ЭБУ обычно занимает от 1 до 2 часов, включая диагностику и тестовый заезд. Однако подготовка автомобиля и выбор оптимальной карты прошивки могут занять больше времени.</p>
+</details>
+<details>
+<summary>Нужно ли менять коробку передач при увеличении мощности?</summary>
+<p>Для увеличения мощности на 10-15% замена коробки передач не требуется. Однако при более агрессивном тюнинге рекомендуется проверить состояние сцепления и гидротрансформатора.</p>
+</details>
+<details>
+<summary>Как влияет понижение подвески на проходимость?</summary>
+<p>Понижение подвески на 20-40 мм снижает клиренс, что уменьшает проходимость по бездорожью. Автомобиль становится менее пригодным для серьезных внедорожных испытаний.</p>
+</details>
+<details>
+<summary>Можно ли вернуть автомобиль в заводское состояние?</summary>
+<p>Да, большинство изменений, таких как чип-тюнинг и замена выхлопа, обратимы. Достаточно вернуть старую прошивку и установить штатные элементы.</p>
+</details>
+<details>
+<summary>Какие диски лучше выбрать для зимней эксплуатации?</summary>
+<p>Для зимы рекомендуется использовать стальные диски или легкие кованые диски меньшего диаметра с высоким профилем резины. Это обеспечит лучшую проходимость по снегу и льду.</p>
+</details>
+
+<p>Тюнинг <em>Honda CR-V 2</em> — это увлекательный процесс, позволяющий создать уникальный автомобиль, отвечающий вашим потребностям. Главное — подходить к делу с умом, учитывая технические особенности и законодательные нормы.</p>
+
+<p>Правильно подобранные улучшения не только сделают ваш кроссовер быстрее и красивее, но и продлят срок его службы, обеспечивая надежность и комфорт на долгие годы.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Успешный тюнинг — это гармоничное сочетание мощности, управляемости и эстетики, не нарушающее баланс автомобиля.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#двигатель-и-система-выхлопа-как-получить-больше-мощности">Двигатель и система выхлопа: как получить больше мощности</a></li><li><a href="#улучшение-управляемости-и-подвески">Улучшение управляемости и подвески</a></li><li><a href="#внешний-стайлинг-и-аэродинамика">Внешний стайлинг и аэродинамика</a></li><li><a href="#технические-характеристики-и-сравнение">Технические характеристики и сравнение</a></li><li><a href="#интерьер-и-комфорт">Интерьер и комфорт</a></li><li><a href="#юридические-аспекты-и-безопасность">Юридические аспекты и безопасность</a></li><li><a href="#частые-вопросы-владельцев">Частые вопросы владельцев</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-tsrv-otzyvy-o-mashine-vladeltsev.html" class="related-card">Honda CR-V: честные отзывы владельцев, плюсы и минусы</a></li><li><a href="/articles/k/kr/kran-pechki-khonda-srv-rd1.html" class="related-card">Замена крана печки Honda CR-V RD1: инструкция, цены и нюансы</a></li><li><a href="/articles/k/kh/khonda-srv-2-otzyvy-vladeltsev.html" class="related-card">Хонда CR-V 2 отзывы владельцев: плюсы, минусы и реальные проблемы</a></li><li><a href="/articles/p/p1/p1259-honda-cr-v-oshibka.html" class="related-card">Ошибка P1259 Honda CR-V: Диагностика, причины и ремонт</a></li><li><a href="/articles/k/kh/khonda-srv-zamena-startera.html" class="related-card">Замена стартера на Honda CR-V: Пошаговая инструкция и цены</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-tsrv-otzyvy-o-mashine-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V: честные отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Полный разбор Honda CR-V по отзывам реальных владельцев. Надежность двигателя, расход топлива, пробл</span></a><a href="/articles/k/kr/kran-pechki-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Замена крана печки Honda CR-V RD1: инструкция, цены и нюансы</span><span class="related-bottom-desc">Полное руководство по замене радиатора отопителя и крана на Honda CR-V первого поколения (RD1). Прич</span></a><a href="/articles/k/kh/khonda-srv-2-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Хонда CR-V 2 отзывы владельцев: плюсы, минусы и реальные проблемы</span><span class="related-bottom-desc">Подробный разбор Honda CR-V 2: отзывы владельцев о надежности, расходе топлива, поломках и обслужива</span></a><a href="/articles/p/p1/p1259-honda-cr-v-oshibka.html" class="related-bottom-card"><span class="related-bottom-title">Ошибка P1259 Honda CR-V: Диагностика, причины и ремонт</span><span class="related-bottom-desc">Ошибка P1259 на Honda CR-V означает неисправность системы управления двигателем. Узнайте причины, си</span></a><a href="/articles/k/kh/khonda-srv-zamena-startera.html" class="related-bottom-card"><span class="related-bottom-title">Замена стартера на Honda CR-V: Пошаговая инструкция и цены</span><span class="related-bottom-desc">Полное руководство по замене стартера на Honda CR-V. Диагностика неисправностей, выбор аналогов, пош</span></a><a href="/articles/k/ka/kak-otkrutit-shkiv-kolenvala-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Как открутить шкив коленвала Honda CR-V RD1: Инструкция и инструменты</span><span class="related-bottom-desc">Пошаговое руководство по снятию шкива коленвала на Honda CR-V RD1. Обзор инструментов, методы демонт</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

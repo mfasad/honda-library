@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Сброс PCM и TCM Honda: что это, зачем и как сделать правильно — Honda Library</title>
+    <meta name="description" content="Разбираем процедуру сброса адаптаций блоков управления двигателем и трансмиссией Honda. Пошаговая инструкция, нюансы для разных моделей и последствия ошибки.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/sb/sbros-pcm-tcm-honda-eto-chto.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Сброс PCM и TCM Honda: что это, зачем и как сделать правильно">
+    <meta property="og:description" content="Разбираем процедуру сброса адаптаций блоков управления двигателем и трансмиссией Honda. Пошаговая инструкция, нюансы для разных моделей и последствия ошибки.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/авто/">Авто</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Сброс PCM и TCM Honda: что это, зачем и как сделать правильно</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Сброс PCM и TCM Honda: полное руководство по адаптации</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#суть-процессов-адаптации-в-автомобилях-honda">Суть процессов адаптации в автомобилях Honda</a></li><li><a href="#когда-необходимо-выполнять-процедуру-сброса">Когда необходимо выполнять процедуру сброса</a></li><li><a href="#методы-сброса-от-простых-к-сложным">Методы сброса: от простых к сложным</a></li><li><a href="#пошаговая-инструкция-сброса-адаптаций">Пошаговая инструкция сброса адаптаций</a></li><li><a href="#особенности-для-разных-моделей-honda">Особенности для разных моделей Honda</a></li><li><a href="#последствия-неправильного-сброса">Последствия неправильного сброса</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Ситуация, когда автомобиль Honda начинает работать нестабильно после замены деталей или программных сбоев, требует вмешательства в электронику. Многие автовладельцы сталкиваются с термином «сброс PCM TCM Honda это что» и не понимают, как это влияет на поведение машины. На самом деле речь идет о принудительной очистке памяти адаптаций в двух ключевых блоках: блоке управления двигателем (Powertrain Control Module) и блоке управления коробкой передач (Transmission Control Module).</p>
+<p>Эти устройства постоянно учатся подстраиваться под износ двигателя и особенности вождения. Если вы только что заменили <strong>дроссельную заслонку</strong>, <strong>топливный насос</strong> или перепрошили систему, старые данные адаптации будут конфликтовать с новыми параметрами. Без выполнения процедуры сброса вы рискуете получить плавающие обороты, рывки при переключении передач и повышенный расход топлива, даже если механическая часть исправна.</p>
+
+<h2 id="суть-процессов-адаптации-в-автомобилях-honda">Суть процессов адаптации в автомобилях Honda</h2>
+<p>Современные автомобили <em>Honda</em> используют сложные алгоритмы для управления силовым агрегатом. Блок <strong>PCM</strong> отслеживает положение дроссельной заслонки, давление топлива и нагрузку на двигатель, сохраняя эти данные в энергонезависимой памяти. Блок <strong>TCM</strong> делает то же самое для трансмиссии, записывая моменты переключения передач и давление в гидроблоке. Эти настройки называются адаптациями, и они индивидуальны для каждого конкретного экземпляра машины.</p>
+<p>Когда происходит ремонт или замена компонентов, старые адаптации становятся неактуальными. Например, новая дроссельная заслонка имеет другие физические характеристики зазора, чем изношенная старая. Если вы не выполните <strong>сброс адаптаций</strong>, компьютер будет пытаться управлять новым узлом, опираясь на устаревшие данные. Это приводит к тому, что холостые обороты начинают «плавать», а коробка передач переключается с ударом.</p>
+<p>Процедура сброса необходима не только после ремонта, но и после длительной стоянки, если аккумулятор был полностью разряжен. В таких случаях <em>ECU</em> может потерять часть калибровочных данных, но не все из них, что создает рассинхронизацию. Понимание того, что <strong>PCM и TCM</strong> работают в связке, помогает избежать ошибок при диагностике.</p>
+
+<h2 id="когда-необходимо-выполнять-процедуру-сброса">Когда необходимо выполнять процедуру сброса</h2>
+<p>Есть ряд явных симптомов, указывающих на то, что адаптации нарушены и требуется сброс. Если вы заметили, что двигатель глохнет сразу после запуска, или обороты холостого хода нестабильны — это первый сигнал. Также обратите внимание на поведение автоматической коробки передач: рывки при переключении с первой на вторую передачу или задержки при движении с места часто свидетельствуют о сбое в работе <strong>TCM</strong>.</p>
+<p>Сброс становится обязательным в следующих случаях:</p>
+<ul>
+<li>🔧 Замена <em>дроссельной заслонки</em> или впускного коллектора на автомобиле <strong>Honda Civic</strong> или <strong>Accord</strong>.</li>
+<li>🔧 Перепрошивка программного обеспечения через дилерский сканер или сторонние устройства.</li>
+<li>🔧 Замена <em>датчиков кислорода</em> или топливных форсунок, влияющих на состав смеси.</li>
+<li>🔧 Отключение аккумулятора на длительный срок после ремонта.</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Не пытайтесь сбрасывать адаптации, если в системе есть активные неисправности. Сначала устраните ошибки, иначе сброс приведет к временной нестабильности работы двигателя, которую вы примете за поломку.</blockquote>
+
+<p>Иногда владельцы пытаются решить проблему просто снятием клеммы аккумулятора. Этот метод работает не всегда, так как <strong>PCM</strong> хранит критические данные в памяти, которая не стирается при простом обесточивании. Полноценный сброс требует взаимодействия с диагностическим разъемом или выполнения специальной последовательности действий с зажиганием.</p>
+
+<h2 id="методы-сброса-от-простых-к-сложным">Методы сброса: от простых к сложным</h2>
+<p>Существует несколько способов обнулить настройки. Самый простой, но не всегда эффективный — отключение аккумулятора. Для этого нужно снять минусовую клемму и подождать 15-20 минут. Однако для современных моделей <em>Honda</em> это часто недостаточно. Более надежный метод — использование диагностического сканера, который может подать команду на сброс через протокол OBD-II.</p>
+<p>Если у вас нет профессионального оборудования, можно попробовать метод «кнопки». На некоторых моделях <strong>Honda</strong> существует процедура сброса через комбинацию педалей и положения ключа зажигания. Например, для сброса адаптации дроссельной заслонки часто требуется: включить зажигание, подождать 2 секунды, выключить, повторить 5 раз, затем нажать педаль газа до упора. Точная последовательность зависит от года выпуска и модели.</p>
+<p>Самым точным инструментом остается дилерский сканер <em>HDS (Honda Diagnostic System)</em>. Он позволяет выбрать конкретный пункт в меню <code>PCM Reset</code> или <code>TCM Reset</code> и убедиться, что процедура прошла успешно. Это особенно важно, если вы работаете с гибридными системами <em>Insight</em> или <em>Accord Hybrid</em>, где ошибки могут заблокировать запуск.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой метод сброса вы использовали ранее?</strong><ul><li>Снятие клеммы АКБ</li><li>Диагностический сканер</li><li>Комбинация педалей</li><li>Ничего не делал</li></ul></div></div>
+
+<h2 id="пошаговая-инструкция-сброса-адаптаций">Пошаговая инструкция сброса адаптаций</h2>
+<p>Рассмотрим универсальный алгоритм, который подходит для большинства бензиновых двигателей <em>Honda</em> без серьезных электронных сбоев. Перед началом убедитесь, что аккумулятор полностью заряжен, так как процесс требует стабильного напряжения.</p>
+<ul>
+<li>🚗 Заглушите двигатель и выключите зажигание. Убедитесь, что все потребители энергии (фары, кондиционер, магнитола) отключены.</li>
+<li>🔑 Вставьте ключ в замок зажигания и поверните его в положение <code>ON (II)</code>, но не запускайте двигатель.</li>
+<li>🔧 Подождите 2-3 секунды, пока индикаторы на приборной панели перестанут мигать.</li>
+<li>🦶 Нажмите педаль акселератора до пола и удерживайте ее в течение 10 секунд.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Подготовка к сбросу адаптаций</h4><label class="check-item"><input type="checkbox"><span>Зарядить аккумулятор</span></label><label class="check-item"><input type="checkbox"><span>Отключить все электроприборы</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие ошибок сканером</span></label><label class="check-item"><input type="checkbox"><span>Найти схему для вашей модели</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>После выполнения этих действий выключите зажигание и подождите еще 10 секунд. Затем запустите двигатель и дайте ему поработать на холостых оборотах до тех пор, пока вентилятор охлаждения не включится. Это необходимо для того, чтобы <strong>PCM</strong> начал заново обучаться параметрам работы двигателя в теплом режиме.</p>
+
+<blockquote>⚠️ Внимание: Если после сброса двигатель работает неровно в течение первых 10-15 минут — это нормально. Компьютер только что очистил память и начинает сбор новых данных. Не глушите мотор в этот период.</blockquote>
+
+<p>Для сброса адаптации <strong>TCM</strong> часто требуется проехать на автомобиле в определенном режиме. Двигайтесь в городском цикле, позволяя коробке передач переключаться на все доступные передачи. Избегайте резких ускорений в первые 20 км пробега после сброса.</p>
+
+<details class="faq-item"><summary>Что делать, если сброс не помогает?</summary><div class="faq-answer"><p>Если стандартные методы не дали результата, проблема может быть в программном сбое самого блока. В таком случае потребуется перепрошивка или замена PCM/TCM. Также проверьте датчики массового расхода воздуха и положения дроссельной заслонки, они могут выдавать неверные данные, блокируя обучение.</p></div></details>
+
+<h2 id="особенности-для-разных-моделей-honda">Особенности для разных моделей Honda</h2>
+<p>Каждая модель <em>Honda</em> имеет свои нюансы в работе электронных блоков. Например, на <strong>Honda CR-V</strong> последних поколений процедура сброса часто интегрирована в меню приборной панели, доступ к которому осуществляется через кнопки на руле. В то же время, на старых <em>Accord</em> или <em>Civic</em> (поколения 2000-х годов) может потребоваться использование перемычки в диагностическом разъеме.</p>
+<p>Особое внимание стоит уделить гибридным моделям. В <em>Honda Insight</em> или <em>Pilot Hybrid</em> блоки управления двигателем и трансмиссией тесно связаны с системой управления батареей. Сброс адаптаций здесь должен проводиться только с помощью специализированного оборудования, так как некорректные действия могут привести к разбалансировке работы электродвигателя.</p>
+<p>Для внедорожников <em>Pilot</em> и <em>Passport</em>, оснащенных полноприводными системами, важно сбрасывать не только основные блоки, но и адаптации дифференциалов. Игнорирование этого шага может привести к повышенному износу раздаточной коробки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Модель Honda</th>
+<th>Типичная проблема</th>
+<th>Рекомендуемый метод сброса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Civic (2012-2020)</td>
+<td>Плавающие обороты</td>
+<td>Диагностический сканер или кнопка дросселя</td>
+</tr>
+<tr>
+<td>Accord (2013-2022)</td>
+<td>Рывки АКПП</td>
+<td>Спецрежим езды + сброс через меню</td>
+</tr>
+<tr>
+<td>CR-V (2017+)</td>
+<td>Задержка при старте</td>
+<td>Процедура через мультимедиа</td>
+</tr>
+<tr>
+<td>Insight Hybrid</td>
+<td>Нестабильная работа ДВС</td>
+<td>Только дилерский сканер HDS</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед началом процедуры сброса запишите текущие ошибки сканером. Иногда сброс стирает и коды ошибок, что затруднит дальнейшую диагностику, если проблема не решится.</p></div>
+
+<h2 id="последствия-неправильного-сброса">Последствия неправильного сброса</h2>
+<p>Если процедура выполнена с нарушениями, блок управления может войти в режим защиты (Limp Mode). В этом режиме автомобиль ограничивает мощность, запрещает переключение на высшие передачи и держит обороты на минимальном уровне. Это защитный механизм, который предотвращает поломку узлов при некорректных данных.</p>
+<p>Частой ошибкой является повторный сброс без прохождения цикла обучения. После очистки памяти <strong>PCM</strong> и <strong>TCM</strong> им требуется время на адаптацию. Если вы сразу после сброса начнете агрессивную езду, блоки не успеют записать новые параметры, и работа двигателя останется нестабильной.</p>
+<p>Также стоит учитывать, что сброс может временно увеличить расход топлива. Компьютер, не зная точных характеристик изношенных деталей, может подавать обогащенную смесь. Обычно это проходит после 100-200 км пробега, когда адаптация завершится.</p>
+
+<blockquote>⚠️ Внимание: Никогда не сбрасывайте адаптации на горячем двигателе сразу после длительной поездки. Дайте мотору остыть до температуры окружающей среды, чтобы датчики вернулись в исходное состояние.</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильный сброс адаптаций — это не просто кнопка, а комплекс действий: подготовка, очистка памяти и обязательный цикл обучения во время движения.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Нужно ли сбрасывать адаптации после замены аккумулятора?</summary>
+<p>В большинстве случаев нет, если отключение было кратковременным. Сброс требуется только если аккумулятор разряжался полностью и машина долго стояла, либо если после замены возникли проблемы с холостыми оборотами.</p>
+</details>
+
+<details>
+<summary>Можно ли сделать сброс без компьютера?</summary>
+<p>Да, для многих моделей <em>Honda</em> существуют механические процедуры с использованием педали газа и положения ключа зажигания, но они не всегда гарантируют 100% результат по сравнению со сканером.</p>
+</details>
+
+<details>
+<summary>Сколько времени занимает обучение после сброса?</summary>
+<p>Первичная адаптация занимает от 15 до 30 минут работы на холостых оборотах. Полное обучение трансмиссии может потребовать 50-100 км пробега в разных режимах езды.</p>
+</details>
+
+<details>
+<summary>Почему сброс не помогает убрать ошибку Check Engine?</summary>
+<p>Сброс адаптаций не удаляет физические неисправности. Если ошибка вызвана поломкой датчика или механическим дефектом, она вернется сразу после запуска двигателя.</p>
+</details>
+
+<details>
+<summary>Можно ли сбрасывать TCM и PCM одновременно?</summary>
+<p>Да, и это часто рекомендуется делать вместе, особенно если проблема затрагивает и двигатель, и коробку передач. Однако после сброса нужно дать обоим блокам время на синхронизацию данных.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#суть-процессов-адаптации-в-автомобилях-honda">Суть процессов адаптации в автомобилях Honda</a></li><li><a href="#когда-необходимо-выполнять-процедуру-сброса">Когда необходимо выполнять процедуру сброса</a></li><li><a href="#методы-сброса-от-простых-к-сложным">Методы сброса: от простых к сложным</a></li><li><a href="#пошаговая-инструкция-сброса-адаптаций">Пошаговая инструкция сброса адаптаций</a></li><li><a href="#особенности-для-разных-моделей-honda">Особенности для разных моделей Honda</a></li><li><a href="#последствия-неправильного-сброса">Последствия неправильного сброса</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/m/ma/maslo-v-variator-honda-stepwgn.html" class="related-card">Масло в вариатор Honda Stepwgn: выбор, замена и интервалы</a></li><li><a href="/articles/s/sr/sravnenie-khonda-stepvagon-i-tojota-voksi.html" class="related-card">Honda Stepwgn vs Toyota Voxy: Сравнение минивэнов для семьи</a></li><li><a href="/articles/h/ho/honda-stepwgn-spada-razmery.html" class="related-card">Размеры Honda Stepwgn Spada: Габариты, колесная база и объем багажника</a></li><li><a href="/articles/k/kh/khonda-frid-polnyj-privod-kak-rabotaet.html" class="related-card">Honda Freed Полный привод: принцип работы, особенности и эксплуатация</a></li><li><a href="/articles/k/kn/knopka-s-na-variatore-khonda-frid.html" class="related-card">Кнопка S на вариаторе Honda Freed: назначение, режимы и особенности вождения</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/m/ma/maslo-v-variator-honda-stepwgn.html" class="related-bottom-card"><span class="related-bottom-title">Масло в вариатор Honda Stepwgn: выбор, замена и интервалы</span><span class="related-bottom-desc">Полное руководство по выбору и замене масла в вариаторе Honda Stepwgn. Обзоры смазок, интервалы заме</span></a><a href="/articles/s/sr/sravnenie-khonda-stepvagon-i-tojota-voksi.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stepwgn vs Toyota Voxy: Сравнение минивэнов для семьи</span><span class="related-bottom-desc">Подробное сравнение Хонда Степвагн и Тойота Вокси. Разбор двигателей, комфорта, трансформации салона</span></a><a href="/articles/h/ho/honda-stepwgn-spada-razmery.html" class="related-bottom-card"><span class="related-bottom-title">Размеры Honda Stepwgn Spada: Габариты, колесная база и объем багажника</span><span class="related-bottom-desc">Полный обзор габаритных размеров Honda Stepwgn Spada. Технические характеристики кузова, длина, шири</span></a><a href="/articles/k/kh/khonda-frid-polnyj-privod-kak-rabotaet.html" class="related-bottom-card"><span class="related-bottom-title">Honda Freed Полный привод: принцип работы, особенности и эксплуатация</span><span class="related-bottom-desc">Подробный разбор системы полного привода i-VTEC на Honda Freed. Как работает муфта подключения, особ</span></a><a href="/articles/k/kn/knopka-s-na-variatore-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Кнопка S на вариаторе Honda Freed: назначение, режимы и особенности вождения</span><span class="related-bottom-desc">Подробный разбор функции кнопки S на вариаторе Honda Freed. Как работает Sport-режим, влияние на рас</span></a><a href="/articles/a/ac/acura-i-honda-v-chem-raznitsa.html" class="related-bottom-card"><span class="related-bottom-title">Acura и Honda: в чем разница между брендами и моделями</span><span class="related-bottom-desc">Подробный разбор отличий Acura от Honda. Сравнение двигателей, комплектаций, технологий и стоимости </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

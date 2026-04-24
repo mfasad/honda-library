@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Другое — страница 113 — Honda Library</title>
+    <meta name="description" content="Прочие статьи">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+        .cat-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e3a5f 100%);
+            border-bottom: none;
+            padding: 48px 0 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cat-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(37,99,235,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(139,92,246,0.1) 0%, transparent 50%);
+            animation: heroShimmer 8s ease-in-out infinite alternate;
+        }
+        @keyframes heroShimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(3deg); }
+        }
+        .cat-hero .container { position: relative; z-index: 1; }
+        .cat-hero-icon {
+            font-size: 3.5rem; display: block; margin-bottom: 16px;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+        }
+        .cat-hero h1 {
+            font-size: 2rem; font-weight: 800; color: #f1f5f9;
+            margin-bottom: 10px; letter-spacing: -0.02em;
+        }
+        .cat-hero p {
+            color: #94a3b8; font-size: 1.05rem; max-width: 600px;
+            margin: 0 auto; line-height: 1.6;
+        }
+        .cat-benefits {
+            display: flex; justify-content: center; gap: 12px;
+            margin-top: 24px; flex-wrap: wrap;
+        }
+        .cat-benefit {
+            display: flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.08); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px; padding: 8px 18px;
+            font-size: 0.88rem; color: #e2e8f0; font-weight: 500;
+            transition: all 0.25s;
+        }
+        .cat-benefit:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        .benefit-icon { font-size: 1.15em; }
+
+        .cat-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 16px; padding: 32px 0 24px;
+        }
+        .article-home-card {
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+            padding: 0; text-decoration: none; color: #1e293b;
+            transition: all 0.25s ease; display: flex; flex-direction: column;
+            overflow: hidden; position: relative;
+        }
+        .article-home-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 24px rgba(37,99,235,0.1);
+            transform: translateY(-4px);
+        }
+        .card-top {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 20px 0;
+        }
+        .card-icon {
+            font-size: 1.4em;
+            background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+            width: 36px; height: 36px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 6px rgba(37,99,235,0.1);
+        }
+        .card-read-time {
+            font-size: 0.78rem; color: #94a3b8; font-weight: 500;
+        }
+        .article-home-title {
+            font-weight: 600; font-size: 0.97rem; line-height: 1.4;
+            padding: 12px 20px 0; transition: color 0.2s;
+        }
+        .article-home-card:hover .article-home-title { color: #2563eb; }
+        .article-home-desc {
+            font-size: 0.84rem; color: #64748b; line-height: 1.5;
+            padding: 6px 20px 0; flex: 1;
+        }
+        .card-footer {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding: 12px 20px; margin-top: auto;
+            border-top: 1px solid #f1f5f9;
+        }
+        .card-read-more {
+            font-size: 0.82rem; font-weight: 600; color: #94a3b8;
+            transition: all 0.2s;
+        }
+        .article-home-card:hover .card-read-more {
+            color: #2563eb; letter-spacing: 0.02em;
+        }
+
+        .pagination {
+            display: flex; justify-content: center; gap: 6px;
+            padding: 8px 0 48px; flex-wrap: wrap; align-items: center;
+        }
+        .pag-link {
+            padding: 10px 16px; border-radius: 10px; border: 1px solid #e2e8f0;
+            color: #64748b; font-size: 0.9rem; text-decoration: none;
+            transition: all 0.2s; font-weight: 500;
+        }
+        .pag-link:hover { border-color: #2563eb; color: #2563eb; background: #eff6ff; }
+        .pag-active {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: #fff !important; border-color: #2563eb;
+            box-shadow: 0 3px 10px rgba(37,99,235,0.3);
+        }
+        .pag-edge { font-size: 1rem; font-weight: 700; }
+        .pag-dots { color: #94a3b8; padding: 0 4px; }
+
+        
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+
+        @media (max-width: 640px) {
+            .cat-grid { grid-template-columns: 1fr; }
+            .cat-hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container">
+            <a href="/">Главная</a>
+            <span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current">Другое</span>
+        </div>
+    </nav>
+
+    <section class="cat-hero">
+        <div class="container">
+            <span class="cat-hero-icon">📁</span>
+            <h1>Другое</h1>
+            <p>Прочие статьи · страница 113 из 147</p>
+            <div class="cat-benefits"><div class="cat-benefit"><span class="benefit-icon">📖</span><span>Понятные инструкции</span></div><div class="cat-benefit"><span class="benefit-icon">✅</span><span>Проверенные решения</span></div><div class="cat-benefit"><span class="benefit-icon">⚡</span><span>Без лишних слов</span></div></div>
+        </div>
+    </section>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="cat-grid">
+            <a href="/articles/o/oi/oil-life-honda-chto-eto.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 12 мин</span>
+                </div>
+                <div class="article-home-title">Oil Life Honda: что показывает индикатор и как сбросить</div>
+                <div class="article-home-desc">Полный разбор системы Oil Life на автомобилях Honda. Как работает алгоритм расчета, когда менять масло и пошаговая инстр</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/o/op/opornyj-podshipnik-khonda-stepvagon.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 13 мин</span>
+                </div>
+                <div class="article-home-title">Опорный подшипник Honda Stepwgn: замена, диагностика и выбор</div>
+                <div class="article-home-desc">Полный гайд по замене опорных подшипников на Honda Stepwgn. Признаки неисправности, выбор оригинала и аналогов, пошагова</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/pe/peregon-khonda-vezel-iz-vladivostoka.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Погон Хонда Везел из Владивостока: Полный гид по покупке и растаможке</div>
+                <div class="article-home-desc">Узнайте всё о погоне Honda Vezel из Владивостока. Цены, логистика, риски при растаможке, выбор аукциона и нюансы проверк</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/po/podshipnik-reduktora-khonda-dio-34.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 9 мин</span>
+                </div>
+                <div class="article-home-title">Замена подшипника редуктора Honda Dio 34: Инструкция и выбор запчастей</div>
+                <div class="article-home-desc">Полный гайд по диагностике и замене подшипника редуктора на мопеде Honda Dio 34. Разбор признаков неисправности, подбор </div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/po/pokryshka-khonda-dio-27.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 10 мин</span>
+                </div>
+                <div class="article-home-title">Покрышка на Honda Dio 27: выбор, размеры и установка шин</div>
+                <div class="article-home-desc">Полный гид по подбору резины для Honda Dio 27. Размеры, бренды, давление в шинах и пошаговая инструкция замены. Увеличьт</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/pr/predokhraniteli-v-khonda-frid.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 12 мин</span>
+                </div>
+                <div class="article-home-title">Где находятся предохранители в Honda Freed: схема и замена</div>
+                <div class="article-home-desc">Полная инструкция по поиску, замене предохранителей в Honda Freed. Схемы блоков, диагностика неисправностей, советы по в</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/pr/prodazha-khonda-stepvagon-v-abakane.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 9 мин</span>
+                </div>
+                <div class="article-home-title">Продажа Хонда Степвагон в Абакане: цены, выбор и советы</div>
+                <div class="article-home-desc">Ищете Honda Stepwgn в Абакане? Полный гид по рынку: где купить, как проверить, актуальные цены и особенности эксплуатаци</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/pr/prodazha-khonda-stepvagon-v-rossii.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 9 мин</span>
+                </div>
+                <div class="article-home-title">Honda Stepwgn в России: цены, особенности покупки и эксплуатации</div>
+                <div class="article-home-desc">Полный гид по Honda Stepwgn в РФ: анализ рынка, модификации, слабые места двигателей и советы по покупке б/у минивэна из</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/pr/prodazha-khonda-vezel-v-krasnoyarske.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 10 мин</span>
+                </div>
+                <div class="article-home-title">Купить Хонда Везел в Красноярске: цены, автосалоны, отзывы</div>
+                <div class="article-home-desc">Актуальная информация о продаже Honda Vezel в Красноярске. Обзор цен, комплектаций, плюсов и минусов модели, а также сов</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/p/pr/provodka-na-skuter-khonda-dio.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 10 мин</span>
+                </div>
+                <div class="article-home-title">Схема проводки на скутер Honda Dio: установка, диагностика, ошибки</div>
+                <div class="article-home-desc">Полная схема проводки на скутер Honda Dio. Инструкция по монтажу, расшифровка цветов проводов, устранение замыканий и на</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ra/raspinovka-magnitoly-khonda-strim.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 12 мин</span>
+                </div>
+                <div class="article-home-title">Распиновка магнитолы Honda Stream: Полная схема подключения 2026</div>
+                <div class="article-home-desc">Актуальная распиновка штатных магнитол Honda Stream. Цвета проводов, схема ISO, подключение камеры заднего вида и навига</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ra/razmer-diska-khonda-frid.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Размер диска Honda Freed: параметры, сверловка и подбор колес</div>
+                <div class="article-home-desc">Полный гид по дискам на Хонда Фрид. Штатные размеры R15, R16, R17, разболтовка 5x114.3, вылет ET и допустимые аналоги дл</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ra/razmer-diskov-khonda-stepvagon.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 14 мин</span>
+                </div>
+                <div class="article-home-title">Размер дисков для Honda Stepwgn: полная таблица и рекомендации</div>
+                <div class="article-home-desc">Узнайте, какие диски подходят на Honda Stepwgn всех поколений. Таблица разболтовки, вылет, диаметр и советы по выбору ре</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ra/razmer-dvornikov-khonda-strim-rn1.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Размер дворников Honda Stream RN1: полная таблица и советы по выбору</div>
+                <div class="article-home-desc">Узнайте точный размер щеток стеклоочистителя для Honda Stream RN1. Таблица размеров, инструкции по замене и разбор типов</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ra/razmer-shin-khonda-frid.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Размер шин для Honda Freed: таблица, рекомендации и советы по выбору</div>
+                <div class="article-home-desc">Полный гид по размерам шин Honda Freed. Таблица размеров, давление в шинах, советы по сезонности и выбору дисков для ком</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/re/remont-dvigatelya-khonda-gx-160.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Ремонт двигателя Honda GX160: Инструкция, цены и частые поломки</div>
+                <div class="article-home-desc">Полное руководство по ремонту бензинового двигателя Honda GX160. Диагностика, замена поршневой, регулировка клапанов и у</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/re/reshetka-radiatora-khonda-frid.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Решетка радиатора Honda Freed: выбор, замена и тюнинг</div>
+                <div class="article-home-desc">Полный гид по решетке радиатора для Honda Freed. Обзор моделей, способы замены, сравнение оригинала и аналогов, советы п</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/re/reshetka-radiatora-khonda-strim-rn1.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 12 мин</span>
+                </div>
+                <div class="article-home-title">Решетка радиатора Honda Stream RN1: виды, замена и выбор</div>
+                <div class="article-home-desc">Полный гид по решетке радиатора Honda Stream RN1. Обзор типов, инструкция по замене, подбор оригинала и аналогов. Советы</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ro/rotor-generatora-khonda-dio-34.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 13 мин</span>
+                </div>
+                <div class="article-home-title">Ротор генератора Хонда Дио 34: замена, проверка и артикулы</div>
+                <div class="article-home-desc">Подробный гид по ротору генератора Honda Dio 34 AF34. Диагностика, симптомы поломки, артикулы запчастей и пошаговая инст</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ru/rulevaya-rejka-khonda-airvejv.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 9 мин</span>
+                </div>
+                <div class="article-home-title">Рулевая рейка Хонда Аирвейв: диагностика, ремонт и замена</div>
+                <div class="article-home-desc">Полный гид по рулевой рейке Honda Airwave. Симптомы неисправностей, разборка, регулировка и выбор запчасти. Экспертные с</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/r/ru/rulevaya-rejka-khonda-frid.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 10 мин</span>
+                </div>
+                <div class="article-home-title">Рулевая рейка Honda Freed: диагностика, ремонт и замена</div>
+                <div class="article-home-desc">Полный гид по проблемам рулевой рейки Honda Freed. Причины стука, симптомы неисправности, выбор запчасти и пошаговая инс</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/s/sr/sravnenie-khonda-frid-i-tojota-sienta.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 9 мин</span>
+                </div>
+                <div class="article-home-title">Honda Freed vs Toyota Sienna: Сравнение минивэнов для семьи</div>
+                <div class="article-home-desc">Подробное сравнение Honda Freed и Toyota Sienna. Разбор двигателей, интерьера, надежности и цены. Узнайте, какой минивэн</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/s/sv/sverlovka-khonda-fit-shattl.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 10 мин</span>
+                </div>
+                <div class="article-home-title">Сверловка Honda Fit Shuttle: параметры и схемы разболтовки</div>
+                <div class="article-home-desc">Подробный разбор сверловки Honda Fit Shuttle. Размеры PCD, ЦО, резьбы и нюансы подбора дисков для гибрида и бензиновых в</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/t/ty/tyuning-khonda-strim-rn6.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 8 мин</span>
+                </div>
+                <div class="article-home-title">Тюнинг Honda Stream RN6: чип, подвеска, экстерьер и стайлинг</div>
+                <div class="article-home-desc">Полный гид по тюнингу Honda Stream RN6. Обзоры двигателей 1.8 и 2.0, настройка подвески, чип-тюнинг, установка дисков и </div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/v/ve/ves-khonda-frid-spajk.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 12 мин</span>
+                </div>
+                <div class="article-home-title">Вес Хонда Фрид Спайк: габариты, грузоподъемность и модификации</div>
+                <div class="article-home-desc">Подробный разбор массы Honda Freed Spike. Снаряженный вес, грузоподъемность, распределение по осям и влияние модификаций</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/v/ve/ves-khonda-varadero-1000.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 13 мин</span>
+                </div>
+                <div class="article-home-title">Вес Хонда Варадеро 1000: Сухая и полная масса, характеристики</div>
+                <div class="article-home-desc">Полный разбор массы Honda XL1000V Varadero. Сухой и полный вес, распределение по осям, влияние на управляемость и технич</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/v/vo/vozdushnyj-filtr-khonda-stepvagon.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 13 мин</span>
+                </div>
+                <div class="article-home-title">Воздушный фильтр Honda Stepwgn: выбор, замена и нюансы обслуживания</div>
+                <div class="article-home-desc">Полное руководство по замене воздушного фильтра на Honda Stepwgn. Обзор оригинальных и аналогов, инструкция по снятию, п</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/v/vt/vtec-honda-printsip-raboty-sistemy.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 10 мин</span>
+                </div>
+                <div class="article-home-title">VTEC Honda: принцип работы, виды систем и особенности обслуживания</div>
+                <div class="article-home-desc">Подробный разбор системы VTEC от Honda. Узнайте, как работает механизм изменения фаз газораспределения, типы VTEC и нюан</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/z/za/zadnyaya-podveska-khonda-strim.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 14 мин</span>
+                </div>
+                <div class="article-home-title">Задняя подвеска Honda Stream: Ремонт, замена и нюансы</div>
+                <div class="article-home-desc">Полный гид по задней подвеске Honda Stream. Обзор конструкции, признаки износа, замена рычагов и амортизаторов. Советы э</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a>
+            <a href="/articles/z/za/zamena-termostata-khonda-partner.html" class="article-home-card">
+                <div class="card-top">
+                    <span class="card-icon">📁</span>
+                    <span class="card-read-time">⏱ 11 мин</span>
+                </div>
+                <div class="article-home-title">Замена термостата Honda Partner: инструкция, цены и ошибки</div>
+                <div class="article-home-desc">Пошаговая замена термостата на Honda Partner. Симптомы неисправности, выбор запчасти, стоимость работ и советы экспертов</div>
+                <div class="card-footer">
+                    <span class="card-read-more">Читать →</span>
+                </div>
+            </a></div>
+            <nav class="pagination" aria-label="Страницы"><a href="/category/drugoe/" class="pag-link pag-edge" title="В начало">«</a><a href="/category/drugoe/page/112/" class="pag-link">← Назад</a><a href="/category/drugoe/" class="pag-link">1</a><span class="pag-dots">…</span><a href="/category/drugoe/page/110/" class="pag-link">110</a><a href="/category/drugoe/page/111/" class="pag-link">111</a><a href="/category/drugoe/page/112/" class="pag-link">112</a><a href="/category/drugoe/page/113/" class="pag-link pag-active">113</a><a href="/category/drugoe/page/114/" class="pag-link">114</a><a href="/category/drugoe/page/115/" class="pag-link">115</a><a href="/category/drugoe/page/116/" class="pag-link">116</a><span class="pag-dots">…</span><a href="/category/drugoe/page/147/" class="pag-link">147</a><a href="/category/drugoe/page/114/" class="pag-link">Далее →</a><a href="/category/drugoe/page/147/" class="pag-link pag-edge" title="В конец">»</a></nav>
+        </div>
+    </main>
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script>
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+        document.getElementById('mainNav')?.classList.toggle('open');
+    });
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

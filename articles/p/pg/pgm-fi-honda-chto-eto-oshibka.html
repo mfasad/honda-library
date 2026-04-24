@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Ошибка PGM-FI Honda: причины, диагностика и способы устранения — Honda Library</title>
+    <meta name="description" content="Что значит ошибка PGM-FI на Honda? Разбор кодов неисправностей, причины сбоев системы впрыска и пошаговая инструкция по самостоятельной диагностике.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/p/pg/pgm-fi-honda-chto-eto-oshibka.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ошибка PGM-FI Honda: причины, диагностика и способы устранения">
+    <meta property="og:description" content="Что значит ошибка PGM-FI на Honda? Разбор кодов неисправностей, причины сбоев системы впрыска и пошаговая инструкция по самостоятельной диагностике.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Ошибка PGM-FI Honda: причины, диагностика и способы устранения</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Ошибка PGM-FI на Honda: полное руководство по диагностике и ремонту</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#суть-системы-pgm-fi-и-принцип-работы">Суть системы PGM-FI и принцип работы</a></li><li><a href="#основные-причины-появления-кода-ошибки">Основные причины появления кода ошибки</a></li><li><a href="#симптомы-и-поведение-автомобиля-при-сбое">Симптомы и поведение автомобиля при сбое</a></li><li><a href="#диагностика-и-чтение-кодов-неисправностей">Диагностика и чтение кодов неисправностей</a></li><li><a href="#пошаговая-инструкция-по-устранению-неполадок">Пошаговая инструкция по устранению неполадок</a></li><li><a href="#частые-ошибки-и-их-коды-в-таблице">Частые ошибки и их коды в таблице</a></li><li><a href="#профилактика-и-обслуживание-системы">Профилактика и обслуживание системы</a></li><li><a href="#когда-стоит-обратиться-к-профессионалам">Когда стоит обратиться к профессионалам</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Многие владельцы японских автомобилей сталкиваются с ситуацией, когда на приборной панели загорается желтый значок двигателя, а сканер выдает код ошибки, связанный с аббревиатурой <strong>PGM-FI</strong>. Эта система, представляющая собой программное управление впрыском топлива, является «мозгом» работы мотора, и ее сбои могут варьироваться от незначительных неудобств до критических поломок, требующих немедленного вмешательства.</p>
+
+<p>Понимание того, что именно скрывается за этим кодом, позволит вам избежать ненужных затрат на сервис и оперативно принять меры. В отличие от простых индикаторов, ошибка PGM-FI может указывать на широкий спектр проблем: от неисправности датчика кислорода до сбоев в работе топливного насоса или проблем с проводкой.</p>
+
+<p>Не стоит паниковать при появлении предупреждения, но и игнорировать его категорически нельзя. Владельцам моделей <em>Honda Civic</em>, <em>Accord</em> или <em>CR-V</em> необходимо знать, как правильно интерпретировать сигналы системы и какие шаги предпринять для восстановления штатной работы двигателя.</p>
+
+<h2 id="суть-системы-pgm-fi-и-принцип-работы">Суть системы PGM-FI и принцип работы</h2>
+
+<p>Аббревиатура <strong>PGM-FI</strong> расшифровывается как Programmed Fuel Injection, что в переводе означает «программируемый впрыск топлива». Это сложная электронная система, которая управляет подачей горючей смеси в цилиндры двигателя, опираясь на данные от десятков датчиков.</p>
+
+<p>Основная задача системы — обеспечить идеальное соотношение воздуха и топлива в любой момент работы мотора. Электронный блок управления (ЭБУ) постоянно анализирует параметры: обороты коленвала, нагрузку, температуру охлаждающей жидкости и положение дроссельной заслонки.</p>
+
+<p>Если система фиксирует отклонение от заводских норм, она активирует аварийный режим и выводит на панель код ошибки. Владельцам автомобилей <em>Honda Pilot</em> или <em>Odyssey</em> важно понимать, что ошибка PGM-FI — это не конкретная поломка, а общий сигнал о том, что система обнаружила сбой в одном из своих контуров.</p>
+
+<h2 id="основные-причины-появления-кода-ошибки">Основные причины появления кода ошибки</h2>
+
+<p>Существует множество факторов, способных вызвать сбой в работе системы управления двигателем. Чаще всего проблема кроется в неисправности датчиков, которые передают некорректные данные в ЭБУ. Это может быть датчик массового расхода воздуха (MAF), датчик положения дроссельной заслонки или лямбда-зонд.</p>
+
+<p>Второй по частоте причиной являются проблемы с электрической частью. Окисление контактов, перетертая изоляция проводов или неплотное подключение разъемов могут привести к потере сигнала. Особенно это актуально для подержанных автомобилей, таких как <em>Honda Accord</em> предыдущих поколений.</p>
+
+<p>Нельзя исключать и механические неисправности. Износ топливного насоса, засорение форсунок или проблемы с системой зажигания также могут спровоцировать появление ошибки. В некоторых случаях причина кроется в некачественном топливе, которое нарушает процесс сгорания.</p>
+
+<ul>
+<li>🛠️ Неисправность датчика кислорода или датчика положения дроссельной заслонки.</li>
+<li>⚡ Обрыв или короткое замыкание в жгутах проводки системы управления.</li>
+<li>⛽ Проблемы с давлением топлива из-за забитого фильтра или слабого насоса.</li>
+<li>🔥 Сбои в работе системы зажигания, включая свечи и катушки.</li>
+</ul>
+
+<h2 id="симптомы-и-поведение-автомобиля-при-сбое">Симптомы и поведение автомобиля при сбое</h2>
+
+<p>При появлении ошибки PGM-FI поведение автомобиля может сильно различаться в зависимости от тяжести проблемы. В легких случаях вы можете не заметить никаких изменений в работе двигателя, кроме горящей лампочки на панели приборов.</p>
+
+<p>Однако при серьезных сбоях машина начнет вести себя непредсказуемо. Может наблюдаться потеря мощности, особенно при резком нажатии на газ. Двигатель может работать нестабильно на холостых оборотах, глохнуть или троить.</p>
+
+<p>В некоторых случаях автомобиль переходит в так называемый «аварийный режим». В этом режиме ЭБУ ограничивает обороты и мощность, чтобы предотвратить дальнейшие повреждения двигателя. Вам нужно будет ехать очень осторожно, избегая резких ускорений.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Если при загорании лампы PGM-FI вы замечаете сильную вибрацию мотора, черный дым из выхлопной трубы или запах несгоревшего топлива — немедленно остановитесь и заглушите двигатель. Продолжение движения может привести к дорогостоящему ремонту.</p>
+</blockquote>
+
+<h2 id="диагностика-и-чтение-кодов-неисправностей">Диагностика и чтение кодов неисправностей</h2>
+
+<p>Для точного определения проблемы необходимо провести компьютерную диагностику. Самый простой способ — использовать OBDII сканер, который подключается к диагностическому разъему автомобиля. Этот разъем обычно находится под рулевой колонкой.</p>
+
+<p>После подключения устройства включите зажигание и считайте код ошибки. Коды PGM-FI часто начинаются с буквы «P» (Powertrain). Например, P0300 означает пропуски зажигания, а P0171 — слишком бедную смесь.</p>
+
+<p>Для более глубокого анализа профессионалы используют дилерские сканеры, такие как HDS (Honda Diagnostic System). Они позволяют не только считать код, но и посмотреть параметры в реальном времени, что значительно упрощает поиск неисправности.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой метод диагностики вы предпочитаете?</strong><ul><li>Самостоятельно через OBDII сканер</li><li>Обращение в официальный дилерский центр</li><li>Поездка в независимый автосервис</li><li>Игнорирую ошибку, езжу дальше</li></ul></div></div>
+
+<h2 id="пошаговая-инструкция-по-устранению-неполадок">Пошаговая инструкция по устранению неполадок</h2>
+
+<p>Первым шагом всегда должна быть проверка простейших элементов, которые часто вызывают ложные срабатывания. Начните с визуального осмотра всех разъемов и проводов, идущих к датчикам двигателя. Убедитесь, что они плотно подключены и не имеют следов коррозии.</p>
+
+<p>Далее проверьте состояние воздушного фильтра. Если он сильно загрязнен, это может нарушить поступление воздуха и вызвать ошибку по бедной смеси. Замените фильтр на новый, если это необходимо.</p>
+
+<p>Если визуальный осмотр не дал результатов, переходите к проверке датчиков. Начните с датчика массового расхода воздуха (MAF). Его можно аккуратно почистить специальным спреем для очистки карбюраторов или датчиков.</p>
+
+<div class="checklist-block"><h4>☑️ Базовая проверка системы</h4><label class="check-item"><input type="checkbox"><span>Осмотреть разъемы датчиков</span></label><label class="check-item"><input type="checkbox"><span>Проверить состояние воздушного фильтра</span></label><label class="check-item"><input type="checkbox"><span>Очистить датчик MAF</span></label><label class="check-item"><input type="checkbox"><span>Проверить уровень и качество топлива</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Проверьте свечи зажигания и высоковольтные провода. Изношенные свечи могут вызывать пропуски зажигания, которые система интерпретирует как сбой PGM-FI. Замените их при необходимости, используя свечи, рекомендованные производителем.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Перед началом работ по отключению датчиков или снятию топливных шлангов обязательно отсоедините минусовую клемму аккумулятора. Это предотвратит короткое замыкание и защиту ЭБУ от случайного повреждения.</p>
+</blockquote>
+
+<details class="faq-item"><summary>Что делать, если ошибка возвращается после сброса?</summary><div class="faq-answer"><p>Если вы сбросили ошибку через сканер, но она появляется снова через несколько километров, значит, проблема не устранена. В этом случае необходимо провести углубленную диагностику с замерами сопротивления датчиков и проверкой напряжения в цепи питания ЭБУ.</p></div></details>
+
+<h2 id="частые-ошибки-и-их-коды-в-таблице">Частые ошибки и их коды в таблице</h2>
+
+<p>Чтобы легче ориентироваться в диагностике, ниже приведена таблица наиболее распространенных кодов ошибок, связанных с системой PGM-FI, и их расшифровка. Эти данные помогут вам быстрее сориентироваться при чтении показаний сканера.</p>
+
+<table>
+<thead>
+<tr>
+<th>Код ошибки</th>
+<th>Описание проблемы</th>
+<th>Вероятная причина</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0171</td>
+<td>Система слишком бедная (банк 1)</td>
+<td>Подсос воздуха, забитый фильтр, слабый насос</td>
+</tr>
+<tr>
+<td>P0135</td>
+<td>Неисправность нагревателя лямбда-зонда</td>
+<td>Сломан датчик кислорода или обрыв проводки</td>
+</tr>
+<tr>
+<td>P0300</td>
+<td>Случайные пропуски воспламенения</td>
+<td>Свечи, катушки зажигания, топливо</td>
+</tr>
+<tr>
+<td>P0420</td>
+<td>Эффективность каталитического нейтрализатора</td>
+<td>Износ катализатора, неисправность лямбда-зонда</td>
+</tr>
+<tr>
+<td>P0102</td>
+<td>Низкий уровень сигнала датчика MAF</td>
+<td>Загрязнение датчика или обрыв цепи</td>
+</tr>
+</tbody>
+</table>
+
+<p>Помните, что один и тот же код может указывать на разные проблемы в зависимости от модели автомобиля. Например, для <em>Honda Civic</em> с двигателем серии K и <em>Honda CR-V</em> с двигателем R-серии причины могут отличаться.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная интерпретация кода ошибки — это 80% успеха в ремонте. Не меняйте запчасти наугад, сначала проведите точную диагностику параметров в реальном времени.</p></div>
+
+<h2 id="профилактика-и-обслуживание-системы">Профилактика и обслуживание системы</h2>
+
+<p>Чтобы избежать повторного появления ошибки PGM-FI, важно соблюдать регулярные интервалы технического обслуживания. Использование качественного топлива и своевременная замена фильтров — залог долгой жизни системы впрыска.</p>
+
+<p>Регулярно проверяйте состояние свечей зажигания и высоковольтных проводов. Износ этих элементов часто становится причиной пропусков зажигания, которые ЭБУ воспринимает как серьезный сбой.</p>
+
+<p>Не забывайте о чистке дроссельной заслонки. Со временем на ней накапливается нагар, который нарушает работу системы холостого хода и может привести к ошибкам.</p>
+
+<ul>
+<li>🔧 Используйте только оригинальные или сертифицированные запчасти для замены.</li>
+<li>⛽ Заправляйтесь на проверенных АЗС с качественным топливом.</li>
+<li>📅 Проводите компьютерную диагностику раз в 10-15 тысяч километров.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Экономия на топливе или использовании дешевых аналогов свечей зажигания может привести к выходу из строя дорогостоящих компонентов системы PGM-FI, таких как каталитический нейтрализатор или датчики кислорода.</p>
+</blockquote>
+
+<h2 id="когда-стоит-обратиться-к-профессионалам">Когда стоит обратиться к профессионалам</h2>
+
+<p>Несмотря на то, что многие проблемы можно решить самостоятельно, существуют случаи, когда без помощи специалистов не обойтись. Если после выполнения всех проверок ошибка продолжает появляться, возможно, проблема глубже, чем кажется.</p>
+
+<p>Неисправность самого электронного блока управления (ЭБУ) требует сложного оборудования для диагностики и перепрошивки. Также проблемы могут быть связаны с механическими повреждениями внутри двигателя, например, сжатием в цилиндрах.</p>
+
+<p>Если вы не уверены в своих навыках работы с электропроводкой или диагностическим оборудованием, лучше доверьте ремонт профессионалам. Неправильные действия могут усугубить ситуацию и привести к еще большим затратам.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед визитом в сервис запишите все симптомы: когда появляется ошибка, на каких оборотах, есть ли вибрация, меняется ли расход топлива. Это поможет мастеру быстрее найти причину.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли ездить с горящей лампой PGM-FI?</summary>
+<p>Кратковременно — да, но только если двигатель работает стабильно. Если наблюдаются вибрации, потеря мощности или странные звуки, движение следует немедленно прекратить.</p>
+</details>
+
+<details>
+<summary>Как сбросить ошибку PGM-FI самостоятельно?</summary>
+<p>Самый простой способ — отключить минусовую клемму аккумулятора на 10-15 минут. Однако, если неисправность не устранена, ошибка вернется после перезапуска двигателя.</p>
+</details>
+
+<details>
+<summary>Влияет ли ошибка PGM-FI на расход топлива?</summary>
+<p>Да, чаще всего расход увеличивается, так как ЭБУ переходит в аварийный режим и enriches смесь (обогащает) для защиты двигателя от возможных перегревов или детонации.</p>
+</details>
+
+<details>
+<summary>Почему ошибка появляется только на холодном двигателе?</summary>
+<p>Это может указывать на неисправность датчика температуры охлаждающей жидкости или проблемы с системой запуска, которые проявляются только при низких температурах.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять датчики сразу после появления ошибки?</summary>
+<p>Нет, сначала необходимо провести диагностику цепи питания и проводки. Часто проблема кроется в окисленном контакте, а не в самом датчике.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#суть-системы-pgm-fi-и-принцип-работы">Суть системы PGM-FI и принцип работы</a></li><li><a href="#основные-причины-появления-кода-ошибки">Основные причины появления кода ошибки</a></li><li><a href="#симптомы-и-поведение-автомобиля-при-сбое">Симптомы и поведение автомобиля при сбое</a></li><li><a href="#диагностика-и-чтение-кодов-неисправностей">Диагностика и чтение кодов неисправностей</a></li><li><a href="#пошаговая-инструкция-по-устранению-неполадок">Пошаговая инструкция по устранению неполадок</a></li><li><a href="#частые-ошибки-и-их-коды-в-таблице">Частые ошибки и их коды в таблице</a></li><li><a href="#профилактика-и-обслуживание-системы">Профилактика и обслуживание системы</a></li><li><a href="#когда-стоит-обратиться-к-профессионалам">Когда стоит обратиться к профессионалам</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kalibrovka-drosselnoj-zaslonki-khonda-frid.html" class="related-card">Калибровка дроссельной заслонки Honda Freed: Инструкция и нюансы</a></li><li><a href="/articles/t/ty/tyuning-khonda-dio-35.html" class="related-card">Тюнинг Honda Dio 35: полный гайд по увеличению мощности и улучшению</a></li><li><a href="/articles/a/av/avito-khonda-sb-400.html" class="related-card">Авито Honda CB400: Как выбрать байк, цены и ловушки продавцов</a></li><li><a href="/articles/a/ak/akkumulyator-dlya-khonda-stepvagon-2016.html" class="related-card">Аккумулятор для Honda Stepwgn 2016: выбор, замена и советы</a></li><li><a href="/articles/h/ho/honda-cb-1300-kharakteristiki.html" class="related-card">Honda CB 1300 характеристики: полный обзор, параметры, расход</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kalibrovka-drosselnoj-zaslonki-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Калибровка дроссельной заслонки Honda Freed: Инструкция и нюансы</span><span class="related-bottom-desc">Полное руководство по адаптации дроссельной заслонки на Honda Freed. Причины сбоев, пошаговая процед</span></a><a href="/articles/t/ty/tyuning-khonda-dio-35.html" class="related-bottom-card"><span class="related-bottom-title">Тюнинг Honda Dio 35: полный гайд по увеличению мощности и улучшению</span><span class="related-bottom-desc">Полное руководство по тюнингу скутера Honda Dio 35. Обзор карбюраторов, вариаторов, цилиндров. Как п</span></a><a href="/articles/a/av/avito-khonda-sb-400.html" class="related-bottom-card"><span class="related-bottom-title">Авито Honda CB400: Как выбрать байк, цены и ловушки продавцов</span><span class="related-bottom-desc">Полный гид по покупке Honda CB400 на Авито. Реальные цены, проверка документов, типичные дефекты мот</span></a><a href="/articles/a/ak/akkumulyator-dlya-khonda-stepvagon-2016.html" class="related-bottom-card"><span class="related-bottom-title">Аккумулятор для Honda Stepwgn 2016: выбор, замена и советы</span><span class="related-bottom-desc">Полный гид по выбору аккумулятора для Honda Stepwgn 2016 года. Размеры, пусковые токи, особенности з</span></a><a href="/articles/h/ho/honda-cb-1300-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Honda CB 1300 характеристики: полный обзор, параметры, расход</span><span class="related-bottom-desc">Подробные характеристики Honda CB 1300: мощность двигателя, расход топлива, габариты, вес и особенно</span></a><a href="/articles/i/iz/iz-kakoj-strany-khonda.html" class="related-bottom-card"><span class="related-bottom-title">Honda: из какой страны производитель, история бренда и сборка</span><span class="related-bottom-desc">Узнайте, из какой страны Хонда и где собирают автомобили. Полный разбор истории японского бренда, за</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

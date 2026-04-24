@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Honda Stepwgn в BeamNG.drive: Гайд по установке, настройке и физике — Honda Library</title>
+    <meta name="description" content="Полный обзор Honda Stepwgn для симулятора BeamNG.drive. Инструкция по установке мода, настройка подвески, особенности вождения и сравнение с другими минивэнами.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/h/ho/honda-stepwgn-beamng-drive.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Honda Stepwgn в BeamNG.drive: Гайд по установке, настройке и физике">
+    <meta property="og:description" content="Полный обзор Honda Stepwgn для симулятора BeamNG.drive. Инструкция по установке мода, настройка подвески, особенности вождения и сравнение с другими минивэнами.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Honda Stepwgn в BeamNG.drive: Гайд по установке, настройке и физике</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Honda Stepwgn в BeamNG.drive: Полный гайд по установке и настройке</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-модели-и-физика-поведения">Особенности модели и физика поведения</a></li><li><a href="#процесс-установки-и-интеграции-в-игру">Процесс установки и интеграции в игру</a></li><li><a href="#настройка-подвески-и-шин-для-разных-задач">Настройка подвески и шин для разных задач</a></li><li><a href="#сравнение-с-другими-минивэнами-в-игре">Сравнение с другими минивэнами в игре</a></li><li><a href="#рекомендации-по-вождению-и-тестам-на-прочность">Рекомендации по вождению и тестам на прочность</a></li><li><a href="#частые-проблемы-и-способы-их-решения">Частые проблемы и способы их решения</a></li><li><a href="#сообщество-и-моддинг-экосистема">Сообщество и моддинг-экосистема</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Мир симуляторов вождения постоянно расширяется, предлагая пользователям всё более реалистичные транспортные средства. Среди множества моделей особое место занимает японский минивэн, который благодаря своим габаритам и поведению на дороге стал фаворитом сообщества. В <em>BeamNG.drive</em> этот автомобиль предлагает уникальный опыт, отличающийся от управления спорткаров или внедорожников.</p>
+
+<p>Игроки часто ищут способы добавить в игру <em>Honda Stepwgn</em>, чтобы протестировать его на прочность или просто насладиться плавностью хода. Этот автомобиль обладает специфической <strong>аэродинамикой</strong> и характеристиками <strong>подвески</strong>, которые требуют особого подхода при настройке. Именно поэтому мы подготовили подробный разбор всех аспектов работы с этой моделью в симуляторе.</p>
+
+<h2 id="особенности-модели-и-физика-поведения">Особенности модели и физика поведения</h2>
+
+<p>В отличие от стандартных автомобилей, которые часто встречаются в базовой версии игры, японский минивэн <em>Stepwgn</em> обладает уникальной геометрией кузова. Его высокий центр тяжести и длинная база создают специфические крены, которые вы почувствуете сразу же при начале движения. Это делает его отличным полигоном для отработки навыков управления тяжелым транспортом.</p>
+
+<p>Физический движок игры детально просчитывает работу <strong>амортизаторов</strong> и <strong>пружин</strong>. Вам нужно учитывать, что при резком торможении передняя часть будет сильно нырять вниз, а задняя — подниматься. Это особенно заметно на неровных поверхностях, где <strong>плавность хода</strong> может смениться хаотичными колебаниями, если не настроить параметры правильно.</p>
+
+<p>Не стоит забывать и о колесной базе. Она существенно влияет на маневренность в узких городских условиях. Попробуйте пройти поворот на скорости, которая казалась безопасной для седана, и вы удивитесь, насколько широким будет радиус разворота. Это критически важно знать при планировании маршрутов в городских мод-картах.</p>
+
+<h2 id="процесс-установки-и-интеграции-в-игру">Процесс установки и интеграции в игру</h2>
+
+<p>Чтобы начать управлять этой моделью, необходимо правильно интегрировать модификацию в файловую структуру игры. Сначала скачайте архив с файлами модели из проверенных источников. Убедитесь, что версия мода совместима с вашей текущей версией <em>BeamNG.drive</em>, иначе возможны ошибки загрузки или вылеты.</p>
+
+<p>После загрузки архива вам нужно извлечь его содержимое в специальную папку. Обычно путь выглядит так: <code>Документы\BeamNG.drive\mods</code>. Важно не создавать лишних вложенных папок, иначе игра не увидит файл. Просто перетащите файл с расширением <code>.zip</code> или распакованную папку напрямую в директорию <code>mods</code>.</p>
+
+<p>Запустите игру и перейдите в меню выбора транспорта. Найдите вкладку "Моды" или "User Vehicles". Если вы все сделали верно, <em>Honda Stepwgn</em> появится в списке доступных автомобилей. Если машина не отображается, проверьте лог-файлы игры на наличие ошибок при загрузке ассетов.</p>
+
+<h2 id="настройка-подвески-и-шин-для-разных-задач">Настройка подвески и шин для разных задач</h2>
+
+<p>Стандартные настройки подвески могут не подходить для экстремальных испытаний или агрессивной езды. Вам потребуется зайти в меню тюнинга и изменить жесткость <strong>стабилизаторов</strong>. Это поможет снизить крены в поворотах и сделать управление более предсказуемым при перестроении.</p>
+
+<p>Выбор шин также играет решающую роль. Для городской езды подойдут стандартные летние шины с умеренным профилем. Однако, если вы планируете участвовать в дрифте или экстремальных заездах, стоит рассмотреть установку широких гоночных покрышек с низким профилем. Это улучшит сцепление, но сделает поездку более жесткой.</p>
+
+<p>Важно настроить давление в шинах. Слишком низкое давление приведет к постоянным контактам диска с дорогой при больших нагрузках, что быстро уничтожит <strong>диски</strong>. Слишком высокое — сделает машину "прыгучей" и неустойчивой. Оптимальное значение обычно составляет около <code>2.2 бар</code> для стандартных условий.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой стиль вождения вам ближе?</strong><ul><li>Спокойный городской</li><li>Экстремальный дрифт</li><li>Тест на прочность</li><li>Гонки на выживание</li></ul></div></div>
+
+<h2 id="сравнение-с-другими-минивэнами-в-игре">Сравнение с другими минивэнами в игре</h2>
+
+<p>Многие игроки задаются вопросом, чем <em>Stepwgn</em> отличается от других минивэнов, доступных в игре, например, от американских аналогов. Японская модель, как правило, легче и более маневренна за счет компактных размеров. Это дает преимущество в тесных городских лабиринтах.</p>
+
+<p>Американские минивэны часто имеют более мощные двигатели, но страдают от недостаточной управляемости на высоких скоростях. <em>Stepwgn</em> же предлагает сбалансированную динамику, где скорость не является приоритетом, но важна стабильность. Это делает его отличным выбором для сценариев, где требуется аккуратная доставка груза.</p>
+
+<p>В таблице ниже приведено сравнение основных характеристик, чтобы вы могли выбрать идеальную машину для своих задач:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Параметр</th>
+      <th>Honda Stepwgn</th>
+      <th>American Minivan</th>
+      <th>Compact MPV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Масса (кг)</td>
+      <td>1450</td>
+      <td>1800</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <td>Мощность (л.с.)</td>
+      <td>150</td>
+      <td>210</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <td>Центр тяжести</td>
+      <td>Высокий</td>
+      <td>Очень высокий</td>
+      <td>Средний</td>
+    </tr>
+    <tr>
+      <td>Маневренность</td>
+      <td>Хорошая</td>
+      <td>Средняя</td>
+      <td>Отличная</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+<p>⚠️ <strong>Внимание!</strong> При сравнении характеристик не забывайте, что реальные данные могут варьироваться в зависимости от года выпуска и конкретной модификации, которую вы установили через моды.</p>
+</blockquote>
+
+<details class="faq-item"><summary>Скрытые возможности кузова Stepwgn</summary><div class="faq-answer"><p>В некоторых версиях мода можно открыть задние двери раздвижным механизмом, а также настроить работу поворотников и противотуманных фар через меню настройки.</p></div></details>
+
+<h2 id="рекомендации-по-вождению-и-тестам-на-прочность">Рекомендации по вождению и тестам на прочность</h2>
+
+<p>Вождение минивэна требует терпения и точности. Не пытайтесь проходить повороты на высокой скорости, так как риск опрокидывания очень велик. Используйте <strong>торможение двигателем</strong>, чтобы плавно снижать скорость перед маневром. Это поможет сохранить контроль над ситуацией.</p>
+
+<p>Если вы хотите протестировать прочность кузова, используйте режим "Crash Test". Обратите внимание на то, как деформируются стойки и пороги. <em>Stepwgn</em> обладает хорошей жесткостью каркаса, но при сильных боковых ударах двери могут заклинить, что затруднит эвакуацию.</p>
+
+<p>Для более реалистичных ощущений попробуйте использовать режим "Soft Body". В этом режиме физика кузова работает максимально детально, имитируя поведение металла при деформации. Это отличный способ понять, как ведет себя <strong>силовая структура</strong> автомобиля при аварии.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист перед началом теста</h4><label class="check-item"><input type="checkbox"><span>Проверить настройки подвески</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в целостности шин</span></label><label class="check-item"><input type="checkbox"><span>Настроить давление в шинах</span></label><label class="check-item"><input type="checkbox"><span>Выбрать подходящую трассу</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Не стоит игнорировать систему стабилизации. В <em>BeamNG.drive</em> она работает довольно реалистично и может спасти вас от потери управления на мокром асфальте. Однако, если вы планируете дрифт, её лучше отключить, чтобы получить полный контроль над задней осью.</p>
+
+<h2 id="частые-проблемы-и-способы-их-решения">Частые проблемы и способы их решения</h2>
+
+<p>Иногда при запуске мода могут возникнуть проблемы с текстурами или звуком. Это часто случается, если файлы мода повреждены при загрузке. Попробуйте удалить мод и скачать его заново. Убедитесь, что у вас есть стабильное интернет-соединение.</p>
+
+<p>Другая распространенная проблема — некорректное отображение фар. В этом случае проверьте настройки освещения в игре. Возможно, стоит переключить режим рендеринга или обновить драйверы видеокарты. Также попробуйте изменить разрешение экрана в настройках.</p>
+
+<p>Если машина теряет управление на высоких скоростях, это может быть связано с неправильной настройкой развал-схождения. Зайдите в меню тюнинга и проверьте углы установки колес. Обычно для минивэнов рекомендуется небольшой развал для лучшей устойчивости.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед началом тестов на прочность сделайте скриншот настроек, чтобы потом легко вернуть их к исходному состоянию в случае неудачи.</p></div>
+
+<blockquote>
+<p>⚠️ <strong>Внимание!</strong> Если игра вылетает сразу после загрузки мода, проверьте, не конфликтует ли он с другими установленными модификациями, особенно с теми, что меняют физику или звук.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная настройка подвески и шин — ключ к успешному управлению Honda Stepwgn в условиях симулятора.</p></div>
+
+<h2 id="сообщество-и-моддинг-экосистема">Сообщество и моддинг-экосистема</h2>
+
+<p>Сообщество фанатов <em>BeamNG.drive</em> активно создает новые вариации этой модели. Вы можете найти версии с измененным кузовом, спортивными обвесами или даже грузовыми модификациями. Это позволяет расширить игровой опыт и попробовать себя в разных ролях.</p>
+
+<p>Форумы и Discord-каналы полны советов от опытных игроков. Там можно найти готовые конфигурации для разных типов трасс. Не бойтесь экспериментировать с настройками, ведь именно так рождаются самые интересные сценарии для игры.</p>
+
+<p>Участие в конкурсах на лучший краш-тест или дрифт-заезд также может стать отличным способом попрактиковаться. Посмотрите, как другие игроки управляют аналогичными машинами, и перенимайте их приемы. Это поможет вам стать более опытным водителем в виртуальном мире.</p>
+
+<details class="faq-item"><summary>Секреты настройки двигателя</summary><div class="faq-answer"><p>В некоторых модах можно открыть капот и вручную изменить настройки впрыска топлива, что влияет на разгон и максимальную скорость.</p></div></details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание!</strong> При установке сторонних модов всегда проверяйте их на вирусы и совместимость, чтобы избежать повреждения файлов игры или потери сохранений.</p>
+</blockquote>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+  <summary>Почему Honda Stepwgn не появляется в списке автомобилей?</summary>
+  <p>Проверьте, правильно ли вы поместили файл мода в папку <code>mods</code>. Убедитесь, что игра видит файл и он не поврежден. Также попробуйте перезапустить игру.</p>
+</details>
+
+<details>
+  <summary>Как настроить управление для минивэна?</summary>
+  <p>В меню управления можно настроить чувствительность руля и педалей. Для минивэна рекомендуется уменьшить чувствительность руля для более плавного управления.</p>
+</details>
+
+<details>
+  <summary>Можно ли установить другой двигатель в Stepwgn?</summary>
+  <p>Да, многие моды позволяют заменить стандартный двигатель на более мощный. Для этого нужно зайти в меню тюнинга и выбрать доступные варианты двигателей.</p>
+</details>
+
+<details>
+  <summary>Что делать, если машина слишком сильно кренится в поворотах?</summary>
+  <p>Увеличьте жесткость стабилизаторов поперечной устойчивости и пружин в меню настройки подвески. Это снизит крены и улучшит управляемость.</p>
+</details>
+
+<details>
+  <summary>Как спасти машину после серьезной аварии?</summary>
+  <p>Используйте функцию "Repair" в меню паузы. Это восстановит все детали автомобиля, но может занять время в зависимости от уровня повреждений.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-модели-и-физика-поведения">Особенности модели и физика поведения</a></li><li><a href="#процесс-установки-и-интеграции-в-игру">Процесс установки и интеграции в игру</a></li><li><a href="#настройка-подвески-и-шин-для-разных-задач">Настройка подвески и шин для разных задач</a></li><li><a href="#сравнение-с-другими-минивэнами-в-игре">Сравнение с другими минивэнами в игре</a></li><li><a href="#рекомендации-по-вождению-и-тестам-на-прочность">Рекомендации по вождению и тестам на прочность</a></li><li><a href="#частые-проблемы-и-способы-их-решения">Частые проблемы и способы их решения</a></li><li><a href="#сообщество-и-моддинг-экосистема">Сообщество и моддинг-экосистема</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-stepwgn-zamena-masla-v-variatore.html" class="related-card">Замена масла в вариаторе Honda Stepwgn: инструкция и нюансы</a></li><li><a href="/articles/o/ot/otzyvy-o-khonda-frid.html" class="related-card">Отзывы о Honda Freed: реальные владельцы, плюсы и минусы</a></li><li><a href="/articles/r/ru/rukovodstvo-po-ekspluatatsii-khonda-vezel.html" class="related-card">Руководство по эксплуатации Honda Vezel: инструкции и советы</a></li><li><a href="/articles/c/ch/chekhly-na-avtomobilnye-sideniya-khonda-vezel.html" class="related-card">Чехлы на сиденья Honda Vezel: выбор, установка и обзор материалов</a></li><li><a href="/articles/k/ka/karbyurator-khonda-lid-90.html" class="related-card">Карбюратор Honda Lead 90: настройка, ремонт и замена</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-stepwgn-zamena-masla-v-variatore.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в вариаторе Honda Stepwgn: инструкция и нюансы</span><span class="related-bottom-desc">Полное руководство по замене масла в CVT Honda Stepwgn. Выбор жидкости, интервалы обслуживания, поша</span></a><a href="/articles/o/ot/otzyvy-o-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Отзывы о Honda Freed: реальные владельцы, плюсы и минусы</span><span class="related-bottom-desc">Подробные отзывы владельцев Honda Freed. Разбор надежности, комфорта, расходом топлива и скрытых деф</span></a><a href="/articles/r/ru/rukovodstvo-po-ekspluatatsii-khonda-vezel.html" class="related-bottom-card"><span class="related-bottom-title">Руководство по эксплуатации Honda Vezel: инструкции и советы</span><span class="related-bottom-desc">Полное руководство по эксплуатации Honda Vezel. Особенности обслуживания, настройки мультимедиа, рас</span></a><a href="/articles/c/ch/chekhly-na-avtomobilnye-sideniya-khonda-vezel.html" class="related-bottom-card"><span class="related-bottom-title">Чехлы на сиденья Honda Vezel: выбор, установка и обзор материалов</span><span class="related-bottom-desc">Полный гайд по подбору чехлов для Honda Vezel. Сравнение материалов, инструкция по установке, разбор</span></a><a href="/articles/k/ka/karbyurator-khonda-lid-90.html" class="related-bottom-card"><span class="related-bottom-title">Карбюратор Honda Lead 90: настройка, ремонт и замена</span><span class="related-bottom-desc">Полное руководство по обслуживанию карбюратора скутера Honda Lead 90. Настройка холостого хода, устр</span></a><a href="/articles/k/kh/khonda-stepvagon-transformatsiya-salona.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stepwgn: полное руководство по трансформации салона и сидений</span><span class="related-bottom-desc">Подробный гид по трансформации салона Honda Stepwgn. Как сложить сиденья, создать спальное место и о</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

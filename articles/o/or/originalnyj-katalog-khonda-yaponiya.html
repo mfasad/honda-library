@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Оригинальный каталог Honda Япония: Поиск запчастей по VIN — Honda Library</title>
+    <meta name="description" content="Как найти оригинальный каталог запчастей Honda Япония. Инструкция по поиску по VIN, разбор структуры каталогов, отличия OEM от подделок. Актуальные базы данных.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/o/or/originalnyj-katalog-khonda-yaponiya.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Оригинальный каталог Honda Япония: Поиск запчастей по VIN">
+    <meta property="og:description" content="Как найти оригинальный каталог запчастей Honda Япония. Инструкция по поиску по VIN, разбор структуры каталогов, отличия OEM от подделок. Актуальные базы данных.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/авто/">Авто</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Оригинальный каталог Honda Япония: Поиск запчастей по VIN</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полный гид по оригинальному каталогу запчастей Honda Япония</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#зачем-нужен-доступ-к-японским-базам-данных">Зачем нужен доступ к японским базам данных</a></li><li><a href="#структура-и-навигация-в-системе-tecdoc-и-аналогах">Структура и навигация в системе TecDoc и аналогах</a></li><li><a href="#алгоритм-поиска-детали-по-vin-коду">Алгоритм поиска детали по VIN-коду</a></li><li><a href="#отличия-японских-спецификаций-от-европейских-и-американских">Отличия японских спецификаций от европейских и американских</a></li><li><a href="#интерпретация-схем-и-обозначений">Интерпретация схем и обозначений</a></li><li><a href="#частые-ошибки-при-поиске-и-заказе">Частые ошибки при поиске и заказе</a></li><li><a href="#где-найти-надежный-источник-каталогов">Где найти надежный источник каталогов</a></li><li><a href="#faq-частые-вопросы-по-каталогам-honda">FAQ: Частые вопросы по каталогам Honda</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Поиск качественных комплектующих для японского автомобиля часто начинается с обращения к первоисточнику. <strong>Оригинальный каталог Honda Япония</strong> представляет собой фундаментальную базу данных, содержащую подробные схемы всех узлов и агрегатов, которые выпускались концерном на территории Страны восходящего солнца. В отличие от европейских или американских версий, японские спецификации часто имеют уникальные особенности конструкции, которые необходимо учитывать при заказе деталей.</p>
+
+<p>Многие владельцы сталкиваются с проблемой поиска правильного артикула, так как один и тот же элемент может иметь десятки модификаций в зависимости от года выпуска, типа двигателя и комплектации. Использование специализированных электронных систем позволяет избежать ошибок, которые могут привести к установке несовместимых узлов. Мы разберем, как эффективно работать с этими базами данных и на что обращать внимание при выборе запчастей.</p>
+
+<h2 id="зачем-нужен-доступ-к-японским-базам-данных">Зачем нужен доступ к японским базам данных</h2>
+
+<p>Использование <strong>оригинального каталога</strong> дает неоспоримое преимущество перед каталогами агрегаторов или сторонних производителей. В первую очередь, это гарантия точности подбора. Японские базы данных обновляются практически ежедневно и содержат информацию о всех <em>Honda</em>, выпущенных с начала производства до текущего момента.</p>
+
+<p>Важно понимать, что многие детали, которые продаются в обычных магазинах под видом "оригинала", могут быть произведены для других рынков или иметь упрощенную конструкцию. <em>Civic</em> японского рынка может отличаться от европейского аналога даже в мелочах, таких как расположение креплений или материал корпуса. Только работа с первичным источником позволяет выявить эти различия.</p>
+
+<p>Кроме того, доступ к базе дает возможность увидеть историю изменений детали. Производитель мог менять поставщика или технологию производства, что отражается в изменении кода детали. Это критически важно при ремонте подержанных автомобилей, где на узле может стоять деталь старой ревизии.</p>
+
+<ul>
+<li>🔍 Точное определение номера детали по VIN-коду автомобиля</li>
+<li>🛡️ Гарантия совместимости с конкретным двигателем и кузовом</li>
+<li>📄 Возможность увидеть полный список узлов в разрезе</li>
+</ul>
+
+<h2 id="структура-и-навигация-в-системе-tecdoc-и-аналогах">Структура и навигация в системе TecDoc и аналогах</h2>
+
+<p>Современные электронные каталоги строятся по сложной иерархической структуре. Обычно она делится на основные группы: двигатель, трансмиссия, ходовая часть, кузов и электрика. Внутри каждой группы существуют подразделы, которые детализируют узлы до отдельного болта или прокладки. <strong>Навигация по каталогу</strong> требует внимательности, так как визуальное сходство схем может вводить в заблуждение.</p>
+
+<p>При выборе раздела необходимо учитывать тип кузова и код модели. Например, для модели <em>Accord</em> существуют совершенно разные схемы для седана и универсала, а также для версий с правым и левым рулем. Система автоматически фильтрует информацию, но только если вы корректно ввели исходные данные.</p>
+
+<p>Особое внимание следует уделить легенде к схеме. В ней часто указываются примечания о том, что деталь подходит только для определенных VIN-диапазонов. Игнорирование этих пометок — частая причина возврата запчастей. <mark>Всегда сверяйте дату производства автомобиля с диапазоном применимости детали на схеме</mark>.</p>
+
+<ul>
+<li>📊 Группировка по функциональным узлам автомобиля</li>
+<li>🔧 Детализация до уровня отдельных крепежных элементов</li>
+<li>🔗 Ссылки на перекрестные таблицы совместимости</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой способ поиска запчастей вы используете чаще?</strong><ul><li>По VIN-коду</li><li>По названию модели и году</li><li>По номеру детали</li><li>По схеме узла</li></ul></div></div>
+
+<h2 id="алгоритм-поиска-детали-по-vin-коду">Алгоритм поиска детали по VIN-коду</h2>
+
+<p>Самый надежный способ найти нужную запчасть — это ввод 17-значного VIN-кода в поле поиска. Этот уникальный идентификатор содержит всю информацию о конфигурации вашего автомобиля. Система проанализирует код и предложит только те схемы, которые относятся к вашей конкретной машине. Это исключает риск ошибки при ручном выборе модели.</p>
+
+<p>Если в базе данных вы не находите детали по VIN, попробуйте использовать поиск по коду кузова и коду двигателя. Иногда базы данных могут иметь задержки в обновлении информации для новых моделей, и ручной подбор оказывается эффективнее. Введите код кузова (например, <code>GG3</code>) и код двигателя (например, <code>R18Z4</code>) в соответствующие поля фильтра.</p>
+
+<p> В таких случаях может потребоваться обращение к официальным дилерам или использование платных версий каталогов. <strong>Правильный ввод данных</strong> — залог успеха в поиске.</p>
+
+<p>Если вы используете мобильное приложение или веб-версию, убедитесь, что интернет-соединение стабильно. Разрыв соединения во время загрузки схемы может привести к потере данных или некорректному отображению номеров.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка данных перед заказом</h4><label class="check-item"><input type="checkbox"><span>Проверить VIN-код на ошибки</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в актуальности базы</span></label><label class="check-item"><input type="checkbox"><span>Сверить дату выпуска авто</span></label><label class="check-item"><input type="checkbox"><span>Проверить код кузова</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="отличия-японских-спецификаций-от-европейских-и-американских">Отличия японских спецификаций от европейских и американских</h2>
+
+<p>Автомобили, предназначенные для внутреннего рынка Японии (JDM), часто имеют уникальные характеристики, которые не встречаются на других рынках. Это касается не только двигателей, но и элементов кузова, подвески, интерьера и электроники. <strong>Каталог Honda Япония</strong> отражает именно эти спецификации.</p>
+
+<p>Например, передние бамперы на японских <em>Odyssey</em> могут иметь другие крепления или датчики парковки, отличные от европейских аналогов. Тормозные системы также могут различаться по диаметру дисков и типу суппортов. Использование деталей из каталога для другого региона без проверки совместимости может привести к проблемам при установке.</p>
+
+<p>Существует понятие "адаптации". Некоторые детали универсальны и подходят для всех рынков, но многие узлы, такие как блоки управления, фары или элементы выхлопной системы, строго привязаны к региону. При заказе обязательно уточняйте, для какого рынка предназначена деталь.</p>
+
+<ul>
+<li>🇯🇵 Специфические материалы и стандарты качества</li>
+<li>🔌 Разные стандарты разъемов и электроники</li>
+<li>⚙️ Уникальные настройки подвески и рулевого управления</li>
+</ul>
+
+<details class="faq-item"><summary>Почему важно знать код страны?</summary><div class="faq-answer"><p>Код страны в VIN-коде указывает на рынок сбыта. Если вы заказываете деталь для японского авто, а она предназначена для США, могут возникнуть проблемы с размерами и креплениями.</p></div></details>
+
+<h2 id="интерпретация-схем-и-обозначений">Интерпретация схем и обозначений</h2>
+
+<p>Каждая деталь на схеме имеет свой порядковый номер и артикул. Артикулы обычно состоят из 10-12 цифр и букв. Первые цифры обозначают группу деталей, последующие — конкретную позицию. Понимание структуры артикула помогает быстро ориентироваться в каталоге и понимать, к какой категории относится деталь.</p>
+
+<p>На схемах могут встречаться обозначения, указывающие на количество необходимых деталей для сборки узла. Например, цифра "2" рядом с болтом означает, что для сборки требуется два таких элемента. Также важно обращать внимание на стрелки и линии, которые показывают порядок сборки или принадлежность детали к определенному узлу.</p>
+
+<p>Иногда на одной схеме могут быть показаны несколько вариантов одной и той же детали. Это может быть связано с изменением конструкции в процессе производства. В легенде к схеме должно быть указано, какой вариант применим для вашей модели. Если легенда отсутствует или непонятна, лучше проконсультироваться со специалистом.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Сохраняйте скриншоты схем с номерами деталей перед заказом. Это поможет продавцу быстрее найти нужный товар и избежать путаницы при доставке.</p></div>
+
+<h2 id="частые-ошибки-при-поиске-и-заказе">Частые ошибки при поиске и заказе</h2>
+
+<p>Одной из самых распространенных ошибок является игнорирование модификаций двигателя. Даже если автомобиль имеет одинаковый код кузова, разные двигатели могут требовать различных фильтров, прокладок или шлангов. Всегда проверяйте код двигателя в базе данных перед оформлением заказа.</p>
+
+<p>Еще одна ошибка — заказ деталей без учета года выпуска. Производители часто вносят изменения в конструкцию автомобиля в середине модельного года. Деталь, которая подходила для машины начала года, может не подойти для машины конца того же года. <strong>Год выпуска</strong> — критический параметр при поиске.</p>
+
+<p>Не стоит также полагаться исключительно на визуальное сходство. Два болта могут выглядеть одинаково, но отличаться длиной резьбы или шагом нарезки. Использование неподходящего крепежа может привести к разрушению узла. Всегда сверяйтесь с номером детали в каталоге.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Японский рынок (JDM)</th>
+<th>Европейский рынок</th>
+<th>Американский рынок</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Стандарт фар</td>
+<td>Левый свет (правый руль)</td>
+<td>Левый свет (левый руль)</td>
+<td>Левый свет (левый руль)</td>
+</tr>
+<tr>
+<td>Топливные фильтры</td>
+<td>Встроенные в бак (часто)</td>
+<td>Отдельные модули</td>
+<td>Отдельные модули</td>
+</tr>
+<tr>
+<td>Тормозные диски</td>
+<td>Вентилируемые (часто)</td>
+<td>Сплошные (для базовых)</td>
+<td>Вентилируемые</td>
+</tr>
+<tr>
+<td>Тип подвески</td>
+<td>Специфическая жесткость</td>
+<td>Комфортная настройка</td>
+<td>Спортивная настройка</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ Внимание: Не заказывайте детали "на глаз" или по фото. Даже незначительное отклонение в размерах может сделать деталь непригодной для установки.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Точность ввода данных и проверка совместимости по VIN — единственный способ избежать возврата бракованных или несовместимых запчастей.</p></div>
+
+<h2 id="где-найти-надежный-источник-каталогов">Где найти надежный источник каталогов</h2>
+
+<p>Существует множество ресурсов, предлагающих доступ к каталогам запчастей. Некоторые из них бесплатны, другие требуют подписки. Для профессиональных мастеров и серьезных покупателей лучше использовать платные сервисы, которые гарантируют актуальность данных и наличие полных схем.</p>
+
+<p>Официальные дилеры имеют прямой доступ к базам данных производителя, но их услуги могут быть дорогими. Альтернативой являются специализированные онлайн-платформы, которые агрегируют информацию из официальных источников. При выборе сервиса обращайте внимание на отзывы пользователей и дату последнего обновления базы.</p>
+
+<p>Некоторые форумы и сообщества владельцев <em>Honda</em> делятся ссылками на архивы каталогов. Это может быть полезно для поиска старых запчастей, которые сняты с производства. Однако такие данные могут быть неполными или устаревшими, поэтому их стоит использовать с осторожностью.</p>
+
+<ul>
+<li>🌐 Официальные порталы дилеров Honda</li>
+<li>💰 Платные сервисы с расширенными функциями</li>
+<li>🤝 Сообщества энтузиастов и архивы</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Избегайте сомнительных сайтов, требующих ввода данных банковской карты без возможности проверки. Это может быть мошенничество.</p>
+</blockquote>
+
+<h2 id="faq-частые-вопросы-по-каталогам-honda">FAQ: Частые вопросы по каталогам Honda</h2>
+
+<details>
+<summary>Как узнать точный номер детали, если он стерт?</summary>
+<p>Если номер на детали не читается, попробуйте найти деталь по схеме узла в каталоге. Опишите ее внешний вид, расположение и функцию. Также можно сфотографировать узел и обратиться к специалистам, которые смогут идентифицировать деталь по фото и схеме.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать каталог для праворульных авто, если машина леворульная?</summary>
+<p>Да, каталог подходит для всех версий, но нужно внимательно смотреть на схемы. Для леворульных машин ищите разделы, помеченные как "LHD" (Left Hand Drive), а для праворульных — "RHD" (Right Hand Drive). Некоторые детали универсальны, но многие (например, педали или рулевая колонка) будут отличаться.</p>
+</details>
+
+<details>
+<summary>Что делать, если деталь в каталоге помечена как "снята с производства"?</summary>
+<p>Если деталь снята с производства, в каталоге часто указывается номер замены (superseded part number). Это новый артикул, который пришел на смену старому. Заказывайте именно новый номер, так как он полностью совместим с вашей моделью.</p>
+</details>
+
+<details>
+<summary>Нужно ли покупать оригинальные прокладки или можно аналоги?</summary>
+<p>Для критически важных узлов (двигатель, коробка передач) настоятельно рекомендуется использовать только оригинальные прокладки. Аналоги часто имеют меньший ресурс или не обеспечивают идеальную герметичность. Для неответственных элементов можно рассмотреть качественные аналоги.</p>
+</details>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не пренебрегайте инструкциями по установке, указанными в каталоге. Неправильная затяжка или монтаж могут привести к серьезным поломкам.</p>
+</blockquote></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#зачем-нужен-доступ-к-японским-базам-данных">Зачем нужен доступ к японским базам данных</a></li><li><a href="#структура-и-навигация-в-системе-tecdoc-и-аналогах">Структура и навигация в системе TecDoc и аналогах</a></li><li><a href="#алгоритм-поиска-детали-по-vin-коду">Алгоритм поиска детали по VIN-коду</a></li><li><a href="#отличия-японских-спецификаций-от-европейских-и-американских">Отличия японских спецификаций от европейских и американских</a></li><li><a href="#интерпретация-схем-и-обозначений">Интерпретация схем и обозначений</a></li><li><a href="#частые-ошибки-при-поиске-и-заказе">Частые ошибки при поиске и заказе</a></li><li><a href="#где-найти-надежный-источник-каталогов">Где найти надежный источник каталогов</a></li><li><a href="#faq-частые-вопросы-по-каталогам-honda">FAQ: Частые вопросы по каталогам Honda</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-stepvagon-skolko-mest.html" class="related-card">Хонда Степвагон: сколько мест в салоне и схема рассадки</a></li><li><a href="/articles/m/ma/maslo-khonda-kto-proizvoditel.html" class="related-card">Кто производитель масла Honda: разбор подделки и оригинала</a></li><li><a href="/articles/k/kh/khonda-shattl-2017-otzyvy.html" class="related-card">Honda Shuttle 2017: Полные отзывы владельцев, плюсы и минусы</a></li><li><a href="/articles/t/to/toplivnyj-filtr-khonda-frid-spajk.html" class="related-card">Топливный фильтр Honda Freed Spike: выбор, замена и нюансы обслуживания</a></li><li><a href="/articles/p/ps/psf-zhidkost-dlya-gur-honda.html" class="related-card">Жидкость PSF для ГУР Honda: выбор, замена и ошибки</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-stepvagon-skolko-mest.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Степвагон: сколько мест в салоне и схема рассадки</span><span class="related-bottom-desc">Подробный разбор компоновки Honda Stepwgn. Узнайте, сколько мест в машине, как трансформируется сало</span></a><a href="/articles/m/ma/maslo-khonda-kto-proizvoditel.html" class="related-bottom-card"><span class="related-bottom-title">Кто производитель масла Honda: разбор подделки и оригинала</span><span class="related-bottom-desc">Ищете правду о том, кто делает масло Honda? Разбираем контракты с Shell, Idemitsu и Caltex. Как отли</span></a><a href="/articles/k/kh/khonda-shattl-2017-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Honda Shuttle 2017: Полные отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Честные отзывы о Honda Shuttle 2017 года. Разбор надежности двигателя, коробки передач, расходных ма</span></a><a href="/articles/t/to/toplivnyj-filtr-khonda-frid-spajk.html" class="related-bottom-card"><span class="related-bottom-title">Топливный фильтр Honda Freed Spike: выбор, замена и нюансы обслуживания</span><span class="related-bottom-desc">Полный гид по топливным фильтрам для Honda Freed Spike. Обзор аналогов, пошаговая инструкция замены,</span></a><a href="/articles/p/ps/psf-zhidkost-dlya-gur-honda.html" class="related-bottom-card"><span class="related-bottom-title">Жидкость PSF для ГУР Honda: выбор, замена и ошибки</span><span class="related-bottom-desc">Полный гид по выбору жидкости PSF для гидроусилителя Honda. Разбор допусков, риски смешивания и поша</span></a><a href="/articles/s/sv/sverlovka-diskov-khonda-stepvagon.html" class="related-bottom-card"><span class="related-bottom-title">Сверловка дисков Honda Stepwgn: выбор сверла, разболтовка и установка</span><span class="related-bottom-desc">Полный гайд по сверловке дисков для Honda Stepwgn. Узнайте правильную разболтовку, параметры PCD, вы</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

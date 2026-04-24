@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Как узнать комплектацию Honda по VIN-коду: Полная расшифровка — Honda Library</title>
+    <meta name="description" content="Узнайте, как точно определить заводскую комплектацию Honda по номеру кузова. Разбор базовых опций, кодов двигателей и скрытых функций.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/k/ko/komplektatsiya-khonda-po-nomeru-kuzova.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как узнать комплектацию Honda по VIN-коду: Полная расшифровка">
+    <meta property="og:description" content="Узнайте, как точно определить заводскую комплектацию Honda по номеру кузова. Разбор базовых опций, кодов двигателей и скрытых функций.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Как узнать комплектацию Honda по VIN-коду: Полная расшифровка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полная расшифровка комплектации Honda по номеру кузова (VIN)</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#зачем-нужна-точная-расшифровка-спецификации-honda">Зачем нужна точная расшифровка спецификации Honda</a></li><li><a href="#структура-vin-кода-и-ключевые-позиции">Структура VIN-кода и ключевые позиции</a></li><li><a href="#способы-получения-полной-информации-о-комплектации">Способы получения полной информации о комплектации</a></li><li><a href="#как-заказать-официальную-спецификацию-у-дилера">Как заказать официальную спецификацию у дилера</a></li><li><a href="#особенности-расшифровки-для-автомобилей-из-японии">Особенности расшифровки для автомобилей из Японии</a></li><li><a href="#типичные-ошибки-при-самостоятельной-проверке">Типичные ошибки при самостоятельной проверке</a></li><li><a href="#как-использовать-данные-для-подбора-запчастей-и-тюнинга">Как использовать данные для подбора запчастей и тюнинга</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Покупка автомобиля марки <em>Honda</em> на вторичном рынке или из-за границы часто сопряжена с риском столкнуться с неполной информацией о его прошлом. Заводские данные, скрытые в 17-значном коде, являются единственным достоверным источником, способным рассказать о том, как именно машина сошла с конвейера. Многие владельцы ошибочно полагают, что внешний вид или наличие некоторых опций говорят о полной спецификации, однако это далеко не так.</p>
+
+<p>Правильная интерпретация <strong>VIN-кода</strong> позволяет избежать дорогостоящих ошибок при подборе запчастей и ремонте. Зная точную спецификацию, вы сможете убедиться в оригинальности кузова, проверить тип установленного двигателя и наличие систем безопасности, которые могли быть демонтированы или заменены недобросовестными продавцами.</p>
+
+<p>В этой статье мы детально разберем алгоритм действий для получения полной <strong>комлектации</strong> вашего автомобиля. Мы затронем не только бесплатные методы проверки, но и покажем, как получить глубокие технические данные, недоступные в обычных онлайн-базах. Это поможет вам стать экспертом в вопросе идентификации своего <em>Japanese car</em>.</p>
+
+<h2 id="зачем-нужна-точная-расшифровка-спецификации-honda">Зачем нужна точная расшифровка спецификации Honda</h2>
+
+<p>Многие автовладельцы игнорируют необходимость проверки документации, пока не столкнутся с проблемой. Например, при попытке установить <strong>штатную магнитолу</strong> оказывается, что в машине нет нужного разъема из-за другой комплектации. Или при замене тормозных дисков выясняется, что диаметр суппортов отличается от заявленного продавцом.</p>
+
+<p>Точное знание заводской <strong>спецификации</strong> критично для правильного подбора расходных материалов. Двигатели одного объема могут иметь разные типы систем газораспределения, что требует различных масел и фильтров. Неправильный подбор может привести к ускоренному износу узлов и агрегатов, что в итоге выльется в крупные финансовые потери.</p>
+
+<p>Кроме того, проверка по VIN помогает выявить "китайские копии" или машины с нештатными кузовными элементами. В случае с <em>Honda Civic</em> или <em>Honda CR-V</em> часто встречаются подмены двигателей или смена типа привода. Только официальная расшифровка может подтвердить, что перед вами действительно полноприводная версия с двигателем 2.4 литра, а не переделанный переднеприводный аналог.</p>
+
+<h2 id="структура-vin-кода-и-ключевые-позиции">Структура VIN-кода и ключевые позиции</h2>
+
+<p>Вин-код — это не просто набор случайных цифр и букв, а структурированный язык инженеров. Первые три символа всегда указывают на страну и производителя. Для всех автомобилей <em>Honda</em>, произведенных в Японии, код начинается с комбинации <code>JHM</code> или <code>JH4</code>. Если машина собрана в США, код будет начинаться с <code>1HG</code> или <code>1H4</code>, а для европейских моделей — с <code>SC</code>.</p>
+
+<p>Четвертая и пятая позиции отвечают за модель и тип кузова. Именно здесь зашифрована информация о том, является ли автомобиль седаном, хэтчбеком или кроссовером. Следующие символы содержат данные о типе двигателя и трансмиссии. Например, буква <code>D</code> часто обозначает дизельный мотор, а цифры могут указывать на объем и поколение модели.</p>
+
+<p>Позиция с седьмого по одиннадцатый символ является наиболее важной для определения комплектации. Здесь находится код <strong>типа кузова</strong> и уровня оснащения. Ошибка в одной букве здесь может привести к покупке неподходящих сидений или бамперов. Последняя цифра всегда указывает на год выпуска, что позволяет точно датировать производство машины.</p>
+
+<p>Для глубокого понимания структуры полезно изучить таблицу ниже, где приведены примеры кодов для популярных моделей:</p>
+
+<table>
+<thead>
+<tr>
+<th>Позиция в VIN</th>
+<th>Описание</th>
+<th>Пример значения (Honda)</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-3</td>
+<td>Страна и производитель</td>
+<td>JHM</td>
+<td>Япония, Honda</td>
+</tr>
+<tr>
+<td>4-5</td>
+<td>Серия и тип кузова</td>
+<td>FA1</td>
+<td>Civic седан (8 поколение)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Тип двигателя</td>
+<td>R</td>
+<td>Двигатель серии R18/R20</td>
+</tr>
+<tr>
+<td>7-11</td>
+<td>Комплектация и код кузова</td>
+<td>LX1</td>
+<td>Конкретный уровень оснащения</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Год выпуска</td>
+<td>M</td>
+<td>2021 год</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не пытайтесь расшифровать VIN-код, просто сравнивая его с таблицами из интернета, так как коды комплектаций могут меняться даже в пределах одного модельного года в зависимости от месяца выпуска.</p>
+</blockquote>
+
+<h2 id="способы-получения-полной-информации-о-комплектации">Способы получения полной информации о комплектации</h2>
+
+<p>Существует несколько путей получения данных о вашем <em>авто</em>. Самый простой и доступный вариант — использование онлайн-сервисов, которые бесплатно предоставляют базовую информацию. Обычно такие сервисы показывают год выпуска, объем двигателя и цвет кузова. Однако они редко дают полную картину о заводском оснащении салона и электронике.</p>
+
+<p>Более надежный способ — обращение к официальным дилерским базам данных. Для этого вам потребуется посетить дилерский центр и запросить распечатку истории автомобиля по VIN. Владельцы <strong>Honda</strong> часто получают так называемый "лист спецификации" или "build sheet", который содержит исчерпывающий список всех опций, установленных на заводе.</p>
+
+<p>Также можно воспользоваться специализированными платными сервисами, которые специализируются на японских автомобилях. Они предоставляют доступ к внутренним базам данных дилеров Японии, где хранится информация о первом владельце и заводской спецификации. Это особенно актуально для машин, ввезенных из Японии, так как позволяет увидеть оригинальный лист комплектации на японском языке.</p>
+
+<p>Не забывайте о возможности проверки через <code>Honda Global</code> портал или региональные сайты дистрибьюторов. В некоторых случаях достаточно ввести VIN-код в форму поиска на официальном сайте, чтобы получить доступ к техническим схемам и каталогам запчастей, что косвенно подтверждает комплектацию.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой метод проверки комплектации вы считаете самым надежным?</strong><ul><li>Бесплатные онлайн-сервисы</li><li>Официальный дилер</li><li>Платные базы Японии</li><li>Самостоятельный разбор VIN</li></ul></div></div>
+
+<h2 id="как-заказать-официальную-спецификацию-у-дилера">Как заказать официальную спецификацию у дилера</h2>
+
+<p>Запрос информации у официального дилера — это самый верный способ получить документ, который имеет юридическую силу. Вам необходимо обратиться в отдел сервиса или запчастей с просьбой распечатать <strong>спецификацию</strong> по VIN-коду. Обычно эта процедура занимает от 15 минут до нескольких часов, в зависимости от загруженности сотрудников.</p>
+
+<p>Важно понимать, что дилеры могут запросить подтверждение права владения автомобилем. Это стандартная мера безопасности, чтобы предотвратить утечку данных. Подготовьте документы на машину и свой паспорт перед визитом. После получения распечатки внимательно проверьте все пункты, особенно касающиеся типа привода и наличия систем безопасности.</p>
+
+<p>В некоторых случаях дилер может предоставить информацию в электронном виде через <strong>Honda HDS</strong> (Honda Diagnostic System). Это система диагностики, которая подключается к автомобилю и считывает все заводские настройки. Такой метод позволяет увидеть даже скрытые коды ошибок и конфигурации блоков управления, которые не отображаются в бумажном списке.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к визиту в сервис</h4><label class="check-item"><input type="checkbox"><span>Подготовить VIN-код</span></label><label class="check-item"><input type="checkbox"><span>Взять документы на авто</span></label><label class="check-item"><input type="checkbox"><span>Записать вопросы по опциям</span></label><label class="check-item"><input type="checkbox"><span>Уточнить стоимость услуги</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="особенности-расшифровки-для-автомобилей-из-японии">Особенности расшифровки для автомобилей из Японии</h2>
+
+<p>Автомобили, ввезенные из Японии, часто имеют уникальную специфику, которую сложно найти в европейской документации. Японские дилерские базы содержат информацию о "пакетах опций", которые могут не иметь прямых аналогов в других регионах. Например, пакет "Winter" может включать подогрев не только сидений, но и руля, лобового стекла и форсунок омывателя.</p>
+
+<p>Особое внимание стоит уделить кодам двигателей. В Японии использовались двигатели с маркировкой <code>VTEC</code>, которые имеют свои особенности настройки и экологические классы. Иногда один и тот же двигатель в разных комплектациях имеет разные коды, что влияет на совместимость деталей. Ошибка в определении кода мотора может привести к покупке неподходящей прокладки ГБЦ или датчика.</p>
+
+<p>Также важно учитывать региональные особенности. Автомобили для внутреннего рынка Японии (JDM) часто имеют более богатую комплектацию, чем экспортные версии. В них могут присутствовать системы адаптивного круиз-контроля, камеры кругового обзора и другие опции, которые не были доступны в других странах на тот момент. <mark>Зная точный код комплектации, вы сможете заказать оригинальные запчасти, даже если они сняты с производства в вашей стране.</mark></p>
+
+<details class="faq-item"><summary>Скрытые опции в японских авто</summary><div class="faq-answer"><p>В Японии часто встречаются опции, которые не упоминаются в общих каталогах, например, специфические режимы работы климат-контроля или уникальные настройки подвески для разных типов дорог.</p></div></details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При заказе запчастей для японской версии обязательно указывайте код комплектации, так как детали могут отличаться даже визуально, но иметь разные каталожные номера.</p>
+</blockquote>
+
+<h2 id="типичные-ошибки-при-самостоятельной-проверке">Типичные ошибки при самостоятельной проверке</h2>
+
+<p>Одной из самых частых ошибок является путаница в похожих буквах и цифрах. Буквы <code>I</code> и <code>l</code>, а также цифры <code>0</code> и <code>O</code> часто вызывают сложности при ручном вводе. Ошибка в одном символе может привести к тому, что система выдаст данные о совершенно другой модели или даже о несуществующем автомобиле.</p>
+
+<p>Другая распространенная проблема — игнорирование изменений в спецификации в течение модельного года. Производители часто вносят изменения в комплектацию без смены названия модели. Например, в середине года могут убрать подогрев руля или изменить тип колесных дисков. Если вы будете ориентироваться только на год выпуска, а не на точный месяц, есть риск получить неверные данные.</p>
+
+<p>Не стоит также полагаться на данные, полученные из неофициальных источников, таких как объявления о продаже или форумы. Продавцы могут ошибаться в описании комплектации, а пользователи форумов часто путают похожие модели. Единственным источником истины является <strong>заводской VIN-код</strong> и официальные базы данных.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед вводом VIN-кода в любую систему внимательно проверьте его на наличие царапин или повреждений на шильдике, чтобы избежать ошибок чтения.</p></div>
+
+<h2 id="как-использовать-данные-для-подбора-запчастей-и-тюнинга">Как использовать данные для подбора запчастей и тюнинга</h2>
+
+<p>Получив точную информацию о комплектации, вы можете существенно сэкономить на обслуживании автомобиля. Зная точный код двигателя и трансмиссии, вы сможете подобрать оригинальные детали без риска ошибки. Это особенно важно для таких узлов, как <strong>турбокомпрессоры</strong>, форсунки и электронные блоки управления, где даже незначительные отличия могут привести к поломке.</p>
+
+<p>Для любителей тюнинга расшифровка комплектации открывает широкие возможности. Вы сможете определить, какие опции уже установлены на заводе, а что нужно докупить отдельно. Например, если вы хотите установить систему видеорегистратора или навигации, знание типа штатной проводки и разъемов сэкономит вам время и деньги на переделке проводки.</p>
+
+<p>Также это поможет избежать конфликтов при продаже автомобиля. Наличие полной документации о заводской комплектации повышает доверие покупателей и обосновывает цену. Вы сможете доказать, что автомобиль не подвергался несанкционированным вмешательствам и соответствует заводским спецификациям.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Точное знание заводской комплектации — это фундамент для грамотного обслуживания, безопасного тюнинга и успешной перепродажи автомобиля.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли узнать комплектацию бесплатно?</summary>
+<p>Да, существуют бесплатные онлайн-сервисы, которые предоставляют базовую информацию (год, двигатель, цвет). Однако для получения полного списка опций и кодов часто требуется платный доступ к дилерским базам или обращение к официальному дилеру.</p>
+</details>
+
+<details>
+<summary>Что делать, если VIN-код поврежден или не читается?</summary>
+<p>Если VIN-код нечитаем из-за коррозии или повреждений, необходимо обратиться в ГИБДД для проведения экспертизы и восстановления номера. Без читаемого VIN-кода расшифровка комплектации невозможна.</p>
+</details>
+
+<details>
+<summary>Влияет ли пробег на комплектацию?</summary>
+<p>Нет, пробег не влияет на заводскую комплектацию. Комплектация определяется в момент производства автомобиля на заводе и не меняется со временем, если не проводились вмешательства в электронику или механику.</p>
+</details>
+
+<details>
+<summary>Можно ли узнать комплектацию по госномеру?</summary>
+<p>В некоторых случаях через базы ГИБДД можно узнать базовые данные (модель, год, цвет), но получить полную заводскую спецификацию по госномеру невозможно. Необходим именно VIN-код.</p>
+</details>
+
+<details>
+<summary>Нужна ли расшифровка для покупки запчастей?</summary>
+<p>Очень желательна. Многие детали (особенно электронные блоки, датчики и элементы подвески) имеют разные каталожные номера в зависимости от комплектации. Расшифровка помогает избежать ошибок при заказе.</p>
+</details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Не пытайтесь восстановить комплектацию по фотографиям из интернета, так как многие опции (например, тип подогрева сидений или наличие парктроников) не видны внешне.</p>
+</blockquote></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#зачем-нужна-точная-расшифровка-спецификации-honda">Зачем нужна точная расшифровка спецификации Honda</a></li><li><a href="#структура-vin-кода-и-ключевые-позиции">Структура VIN-кода и ключевые позиции</a></li><li><a href="#способы-получения-полной-информации-о-комплектации">Способы получения полной информации о комплектации</a></li><li><a href="#как-заказать-официальную-спецификацию-у-дилера">Как заказать официальную спецификацию у дилера</a></li><li><a href="#особенности-расшифровки-для-автомобилей-из-японии">Особенности расшифровки для автомобилей из Японии</a></li><li><a href="#типичные-ошибки-при-самостоятельной-проверке">Типичные ошибки при самостоятельной проверке</a></li><li><a href="#как-использовать-данные-для-подбора-запчастей-и-тюнинга">Как использовать данные для подбора запчастей и тюнинга</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/p/pr/predokhranitel-prikurivatelya-khonda-tsivik.html" class="related-card">Предохранитель прикуривателя Хонда Цивик: где находится и замена</a></li><li><a href="/articles/h/ho/honda-civic-2012-sedan.html" class="related-card">Honda Civic 2012 седан: Полный обзор, характеристики и советы по выбору</a></li><li><a href="/articles/a/ak/akpp-khonda-strim-k20a.html" class="related-card">АКПП Honda Stream с двигателем K20A: диагностика, ремонт и нюансы</a></li><li><a href="/articles/p/po/podshipnik-kompressora-konditsionera-khonda-tsivik-4d.html" class="related-card">Подшипник компрессора Honda Civic 4D: симптомы, выбор и замена</a></li><li><a href="/articles/r/ra/raspinovka-magnitoly-gathers-honda.html" class="related-card">Распиновка магнитолы Gathers для Honda: полная схема и инструкция</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/p/pr/predokhranitel-prikurivatelya-khonda-tsivik.html" class="related-bottom-card"><span class="related-bottom-title">Предохранитель прикуривателя Хонда Цивик: где находится и замена</span><span class="related-bottom-desc">Пошаговая инструкция по поиску и замене предохранителя прикуривателя Honda Civic всех поколений. Схе</span></a><a href="/articles/h/ho/honda-civic-2012-sedan.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic 2012 седан: Полный обзор, характеристики и советы по выбору</span><span class="related-bottom-desc">Детальный анализ Honda Civic 2012 года в кузове седан. Разбор двигателей, типичные неисправности, ур</span></a><a href="/articles/a/ak/akpp-khonda-strim-k20a.html" class="related-bottom-card"><span class="related-bottom-title">АКПП Honda Stream с двигателем K20A: диагностика, ремонт и нюансы</span><span class="related-bottom-desc">Полный разбор автоматической коробки передач для Honda Stream с мотором K20A. Причины поломок, симпт</span></a><a href="/articles/p/po/podshipnik-kompressora-konditsionera-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Подшипник компрессора Honda Civic 4D: симптомы, выбор и замена</span><span class="related-bottom-desc">Как диагностировать износ подшипника компрессора кондиционера на Honda Civic 4D. Обзор моделей, прич</span></a><a href="/articles/r/ra/raspinovka-magnitoly-gathers-honda.html" class="related-bottom-card"><span class="related-bottom-title">Распиновка магнитолы Gathers для Honda: полная схема и инструкция</span><span class="related-bottom-desc">Подробная распиновка штатных магнитол Gathers Honda. Цвета проводов, схема подключения, нюансы устан</span></a><a href="/articles/k/ko/kod-kraski-khonda-tsivik.html" class="related-bottom-card"><span class="related-bottom-title">Код краски Хонда Цивик: как найти и расшифровать цвет авто</span><span class="related-bottom-desc">Узнайте, где найти код краски Honda Civic, как расшифровать его значение и подобрать идеальный оттен</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

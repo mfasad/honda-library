@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>SCS Honda обрыв: причины, диагностика и способы ремонта — Honda Library</title>
+    <meta name="description" content="Разбираем ошибку SCS Honda обрыв. Узнайте, почему возникает сбой цепи, как проверить реле и восстановить работу системы управления двигателем.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/sc/scs-honda-obryv-chto-eto.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SCS Honda обрыв: причины, диагностика и способы ремонта">
+    <meta property="og:description" content="Разбираем ошибку SCS Honda обрыв. Узнайте, почему возникает сбой цепи, как проверить реле и восстановить работу системы управления двигателем.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">SCS Honda обрыв: причины, диагностика и способы ремонта</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>SCS Honda обрыв: причины, диагностика и способы ремонта</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#суть-проблемы-и-назначение-сигнала-scs">Суть проблемы и назначение сигнала SCS</a></li><li><a href="#основные-причины-возникновения-разрыва-цепи">Основные причины возникновения разрыва цепи</a></li><li><a href="#диагностика-и-проверка-целостности-проводки">Диагностика и проверка целостности проводки</a></li><li><a href="#проверка-реле-диагностики-и-блока-предохранителей">Проверка реле диагностики и блока предохранителей</a></li><li><a href="#восстановление-связи-и-сброс-ошибок">Восстановление связи и сброс ошибок</a></li><li><a href="#влияние-некачественного-ремонта-и-тюнинга">Влияние некачественного ремонта и тюнинга</a></li><li><a href="#когда-необходима-замена-блока-управления">Когда необходима замена блока управления</a></li><li><a href="#профилактика-и-обслуживание-системы">Профилактика и обслуживание системы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Многие владельцы автомобилей <em>Honda</em> сталкиваются с непонятным сообщением на приборной панели или в диагностическом сканере: «SCS обрыв». Эта аббревиатура расшифровывается как Service Check Signal — сервисный сигнал проверки. Суть проблемы заключается в разрыве электрической цепи, которая связывает блок управления двигателем (ECU) с диагностическим разъемом. Без этого соединения невозможно корректно считывать коды ошибок или проводить процедуру адаптации.</p>
+
+<p>Игнорирование данной неисправности может привести к невозможности проведения планового обслуживания или сброса ошибок после ремонта. В некоторых случаях это блокирует вход в режим диагностики, что мешает мастеру увидеть реальные проблемы с системой зажигания или подачи топлива. Понимание природы сигнала SCS поможет вам быстрее локализовать неисправность, не прибегая к дорогостоящим услугам сервисных центров.</p>
+
+<h2 id="суть-проблемы-и-назначение-сигнала-scs">Суть проблемы и назначение сигнала SCS</h2>
+<p>Система <strong>SCS</strong> в автомобилях <em>Honda</em> и <em>Acura</em> играет критическую роль в диагностике. Это специальный провод, который при закорачивании с массой (или при подаче сигнала) переводит блок управления в режим тестирования. Если цепь разорвана, блок ECU не получает команду на вход в этот режим, что и фиксируется как ошибка «обрыв».</p>
+
+<p>Важно понимать, что это не всегда означает физический обрыв провода. Часто проблема кроется в плохом контакте, окислении разъема или неисправности самого реле диагностики. Для владельцев моделей <em>Accord</em>, <em>Civic</em> или <em>CR-V</em> эта ошибка часто появляется после некачественного ремонта проводки или установки дополнительного оборудования.</p>
+
+<p>Неисправность в цепи SCS может маскировать другие серьезные проблемы. Если блок управления не может войти в диагностический режим, он может игнорировать некоторые аварийные режимы работы двигателя, что приведет к повышенному расходу топлива или нестабильной работе на холостых оборотах.</p>
+
+<blockquote>⚠️ Внимание: Если вы видите ошибку SCS, не пытайтесь принудительно запускать двигатель в аварийном режиме без диагностики. Это может привести к перегреву катализатора из-за неверных параметров смесеобразования.</blockquote>
+
+<h2 id="основные-причины-возникновения-разрыва-цепи">Основные причины возникновения разрыва цепи</h2>
+<p>Причин появления сообщения «SCS обрыв» может быть несколько, и они варьируются от банальных до сложных. Самой частой проблемой является механическое повреждение провода в месте его изгиба или перетирания о кузовные элементы. Особенно это актуально для старых автомобилей, где изоляция со временем становится хрупкой.</p>
+
+<p>Второй распространенной причиной является выход из строя диагностического реле. В блоке предохранителей и реле, расположенном в моторном отсеке, находится специальное реле, отвечающее за замыкание цепи SCS при подаче питания. Если его контакты окислились или катушка сгорела, сигнал просто не дойдет до ЭБУ.</p>
+
+<ul>
+    <li>🔍 Окисление контактов в разъеме OBDII или в колодке блока управления.</li>
+    <li>🔍 Перетирание провода жгута в районе блока предохранителей под капотом.</li>
+    <li>🔍 Неправильная установка сигнализации, которая вмешалась в штатную проводку.</li>
+    <li>🔍 Выход из строя самого блока управления двигателем (редко, но бывает).</li>
+</ul>
+
+<p>Иногда проблема возникает из-за использования нештатных адаптеров для подключения к диагностическому порту. Дешевые китайские сканеры могут иметь неправильную распиновку, что создает помехи или физически повреждает цепь SCS при подключении.</p>
+
+<h2 id="диагностика-и-проверка-целостности-проводки">Диагностика и проверка целостности проводки</h2>
+<p>Для начала работ вам понадобится мультиметр и схема электропроводки вашей конкретной модели. Необходимо найти провод SCS, который обычно имеет цвет маркировки <strong>синий/красный</strong> или <strong>зеленый/красный</strong> в зависимости от года выпуска автомобиля. Этот провод идет от диагностического разъема к блоку управления.</p>
+
+<p>Первым шагом станет проверка напряжения на диагностическом разъеме. Подключите мультиметр к контакту SCS и массе. При включенном зажигании вы должны увидеть определенное напряжение. Если его нет, значит, разрыв находится до блока управления или в самом блоке.</p>
+
+<p>Если напряжение есть, но ошибка сохраняется, проверьте сопротивление цепи. Отключите аккумулятор и замерьте сопротивление между контактом SCS на разъеме и соответствующим контактом на блоке управления. Значение должно быть близким к нулю. Любое значительное отклонение указывает на плохой контакт или обрыв.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая у вас модель Honda?</strong><ul><li>Civic</li><li>Accord</li><li>CR-V</li><li>Pilot</li><li>Другая</li></ul></div></div>
+
+<h2 id="проверка-реле-диагностики-и-блока-предохранителей">Проверка реле диагностики и блока предохранителей</h2>
+<p>В моторном отсеке большинства автомобилей <em>Honda</em> расположен блок предохранителей и реле. Именно там находится реле диагностики, которое замыкает цепь SCS при необходимости сброса ошибок. Это реле часто маркируется как «SCS Short Service Check Signal» или имеет специфическую маркировку на крышке.</p>
+
+<p>Необходимо извлечь реле и проверить его контакты на предмет окисления или нагара. Попробуйте заменить его на заведомо исправное реле с аналогичными характеристиками. В автомобилях <em>Prelude</em> и <em>Integra</em> это реле может находиться в другом месте, поэтому сверьтесь с инструкцией по эксплуатации.</p>
+
+<p>Также стоит проверить предохранитель, который питает цепь диагностики. Если он перегорел, система не получит питание для активации сигнала. Используйте предохранитель той же номинальности, чтобы избежать перегрузки.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка реле диагностики</h4><label class="check-item"><input type="checkbox"><span>Найти блок реле в моторном отсеке</span></label><label class="check-item"><input type="checkbox"><span>Извлечь реле SCS</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть контакты</span></label><label class="check-item"><input type="checkbox"><span>Заменить на заведомо исправное</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<blockquote>⚠️ Внимание: При проверке реле не используйте отвертку для принудительного замыкания контактов. Это может привести к короткому замыканию и выходу из строя блока управления.</blockquote>
+
+<h2 id="восстановление-связи-и-сброс-ошибок">Восстановление связи и сброс ошибок</h2>
+<p>После устранения причины обрыва (замена провода, чистка контактов или замена реле) необходимо сбросить ошибку. Для этого часто требуется замкнуть контакты диагностического разъема в определенной последовательности. Обычно это делается путем замыкания контактов SCS и массы при выключенном зажигании.</p>
+
+<p>Процедура сброса может отличаться в зависимости от поколения автомобиля. На старых моделях <em>Legend</em> или <em>Accord</em> это делается вручную перемычкой. На новых моделях требуется использование профессионального сканера, который подаст команду на сброс через исправную цепь.</p>
+
+<p>Если ошибка не исчезает, возможно, блок управления сохранил код в памяти и требует полного сброса. В некоторых случаях помогает отключение аккумулятора на 15-20 минут, но это сбросит и другие настройки, такие как часы и радиостанции.</p>
+
+<details class="faq-item"><summary>Как сбросить ошибку SCS вручную</summary><div class="faq-answer"><p>Для старых моделей Honda (до 2005 года) часто требуется замкнуть контакты 4 и 5 диагностического разъема (или SCS и массу) при включенном зажигании на 5 секунд. Это активирует режим сброса ошибок. На новых моделях процедура сложнее и требует сканера.</p></div></details>
+
+<p>Важно убедиться, что проблема решена окончательно. После сброса запустите двигатель и дайте ему поработать несколько минут. Если лампа Check Engine не загорелась и сканер не видит ошибки SCS, значит, ремонт прошел успешно.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Модель автомобиля</th>
+            <th>Расположение реле SCS</th>
+            <th>Цвет провода SCS</th>
+            <th>Сложность ремонта</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Honda Civic (8-9 поколение)</td>
+            <td>Блок под капотом</td>
+            <td>Синий/Красный</td>
+            <td>Низкая</td>
+        </tr>
+        <tr>
+            <td>Honda Accord (7-8 поколение)</td>
+            <td>Блок под капотом</td>
+            <td>Зеленый/Красный</td>
+            <td>Средняя</td>
+        </tr>
+        <tr>
+            <td>Honda CR-V (2-3 поколение)</td>
+            <td>Блок под капотом</td>
+            <td>Синий/Красный</td>
+            <td>Низкая</td>
+        </tr>
+        <tr>
+            <td>Honda Pilot</td>
+            <td>Блок в салоне/под капотом</td>
+            <td>Оранжевый/Красный</td>
+            <td>Высокая</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="влияние-некачественного-ремонта-и-тюнинга">Влияние некачественного ремонта и тюнинга</h2>
+<p>Часто ошибка SCS возникает после вмешательств в электрическую систему. Установка сигнализации, парктроника или аудиосистемы с неправильным подключением может повредить тонкий провод SCS. Мастера-самоучки часто режут жгуты, не восстанавливая изоляцию должным образом, что приводит к окислению.</p>
+
+<p>При тюнинге, например, установке чип-тюнинга или перепрошивке ЭБУ, также высок риск повреждения цепи. Если сканер был подключен неправильно или использован несовместимый адаптер, это могло вызвать скачок напряжения, повредив реле или входной каскад блока управления.</p>
+
+<p>Если вы недавно проводили работы с электрикой, первым делом проверьте места, где были разрезаны провода. Часто проблема скрыта под изолентой, которая со временем теряет свойства и провод начинает окисляться.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед началом любых работ с электрикой обязательно отключите минусовую клемму аккумулятора. Это защитит блок управления от случайных коротких замыканий при случайном касании инструментом.</p></div>
+
+<h2 id="когда-необходима-замена-блока-управления">Когда необходима замена блока управления</h2>
+<p>В редких случаях, когда вся цепь проверена, реле исправно, а проводка целая, проблема может быть внутри самого блока управления (ECU). Это происходит, если входной каскад, отвечающий за прием сигнала SCS, сгорел из-за скачка напряжения или попадания влаги.</p>
+
+<p>Замена блока управления — это крайняя мера, требующая профессионального оборудования. Новый блок необходимо «прописать» под конкретный автомобиль, а также настроить все параметры. Просто поставить блок от другого автомобиля не получится.</p>
+
+<p>Если вы подозреваете неисправность ЭБУ, лучше обратиться к официальным дилерам или в специализированные сервисы, занимающиеся электроникой. Самостоятельная замена без должных знаний может привести к полной неработоспособности автомобиля.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если цепь SCS цела, реле исправно, а ошибка сохраняется — проблема, скорее всего, во внутреннем сбое блока управления двигателем, требующем профессиональной диагностики или замены.</p></div>
+
+<blockquote>⚠️ Внимание: Не пытайтесь самостоятельно паять или ремонтировать печатную плату блока управления без опыта. Высок риск вывести из строя микроконтроллер, после чего восстановление станет невозможным.</blockquote>
+
+<h2 id="профилактика-и-обслуживание-системы">Профилактика и обслуживание системы</h2>
+<p>Чтобы избежать проблем с цепью SCS в будущем, регулярно осматривайте проводку в моторном отсеке. Обращайте внимание на места изгибов и трения о кузов. Если изоляция потрескалась, замените провод или заизолируйте его качественной термоусадкой.</p>
+
+<p>Следите за состоянием диагностического разъема. Влага, попадающая в салон или под капот, может вызвать коррозию контактов. Используйте специальные контактные спреи для очистки разъемов раз в год.</p>
+
+<p>При установке дополнительного оборудования всегда используйте схемы подключения и не нарушайте целостность штатных жгутов. Если вы не уверены в своих силах, доверьте работу профессионалам, чтобы избежать дорогостоящих ошибок.</p>
+
+<details>
+    <summary>Что делать, если ошибка SCS появляется только при прогреве двигателя?</summary>
+    <p>Это может указывать на то, что при нагреве происходит расширение материалов, и контакт в разъеме или проводе пропадает. Проверьте разъемы на предмет окисления и убедитесь, что провода не натянуты.</p>
+</details>
+
+<details>
+    <summary>Можно ли ездить с ошибкой SCS?</summary>
+    <p>Ездить можно, так как ошибка SCS влияет только на диагностику, но не на работу двигателя напрямую. Однако вы не сможете увидеть другие возможные ошибки, что опасно при скрытых проблемах.</p>
+</details>
+
+<details>
+    <summary>Как узнать, что реле SCS вышло из строя?</summary>
+    <p>Самый простой способ — заменить его на заведомо исправное. Также можно проверить щелчок реле при подаче питания или измерить сопротивление катушки мультиметром.</p>
+</details>
+
+<details>
+    <summary>Влияет ли ошибка SCS на расход топлива?</summary>
+    <p>Косвенно может влиять, если из-за невозможности диагностики не были устранены другие неисправности двигателя. Сам по себе обрыв цепи SCS не меняет параметры смесеобразования.</p>
+</details>
+
+<details>
+    <summary>Нужно ли сбрасывать ошибки после замены реле?</summary>
+    <p>Да, после замены реле необходимо сбросить коды ошибок сканером или методом перемычки, чтобы блок управления обновил статус системы.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#суть-проблемы-и-назначение-сигнала-scs">Суть проблемы и назначение сигнала SCS</a></li><li><a href="#основные-причины-возникновения-разрыва-цепи">Основные причины возникновения разрыва цепи</a></li><li><a href="#диагностика-и-проверка-целостности-проводки">Диагностика и проверка целостности проводки</a></li><li><a href="#проверка-реле-диагностики-и-блока-предохранителей">Проверка реле диагностики и блока предохранителей</a></li><li><a href="#восстановление-связи-и-сброс-ошибок">Восстановление связи и сброс ошибок</a></li><li><a href="#влияние-некачественного-ремонта-и-тюнинга">Влияние некачественного ремонта и тюнинга</a></li><li><a href="#когда-необходима-замена-блока-управления">Когда необходима замена блока управления</a></li><li><a href="#профилактика-и-обслуживание-системы">Профилактика и обслуживание системы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ko/korrektor-far-khonda-frid.html" class="related-card">Корректор фар Хонда Фрид: выбор, замена и настройка света</a></li><li><a href="/articles/k/kh/khonda-frid-zapasnoe-koleso.html" class="related-card">Запасное колесо Honda Freed: где находится и как заменить</a></li><li><a href="/articles/k/kr/kryshka-variatora-khonda-dio.html" class="related-card">Крышка вариатора Хонда Дио: замена, ремонт и выбор</a></li><li><a href="/articles/k/kh/khonda-frid-filtr-maslyanyj.html" class="related-card">Замена масляного фильтра Honda Freed: выбор, интервалы, инструкция</a></li><li><a href="/articles/h/ho/honda-stepwgn-rp-3.html" class="related-card">Honda Stepwgn RP3: Полное руководство по выбору и эксплуатации</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ko/korrektor-far-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Корректор фар Хонда Фрид: выбор, замена и настройка света</span><span class="related-bottom-desc">Полный гид по выбору и установке электрокорректора фар на Honda Freed. Разбор неисправностей, инстру</span></a><a href="/articles/k/kh/khonda-frid-zapasnoe-koleso.html" class="related-bottom-card"><span class="related-bottom-title">Запасное колесо Honda Freed: где находится и как заменить</span><span class="related-bottom-desc">Полное руководство по поиску домкрата, замене запасного колеса на Honda Freed. Советы по выбору рези</span></a><a href="/articles/k/kr/kryshka-variatora-khonda-dio.html" class="related-bottom-card"><span class="related-bottom-title">Крышка вариатора Хонда Дио: замена, ремонт и выбор</span><span class="related-bottom-desc">Полный гид по крышке вариатора Honda Dio. Как снять, проверить, заменить сальник и выбрать усиленную</span></a><a href="/articles/k/kh/khonda-frid-filtr-maslyanyj.html" class="related-bottom-card"><span class="related-bottom-title">Замена масляного фильтра Honda Freed: выбор, интервалы, инструкция</span><span class="related-bottom-desc">Полный гид по масляному фильтру для Honda Freed. Обзор оригинальных номеров, аналоги, частота замены</span></a><a href="/articles/h/ho/honda-stepwgn-rp-3.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stepwgn RP3: Полное руководство по выбору и эксплуатации</span><span class="related-bottom-desc">Обзор Honda Stepwgn RP3: двигатели, комплектации, особенности обслуживания и сравнение с предшествен</span></a><a href="/articles/d/dl/dlina-khonda-strim-2010.html" class="related-bottom-card"><span class="related-bottom-title">Длина Honda Stream 2010: габариты, колесная база и вместимость</span><span class="related-bottom-desc">Подробный обзор длины Honda Stream 2010 года. Узнайте точные габариты, размеры колесной базы, объем </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

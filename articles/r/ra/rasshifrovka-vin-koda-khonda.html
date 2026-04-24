@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Расшифровка VIN-кода Honda: полная инструкция и таблица — Honda Library</title>
+    <meta name="description" content="Узнайте, как самостоятельно расшифровать VIN-код автомобиля Honda. Подробная таблица, значения цифр, проверка истории и важные нюансы для владельцев.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/ra/rasshifrovka-vin-koda-khonda.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Расшифровка VIN-кода Honda: полная инструкция и таблица">
+    <meta property="og:description" content="Узнайте, как самостоятельно расшифровать VIN-код автомобиля Honda. Подробная таблица, значения цифр, проверка истории и важные нюансы для владельцев.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/авто/">Авто</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Расшифровка VIN-кода Honda: полная инструкция и таблица</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полное руководство по расшифровке VIN-кода автомобилей Honda</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#где-найти-идентификационный-номер-на-автомобиле-honda">Где найти идентификационный номер на автомобиле Honda</a></li><li><a href="#структура-и-значение-символов-в-коде-honda">Структура и значение символов в коде Honda</a></li><li><a href="#детальная-расшифровка-позиций-vin-кода">Детальная расшифровка позиций VIN-кода</a></li><li><a href="#таблица-соответствия-годов-выпуска">Таблица соответствия годов выпуска</a></li><li><a href="#особенности-расшифровки-для-разных-рынков">Особенности расшифровки для разных рынков</a></li><li><a href="#почему-самостоятельная-проверка-важнее-онлайн-сервисов">Почему самостоятельная проверка важнее онлайн-сервисов</a></li><li><a href="#частые-ошибки-при-чтении-vin-кода">Частые ошибки при чтении VIN-кода</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Каждый автомобиль, выпущенный на конвейере компании <em>Honda</em>, обладает уникальным идентификатором, который часто называют «паспортом» машины. Это не просто набор случайных символов, а зашифрованная история транспортного средства, содержащая информацию о годе выпуска, стране производства, модели и даже двигателе. Для владельца знание того, как читается <strong>VIN-код</strong>, становится критически важным при покупке б/у авто, заказе запчастей или прохождении технического осмотра.</p>
+
+<p>Многие автовладельцы полагаются исключительно на отчеты сервисов, но самостоятельная проверка позволяет убедиться в достоверности данных. Если вы видите несоответствия в документах или сомневаетесь в честности продавца, умение прочитать <strong>идентификационный номер</strong> поможет избежать дорогостоящих ошибок. В этой статье мы разберем структуру кода по символам и научимся извлекать из него максимум полезной информации.</p>
+
+<h2 id="где-найти-идентификационный-номер-на-автомобиле-honda">Где найти идентификационный номер на автомобиле Honda</h2>
+
+<p>Прежде чем приступать к расшифровке, необходимо locate место, где нанесен <strong>VIN-номер</strong>. На большинстве моделей <em>Honda</em> он дублируется в нескольких местах для защиты от угона и утери данных. Стандартным расположением является лобовое стекло со стороны водителя, где шифр виден через стекло снаружи. Однако это не единственная точка нанесения.</p>
+
+<p>Второе место — табличка на центральной стойке двери со стороны водителя. Откройте дверь и посмотрите на нижнюю часть стойки или на металлическую наклейку. Также номер часто выбит на раме двигателя или на кузове в подкапотном пространстве. </p>
+
+<ul>
+<li>🚗 Лобовое стекло: нижний левый угол, видимый снаружи.</li>
+<li>📄 Табличка на стойке: левая передняя дверь при открытии.</li>
+<li>⚙️ Двигатель и рама: выбит на металле в подкапотном пространстве.</li>
+</ul>
+
+<p>Если вы планируете проверку <strong>истории автомобиля</strong> перед покупкой, обязательно сверьте данные во всех трех точках. Расхождение хотя бы в одной цифре или букве может свидетельствовать о серьезных проблемах с юридическим статусом машины или о том, что кузовные детали были заменены неоригинальными.</p>
+
+<blockquote>⚠️ Внимание: Не пытайтесь самостоятельно зачистить или восстановить поврежденные символы VIN-кода. Любые манипуляции с заводской маркировкой могут быть расценены полицией как попытка угона или подделки документов.</blockquote>
+
+<h2 id="структура-и-значение-символов-в-коде-honda">Структура и значение символов в коде Honda</h2>
+
+<p>Стандартный <strong>VIN-код</strong> состоит из 17 символов, каждый из которых имеет свое строго определенное значение. Эта система унифицирована для всех мировых производителей, но у <em>Honda</em> есть свои особенности в кодировке регионов и моделей. Разделенный на три основные части, номер рассказывает о происхождении, характеристиках и уникальности конкретного экземпляра.</p>
+
+<p>Первая часть, WMI (World Manufacturer Identifier), занимает первые три символа и указывает на производителя и страну сборки. Для автомобилей <em>Honda</em> это обычно начинается с буквы J (Япония), 1, 4 или 5 (США), 2 (Канада) или 3 (Мексика). Следующие символы определяют тип кузова и двигателя, что критично для подбора запчастей.</p>
+
+<ul>
+<li>🌍 Первые 3 символа: Страна и производитель (WMI).</li>
+<li>🔧 Следующие 6 символов: Описание автомобиля (VDS).</li>
+<li>🔢 Последние 8 символов: Индикаторы и серийный номер (VIS).</li>
+</ul>
+
+<p>Особое внимание следует уделить десятому символу, так как именно он указывает на <strong>год выпуска</strong> модели. Это не всегда год фактического производства, а модельный год, который может начинаться раньше календарного. Например, автомобиль, выпущенный в конце 2019 года, может иметь в VIN код, соответствующий модели 2020 года.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Где вы чаще всего ищете VIN-код?</strong><ul><li>Лобовое стекло</li><li>Табличка на двери</li><li>Документы на авто</li><li>Под капотом</li></ul></div></div>
+
+<h2 id="детальная-расшифровка-позиций-vin-кода">Детальная расшифровка позиций VIN-кода</h2>
+
+<p>Давайте разберем каждый блок символов более подробно. Первые два символа всегда обозначают географическую зону и страну. Символ <strong>J</strong> однозначно указывает на японское происхождение, что для многих любителей марки <em>Honda</em> является признаком высшего качества сборки. Символы <strong>1</strong>, <strong>4</strong> и <strong>5</strong> означают американский завод, который также соответствует высоким стандартам.</p>
+
+<p>Третий символ определяет тип транспортного средства или отдел производства. Например, в кодах <em>Honda</em> цифра 5 часто обозначает легковой автомобиль, а цифра 3 — грузовик или пикап. Далее идут символы, описывающие модель, тип кузова, двигатель и трансмиссию. Эти данные могут варьироваться в зависимости от конкретной модели, будь то <em>Accord</em>, <em>Civic</em> или внедорожник <em>Pilot</em>.</p>
+
+<pre><code>Пример структуры: JHMGE8H58CS123456
+<p>J - Япония</p>
+<p>H - Honda</p>
+<p>M - Тип кузова (LHD)</p>
+<p>G - Модель (Civic)</p>
+<p>E - Тип двигателя</p>
+<p>8 - Серия</p>
+<p>H - Тип трансмиссии</p>
+<p>5 - Контрольная цифра</p>
+<p>8 - Год выпуска (2008)</p>
+<p>C - Завод сборки</p>
+<p>123456 - Серийный номер</code></pre></p>
+
+<p>Важно понимать, что <strong>контрольная цифра</strong>, стоящая на девятой позиции, используется для математической проверки подлинности всего номера. Специальный алгоритм пересчета позволяет системам проверять VIN на ошибки ввода или намеренное искажение. Если контрольная цифра не сходится, номер считается невалидным.</p>
+
+<details class="faq-item"><summary>Зачем нужна контрольная цифра?</summary><div class="faq-answer"><p>Контрольная цифра защищает от мошенников, которые пытаются подделать VIN, подставив несуществующие комбинации символов. Система автоматически отклоняет такие номера при сканировании.</p></div></details>
+
+<h2 id="таблица-соответствия-годов-выпуска">Таблица соответствия годов выпуска</h2>
+
+<p>Одним из самых частых вопросов при самостоятельной проверке является определение года выпуска по десятому символу. Система кодирования циклична и повторяется каждые 30 лет, поэтому необходимо учитывать контекст. Символы от 1 до 9 обозначают годы с 2001 по 2009, а буквы от A до Y (кроме I, O, Q, U, Z) — с 1980 по 2000 и с 2010 по 2030.</p>
+
+<p>Ниже приведена таблица, которая поможет вам быстро определить модельный год вашего автомобиля <em>Honda</em>. Обратите внимание, что для автомобилей, выпущенных после 2010 года, используются буквы, а для более старых — цифры или другие буквы.</p>
+
+<table>
+<thead>
+<tr>
+<th>Символ</th>
+<th>Год выпуска</th>
+<th>Символ</th>
+<th>Год выпуска</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2001</td>
+<td>L</td>
+<td>2020</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2002</td>
+<td>M</td>
+<td>2021</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2003</td>
+<td>N</td>
+<td>2022</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2009</td>
+<td>P</td>
+<td>2023</td>
+</tr>
+<tr>
+<td>A</td>
+<td>2010</td>
+<td>R</td>
+<td>2026</td>
+</tr>
+</tbody>
+</table>
+
+<p>Если вы видите в VIN букву <strong>Y</strong>, это может означать как 2000, так и 2030 год, поэтому всегда сверяйте это с другими признаками автомобиля. Для автомобилей, выпущенных до 1980 года, система VIN была иной, и такой расшифровки они не имеют в современном понимании.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка года выпуска</h4><label class="check-item"><input type="checkbox"><span>Найти 10-й символ в VIN</span></label><label class="check-item"><input type="checkbox"><span>Сверить с таблицей</span></label><label class="check-item"><input type="checkbox"><span>Учесть модельный год</span></label><label class="check-item"><input type="checkbox"><span>Проверить дату в документах</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<blockquote>⚠️ Внимание: Модельный год не всегда совпадает с календарным годом выпуска. Автомобиль, собранный в декабре 2023 года, может быть зарегистрирован как модель 2026 года, что влияет на его стоимость и ликвидность.</blockquote>
+
+<h2 id="особенности-расшифровки-для-разных-рынков">Особенности расшифровки для разных рынков</h2>
+
+<p>Автомобили <em>Honda</em>, предназначенные для разных рынков, могут иметь отличия в структуре VIN. Например, машины, собранные для внутреннего рынка Японии (JDM), часто имеют специфические коды двигателей и коробок передач, которые отличаются от версий для США или Европы. Это важно учитывать при заказе запчастей, так как они могут быть несовместимы.</p>
+
+<p>Для моделей, продаваемых в Европе, часто используется код <strong>E</strong> в начале VIN или специфические обозначения в блоке VDS. Американские версии, особенно модели <em>Accord</em> и <em>CR-V</em>, могут иметь дополнительные символы, указывающие на уровень комплектации, который не соответствует европейским аналогам. Всегда уточняйте регион поставки при покупке запчастей.</p>
+
+<ul>
+<li>🇯🇵 JDM версии: часто имеют более мощные двигатели и специфическую электронику.</li>
+<li>🇺🇸 USDM версии: ориентированы на комфорт и безопасность по стандартам США.</li>
+<li>🇪🇺 EU версии: адаптированы под европейские экологические нормы и габариты.</li>
+</ul>
+
+<p>Если вы покупаете автомобиль из другой страны, например, из Японии или США, обязательно используйте специализированные декодеры, которые учитывают региональные особенности. Стандартные онлайн-сервисы могут выдать неполную информацию или ошибиться в интерпретации кодов для специфических рынков.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При заказе запчастей всегда указывайте не только VIN, но и код модели (например, GK5 для Civic), чтобы исключить ошибки совместимости двигателя и трансмиссии.</p></div>
+
+<h2 id="почему-самостоятельная-проверка-важнее-онлайн-сервисов">Почему самостоятельная проверка важнее онлайн-сервисов</h2>
+
+<p>Хотя существует множество онлайн-сервисов для расшифровки VIN, они не всегда предоставляют полную информацию. Бесплатные декодеры часто ограничиваются базовыми данными: моделью, годом и цветом. Для глубокого анализа истории, наличия аварий, пробега и таможенной очистки требуются платные отчеты, которые могут стоить недешево.</p>
+
+<p>Самостоятельное понимание структуры кода позволяет вам задавать правильные вопросы при покупке. Вы сможете заметить, если продавец скрывает информацию о том, что автомобиль был собран на заводе в Мексике, хотя позиционируется как японская версия. Знание <strong>региональных кодов</strong> дает вам преимущество в переговорах.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Самостоятельная проверка VIN позволяет выявить несоответствия в документах и избежать покупки автомобиля с проблемной историей, которую могут скрыть недобросовестные продавцы.</p></div>
+
+<p>Кроме того, некоторые онлайн-сервисы могут не содержать актуальных данных для новых моделей <em>Honda</em>, если их базы не обновляются регулярно. В таких случаях лучше обратиться к официальным дилерам или использовать специализированные программы, которые имеют прямой доступ к заводским базам данных производителя.</p>
+
+<blockquote>⚠️ Внимание: Никогда не доверяйте слепо отчетам из непроверенных источников. Всегда сверяйте данные VIN с реальным состоянием автомобиля и документами перед совершением сделки.</blockquote>
+
+<h2 id="частые-ошибки-при-чтении-vin-кода">Частые ошибки при чтении VIN-кода</h2>
+
+<p>При визуальном считывании VIN-кода легко допустить ошибку, особенно если символы загрязнены или повреждены. Путаница часто возникает между цифрой <strong>0</strong> и буквой <strong>O</strong>, а также между цифрой <strong>1</strong> и буквой <strong>I</strong>. В VIN-коде никогда не используются буквы I, O и Q, чтобы избежать подобных ошибок, но визуально они могут выглядеть очень похоже.</p>
+
+<p>Еще одна распространенная ошибка — неправильная интерпретация контрольной цифры. Некоторые пытаются использовать ее для определения года выпуска или модели, что является фундаментальной ошибкой. Контрольная цифра — это лишь математический инструмент для проверки корректности всего номера.</p>
+
+<ul>
+<li>🚫 Не используйте буквы I, O, Q в VIN-коде (они запрещены стандартом).</li>
+<li>🔍 Внимательно осматривайте символы под разными углами света.</li>
+<li>📝 Записывайте номер полностью, чтобы избежать опечаток при вводе.</li>
+</ul>
+
+<p>Если вы сомневаетесь в правильности прочтения какого-либо символа, лучше обратитесь к специалисту или используйте сканер VIN. Ошибка даже в одном символе приведет к тому, что вы получите информацию о совершенно другом автомобиле, что может быть фатальным при покупке.</p>
+
+<details class="faq-item"><summary>Что делать, если символы стерлись?</summary><div class="faq-answer"><p>Если символы VIN стерлись из-за коррозии или повреждений, необходимо обратиться в ГИБДД или к официальному дилеру для проведения экспертизы и восстановления номера. Самостоятельное восстановление запрещено законом.</p></div></details>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли узнать точную дату выпуска автомобиля по VIN?</summary>
+<p>Да, по 10-му символу можно узнать модельный год, а по 11-му символу часто можно определить месяц и год сборки, если обратиться к специализированным базам данных завода-изготовителя. Однако в открытых источниках эта информация может быть ограничена только модельным годом.</p>
+</details>
+
+<details>
+<summary>Почему в VIN-коде отсутствуют буквы I, O, Q?</summary>
+<p>Эти буквы исключены из VIN-кода специально для предотвращения путаницы с цифрами 1 и 0. Это стандартная практика, принятая во всем мире для обеспечения однозначности считывания номера.</p>
+</details>
+
+<details>
+<summary>Что означает символ в 11-й позиции?</summary>
+<p>11-й символ обычно указывает на завод, где был собран автомобиль. У <em>Honda</em> это может быть буква или цифра, обозначающая конкретное производственное предприятие в Японии, США, Канаде или другой стране.</p>
+</details>
+
+<details>
+<summary>Как проверить автомобиль на угон по VIN?</summary>
+<p>Для проверки на угон необходимо использовать официальные базы данных ГИБДД или МВД вашей страны. Онлайн-сервисы расшифровки VIN не предоставляют эту информацию, так как она является конфиденциальной.</p>
+</details>
+
+<details>
+<summary>Можно ли изменить VIN-код автомобиля?</summary>
+<p>Изменение VIN-кода является незаконным и карается уголовной ответственностью. Любые попытки подделки, изменения или уничтожения заводской маркировки рассматриваются как преступление.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#где-найти-идентификационный-номер-на-автомобиле-honda">Где найти идентификационный номер на автомобиле Honda</a></li><li><a href="#структура-и-значение-символов-в-коде-honda">Структура и значение символов в коде Honda</a></li><li><a href="#детальная-расшифровка-позиций-vin-кода">Детальная расшифровка позиций VIN-кода</a></li><li><a href="#таблица-соответствия-годов-выпуска">Таблица соответствия годов выпуска</a></li><li><a href="#особенности-расшифровки-для-разных-рынков">Особенности расшифровки для разных рынков</a></li><li><a href="#почему-самостоятельная-проверка-важнее-онлайн-сервисов">Почему самостоятельная проверка важнее онлайн-сервисов</a></li><li><a href="#частые-ошибки-при-чтении-vin-кода">Частые ошибки при чтении VIN-кода</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/r/re/rejlingi-na-honda-stream.html" class="related-card">Рейлинги на Honda Stream: выбор, монтаж и совместимость</a></li><li><a href="/articles/h/ho/honda-longlife-coolant-2.html" class="related-card">Honda Longlife Coolant 2: Полное руководство по выбору и замене</a></li><li><a href="/articles/t/to/tochki-podklyucheniya-khonda-frid.html" class="related-card">Точки подключения Honda Freed: схема, распиновка и нюансы установки</a></li><li><a href="/articles/a/ac/acura-i-honda-v-chem-raznitsa.html" class="related-card">Acura и Honda: в чем разница между брендами и моделями</a></li><li><a href="/articles/t/to/tojota-ili-khonda-chto-luchshe.html" class="related-card">Toyota или Honda: что лучше выбрать? Сравнение надежности и технологий</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/r/re/rejlingi-na-honda-stream.html" class="related-bottom-card"><span class="related-bottom-title">Рейлинги на Honda Stream: выбор, монтаж и совместимость</span><span class="related-bottom-desc">Полный гид по установке рейлингов на Honda Stream. Обзор совместимости, типы креплений, инструкция п</span></a><a href="/articles/h/ho/honda-longlife-coolant-2.html" class="related-bottom-card"><span class="related-bottom-title">Honda Longlife Coolant 2: Полное руководство по выбору и замене</span><span class="related-bottom-desc">Узнайте всё об антифризе Honda Longlife Coolant 2. Характеристики, отличия от аналогов, инструкция п</span></a><a href="/articles/t/to/tochki-podklyucheniya-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Точки подключения Honda Freed: схема, распиновка и нюансы установки</span><span class="related-bottom-desc">Полная инструкция по поиску точек подключения для магнитолы и сигнализации на Honda Freed. Распиновк</span></a><a href="/articles/a/ac/acura-i-honda-v-chem-raznitsa.html" class="related-bottom-card"><span class="related-bottom-title">Acura и Honda: в чем разница между брендами и моделями</span><span class="related-bottom-desc">Подробный разбор отличий Acura от Honda. Сравнение двигателей, комплектаций, технологий и стоимости </span></a><a href="/articles/t/to/tojota-ili-khonda-chto-luchshe.html" class="related-bottom-card"><span class="related-bottom-title">Toyota или Honda: что лучше выбрать? Сравнение надежности и технологий</span><span class="related-bottom-desc">Подробное сравнение автомобилей Toyota и Honda. Разбор надежности, технологий, стоимости владения и </span></a><a href="/articles/m/ma/maslo-v-variator-honda-stepwgn.html" class="related-bottom-card"><span class="related-bottom-title">Масло в вариатор Honda Stepwgn: выбор, замена и интервалы</span><span class="related-bottom-desc">Полное руководство по выбору и замене масла в вариаторе Honda Stepwgn. Обзоры смазок, интервалы заме</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

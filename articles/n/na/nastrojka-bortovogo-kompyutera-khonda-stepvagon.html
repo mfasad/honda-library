@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Настройка бортового компьютера Honda Stepwgn: руководство — Honda Library</title>
+    <meta name="description" content="Подробная инструкция по настройке бортового компьютера Хонда Степвгн. Сброс ошибок, калибровка расхода топлива и скрытые функции меню.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/n/na/nastrojka-bortovogo-kompyutera-khonda-stepvagon.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Настройка бортового компьютера Honda Stepwgn: руководство">
+    <meta property="og:description" content="Подробная инструкция по настройке бортового компьютера Хонда Степвгн. Сброс ошибок, калибровка расхода топлива и скрытые функции меню.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Настройка бортового компьютера Honda Stepwgn: руководство</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Настройка бортового компьютера Honda Stepwgn: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#интерфейс-и-основные-функции-дисплея">Интерфейс и основные функции дисплея</a></li><li><a href="#процедура-сброса-и-калибровки-показателей">Процедура сброса и калибровки показателей</a></li><li><a href="#работа-с-кодами-ошибок-и-диагностика">Работа с кодами ошибок и диагностика</a></li><li><a href="#настройка-климат-контроля-и-дополнительных-систем">Настройка климат-контроля и дополнительных систем</a></li><li><a href="#особенности-моделей-stepwgn-spada-и-rp-серии">Особенности моделей Stepwgn Spada и RP-серии</a></li><li><a href="#частые-проблемы-и-методы-их-устранения">Частые проблемы и методы их устранения</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владение минивэном <em>Honda Stepwgn</em> — это не просто комфортные поездки, но и необходимость разбираться в тонкостях японской электроники. Бортовой компьютер (БК) в этих автомобилях представляет собой сложный программный комплекс, который управляет отображением диагностических данных, навигацией и мультимедиа. Часто владельцы сталкиваются с некорректным отображением расхода топлива или «зависанием» интерфейса, что решается правильной процедурой настройки или сброса.</p>
+
+<p>Грамотная <strong>калибровка системы</strong> позволяет получать достоверные данные о состоянии двигателя и трансмиссии в реальном времени. В отличие от европейских аналогов, японские автомобили требуют специфического подхода к взаимодействию с блоком управления. Неправильные действия могут привести к тому, что система перейдет в аварийный режим или перестанет отображать критически важную информацию.</p>
+
+<p>В этом материале мы разберем алгоритмы действий для различных поколений <em>Stepwgn</em>, включая модели RP1, RP2, RP3, RP4 и RP5. Вы узнаете, как самостоятельно выполнить сброс ошибок, откалибровать датчики и активировать скрытые функции, которые не доступны в стандартном меню. Понимание этих процессов сэкономит время на поездках в сервисный центр.</p>
+
+<h2 id="интерфейс-и-основные-функции-дисплея">Интерфейс и основные функции дисплея</h2>
+
+<p>Центральным элементом управления является дисплей, расположенный в верхней части приборной панели или интегрированный в мультимедийную систему в зависимости от года выпуска. Именно через него водитель получает доступ к <strong>диагностическим данным</strong>. Экран реагирует на нажатия физических кнопок, расположенных на рулевом колесе или непосредственно на панели приборов, что обеспечивает удобство управления на ходу.</p>
+
+<p>Основное меню разделено на несколько логических блоков: информация о пробеге, средний расход топлива, запас хода и технические параметры двигателя. Для переключения между экранами используется кнопка <code>DISP</code> или навигационные стрелки. В более новых моделях, таких как <em>Stepwgn Spada</em>, интерфейс может быть сенсорным, что требует калибровки отклика при замене стекла.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При чистке экрана используйте только мягкую микрофибру. Агрессивная химия может повредить антибликовое покрытие, что сделает чтение информации при ярком солнце невозможным.</p>
+</blockquote>
+
+<p>Важно различать режимы отображения:瞬时 (мгновенный) и Average (средний). Мгновенный расход полезен для контроля стиля вождения, тогда как средний показатель необходим для планирования заправки. Система автоматически усредняет данные за последние 30 минут или с момента последнего сброса, в зависимости от настроек.</p>
+
+<ul>
+<li>🚗 <strong>Trip A/B</strong> — независимые счетчики пробега для разных поездок.</li>
+<li>⛽ <strong>Fuel Economy</strong> — текущий и средний расход топлива в литрах на 100 км.</li>
+<li>🔧 <strong>Maintenance</strong> — индикаторы необходимости технического обслуживания.</li>
+<li>🌡️ <strong>Temperature</strong> — температура двигателя и наружного воздуха.</li>
+</ul>
+
+<h2 id="процедура-сброса-и-калибровки-показателей">Процедура сброса и калибровки показателей</h2>
+
+<p>Иногда бортовой компьютер требует принудительного сброса накопленных данных, особенно после замены аккумулятора или проведения ремонтных работ. Стандартная процедура для большинства моделей <em>Honda Stepwgn</em> выполняется через меню настроек. Необходимо войти в режим <code>Settings</code>, выбрать пункт <code>Vehicle Settings</code> и найти опцию сброса Trip-компьютера.</p>
+
+<p>Для глубокой калибровки датчиков, особенно если вы заметили расхождение между показаниями на баке и реальным остатком топлива, применяется метод длительного цикла. Проедьтесь на автомобиле до момента, когда загорится лампа низкого уровня топлива, затем заправьте полный бак и вручную сбросьте счетчик пробега. После этого система начнет строить новую кривую расхода с нуля.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист калибровки</h4><label class="check-item"><input type="checkbox"><span>Заправить полный бак</span></label><label class="check-item"><input type="checkbox"><span>Сбросить Trip A</span></label><label class="check-item"><input type="checkbox"><span>Проехать более 300 км</span></label><label class="check-item"><input type="checkbox"><span>Сравнить показания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Если дисплей показывает неверные данные после замены приборной панели, может потребоваться программная инициализация через диагностический разъем <strong>OBD-II</strong>. В домашних условиях без сканера это сделать невозможно, однако можно попробовать обесточить автомобиль на 15-20 минут, сняв минусовую клемму аккумулятора. Это действие перезагрузит электронные блоки, но не всегда гарантирует корректную работу всех датчиков.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Стандартное значение</th>
+<th>Допустимое отклонение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Холостой ход</td>
+<td>650-750 об/мин</td>
+<td>±50 об/мин</td>
+</tr>
+<tr>
+<td>Температура ОЖ</td>
+<td>85-95 °C</td>
+<td>±5 °C</td>
+</tr>
+<tr>
+<td>Напряжение сети</td>
+<td>13.5-14.5 В</td>
+<td>±0.5 В</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="работа-с-кодами-ошибок-и-диагностика">Работа с кодами ошибок и диагностика</h2>
+
+<p>Бортовой компьютер <em>Honda</em> способен самостоятельно диагностировать неисправности и выводить их в виде кодов или текстовых сообщений. Наиболее распространенные ошибки связаны с системой <strong>VTEC</strong>, датчиками кислорода или проблемами в цепи зажигания. Появление надписи "Check Engine" требует немедленного внимания, хотя автомобиль может продолжать движение.</p>
+
+<p>Для считывания кодов без дорогостоящего сканера на старых моделях можно использовать перемычку в диагностическом разъеме. Замкнув контакты <code>SCS</code> и массу, вы переводите компьютер в режим диагностики. Индикатор "Check Engine" начнет мигать определенным образом: длинные вспышки обозначают десятки, короткие — единицы. Расшифровав код, можно понять суть проблемы.</p>
+
+<details class="faq-item"><summary>Расшифровка мигания индикатора</summary><div class="faq-answer"><p>Длинная вспышка — это десятки (например, 2 секунды), короткая — единицы (0.5 секунды). Код 12 означает проблему с форсункой, а код 21 — с датчиком VTEC. Записывайте последовательность точно.</p></div></details>
+
+<p>В современных моделях с электронным дросселем и сложной системой управления двигателем <strong>i-VTEC</strong> самостоятельная диагностика ограничена. Ошибки могут накапливаться в истории и не исчезать даже после устранения неисправности без программного сброса. Игнорирование повторяющихся кодов может привести к повышенному расходу топлива и снижению ресурса двигателя.</p>
+
+<ul>
+<li>🔴 <strong>P0300-P0304</strong> — пропуски зажигания в цилиндрах.</li>
+<li>🟡 <strong>P0420</strong> — низкая эффективность катализатора.</li>
+<li>🔵 <strong>P0171/P0172</strong> — слишком бедная или богатая смесь.</li>
+<li>🟣 <strong>P0505</strong> — неисправность регулятора холостого хода.</li>
+</ul>
+
+<h2 id="настройка-климат-контроля-и-дополнительных-систем">Настройка климат-контроля и дополнительных систем</h2>
+
+<p>Хотя климат-контроль технически является отдельным модулем, его настройки часто дублируются или синхронизируются с основным бортовым компьютером, особенно в комплектациях <em>Spada</em> и <em>G</em>. Правильная настройка температурных зон влияет на нагрузку на генератор и, следовательно, на показания расхода топлива. Система автоматически регулирует работу кондиционера в зависимости от температуры двигателя.</p>
+
+<p>Для активации скрытых функций, таких как автоматическое запирание дверей при начале движения или изменение логики работы стеклоочистителей, может потребоваться вход в инженерное меню. На некоторых моделях это делается комбинацией удержания кнопок <code>Info</code> и <code>Menu</code> при включении зажигания. Однако будьте осторожны: изменение параметров в инженерном меню без понимания их назначения может нарушить работу штатной логики автомобиля.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если кондиционер перестал холодить, проверьте в меню БК, не активирован ли режим экономии топлива, который принудительно отключает компрессор при резком ускорении.</p></div>
+
+<p>Система мониторинга давления в шинах (если установлена) также интегрирована в общий интерфейс. После подкачки колес или их замены необходимо выполнить процедуру калибровки через меню <code>TPMS Reset</code>. Без этого шага бортовой компьютер будет продолжать сигнализировать о неисправности, основываясь на старых данных вращения колес.</p>
+
+<h2 id="особенности-моделей-stepwgn-spada-и-rp-серии">Особенности моделей Stepwgn Spada и RP-серии</h2>
+
+<p>Модели серии <em>RP1, RP2, RP3, RP4, RP5</em> оснащаются более продвинутыми мультимедийными системами <em>Honda InterNavi</em> или <em>Gather</em>. Здесь бортовой компьютер глубоко интегрирован с навигацией и камерами обзора. Настройка этих систем часто требует специализированного программного обеспечения, подключаемого через USB-порт. Владелец может самостоятельно обновлять карты и менять некоторые параметры отображения.</p>
+
+<p>В отличие от предыдущих поколений, здесь реализована система <strong>Honda Sensing</strong> (в топовых комплектациях), которая использует данные бортового компьютера для работы адаптивного круиз-контроля и системы удержания в полосе. Калибровка камер и радаров после замены лобового стекла или бампера обязательна и выполняется только на стенде, но сброс ошибок системы доступен через меню настроек водителя.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не пытайтесь перепрошивать блок навигации файлами из интернета, предназначенными для других регионов. Это приведет к блокировке головного устройства (brick), восстановление которого возможно только у официальных дилеров.</p>
+</blockquote>
+
+<p>Интерфейс в этих моделях более отзывчивый, но и более сложный. Меню настроено по принципу вложенности, поэтому для доступа к простым функциям, таким как сброс пробега, иногда требуется пройти 3-4 уровня меню. Рекомендуется изучить руководство пользователя конкретно для вашей модификации, так как логика может отличаться даже в пределах одного года выпуска.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая версия Honda Stepwgn у вас?</strong><ul><li>RP1/RP2 (2005-2009)</li><li>RP3/RP4 (2009-2015)</li><li>RP5 (2015-2022)</li><li>Другая модель</li></ul></div></div>
+
+<h2 id="частые-проблемы-и-методы-их-устранения">Частые проблемы и методы их устранения</h2>
+
+<p>Одной из распространенных проблем является «глюк» дисплея, когда он перестает реагировать на команды или показывает артефакты. Часто это связано с перегревом процессора в летний период или окислением контактов шлейфа. В первом случае помогает охлаждение салона, во втором — разборка панели и чистка контактов спиртом.</p>
+
+<p>Также владельцы сталкиваются с ситуацией, когда бортовой компьютер не видит подключенные устройства или некорректно отображает уровень топлива после длительной стоянки. Это решается перезагрузкой системы путем извлечения предохранителя, отвечающего за <strong>ECU</strong> или приборную панель, на 5-10 минут. Перед этим обязательно снимите клемму аккумулятора.</p>
+
+<p>Если проблема носит программный характер и повторяется регулярно, возможно, потребуется обновление прошивки блока управления. Дилеры Honda выпускают обновления, исправляющие ошибки в алгоритмах расчета расхода топлива и работы трансмиссии. Игнорирование таких обновлений может привести к некорректной работе АКПП в паре с двигателм.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Своевременное обновление прошивки и аккуратное обращение с электроникой — залог долгой службы бортового компьютера вашего минивэна.</p></div>
+
+<details>
+<summary>Как сбросить сервисный интервал на Honda Stepwgn?</summary>
+<p>Для сброса сервисного интервала включите зажигание, найдите кнопку сброса пробега (обычно рядом со спидометром). Зажмите её, включите зажигание (не запуская двигатель), держите кнопку около 10 секунд до появления меню или мигания индикатора. Отпустите и нажмите снова для подтверждения. На некоторых моделях требуется удерживать кнопку <code>Info</code>.</p>
+</details>
+
+<details>
+<summary>Почему бортовой компьютер показывает неверный расход топлива?</summary>
+<p>Причины могут быть в «умершем» лямбда-датчике, загрязненных форсунках или низком давлении в топливной рампе. Также часто проблема решается простым сбросом аккумулятора на 15 минут, что заставляет ЭБУ заново обучиться параметрам работы двигателя после замены деталей.</p>
+</details>
+
+<details>
+<summary>Можно ли установить русский язык на навигацию Stepwgn?</summary>
+<p>Штатная навигация Honda для внутреннего рынка Японии (JDM) не поддерживает русский язык и карты других стран программно. Для использования навигации в РФ владельцы обычно заменяют головное устройство на универсальные Android-магнитолы или используют смартфон с зеркальным отображением экрана.</p>
+</details>
+
+<details>
+<summary>Что делать, если погас экран бортового компьютера?</summary>
+<p>В первую очередь проверьте предохранители в салоне и под капотом (обычно подписаны как METER или BACK UP). Если предохранители целы, возможно, отошел шлейф подключения дисплея или вышел из строя сам блок отображения информации. Требуется диагностика электрики.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#интерфейс-и-основные-функции-дисплея">Интерфейс и основные функции дисплея</a></li><li><a href="#процедура-сброса-и-калибровки-показателей">Процедура сброса и калибровки показателей</a></li><li><a href="#работа-с-кодами-ошибок-и-диагностика">Работа с кодами ошибок и диагностика</a></li><li><a href="#настройка-климат-контроля-и-дополнительных-систем">Настройка климат-контроля и дополнительных систем</a></li><li><a href="#особенности-моделей-stepwgn-spada-и-rp-серии">Особенности моделей Stepwgn Spada и RP-серии</a></li><li><a href="#частые-проблемы-и-методы-их-устранения">Частые проблемы и методы их устранения</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-frid-spajk-komplektatsii.html" class="related-card">Honda Freed Spike: комплектации, отличия и выбор версии</a></li><li><a href="/articles/s/st/starter-na-lodochnyj-motor-khonda-20.html" class="related-card">Стартер на лодочный мотор Хонда 20: ремонт, замена, цена</a></li><li><a href="/articles/k/kh/khonda-strim-razmer-dvornikov.html" class="related-card">Размер дворников на Honda Stream: таблица, выбор и замена</a></li><li><a href="/articles/p/pr/printsip-raboty-benzonasosa-khonda-dio.html" class="related-card">Как работает бензонасос Honda Dio: устройство, неисправности и ремонт</a></li><li><a href="/articles/k/kl/klirens-khonda-strim-2012.html" class="related-card">Клиренс Honda Stream 2012: реальный просвет и возможности</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-frid-spajk-komplektatsii.html" class="related-bottom-card"><span class="related-bottom-title">Honda Freed Spike: комплектации, отличия и выбор версии</span><span class="related-bottom-desc">Подробный разбор комплектаций Honda Freed Spike. Сравнение версий Hybrid и Gasoline, особенности инт</span></a><a href="/articles/s/st/starter-na-lodochnyj-motor-khonda-20.html" class="related-bottom-card"><span class="related-bottom-title">Стартер на лодочный мотор Хонда 20: ремонт, замена, цена</span><span class="related-bottom-desc">Где купить стартер на Honda 20 л.с.? Полное руководство: симптомы поломки, проверка бендикса, артику</span></a><a href="/articles/k/kh/khonda-strim-razmer-dvornikov.html" class="related-bottom-card"><span class="related-bottom-title">Размер дворников на Honda Stream: таблица, выбор и замена</span><span class="related-bottom-desc">Узнайте точный размер щеток стеклоочистителя для Honda Stream. Полная таблица размеров, инструкция п</span></a><a href="/articles/p/pr/printsip-raboty-benzonasosa-khonda-dio.html" class="related-bottom-card"><span class="related-bottom-title">Как работает бензонасос Honda Dio: устройство, неисправности и ремонт</span><span class="related-bottom-desc">Полный разбор принципа работы топливного насоса на скутерах Honda Dio. Диагностика, замена мембраны,</span></a><a href="/articles/k/kl/klirens-khonda-strim-2012.html" class="related-bottom-card"><span class="related-bottom-title">Клиренс Honda Stream 2012: реальный просвет и возможности</span><span class="related-bottom-desc">Узнайте реальный дорожный просвет Honda Stream 2012 года. Подробный обзор клиренса с пассажирами, вл</span></a><a href="/articles/h/ho/honda-cbr-600-rr-razgon-do-100.html" class="related-bottom-card"><span class="related-bottom-title">Honda CBR 600 RR: разгон до 100 км/ч, секунды и секреты</span><span class="related-bottom-desc">Анализ динамики Honda CBR 600 RR. Время разгона до 100 км/ч, влияние модификаций, сравнение с конкур</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

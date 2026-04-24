@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Система Cruise Control на Honda: что это и как работает — Honda Library</title>
+    <meta name="description" content="Разбираем, что такое Cruise Main на Honda. Инструкция по включению, настройке и диагностике ошибок системы круиз-контроля на автомобилях Хонда.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/c/cr/cruise-main-khonda-chto-eto.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Система Cruise Control на Honda: что это и как работает">
+    <meta property="og:description" content="Разбираем, что такое Cruise Main на Honda. Инструкция по включению, настройке и диагностике ошибок системы круиз-контроля на автомобилях Хонда.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Система Cruise Control на Honda: что это и как работает</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Система Cruise Main на Honda: полное руководство по эксплуатации</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-назначение-системы">Принцип работы и назначение системы</a></li><li><a href="#как-правильно-активировать-круиз-контроль">Как правильно активировать круиз-контроль</a></li><li><a href="#расшифровка-индикаторов-и-сигналов">Расшифровка индикаторов и сигналов</a></li><li><a href="#особенности-работы-в-разных-погодных-условиях">Особенности работы в разных погодных условиях</a></li><li><a href="#диагностика-и-частые-неисправности">Диагностика и частые неисправности</a></li><li><a href="#таблица-значений-индикаторов-и-действий">Таблица значений индикаторов и действий</a></li><li><a href="#техническое-обслуживание-и-безопасность">Техническое обслуживание и безопасность</a></li><li><a href="#выводы-и-рекомендации">Выводы и рекомендации</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Многие владельцы автомобилей марки <em>Honda</em>, особенно модели <em>Civic</em>, <em>Accord</em> или <em>CR-V</em>, сталкиваются с непонятной надписью «Cruise Main» на приборной панели. Эта аббревиатура является ключевым индикатором состояния системы автоматического поддержания скорости. По сути, это главный переключатель, который подает питание на электронные блоки управления, отвечающие за работу круиз-контроля. Без активации этой функции автомобиль не сможет поддерживать заданное водителем значение скорости самостоятельно, что делает длительные поездки более утомительными.</p>
+
+<p>Понимание принципа работы <strong>Cruise Main</strong> критически важно для безопасного вождения. Если лампочка горит зеленым или синим цветом, это значит, что система готова к использованию, но еще не активна. Когда вы устанавливаете конкретную скорость, индикатор меняет свое поведение или появляется дополнительная надпись «Set». Владельцам необходимо знать разницу между состоянием ожидания и активным режимом работы, чтобы избежать неожиданных ситуаций на дороге.</p>
+
+<h2 id="принцип-работы-и-назначение-системы">Принцип работы и назначение системы</h2>
+
+<p>Система круиз-контроля в автомобилях <em>Honda</em> — это сложный электронный комплекс, который управляет дроссельной заслонкой для поддержания постоянной скорости. Основная задача функции <strong>Cruise Main</strong> заключается в подготовке всех подсистем к работе. Когда вы нажимаете кнопку с надписью «MAIN» на руле, вы замыкаете цепь питания, и блок управления получает сигнал о готовности водителя к использованию автопилота.</p>
+
+<p>Электроника в этот момент начинает мониторить сигналы от датчиков скорости, положения педали газа и тормоза. Если все показатели в норме, на приборной панели загорается индикатор готовности. Важно понимать, что сам по себе <em>Cruise Main</em> не держит скорость автомобиля — он лишь разрешает системе работать. Для фактического удержания темпа движения необходимо дополнительно нажать кнопку «SET» или «RES/+».</p>
+
+<h2 id="как-правильно-активировать-круиз-контроль">Как правильно активировать круиз-контроль</h2>
+
+<p>Процесс включения системы не представляет сложности, но требует соблюдения определенной последовательности действий. Во-первых, разгоните автомобиль до скорости, превышающей минимальный порог срабатывания, который обычно составляет 25-30 км/ч в зависимости от модели. Во-вторых, нажмите кнопку <code>MAIN</code>, расположенную на правом спице рулевого колеса. На панели приборов должен загореться соответствующий значок.</p>
+
+<p>После этого вы можете установить желаемую скорость движения. Для этого нажмите кнопку <code>SET/COAST</code> вниз. В этот момент система захватывает текущую скорость и начинает её удерживать. Если вам нужно временно отключить удержание, не выключая саму систему, просто нажмите педаль тормоза или сцепления (на механике). Повторное нажатие <code>RES/ACC</code> вернет автомобиль к ранее установленному значению.</p>
+
+<ul>
+<li>🚗 Убедитесь, что дорога сухая и ровная перед активацией <strong>системы</strong>.</li>
+<li>⚡ Не пытайтесь включать <em>Cruise Main</em> при скорости ниже 25 км/ч.</li>
+<li>🛑 Всегда держите ногу рядом с педалью тормоза для экстренного реагирования.</li>
+</ul>
+
+<h2 id="расшифровка-индикаторов-и-сигналов">Расшифровка индикаторов и сигналов</h2>
+
+<p>Диагностика состояния системы происходит через комбинацию приборов. Если горит только надпись <strong>Cruise Main</strong> без дополнительных сообщений, это означает, что система включена и находится в режиме ожидания. Вы можете ехать, не касаясь педали газа, и электроника будет сама корректировать положение дроссельной заслонки.</p>
+
+<p>Если же на дисплее появляется сообщение <strong>Check Cruise Control</strong> или загорается желтый значок, это указывает на неисправность. Возможные причины включают проблемы с датчиком скорости, неисправность привода дроссельной заслонки или обрыв проводки. В таких случаях система автоматически блокирует работу круиз-контроля для безопасности водителя и пассажиров.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Если индикатор <em>Cruise Main</em> мигает во время движения, это сигнал о критической ошибке. Немедленно отключите систему кнопкой <code>MAIN</code> и обратитесь в сервисный центр для диагностики.</p>
+</blockquote>
+
+<h2 id="особенности-работы-в-разных-погодных-условиях">Особенности работы в разных погодных условиях</h2>
+
+<p>Владелец <em>Honda</em> должен помнить, что электронные системы имеют ограничения в сложных условиях эксплуатации. Дождь, снег или гололед снижают сцепление колес с дорогой, что делает автоматическое поддержание скорости опасным. В таких ситуациях алгоритм работы <strong>Cruise Main</strong> может сработать с задержкой, что приведет к потере управления.</p>
+
+<p>Производители настоятельно рекомендуют отключать круиз-контроль при ухудшении погодных условий. Водитель должен полностью контролировать процесс торможения и разгона, так как электроника не учитывает состояние дорожного покрытия в полной мере.</p>
+
+<ul>
+<li>🌧️ Отключайте систему при сильном дожде или тумане.</li>
+<li>❄️ На заснеженных дорогах использование <em>круиз-контроля</em> запрещено.</li>
+<li>🛣️ Избегайте работы системы на узких извилистых трассах.</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой марки ваш автомобиль?</strong><ul><li>Honda Accord</li><li>Honda Civic</li><li>Honda CR-V</li><li>Другая марка</li></ul></div></div>
+
+<h2 id="диагностика-и-частые-неисправности">Диагностика и частые неисправности</h2>
+
+<p>Иногда система может отказать без видимых причин. Самой частой проблемой является выход из строя микропереключателя в кнопке <code>MAIN</code> или окисление контактов на рулевой колонке. Также причиной сбоя может стать некорректная работа датчика положения педали тормоза, который блокирует работу круиз-контроля при малейшем нажатии.</p>
+
+<p>Для первичной диагностики можно попробовать сбросить настройки системы. Отключите аккумулятор на 10-15 минут, а затем снова подключите его. Если проблема не исчезла, потребуется компьютерная диагностика через порт <code>OBD-II</code>.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика системы</h4><label class="check-item"><input type="checkbox"><span>Проверить предохранитель Cruise Control</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть кнопки на руле</span></label><label class="check-item"><input type="checkbox"><span>Проверить датчик педали тормоза</span></label><label class="check-item"><input type="checkbox"><span>Сделать сброс ошибок через OBD-II</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="таблица-значений-индикаторов-и-действий">Таблица значений индикаторов и действий</h2>
+
+<p>Ниже приведена таблица, помогающая быстро сориентироваться в состоянии системы на приборной панели <em>Honda</em>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Индикатор</th>
+<th>Цвет</th>
+<th>Значение</th>
+<th>Действие водителя</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cruise Main</td>
+<td>Зеленый</td>
+<td>Система включена, ожидает установки скорости</td>
+<td>Нажмите <code>SET</code> для активации</td>
+</tr>
+<tr>
+<td>Cruise Set</td>
+<td>Зеленый</td>
+<td>Скорость зафиксирована и поддерживается</td>
+<td>Контролируйте дорогу</td>
+</tr>
+<tr>
+<td>Cruise Main</td>
+<td>Желтый/Мигающий</td>
+<td>Ошибка системы</td>
+<td>Отключите кнопку и проверьте сервис</td>
+</tr>
+<tr>
+<td>Cruise Off</td>
+<td>Серый/Не горит</td>
+<td>Система полностью выключена</td>
+<td>Нажмите <code>MAIN</code> для включения</td>
+</tr>
+</tbody>
+</table>
+
+<details class="faq-item"><summary>Что делать, если кнопка MAIN не работает?</summary><div class="faq-answer"><p>Если нажатие на кнопку не дает результата, проверьте предохранитель с маркировкой "CRUISE" в блоке под капотом. Также стоит проверить целостность проводки в рулевой колонке, так как частое вращение руля может привести к перетиранию контактов.</p></div></details>
+
+<h2 id="техническое-обслуживание-и-безопасность">Техническое обслуживание и безопасность</h2>
+
+<p>Долговечность системы зависит от регулярного технического обслуживания. Важно следить за состоянием датчиков скорости и тормозной системы. Если педаль тормоза имеет люфт или не возвращается в исходное положение корректно, блок управления может блокировать работу <strong>Cruise Main</strong> как превентивную меру безопасности.</p>
+
+<p>Регулярная проверка системы через дилерский сканер позволяет выявить скрытые ошибки до их проявления на дороге. Не игнорируйте предупреждения на панели приборов, так как неисправный круиз-контроль может стать причиной ДТП в критической ситуации.</p>
+
+<ul>
+<li>🔧 Проверяйте систему при каждом плановом ТО.</li>
+<li>🔍 Следите за чистотой датчиков на колесах и тормозах.</li>
+<li>🛡️ Используйте только оригинальные запчасти при ремонте.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед длительной поездкой всегда тестируйте работу кнопки MAIN на безопасном участке дороги, чтобы убедиться в исправности системы.</p></div>
+
+<h2 id="выводы-и-рекомендации">Выводы и рекомендации</h2>
+
+<p>Система <em>Cruise Main</em> — это незаменимый помощник для водителей, совершающих длительные поездки по трассе. Она снижает утомляемость и позволяет сосредоточиться на дороге. Однако, как и любой электронный инструмент, она требует внимательного отношения и понимания принципов работы.</p>
+
+<p>Помните, что автоматика не заменяет водителя, а лишь помогает ему. <mark>Никогда не полагайтесь на систему слепо, особенно в сложных дорожных условиях.</mark> Грамотное использование функций круиз-контроля сделает вашу поездку на <em>Honda</em> комфортной и безопасной.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная активация системы через кнопку MAIN и контроль дорожной ситуации — залог безопасного использования круиз-контроля.</p></div>
+
+<details>
+<summary>Что означает надпись Cruise Main на панели приборов Honda?</summary>
+<p>Это означает, что система круиз-контроля включена и готова к работе, но текущая скорость еще не зафиксирована. Водителю нужно нажать кнопку SET для активации удержания скорости.</p>
+</details>
+
+<details>
+<summary>Можно ли включать Cruise Main на низкой скорости?</summary>
+<p>Нет, большинство моделей Honda блокируют активацию системы при скорости ниже 25-30 км/ч. Это сделано для безопасности и предотвращения ложных срабатываний в городском трафике.</p>
+</details>
+
+<details>
+<summary>Что делать, если мигает индикатор Cruise Main?</summary>
+<p>Мигание указывает на неисправность системы. Необходимо отключить круиз-контроль кнопкой MAIN, продиагностировать автомобиль через OBD-II сканер и устранить ошибку.</p>
+</details>
+
+<details>
+<summary>Влияет ли работа Cruise Main на расход топлива?</summary>
+<p>При равномерном движении по трассе система может снижать расход топлива за счет более точного управления дроссельной заслонкой. Однако на холмистой местности расход может увеличиться.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-назначение-системы">Принцип работы и назначение системы</a></li><li><a href="#как-правильно-активировать-круиз-контроль">Как правильно активировать круиз-контроль</a></li><li><a href="#расшифровка-индикаторов-и-сигналов">Расшифровка индикаторов и сигналов</a></li><li><a href="#особенности-работы-в-разных-погодных-условиях">Особенности работы в разных погодных условиях</a></li><li><a href="#диагностика-и-частые-неисправности">Диагностика и частые неисправности</a></li><li><a href="#таблица-значений-индикаторов-и-действий">Таблица значений индикаторов и действий</a></li><li><a href="#техническое-обслуживание-и-безопасность">Техническое обслуживание и безопасность</a></li><li><a href="#выводы-и-рекомендации">Выводы и рекомендации</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kl/klyuch-dlya-snyatiya-shkiva-kolenvala-honda.html" class="related-card">Съемник шкива коленвала Honda: выбор инструмента и инструкция по снятию</a></li><li><a href="/articles/r/ru/ruchka-otkryvaniya-kapota-khonda-tsivik-4d.html" class="related-card">Ручка открывания капота Honda Civic 4D: замена и ремонт своими руками</a></li><li><a href="/articles/k/kh/khonda-tsivik-nfs-andegraund.html" class="related-card">Хонда Сивик в NFS Underground: Легендарная культура тюнинга</a></li><li><a href="/articles/k/kh/khonda-tsivik-6-obves.html" class="related-card">Хонда Цивик 6: обвесы, аэродинамика и тюнинг кузова</a></li><li><a href="/articles/k/kh/khonda-tsivik-2007-predokhraniteli.html" class="related-card">Блок предохранителей Honda Civic 2007: схема, замена и поиск неисправностей</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kl/klyuch-dlya-snyatiya-shkiva-kolenvala-honda.html" class="related-bottom-card"><span class="related-bottom-title">Съемник шкива коленвала Honda: выбор инструмента и инструкция по снятию</span><span class="related-bottom-desc">Полное руководство по демонтажу шкива коленвала на Honda. Обзор спецключей, нюансы затяжки, ошибки п</span></a><a href="/articles/r/ru/ruchka-otkryvaniya-kapota-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Ручка открывания капота Honda Civic 4D: замена и ремонт своими руками</span><span class="related-bottom-desc">Полное руководство по замене троса и ручки открывания капота на Honda Civic 4D. Причины поломки, пош</span></a><a href="/articles/k/kh/khonda-tsivik-nfs-andegraund.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Сивик в NFS Underground: Легендарная культура тюнинга</span><span class="related-bottom-desc">Полный гайд по стайлингу Honda Civic в Need for Speed Underground. Разбор визуальных модификаций, аэ</span></a><a href="/articles/k/kh/khonda-tsivik-6-obves.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Цивик 6: обвесы, аэродинамика и тюнинг кузова</span><span class="related-bottom-desc">Полный гид по обвесам для Honda Civic 6. Выбор материалов, установка бамперов, спойлеров и порогов. </span></a><a href="/articles/k/kh/khonda-tsivik-2007-predokhraniteli.html" class="related-bottom-card"><span class="related-bottom-title">Блок предохранителей Honda Civic 2007: схема, замена и поиск неисправностей</span><span class="related-bottom-desc">Полная схема предохранителей Honda Civic 2007 (8 поколение). Инструкция по поиску перегоревших элеме</span></a><a href="/articles/c/co/corner-sensor-honda-chto-eto.html" class="related-bottom-card"><span class="related-bottom-title">Corner Sensor Honda: что это, как работает и где находится</span><span class="related-bottom-desc">Разбираем систему Corner Sensor на Honda. Принцип работы, причины ошибок, диагностика и стоимость за</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

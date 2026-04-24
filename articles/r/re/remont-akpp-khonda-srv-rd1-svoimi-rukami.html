@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Ремонт АКПП Honda CR-V RD1 своими руками: пошаговая инструкция — Honda Library</title>
+    <meta name="description" content="Полное руководство по диагностике и ремонту автоматической коробки передач Honda CR-V RD1. Разбор симптомов, замена масла, фильтров и соленоидов.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/re/remont-akpp-khonda-srv-rd1-svoimi-rukami.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ремонт АКПП Honda CR-V RD1 своими руками: пошаговая инструкция">
+    <meta property="og:description" content="Полное руководство по диагностике и ремонту автоматической коробки передач Honda CR-V RD1. Разбор симптомов, замена масла, фильтров и соленоидов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Ремонт АКПП Honda CR-V RD1 своими руками: пошаговая инструкция</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Ремонт АКПП Honda CR-V RD1 своими руками: диагностика и восстановление</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#диагностика-неисправностей-и-подготовка-к-ремонту">Диагностика неисправностей и подготовка к ремонту</a></li><li><a href="#необходимые-инструменты-и-расходные-материалы">Необходимые инструменты и расходные материалы</a></li><li><a href="#демонтаж-коробки-передач-с-автомобиля">Демонтаж коробки передач с автомобиля</a></li><li><a href="#разборка-акпп-и-дефектовка-узлов">Разборка АКПП и дефектовка узлов</a></li><li><a href="#замена-соленоидов-и-ремонт-гидроблока">Замена соленоидов и ремонт гидроблока</a></li><li><a href="#сборка-трансмиссии-и-установка-на-автомобиль">Сборка трансмиссии и установка на автомобиль</a></li><li><a href="#адаптация-и-обкатка-после-ремонта">Адаптация и обкатка после ремонта</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Автомобили первого поколения <em>Honda CR-V</em> с кузовом RD1 заслужили репутацию надежных и практичных кроссоверов, однако возраст берет свое, и автоматическая коробка передач часто становится слабым звеном конструкции. Владелец, столкнувшийся с пинками при переключении или задержками реакции на педаль газа, часто задумывается о поездке в сервис, но стоимость работ там может составлять до половины стоимости самого автомобиля на вторичном рынке. Самостоятельный ремонт АКПП <em>Honda CR-V RD1</em> — это сложный, но вполне реализуемый проект для человека с техническим складом ума и набором базовых инструментов.</p>
+
+<p>Прежде чем приступать к демонтажу агрегата, необходимо четко понимать, что <strong>автоматическая трансмиссия</strong> не терпит грязи и небрежности. Успех операции на 80% зависит от правильной первичной диагностики и чистоты рабочего места. Ошибки на этапе определения неисправности могут привести к покупке ненужных запчастей или, что хуже, к окончательному выходу узла из строя после неквалифицированного вмешательства.</p>
+
+<p>В этой статье мы подробно разберем процесс восстановления работоспособности коробки, уделив особое внимание специфическим для модели RD1 нюансам, таким как система VTEC в гидроблоке и особенности фрикционных пакетов. Вы узнаете, как правильно слить масло, проверить давление и заменить изношенные элементы, не обращаясь к дорогостоящим услугам СТО.</p>
+
+<h2 id="диагностика-неисправностей-и-подготовка-к-ремонту">Диагностика неисправностей и подготовка к ремонту</h2>
+
+<p>Любой грамотный ремонт начинается с тщательной диагностики, и АКПП <em>Honda CR-V</em> здесь не исключение. Симптомы могут быть обманчивы: например, пинки при переключении с первой на вторую передачу не всегда означают износ фрикционов, иногда проблема кроется в соленоидах или даже в низком уровне жидкости. Первым делом необходимо считать коды ошибок через диагностический разъем, расположенный под торпедой со стороны пассажира.</p>
+
+<p>Для подключения сканера или обычного мультиметра найдите разъем <code>2-pin</code> (коричневого цвета) под панелью приборов. Замкнув контакты и включив зажигание, вы увидите мигание индикатора <code>"D"</code> на приборной панели. Количество вспышек укажет на конкретную проблему, будь то неисправность соленоида A, B или датчика скорости. Игнорирование этого этапа равносильно стрельбе с закрытыми глазами.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Если индикатор "D" мигает постоянно, эксплуатация автомобиля должна быть немедленно прекращена. Дальнейшая езда может привести к разрушению планетарных механизмов и необходимости замены всей коробки целиком.</p>
+</blockquote>
+
+<p>После получения кодов ошибки следует проверить состояние трансмиссионной жидкости. Цвет и запах масла расскажут о внутреннем состоянии агрегата больше, чем тысячи слов. Черное, пахнущее гари масло свидетельствует о сгоревших фрикционах, а наличие металлической стружки на щупе — о механическом разрушении деталей.</p>
+
+<ul>
+<li>🔍 Проверьте уровень масла на прогретом двигателе при работающем моторе.</li>
+<li>🔍 Оцените цвет жидкости: красный — норма, темно-коричневый — замена, черный с запахом гари — капитальный ремонт.</li>
+<li>🔍 Проверьте наличие металлической взвеси или крупных частиц на магните сливной пробки.</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 С какой проблемой АКПП вы столкнулись?</strong><ul><li>Пинки при переключении</li><li>Проскальзывание ремня</li><li>Течь масла</li><li>Загорелась лампа "D"</li><li>Пока все работает</li></ul></div></div>
+
+<h2 id="необходимые-инструменты-и-расходные-материалы">Необходимые инструменты и расходные материалы</h2>
+
+<p>Для качественного ремонта АКПП <em>Honda CR-V RD1</em> потребуется не только стандартный набор головок и ключей, но и специнструмент. Японские инженеры предусмотрели специфические моменты затяжки и посадки подшипников, игнорирование которых приведет к быстрому выходу отремонтированного узла из строя. Основным документом для мастера становится сервисная мануал-книга <em>Honda Service Manual</em>, без которой лезть внутрь коробки категорически не рекомендуется.</p>
+
+<p>Вам обязательно понадобится динамометрический ключ, так как моменты затяжки болтов гидроблока и корпуса крайне важны для герметичности и правильной работы клапанов. Также потребуется нутромер или микрометр для измерения зазоров во фрикционных пакетах, так как визуальная оценка здесь неэффективна. Точность измерений определяет долговечность ремонта.</p>
+
+<p>Список расходных материалов должен быть составлен заранее, чтобы не прерывать процесс сборки. Помимо основного ремкомплекта, включающего прокладки, сальники и фрикционы, необходимо приобрести фильтр АКПП и качественную жидкость <em>Honda ATF-Z1</em> или её современные аналоги с допуском <code>DW-1</code>. Использование дешевых аналогов может привести к нестабльной работе гидротрансформатора.</p>
+
+<div class="checklist-block"><h4>☑️ Список инструментов и материалов</h4><label class="check-item"><input type="checkbox"><span>Динамометрический ключ и головки до 24мм</span></label><label class="check-item"><input type="checkbox"><span>Ремкомплект прокладок и сальников (Overhaul Kit)</span></label><label class="check-item"><input type="checkbox"><span>Жидкость ATF-Z1 или DW-1 (около 10 литров)</span></label><label class="check-item"><input type="checkbox"><span>Новый фильтр АКПП и уплотнительные кольца</span></label><label class="check-item"><input type="checkbox"><span>Микрометр или набор щупов для замера фрикционов</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="демонтаж-коробки-передач-с-автомобиля">Демонтаж коробки передач с автомобиля</h2>
+
+<p>Процесс снятия АКПП с <em>Honda CR-V RD1</em> требует аккуратности и последовательности действий. В первую очередь необходимо отключить аккумулятор и снять воздушный фильтр, чтобы освободить доступ к верхним болтам крепления. Затем отсоединяются все электрические разъемы, тросик селектора и кулиса переключения передач.</p>
+
+<p>Особое внимание следует уделить отсоединению приводов колес. Передний правый привод вынимается из коробки относительно легко, тогда как левый может потребовать применения спецключа или аккуратного выбивания. Не забудьте слить старое масло перед демонтажем, чтобы не испачкать все вокруг и снизить вес агрегата. Для удобства работы двигатель лучше подпереть домкратом через деревянную прокладку.</p>
+
+<p>После откручивания болтов крепления подушек и опор, коробка вместе с двигателем аккуратно опускается вниз. На этом этапе критически важно не повредить шлицевые соединения и датчики. Вес агрегата значителен, поэтому использование надежной подставки или помощи ассистента является обязательным условием безопасности.</p>
+
+<details class="faq-item"><summary>Секрет снятия левого привода</summary><div class="faq-answer"><p>Левый привод на CR-V RD1 часто прикипает или имеет сложную систему фиксации. Используйте длинную монтировку, уперев её в корпус КПП, и резким, но контролируемым движением подденьте привод наружу. Не бейте молотком по самому валу привода, чтобы не повредить сальник и шлицы дифференциала.</p></div></details>
+
+<h2 id="разборка-акпп-и-дефектовка-узлов">Разборка АКПП и дефектовка узлов</h2>
+
+<p>После того как коробка оказалась на верстаке, начинается самый ответственный этап — разборка и дефектовка. Первым снимается гидротрансформатор ("бублик"), который необходимо тщательно осмотреть на предмет задиров и выработки. Затем демонтируется масляный насос и гидроблок, который на моделях RD1 оснащен системой <strong>VTEC</strong>, управляющей давлением в зависимости от нагрузки.</p>
+
+<p>При разборе валов и барабанов необходимо строго соблюдать очередность снятия шайб, втулок и стопорных колец. Рекомендуется раскладывать детали в порядке их снятия на чистую ветошь или использовать фотофиксацию на каждом этапе. Потеря даже маленькой шайбы может привести к невозможности сборки или неправильной работе трансмиссии.</p>
+
+<p>В таблице ниже приведены критические параметры износа фрикционных дисков для разных пакетов АКПП <em>Honda CR-V RD1</em>. Если толщина диска меньше минимально допустимой, пакет подлежит обязательной замене.</p>
+
+<table>
+<thead>
+<tr>
+<th>Пакет фрикционов</th>
+<th>Номинальная толщина (мм)</th>
+<th>Минимальная толщина (мм)</th>
+<th>Кол-во дисков</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st Clutch</td>
+<td>2.86</td>
+<td>2.66</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2nd Clutch</td>
+<td>2.86</td>
+<td>2.66</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3rd Clutch</td>
+<td>2.86</td>
+<td>2.66</td>
+<td>6</td>
+</tr>
+<tr>
+<td>4th Clutch</td>
+<td>2.86</td>
+<td>2.66</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<p>Отдельного внимания заслуживает состояние втулок скольжения. На старых автомобилях они изнашиваются, что приводит к падению давления масла и пробуксовке. Замерьте внутренний диаметр втулок и сравните с заводскими спецификациями. Люфт валов во втулках не должен превышать допустимых значений, иначе потребуется замена втулок или всего вала.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При дефектовке гидроблока проверьте плунжеры клапанов на предмет задиров. Даже микроскопическая царапина на зеркале клапана может вызвать заклинивание и отказ всей системы управления давлением.</p>
+</blockquote>
+
+<h2 id="замена-соленоидов-и-ремонт-гидроблока">Замена соленоидов и ремонт гидроблока</h2>
+
+<p>Гидроблок — это "мозг" автоматической коробки, и его исправность напрямую влияет на качество переключения передач. На <em>Honda CR-V RD1</em> часто выходят из строя соленоиды линейного давления и соленоиды переключения передач. Их замена не требует полной разборки гидроблока, если доступ открыт, но требует чистоты хирурга.</p>
+
+<p>Перед установкой новых соленоидов необходимо тщательно промыть все каналы гидроблока карбклинером и продуть сжатым воздухом. Убедитесь, что плунжеры клапанов двигаются свободно под собственным весом. Любое залипание приведет к некорректной работе АКПП после сборки.</p>
+
+<p>При замене соленоидов обязательно меняйте уплотнительные кольца и прокладки. Старые резинки теряют эластичность и могут стать причиной утечек давления, что ЭБУ воспримет как ошибку и переведет коробку в аварийный режим. Используйте только оригинальные или качественные аналоги, устойчивые к агрессивной среде ATF.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При сборке гидроблока смажьте все движущиеся части свежим трансмиссионным маслом. Сухая сборка может привести к задирам в первые секунды запуска двигателя до момента заполнения каналов маслом.</p></div>
+
+<h2 id="сборка-трансмиссии-и-установка-на-автомобиль">Сборка трансмиссии и установка на автомобиль</h2>
+
+<p>Сборка АКПП производится в порядке, обратном разборке, но с соблюдением особых правил. Все трущиеся поверхности, подшипники и сальники должны быть обильно смазаны свежим маслом. Это обеспечит нормальную работу узла в первые секунды после запуска двигателя, пока насос не накачает давление.</p>
+
+<p>Моменты затяжки болтов корпуса и гидротрансформатора должны строго соответствовать спецификации <em>Honda</em>. Перетяжка может привести к деформации алюминиевого корпуса, а недотяжка — к разгерметизации и утечкам. Особое внимание уделите установке гидротрансформатора: он должен сесть до упора с характерным щелчком, иначе при запуске двигателя будет срезан шлиц насоса.</p>
+
+<p>После установки коробки на автомобиль и подключения всех разъемов, необходимо залить свежее масло. Запуск двигателя производится с проверкой уровня жидкости по щупу на прогретом двигателе. Циркуляция масла должна быть проверена визуально (если возможно) или по поведению селектора и отсутствию посторонних шумов.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Качество сборки и чистота при монтаже гидроблока определяют 90% успеха ремонта. Одна попавшая внутрь песчинка может вывести из строя всю систему управления давлением.</p></div>
+
+<h2 id="адаптация-и-обкатка-после-ремонта">Адаптация и обкатка после ремонта</h2>
+
+<p>После сборки и замены масла требуется процедура адаптации. ЭБУ должен "обучиться" новым характеристикам фрикционных пакетов и гидравлики. Для этого необходимо прогреть коробку до рабочей температуры и совершить поездку в спокойном режиме, плавно разгоняясь и тормозя, чтобы коробка прошла все передачи.</p>
+
+<p>В первые 500 километров пробега избегайте резких стартов, пробуксовок и буксировки тяжелых грузов. Фрикционные диски должны притереться, а масло — равномерно распределиться по всем узлам. Периодически проверяйте уровень жидкости, так как после обкатки он может немного снизиться из-за заполнения всех полостей.</p>
+
+<p>Если после ремонта наблюдаются рывки или задержки, не спешите разбирать коробку снова. Часто проблема решается повторной процедурой сброса адаптации через диагностический разъем или заменой жидкости после короткой обкатки. Терпение и внимательность на этом этапе закрепят результат вашей работы.</p>
+
+<details>
+<summary>Как часто нужно менять масло в АКПП Honda CR-V RD1?</summary>
+<p>Официально Honda заявляет, что масло залито на весь срок службы, но в условиях реальной эксплуатации, особенно для возрастных авто, замену рекомендуется производить каждые 40-60 тысяч километров. Для старых коробок с неизвестной историей лучше использовать метод частичной замены каждые 15-20 тысяч км, чтобы не спровоцировать проскальзывание изношенных фрикционов.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать синтетическое масло вместо оригинала?</summary>
+<p>Использовать можно только жидкости, имеющие допуск <code>Honda ATF-Z1</code> или современный <code>DW-1</code>. Многие синтетические масла универсального типа могут не обеспечивать необходимых фрикционных свойств, что приведет к вибрациям и неправильной работе блокировки гидротрансформатора. Лучше переплатить за оригинал или проверенный аналог.</p>
+</details>
+
+<details>
+<summary>Что означает мигание индикатора "D" пять раз?</summary>
+<p>Пять вспышек индикатора "D" обычно указывают на проблему с давлением масла или неисправность соленоида управления давлением. Это часто связано с загрязнением гидроблока или износом масляного насоса. Требуется немедленная диагностика, так как езда с низким давлением быстро выведет фрикционы из строя.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять фильтр АКПП при каждой замене масла?</summary>
+<p>На Honda CR-V RD1 фильтр АКПП расположен внутри коробки и доступен только при снятии поддона или полном демонтаже агрегата. Поэтому его меняют только при капитальном ремонте. Если вы делаете просто замену масла без вскрытия, фильтр заменить не получится, но при капитальном ремонте его замена обязательна.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#диагностика-неисправностей-и-подготовка-к-ремонту">Диагностика неисправностей и подготовка к ремонту</a></li><li><a href="#необходимые-инструменты-и-расходные-материалы">Необходимые инструменты и расходные материалы</a></li><li><a href="#демонтаж-коробки-передач-с-автомобиля">Демонтаж коробки передач с автомобиля</a></li><li><a href="#разборка-акпп-и-дефектовка-узлов">Разборка АКПП и дефектовка узлов</a></li><li><a href="#замена-соленоидов-и-ремонт-гидроблока">Замена соленоидов и ремонт гидроблока</a></li><li><a href="#сборка-трансмиссии-и-установка-на-автомобиль">Сборка трансмиссии и установка на автомобиль</a></li><li><a href="#адаптация-и-обкатка-после-ремонта">Адаптация и обкатка после ремонта</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/p/pe/perednie-tormoznye-diski-khonda-srv-3.html" class="related-card">Замена и выбор передних тормозных дисков Honda CR-V 3 (2007-2012)</a></li><li><a href="/articles/d/di/diagnosticheskij-razem-khonda-srv-1.html" class="related-card">Диагностический разъем Honda CR-V 1: Где находится и как подключить сканер</a></li><li><a href="/articles/m/ma/maslo-v-reduktor-khonda-srv-rd1-zadnego-mosta.html" class="related-card">Масло в задний редуктор Honda CR-V RD1: выбор и замена</a></li><li><a href="/articles/r/re/remont-dvigatelya-khonda-srv-20.html" class="related-card">Ремонт двигателя Honda CR-V 2.0: диагностика, симптомы и цены</a></li><li><a href="/articles/k/ko/kovriki-khonda-srv-3.html" class="related-card">Коврики в Honda CR-V 3: Выбор, виды и советы по установке</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/p/pe/perednie-tormoznye-diski-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Замена и выбор передних тормозных дисков Honda CR-V 3 (2007-2012)</span><span class="related-bottom-desc">Полный гайд по выбору, замене и обслуживанию передних тормозных дисков на Honda CR-V третьего поколе</span></a><a href="/articles/d/di/diagnosticheskij-razem-khonda-srv-1.html" class="related-bottom-card"><span class="related-bottom-title">Диагностический разъем Honda CR-V 1: Где находится и как подключить сканер</span><span class="related-bottom-desc">Полный гид по OBD-II разъему первого поколения Honda CR-V. Расположение, распиновка, типы сканеров и</span></a><a href="/articles/m/ma/maslo-v-reduktor-khonda-srv-rd1-zadnego-mosta.html" class="related-bottom-card"><span class="related-bottom-title">Масло в задний редуктор Honda CR-V RD1: выбор и замена</span><span class="related-bottom-desc">Полное руководство по выбору масла и замене в заднем редукторе Honda CR-V RD1. Технические нормы, ин</span></a><a href="/articles/r/re/remont-dvigatelya-khonda-srv-20.html" class="related-bottom-card"><span class="related-bottom-title">Ремонт двигателя Honda CR-V 2.0: диагностика, симптомы и цены</span><span class="related-bottom-desc">Полный гид по ремонту мотора Honda CR-V 2.0. Причины вибрации, замена цепи ГРМ, ремонт ГБЦ. Реальные</span></a><a href="/articles/k/ko/kovriki-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Коврики в Honda CR-V 3: Выбор, виды и советы по установке</span><span class="related-bottom-desc">Полный гид по выбору ковриков в салон и багажник для Honda CR-V третьего поколения. Сравнение резины</span></a><a href="/articles/r/ra/rasshifrovka-vin-honda-cr-v.html" class="related-bottom-card"><span class="related-bottom-title">Расшифровка VIN Honda CR-V: полная инструкция и чек-лист проверок</span><span class="related-bottom-desc">Узнайте, как правильно расшифровать VIN-код Honda CR-V. Подробный разбор 17 знаков, проверка истории</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

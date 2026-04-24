@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Мультимедиа для Honda Freed GB3: выбор, установка и настройка — Honda Library</title>
+    <meta name="description" content="Полный гид по выбору и установке магнитолы для Honda Freed GB3. Обзор моделей Android, нюансы подключения, настройка CAN-шины и сохранение заводских функций.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/m/ma/magnitola-honda-freed-gb3.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Мультимедиа для Honda Freed GB3: выбор, установка и настройка">
+    <meta property="og:description" content="Полный гид по выбору и установке магнитолы для Honda Freed GB3. Обзор моделей Android, нюансы подключения, настройка CAN-шины и сохранение заводских функций.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Мультимедиа для Honda Freed GB3: выбор, установка и настройка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Мультимедийные системы для Honda Freed GB3: полный гайд по обновлению</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-штатной-системы-и-причины-модернизации">Особенности штатной системы и причины модернизации</a></li><li><a href="#выбор-головного-устройства-специфика-кузова-gb3">Выбор головного устройства: специфика кузова GB3</a></li><li><a href="#технические-характеристики-и-требования-к-установке">Технические характеристики и требования к установке</a></li><li><a href="#процесс-демонтажа-и-подключения-оборудования">Процесс демонтажа и подключения оборудования</a></li><li><a href="#настройка-can-шины-и-сохранение-функций-автомобиля">Настройка CAN-шины и сохранение функций автомобиля</a></li><li><a href="#интеграция-с-камерами-и-дополнительным-оборудованием">Интеграция с камерами и дополнительным оборудованием</a></li><li><a href="#частые-вопросы-и-ответы-faq">Частые вопросы и ответы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владельцы минивэна <em>Honda Freed</em> второго поколения с кузовным кодом <strong>GB3</strong> часто сталкиваются с ограниченным функционалом штатной мультимедийной системы. Заводская головная единица, несмотря на надежность, устарела в плане поддержки современных приложений, навигации и формата видео. Заменить её на современный аналог — задача, требующая внимания к техническим деталям, так как автомобиль обладает специфической проводкой и протоколами обмена данными.</p>
+
+<p>Правильно подобранная магнитола способна превратить семейный автомобиль в полноценный мультимедийный центр, поддерживающий Apple CarPlay, Android Auto и работу с камерами кругового обзора. Однако не всякое устройство подойдет для кузова <em>GB3</em> без дополнительных адаптеров. Критически важно учитывать особенности разъема и интеграцию с системой управления климатом и бортовым компьютером.</p>
+
+<h2 id="особенности-штатной-системы-и-причины-модернизации">Особенности штатной системы и причины модернизации</h2>
+<p>Штатная аудиосистема в <em>Honda Freed GB3</em> оснащена простым экраном, который не поддерживает сенсорное управление в полной мере или имеет низкое разрешение. Это создает неудобства при использовании навигационных карт или просмотре видео в пробках. Основная проблема заключается в отсутствии поддержки современных кодеков и невозможности установки сторонних приложений.</p>
+
+<p>Владельцы часто жалуются на отсутствие беспроводных модулей и медленную реакцию интерфейса. Современный рынок предлагает решения на базе операционной системы <strong>Android</strong>, которые лишены этих недостатков. Установка новой магнитолы дает доступ к магазину приложений, голосовому управлению и обновлению карт онлайн.</p>
+
+<h3>Ключевые недостатки заводского оборудования:</h3>
+<ul>
+<li>🚫 Отсутствие поддержки современных протоколов подключения смартфонов</li>
+<li>🚫 Низкая производительность процессора и малый объем оперативной памяти</li>
+<li>🚫 Невозможность обновления программного обеспечения и навигационных баз</li>
+</ul>
+
+<h2 id="выбор-головного-устройства-специфика-кузова-gb3">Выбор головного устройства: специфика кузова GB3</h2>
+<p>При выборе головного устройства необходимо ориентироваться на специфические размеры посадочного места и конфигурацию разъема. Для <em>Honda Freed GB3</em> наиболее популярны двухдиновые решения, адаптированные под дизайн приборной панели. Важно проверить совместимость разъема CAN-шины, так как без него вы потеряете информацию о скорости, уровне топлива и работе парктроников.</p>
+
+<p>Существуют универсальные китайские магнитолы и брендовые решения. Универсальные модели часто требуют дополнительной настройки через <code>Settings</code> и установки адаптеров. Брендовые устройства могут стоить дороже, но они обычно имеют более качественную сборку и лучшую поддержку драйверов для <strong>Honda</strong>.</p>
+
+<blockquote>⚠️ Внимание: Не покупайте магнитолу без проверки совместимости разъема CAN-декодера. Неправильно подобранный адаптер может привести к потере сигнала от датчиков парковки или неработоспособности рулевого управления.</blockquote>
+
+<ul>
+<li>✅ Проверьте тип разъема ISO или специфический Honda 16-pin</li>
+<li>✅ Убедитесь в наличии выхода на усилитель (если он есть в вашей комплектации)</li>
+<li>✅ Обратите внимание на поддержку протокола <strong>Steering Wheel Control</strong> (SWC)</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой тип магнитолы вы предпочитаете?</strong><ul><li>Оригинальная Android-магнитола</li><li>Универсальная китайская модель</li><li>Брендированное устройство</li><li>Оставляю штатную систему</li></ul></div></div>
+
+<h2 id="технические-характеристики-и-требования-к-установке">Технические характеристики и требования к установке</h2>
+<p>Для комфортной работы современных приложений на <em>Honda Freed GB3</em> минимальные требования к устройству должны быть следующими. Процессор должен быть не ниже 4-ядерного, а оперативная память — от 2 Гб, иначе система будет зависать. Экран должен иметь разрешение минимум <code>1280×720</code> для четкой картинки.</p>
+
+<p>Важным аспектом является поддержка видеовходов. В минивэнах часто используются дополнительные камеры. Убедитесь, что магнитола имеет отдельные входы для камеры заднего вида и, при необходимости, для камеры переднего вида или системы кругового обзора.</p>
+
+<h3>Основные технические параметры для проверки:</h3>
+<ul>
+<li>🔹 Операционная система: Android 10, 11 или новее</li>
+<li>🔹 Тип экрана: IPS или AMOLED с яркостью выше 500 нит</li>
+<li>🔹 Поддержка форматов: MP4, MKV, AVI с высоким битрейтом</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Если вы планируете использовать видеорегистратор с записью в цикле, убедитесь, что магнитола имеет выделенный вход для видеосигнала, иначе качество записи может страдать из-за наложения интерфейса.</blockquote>
+
+<div class="checklist-block"><h4>☑️ Проверка комплектации перед покупкой</h4><label class="check-item"><input type="checkbox"><span>Наличие CAN-декодера в комплекте</span></label><label class="check-item"><input type="checkbox"><span>Кабель для подключения к USB порту</span></label><label class="check-item"><input type="checkbox"><span>Антенный переходник</span></label><label class="check-item"><input type="checkbox"><span>Кабель для подключения камеры заднего вида</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="процесс-демонтажа-и-подключения-оборудования">Процесс демонтажа и подключения оборудования</h2>
+<p>Установка новой магнитолы в <em>Honda Freed GB3</em> требует аккуратности, чтобы не повредить декоративные элементы панели. Сначала необходимо снять штатную рамку, используя специальные пластиковые лопатки. Будьте осторожны с защелками, так как пластик на минивэнах может быть хрупким при низких температурах.</p>
+
+<p>Далее отсоединяется штатная проводка. Здесь критично использовать переходную колодку, чтобы не резать заводские провода. Подключение к CAN-шине осуществляется через специальный адаптер, который обычно идет в комплекте с магнитолой или покупается отдельно.</p>
+
+<blockquote>⚠️ Внимание: Отсоединяйте клемму аккумулятора перед началом работ, чтобы избежать короткого замыкания в бортовой сети. Это особенно важно при работе с CAN-шиной, так как скачок напряжения может вывести из строя электронный блок управления.</blockquote>
+
+<details class="faq-item"><summary>Что делать, если не работают кнопки на руле?</summary><div class="faq-answer"><p>Если кнопки не работают после подключения, необходимо зайти в настройки магнитолы в раздел 'Steering Wheel Control' и переназначить команды. Иногда требуется калибровка: нажмите и удерживайте кнопку 'Vol+' на руле, пока индикатор на экране не загорится, затем отпустите.</p></div></details>
+
+<h3>Этапы подключения:</h3>
+<ul>
+<li>🛠️ Снимите декоративную панель вокруг магнитолы</li>
+<li>🛠️ Открутите болты крепления и извлеките штатное устройство</li>
+<li>🛠️ Подключите переходную колодку к разъему автомобиля</li>
+<li>🛠️ Подключите CAN-декодер и антенный переходник</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед полной сборкой панели включите зажигание и проверьте работу всех функций: звука, камеры, рулевого управления и отображения информации на дисплее. Это сэкономит время, если что-то нужно будет переподключить.</p></div>
+
+<h2 id="настройка-can-шины-и-сохранение-функций-автомобиля">Настройка CAN-шины и сохранение функций автомобиля</h2>
+<p>После физического подключения наступает этап программной настройки. В меню магнитолы необходимо выбрать правильный тип автомобиля и модель кузова. Для <em>Honda Freed GB3</em> это критически важно, так как параметры передачи данных различаются даже для разных лет выпуска.</p>
+
+<p>Неправильная настройка может привести к тому, что экран будет гаснуть при движении или не будет отображаться скорость. Также важно настроить параметры работы камеры заднего вида: выбрать режим "при парковке" или "всегда включена" в зависимости от ваших предпочтений.</p>
+
+<h3>Параметры настройки CAN-шины:</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение для Freed GB3</th>
+<th>Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Протокол</td>
+<td>Honda CAN</td>
+<td>Стандартный протокол</td>
+</tr>
+<tr>
+<td>Тип кузова</td>
+<td>Freed GB3/GB4</td>
+<td>Выберите точную модель</td>
+</tr>
+<tr>
+<td>Скорость CAN</td>
+<td>500 кбит/с</td>
+<td>Обычно определяется автоматически</td>
+</tr>
+<tr>
+<td>Режим отображения</td>
+<td>Оригинал/Кастом</td>
+<td>Выберите желаемый стиль</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная настройка CAN-шины — это гарантия того, что автомобиль продолжит работать как единое целое, а не как набор разрозненных устройств.</p></div>
+
+<h2 id="интеграция-с-камерами-и-дополнительным-оборудованием">Интеграция с камерами и дополнительным оборудованием</h2>
+<p>Одним из главных преимуществ установки современной магнитолы является возможность подключения камер высокого разрешения. В <em>Honda Freed GB3</em> можно установить камеру заднего вида с функцией динамических траекторий, которые поворачиваются вместе с рулем. Это возможно только при корректной настройке CAN-шины.</p>
+
+<p>Также можно подключить переднюю камеру или систему кругового обзора, если штатная система этого не поддерживает. Магнитола должна иметь соответствующие видеовходы и поддержку переключения между камерами.</p>
+
+<ul>
+<li>📹 Камера заднего вида: настройка линии отсечки и чувствительности</li>
+<li>📹 Передняя камера: подключение через отдельный вход или через USB</li>
+<li>📹 Парктроник: интеграция цифрового сигнала в интерфейс магнитолы</li>
+</ul>
+
+<h3>Пример настройки видеовхода:</h3>
+<pre><code>Настройки → Экран → Видеовход → Задняя камера → Тип сигнала: AHD 720p</code></pre>
+
+<blockquote>⚠️ Внимание: Если линии разметки не соответствуют траектории движения, проверьте настройки типа камеры в меню. Неправильно выбранный тип (NTSC/PAL или AHD) может вызвать искажение картинки.</blockquote>
+
+<details class="faq-item"><summary>Как подключить камеру кругового обзора?</summary><div class="faq-answer"><p>Для подключения камеры кругового обзора потребуется специальный модуль обработки видео. Подключите камеры к модулю, а модуль к магнитоле через HDMI или AV-кабель. В настройках магнитолы выберите режим "360 view" и выполните калибровку по меткам.</p></div></details>
+
+<h2 id="частые-вопросы-и-ответы-faq">Частые вопросы и ответы (FAQ)</h2>
+<p>Ниже собраны ответы на самые распространенные вопросы, которые возникают при выборе и установке магнитолы для <em>Honda Freed GB3</em>.</p>
+
+<details>
+<summary>Совместима ли магнитола с системой Honda Connect?</summary>
+<p>Нет, большинство сторонних магнитол не поддерживают штатную систему Honda Connect напрямую. Вам придется использовать внешние модули или полностью заменить интерфейс на Android-систему, которая предлагает аналогичные функции через собственные приложения.</p>
+</details>
+
+<details>
+<summary>Можно ли сохранить штатный экран, если он сломался?</summary>
+<p>Если экран разбит, но матрица работает, можно попробовать подключить его через адаптер, но это сложно и редко дает качественный результат. Проще и надежнее установить новую магнитолу со встроенным экраном.</p>
+</details>
+
+<details>
+<summary>Как обновить навигацию на новой магнитоле?</summary>
+<p>Обновление происходит через подключение к интернету (Wi-Fi или 4G). Скачайте приложение Яндекс.Карты, Google Maps или Waze из Play Market и обновите их через меню приложений. Фирменные карты часто требуют покупки лицензии.</p>
+</details>
+
+<details>
+<summary>Потеряется ли гарантия при установке магнитолы?</summary>
+<p>Установка нештатного оборудования может повлиять на гарантию только в том случае, если неисправность возникла в электрической системе из-за неправильного подключения. По закону о защите прав потребителей, производитель не может отказать в гарантии на двигатель или кузов из-за установленной магнитолы.</p>
+</details>
+
+<details>
+<summary>Какая разница между 1 DIN и 2 DIN для Freed GB3?</summary>
+<p>Для Honda Freed GB3 стандартом является размер 2 DIN. 1 DIN устройства потребуют использования переходной рамки, что может выглядеть неэстетично и нарушить дизайн панели. Рекомендуется выбирать устройства, разработанные специально под этот кузов.</p>
+</details>
+
+<mark>Важно: При выборе магнитолы обязательно проверьте наличие поддержки протокола AHD для камер, так как современные камеры используют именно этот стандарт для высокого качества изображения.</mark></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-штатной-системы-и-причины-модернизации">Особенности штатной системы и причины модернизации</a></li><li><a href="#выбор-головного-устройства-специфика-кузова-gb3">Выбор головного устройства: специфика кузова GB3</a></li><li><a href="#технические-характеристики-и-требования-к-установке">Технические характеристики и требования к установке</a></li><li><a href="#процесс-демонтажа-и-подключения-оборудования">Процесс демонтажа и подключения оборудования</a></li><li><a href="#настройка-can-шины-и-сохранение-функций-автомобиля">Настройка CAN-шины и сохранение функций автомобиля</a></li><li><a href="#интеграция-с-камерами-и-дополнительным-оборудованием">Интеграция с камерами и дополнительным оборудованием</a></li><li><a href="#частые-вопросы-и-ответы-faq">Частые вопросы и ответы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-lead-90-tyuning.html" class="related-card">Honda Lead 90 тюнинг: как увеличить мощность и стиль</a></li><li><a href="/articles/k/ko/kozhukh-tsilindra-khonda-dio-27.html" class="related-card">Кожух цилиндра Хонда Дио 27: выбор, установка и ремонт</a></li><li><a href="/articles/h/ho/honda-cbr-400-rr-maksimalnaya-skorost.html" class="related-card">Honda CBR 400 RR: Максимальная скорость и характеристики</a></li><li><a href="/articles/k/kh/khonda-partner-2006-goda.html" class="related-card">Honda Partner 2006: Полный обзор, технические характеристики и нюансы</a></li><li><a href="/articles/k/kh/khonda-khornet-600-maksimalnaya-skorost.html" class="related-card">Хонда Хорнет 600: Максимальная скорость и разгон</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-lead-90-tyuning.html" class="related-bottom-card"><span class="related-bottom-title">Honda Lead 90 тюнинг: как увеличить мощность и стиль</span><span class="related-bottom-desc">Полное руководство по тюнингу скутера Honda Lead 90. Чип-тюнинг, установка вариатора, поршневые груп</span></a><a href="/articles/k/ko/kozhukh-tsilindra-khonda-dio-27.html" class="related-bottom-card"><span class="related-bottom-title">Кожух цилиндра Хонда Дио 27: выбор, установка и ремонт</span><span class="related-bottom-desc">Полный гид по цилиндрам для Honda Dio 27. Выбор материала, размеры поршневой, этапы замены и типичны</span></a><a href="/articles/h/ho/honda-cbr-400-rr-maksimalnaya-skorost.html" class="related-bottom-card"><span class="related-bottom-title">Honda CBR 400 RR: Максимальная скорость и характеристики</span><span class="related-bottom-desc">Узнайте реальную максимальную скорость Honda CBR 400 RR. Подробный разбор двигателя, аэродинамики и </span></a><a href="/articles/k/kh/khonda-partner-2006-goda.html" class="related-bottom-card"><span class="related-bottom-title">Honda Partner 2006: Полный обзор, технические характеристики и нюансы</span><span class="related-bottom-desc">Всё о Honda Partner 2006 года выпуска: технические особенности, двигатель, коробка передач, типичные</span></a><a href="/articles/k/kh/khonda-khornet-600-maksimalnaya-skorost.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Хорнет 600: Максимальная скорость и разгон</span><span class="related-bottom-desc">Какая максимальная скорость у Honda Hornet 600? Реальные цифры разгона, влияние дуг безопасности и т</span></a><a href="/articles/r/re/rele-benzonasosa-khonda-strim.html" class="related-bottom-card"><span class="related-bottom-title">Реле бензонасоса Хонда Стрим: диагностика, схема и замена</span><span class="related-bottom-desc">Подробный разбор реле бензонасоса Honda Stream. Симптомы поломки, схема расположения в блоке, замена</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

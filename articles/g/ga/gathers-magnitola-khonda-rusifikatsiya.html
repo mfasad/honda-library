@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Русификация магнитолы Honda Gather: Полная инструкция и нюансы — Honda Library</title>
+    <meta name="description" content="Как полностью перевести интерфейс мультимедиа Gather на русский язык. Обзор методов, рисков, совместимость моделей и пошаговая прошивка с сохранением функций.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/g/ga/gathers-magnitola-khonda-rusifikatsiya.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Русификация магнитолы Honda Gather: Полная инструкция и нюансы">
+    <meta property="og:description" content="Как полностью перевести интерфейс мультимедиа Gather на русский язык. Обзор методов, рисков, совместимость моделей и пошаговая прошивка с сохранением функций.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Русификация магнитолы Honda Gather: Полная инструкция и нюансы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полный гид по русификации магнитолы Honda Gather</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-системы-honda-gather-и-причины-перевода">Особенности системы Honda Gather и причины перевода</a></li><li><a href="#выбор-метода-русификации-прошивка-или-модификация">Выбор метода русификации: Прошивка или модификация</a></li><li><a href="#подготовка-оборудования-и-программного-обеспечения">Подготовка оборудования и программного обеспечения</a></li><li><a href="#пошаговая-инструкция-по-перепрошивке">Пошаговая инструкция по перепрошивке</a></li><li><a href="#настройка-русифицированной-системы">Настройка русифицированной системы</a></li><li><a href="#таблица-совместимости-версий-и-методов">Таблица совместимости версий и методов</a></li><li><a href="#решение-частых-проблем-после-обновления">Решение частых проблем после обновления</a></li><li><a href="#итоги-и-рекомендации">Итоги и рекомендации</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Мультимедийная система <em>Honda Gather</em>, устанавливаемая на автомобили <em>Honda CR-V</em> (поколение 4) и другие модели, представляет собой мощный компьютер на базе Android. Однако заводская прошивка японского или американского рынка часто имеет английский или японский интерфейс, что существенно снижает удобство использования навигации и мультимедиа для отечественных водителей. Отсутствие родного языка делает работу с меню сложной и запутанной, особенно при движении.</p>
+
+<p>Процесс перевода системы требует глубокого понимания архитектуры устройства и осторожности при работе с системными файлами. Неправильные действия могут привести к потере функционала или неработоспособности головного устройства. В данной статье мы детально разберем методы русификации, инструменты и подводные камни, с которыми вы можете столкнуться в процессе обновления.</p>
+
+<h2 id="особенности-системы-honda-gather-и-причины-перевода">Особенности системы Honda Gather и причины перевода</h2>
+
+<p>Уникальность <em>Honda Gather</em> заключается в интеграции с бортовыми системами автомобиля. Это не просто планшет, а часть экосистемы машины. Заводские прошивки для рынков Северной Америки или Японии часто не содержат кириллицы в шрифтовых пакетах, что приводит к отображению "кракозябр" вместо русского текста на экранах навигации и в списке контактов.</p>
+
+<p>Русификация решает не только языковую проблему. Локализаторы часто добавляют поддержку отечественных карт, улучшают работу голосового помощника и адаптируют звуковые подсказки. Без правильного перевода многие функции, такие как синхронизация с российскими сервисами или чтение SMS с телефона, становятся недоступными или работают с ошибками.</p>
+
+<p>Необходимо учитывать, что система Gather работает на базе <strong>Android Automotive</strong>, что накладывает определенные ограничения на модификацию. Простой смены языка в настройках недостаточно, так как системные ресурсы жестко ограничены производителем для обеспечения стабильности работы климат-контроля и других критических узлов.</p>
+
+<h2 id="выбор-метода-русификации-прошивка-или-модификация">Выбор метода русификации: Прошивка или модификация</h2>
+
+<p>Существует два основных пути перевода системы. Первый метод — это установка официальной или кастомной прошивки с уже встроенной русской локализацией. Этот вариант предпочтителен для большинства пользователей, так как он гарантирует стабильность работы всех драйверов и сохранение гарантии (если она еще актуальна).</p>
+
+<p>Второй метод подразумевает ручную модификацию существующей системы путем установки языковых пакетов и патчей. Этот способ подходит для опытных энтузиастов, которые хотят сохранить специфические настройки или имеют уникальную версию ПО. Однако риск "окирпичивания" устройства при этом методе значительно выше.</p>
+
+<ul>
+<li>🔧 Официальная прошивка от дилера или проверенных сообществ</li>
+<li>🔧 Самостоятельная установка языковых модулей через ADB</li>
+<li>🔧 Использование сторонних лаунчеров с русской поддержкой</li>
+</ul>
+
+<p>Критически важно проверить совместимость версий перед началом работы. Разные ревизии плат (например, <code>HW v2.0</code> и <code>HW v3.0</code>) требуют разных файлов прошивки. Установка неподходящего образа может привести к полному отказу мультимедиа системы.</p>
+
+<blockquote>⚠️ Внимание: Перед началом любых манипуляций обязательно создайте полную резервную копию текущей прошивки через <code>ADB Backup</code> или специализированные сервисные утилиты. Потеря данных может быть необратимой.</blockquote>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой метод перевода вам интереснее?</strong><ul><li>Полная перепрошивка</li><li>Локализация текущей версии</li><li>Покупка русифицированной магнитолы</li><li>Пока не решил</li></ul></div></div>
+
+<h2 id="подготовка-оборудования-и-программного-обеспечения">Подготовка оборудования и программного обеспечения</h2>
+
+<p>Для успешной русификации вам потребуется подготовить набор инструментов. В первую очередь необходим ноутбук с операционной системой <strong>Windows 10</strong> или выше, так как старые драйверы могут некорректно работать с современными версиями Android.</p>
+
+<p>Также вам понадобятся оригинальный USB-кабель, желательно короткой длины, для стабильного соединения с головным устройством. Использование дешевых кабелей может привести к обрыву связи в самый ответственный момент прошивки, что часто заканчивается фатальной ошибкой.</p>
+
+<p>В список обязательного программного обеспечения входят драйверы ADB и Fastboot, а также утилита для работы с системными разделами. Не забудьте скачать архив с русифицированными файлами, соответствующими именно вашей версии <em>Honda Gather</em>.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к русификации</h4><label class="check-item"><input type="checkbox"><span>Проверить версию Android</span></label><label class="check-item"><input type="checkbox"><span>Установить драйверы ADB</span></label><label class="check-item"><input type="checkbox"><span>Скачать файлы прошивки</span></label><label class="check-item"><input type="checkbox"><span>Зарядить аккумулятор авто</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="пошаговая-инструкция-по-перепрошивке">Пошаговая инструкция по перепрошивке</h2>
+
+<p>Процесс начинается с включения режима отладки по USB. Зайдите в <code>Настройки → О системе</code> и нажмите на номер сборки <strong>7 раз</strong>, чтобы активировать режим разработчика. Далее в появившемся меню включите отладку по USB.</p>
+
+<p>Подключите ноутбук к автомобилю и откройте командную строку. Для проверки связи введите команду <pre><code>adb devices</code></pre>. Если вы видите серийное устройство со статусом <code>device</code>, значит соединение установлено корректно. Если статус <code>unauthorized</code>, подтвердите доступ на экране магнитолы.</p>
+
+<p>Далее необходимо загрузить файлы прошивки в системный раздел. Используйте команду <pre><code>adb push update.zip /sdcard/</code></pre> для переноса архива. После этого перейдите в режим восстановления через <code>adb reboot recovery</code> и запустите процесс установки из меню.</p>
+
+<ul>
+<li>📥 Убедитесь, что файл прошивки имеет подпись разработчика</li>
+<li>📥 Не прерывайте процесс, даже если экран погас</li>
+<li>📥 Следите за уровнем заряда аккумулятора, он должен быть выше <strong>50%</strong></li>
+</ul>
+
+<blockquote>⚠️ Внимание: Если процесс прошивки завис на определенном этапе более чем на 10 минут, не перезагружайте устройство самостоятельно. Дождитесь тайм-аута или обратитесь в сервисный центр для программатора.</blockquote>
+
+<details class="faq-item"><summary>Что делать, если прошивка не загружается?</summary><div class="faq-answer"><p>Попробуйте сменить USB-порт на ноутбуке, использовать другой кабель или проверить целостность скачанного архива (сверьте контрольную сумму MD5).</p></div></details>
+
+<h2 id="настройка-русифицированной-системы">Настройка русифицированной системы</h2>
+
+<p>После успешной установки и первого запуска вам предстоит настроить систему под себя. Перейдите в <code>Настройки → Язык и ввод</code> и выберите русский язык как основной. Система автоматически подтянет соответствующие шрифты и голосовые пакеты.</p>
+
+<p>Обратите внимание на настройки навигации. Встроенный <strong>Яндекс.Навигатор</strong> или <em>Google Maps</em> потребуют разрешения на доступ к геолокации и микрофону. Без этих разрешений голосовые подсказки не будут работать корректно.</p>
+
+<p>Рекомендуется также проверить работу Bluetooth-модуля. Иногда после перепрошивки профиль HFP (Hands-Free) сбрасывается, и телефон не видит магнитолу для звонков. В этом случае нужно удалить устройство из списка сопряженных и подключить его заново.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед первым выездом настройте эквалайзер и звуковые эффекты, так как после сброса настроек они вернутся к заводским значениям, которые могут быть слишком тихими или резкими для вашей акустики.</p></div>
+
+<h2 id="таблица-совместимости-версий-и-методов">Таблица совместимости версий и методов</h2>
+
+<p>Ниже представлена сводная таблица, помогающая определить подходящий метод русификации в зависимости от версии вашего устройства. Это поможет избежать ошибок при выборе файлов прошивки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Версия ПО</th>
+<th>Рынок</th>
+<th>Метод русификации</th>
+<th>Риски</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.2.4</td>
+<td>Япония</td>
+<td>Полная замена прошивки</td>
+<td>Средние</td>
+</tr>
+<tr>
+<td>2.1.0</td>
+<td>США</td>
+<td>Установка языкового пакета</td>
+<td>Низкие</td>
+</tr>
+<tr>
+<td>3.0.5</td>
+<td>Европа</td>
+<td>Официальное обновление</td>
+<td>Отсутствуют</td>
+</tr>
+<tr>
+<td>4.0.1</td>
+<td>Китай (Gather)</td>
+<td>Кастомная прошивка</td>
+<td>Высокие</td>
+</tr>
+</tbody>
+</table>
+
+<p>Обратите внимание, что для версий с индексом <strong>4.0.1</strong> и выше часто требуются специфические драйверы, которые не входят в стандартный набор инструментов. Игнорирование этого требования приведет к невозможности подключения устройства к ПК.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильный выбор метода русификации зависит от аппаратной ревизии и текущей версии ПО. Ошибочный выбор может привести к потере функций автомобиля.</p></div>
+
+<h2 id="решение-частых-проблем-после-обновления">Решение частых проблем после обновления</h2>
+
+<p>Иногда после русификации пользователи сталкиваются с тем, что перестают работать кнопки на руле. Это связано с тем, что новая прошивка может изменить протоколы обмена данными с CAN-шиномей. В таких случаях требуется перепрошивка модуля рулевого управления или настройка карт кнопок в специализированном приложении.</p>
+
+<p>Другая распространенная проблема — отсутствие звука при воспроизведении видео. Это часто случается из-за конфликта кодеков. Установите дополнительный плеер, например <em>VLC</em>, и проверьте, сохраняется ли проблема. Если звук появляется, значит, в системе отсутствуют нужные библиотеки.</p>
+
+<p>Если экран стал черным при включении зажигания, проверьте настройки автоспуска экрана. Возможно, время выключения установлено на ноль или система не получает сигнал с замка зажигания из-за сбоя конфигурации.</p>
+
+<ul>
+<li>🔊 Перепроверьте настройки вывода звука в <code>Настройки → Звук</code></li>
+<li>🔊 Установите приложение для чтения CAN-шины</li>
+<li>🔊 Сбросьте настройки до заводских, если проблема не решается</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Если после сброса настроек проблема с черным экраном сохраняется, возможно, поврежден аппаратный модуль дисплея, и потребуется его замена.</blockquote>
+
+<details class="faq-item"><summary>Почему пропадает Wi-Fi после прошивки?</summary><div class="faq-answer"><p>Часто это связано с тем, что новая прошивка не содержит драйверов для конкретного модуля Wi-Fi вашей ревизии. Попробуйте найти патч для драйверов или использовать внешний USB-адаптер.</p></div></details>
+
+<h2 id="итоги-и-рекомендации">Итоги и рекомендации</h2>
+
+<p>Русификация <em>Honda Gather</em> — это сложный, но выполнимый процесс, который значительно улучшает удобство эксплуатации автомобиля. Главное правило — действовать последовательно и не пропускать этапы подготовки. Успех зависит от точности выполнения инструкций и качества используемого программного обеспечения.</p>
+
+<p>Не стоит экономить на качестве файлов прошивки. Используйте только проверенные источники, где сообщество пользователей подтвердило работоспособность обновлений. Репутация источника часто важнее скорости загрузки файла.</p>
+
+<p> Не пугайтесь, если в первые часы работы устройство работает медленно или быстро разряжается — это нормальное явление для Android-систем после обновления.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярное обновление ПО и использование проверенных источников файлов — залог стабильной работы русифицированной системы Honda Gather.</p></div>
+
+<h2 id="часто-задаваемые-вопросы">Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Смогу ли я сохранить свои настройки после русификации?</summary>
+<p>К сожалению, при полной замене прошивки (флешинге) настройки сбрасываются до заводских. При использовании метода установки языкового пакета настройки могут сохраниться, но это не гарантируется на 100%.</p>
+</details>
+
+<details>
+<summary>Можно ли вернуть английскую версию после русификации?</summary>
+<p>Да, это возможно. Вам потребуется найти оригинальную прошивку для вашего региона и установить ее обратно. Однако это может занять много времени и потребует повторной подготовки устройства.</p>
+</details>
+
+<details>
+<summary>Влияет ли русификация на гарантию автомобиля?</summary>
+<p>Юридически дилер не может отказать в гарантии только на основании изменения ПО мультимедиа, если это не привело к поломке других систем. Однако на практике могут возникнуть споры, если магнитола перестанет работать.</p>
+</details>
+
+<details>
+<summary>Нужен ли специальный кабель для подключения?</summary>
+<p>Рекомендуется использовать качественный USB-кабель с поддержкой передачи данных. Дешевые кабели часто работают только на зарядку, что делает невозможным ввод команд через ADB.</p>
+</details>
+
+<details>
+<summary>Что делать, если магнитола не включается после прошивки?</summary>
+<p>Попробуйте выполнить жесткий сброс через комбинацию кнопок на корпусе или отключите минусовую клемму аккумулятора на 10-15 минут. Если это не поможет, потребуется перепрошивка через дилерское оборудование.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-системы-honda-gather-и-причины-перевода">Особенности системы Honda Gather и причины перевода</a></li><li><a href="#выбор-метода-русификации-прошивка-или-модификация">Выбор метода русификации: Прошивка или модификация</a></li><li><a href="#подготовка-оборудования-и-программного-обеспечения">Подготовка оборудования и программного обеспечения</a></li><li><a href="#пошаговая-инструкция-по-перепрошивке">Пошаговая инструкция по перепрошивке</a></li><li><a href="#настройка-русифицированной-системы">Настройка русифицированной системы</a></li><li><a href="#таблица-совместимости-версий-и-методов">Таблица совместимости версий и методов</a></li><li><a href="#решение-частых-проблем-после-обновления">Решение частых проблем после обновления</a></li><li><a href="#итоги-и-рекомендации">Итоги и рекомендации</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-srv-rd1-zamena-masla-v-akpp.html" class="related-card">Замена масла в АКПП Honda CR-V RD1: Инструкция, интервалы и нюансы</a></li><li><a href="/articles/z/za/zamena-reshetki-radiatora-khonda-srv-4.html" class="related-card">Замена решетки радиатора Honda CR-V 4: пошаговая инструкция</a></li><li><a href="/articles/k/ka/kardan-khonda-srv-rd1.html" class="related-card">Замена кардана Honda CR-V RD1: признаки износа, выбор и установка</a></li><li><a href="/articles/c/ch/chistka-drosselnoj-zaslonki-khonda-srv-rd1.html" class="related-card">Чистка дроссельной заслонки Honda CR-V RD1: Инструкция и нюансы</a></li><li><a href="/articles/p/po/polnyj-privod-khonda-srv-3.html" class="related-card">Полный привод Honda CR-V 3: устройство, эксплуатация и ремонт</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-srv-rd1-zamena-masla-v-akpp.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в АКПП Honda CR-V RD1: Инструкция, интервалы и нюансы</span><span class="related-bottom-desc">Полное руководство по замене трансмиссионной жидкости на Honda CR-V второго поколения (RD1). Пошагов</span></a><a href="/articles/z/za/zamena-reshetki-radiatora-khonda-srv-4.html" class="related-bottom-card"><span class="related-bottom-title">Замена решетки радиатора Honda CR-V 4: пошаговая инструкция</span><span class="related-bottom-desc">Как самостоятельно заменить решетку радиатора Хонда СРВ 4. Выбор оригинала или аналога, демонтаж бам</span></a><a href="/articles/k/ka/kardan-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Замена кардана Honda CR-V RD1: признаки износа, выбор и установка</span><span class="related-bottom-desc">Полный гайд по диагностике и замене карданного вала на Honda CR-V RD1. Симптомы поломки, нюансы выбо</span></a><a href="/articles/c/ch/chistka-drosselnoj-zaslonki-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Чистка дроссельной заслонки Honda CR-V RD1: Инструкция и нюансы</span><span class="related-bottom-desc">Подробное руководство по очистке дроссельной заслонки на Honda CR-V RD1. Симптомы загрязнения, пошаг</span></a><a href="/articles/p/po/polnyj-privod-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Полный привод Honda CR-V 3: устройство, эксплуатация и ремонт</span><span class="related-bottom-desc">Подробный разбор системы полного привода Real Time 4WD на Honda CR-V 3. Принципы работы, типичные не</span></a><a href="/articles/t/to/tormoznye-diski-honda-cr-v-4.html" class="related-bottom-card"><span class="related-bottom-title">Тормозные диски Honda CR-V 4: выбор, замена и нюансы обслуживания</span><span class="related-bottom-desc">Полный гид по выбору и замене тормозных дисков на Honda CR-V 4. Обзор брендов, отличия втулок, прове</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

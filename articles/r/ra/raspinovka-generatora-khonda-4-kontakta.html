@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Распиновка генератора Honda: 4 контакта, схема и диагностика — Honda Library</title>
+    <meta name="description" content="Подробная распиновка 4-контактного генератора Honda. Схема подключения, диагностика ошибок FLD/FRP, замена реле-регулятора и устранение скачков напряжения.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/ra/raspinovka-generatora-khonda-4-kontakta.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Распиновка генератора Honda: 4 контакта, схема и диагностика">
+    <meta property="og:description" content="Подробная распиновка 4-контактного генератора Honda. Схема подключения, диагностика ошибок FLD/FRP, замена реле-регулятора и устранение скачков напряжения.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Распиновка генератора Honda: 4 контакта, схема и диагностика</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полный гид по распиновке 4-контактного генератора Honda</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#основы-работы-системы-зарядки-honda">Основы работы системы зарядки Honda</a></li><li><a href="#распиновка-4-контактного-разъема">Распиновка 4-контактного разъема</a></li><li><a href="#диагностика-сигналов-возбуждения">Диагностика сигналов возбуждения</a></li><li><a href="#устранение-распространенных-неисправностей">Устранение распространенных неисправностей</a></li><li><a href="#замена-реле-регулятора">Замена реле-регулятора</a></li><li><a href="#влияние-на-бортовую-электронику">Влияние на бортовую электронику</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Система зарядки в автомобилях <em>Honda</em> часто вызывает вопросы у владельцев при возникновении проблем с аккумулятором или нестабильной работе электрооборудования. В отличие от простых двухконтактных систем, четырехконтактные генераторы, устанавливаемые на модели <em>Civic</em>, <em>Accord</em> и <em>CR-V</em>, используют сложную логику взаимодействия с блоком управления двигателем (ECU). Понимание того, как распределены сигналы по разъемам, является ключом к быстрой диагностике неисправностей без обращения в сервисный центр.</p>
+
+<p>Ошибочная интерпретация контактов может привести к перегоранию дорогостоящей проводки или выходу из строя самого генератора. В данной статье мы детально разберем назначение каждого из четырех выводов, схемы подключения для различных поколений и методы проверки работоспособности с помощью мультиметра. Вы узнаете, как отличить сигнал управления током от сигнала контроля напряжения и почему стандартные мультиметры могут не показывать полную картину работы системы <em>FRL</em>.</p>
+
+<h2 id="основы-работы-системы-зарядки-honda">Основы работы системы зарядки Honda</h2>
+
+<p>Современные генераторы <em>Honda</em> оснащены интеллектуальным реле-регулятором, который не просто поддерживает напряжение на одном уровне, а динамически меняет режимы работы в зависимости от нагрузки на двигатель. Это позволяет экономить топливо и снижать износ деталей. Система получает команды от электронного блока управления, отслеживая такие параметры, как температура двигателя и потребление энергии бортовой сетью.</p>
+
+<p>Ключевым элементом здесь является <strong>сигнал FRP</strong> (Field Duty Request Pulse), который представляет собой широтно-импульсную модуляцию. Именно этот сигнал сообщает генератору, какую силу тока необходимо выдать в данный момент. Если вы не понимаете принцип работы <strong>ШИМ-сигнала</strong>, диагностика может показаться сложной, но на практике это лишь последовательность импульсов, которую можно измерить специальным оборудованием или осциллографом.</p>
+
+<p>Вторым важным аспектом является <strong>сигнал FLD</strong> (Field Duty Request), который часто путают с FRP, но в некоторых схемах он выполняет функцию обратной связи или дополнительного контроля. Неправильная интерпретация этих сигналов приводит к тому, что аккумулятор либо не заряжается вовсе, либо перезаряжается, что вызывает закипание электролита. </p>
+
+<h2 id="распиновка-4-контактного-разъема">Распиновка 4-контактного разъема</h2>
+
+<p>При снятии фишки с задней крышки генератора вы увидите четыре основных контакта. Их маркировка может незначительно отличаться в зависимости от года выпуска и модели, но функциональное назначение остается неизменным. Первым и самым мощным является вывод <strong>B+</strong>, который подает основное напряжение на аккумулятор. К нему подключается толстый силовой кабель, идущий непосредственно к клемме батареи через предохранитель.</p>
+
+<p>Второй контакт — это <strong>L</strong> (Lamp) или <strong>S</strong> (Sense), который отвечает за контроль напряжения и подсветку лампы зарядки на приборной панели. Этот провод часто тоньше и требует осторожности при проверке. Третий вывод — <strong>FR</strong> (Field Request) или <strong>F</strong>, который передает управляющий сигнал от ECU к реле-регулятору. Четвертый контакт — это <strong>IG</strong> (Ignition) или масса, обеспечивающая питание схемы возбуждения при включении зажигания.</p>
+
+<p>Для наглядности приведем таблицу с типичным распределением контактов для большинства моделей <em>Honda</em> с 4-пиновым разъемом:</p>
+
+<table>
+<thead>
+<tr>
+<th>Контакт (Pin)</th>
+<th>Маркировка</th>
+<th>Назначение</th>
+<th>Цвет провода (пример)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B+</td>
+<td>Силовой выход на АКБ</td>
+<td>Красный/Черный</td>
+</tr>
+<tr>
+<td>2</td>
+<td>L / S</td>
+<td>Контроль напряжения / Лампа</td>
+<td>Зеленый</td>
+</tr>
+<tr>
+<td>3</td>
+<td>FR / F</td>
+<td>Управление током возбуждения</td>
+<td>Белый/Синий</td>
+</tr>
+<tr>
+<td>4</td>
+<td>IG / E</td>
+<td>Питание возбуждения / Масса</td>
+<td>Коричневый</td>
+</tr>
+</tbody>
+</table>
+
+<p>Обратите внимание, что цвета проводов могут меняться в зависимости от года выпуска автомобиля, поэтому полагаться только на цветовую маркировку опасно. Всегда сверяйтесь со схемой конкретного автомобиля. Неправильное подключение <strong>сигнального провода</strong> может привести к выходу из строя самого блока управления двигателем.</p>
+
+<blockquote>⚠️ Внимание: Не пытайтесь проверить целостность цепи, подавая напряжение напрямую на контакты FR или IG. Это может мгновенно сжечь электронную начинку реле-регулятора, так как они рассчитаны на слаботочные сигналы.</blockquote>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой у вас генератор?</strong><ul><li>2 контакта</li><li>4 контакта</li><li>Не знаю</li><li>Другой</li></ul></div></div>
+
+<h2 id="диагностика-сигналов-возбуждения">Диагностика сигналов возбуждения</h2>
+
+<p>Проверка работоспособности генератора начинается с анализа сигналов возбуждения. Для этого вам понадобится мультиметр, способный измерять частоту или ширину импульсов, либо осциллограф. Обычный вольтметр покажет лишь среднее значение, что недостаточно для точной диагностики. Вам нужно убедиться, что сигнал <strong>FR</strong> приходит от ЭБУ и имеет правильную форму.</p>
+
+<p>Если напряжение на аккумуляторе не растет, первым делом проверьте наличие напряжения на выводе IG при включенном зажигании. Если его нет, проблема не в генераторе, а в цепи зажигания или предохранителях. Затем измерьте сопротивление обмотки возбуждения между контактами, если это технически возможно на вашем типе реле-регулятора. Сопротивление должно быть в пределах нормы, указанной в сервисной документации.</p>
+
+<p>Особое внимание уделите контакту <strong>FR</strong>. На многих моделях <em>Honda</em> этот сигнал представляет собой серию импульсов. Если вы видите постоянный высокий или низкий уровень вместо модулированного сигнала, значит, блок управления двигателем не получает корректные данные или сам генератор не отвечает. В таком случае часто требуется замена <strong>реле-регулятора</strong> в сборе.</p>
+
+<p>Важно также проверить качество контакта на корпусе. Плохая масса может привести к тому, что <strong>сигнал FLD</strong> будет искажаться, вызывая мигание лампы зарядки даже при исправном генераторе. Очистите место контакта на двигателе и убедитесь, что провод массы надежно прикручен к кузову.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика цепи возбуждения</h4><label class="check-item"><input type="checkbox"><span>Проверить напряжение IG</span></label><label class="check-item"><input type="checkbox"><span>Измерить сигнал FR</span></label><label class="check-item"><input type="checkbox"><span>Проверить массу</span></label><label class="check-item"><input type="checkbox"><span>Проверить предохранитель</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="устранение-распространенных-неисправностей">Устранение распространенных неисправностей</h2>
+
+<p>Одной из самых частых проблем является выход из строя диодного моста или щеток генератора. Симптомы могут быть схожи с проблемами в электронике: скачки напряжения, шум при работе. Если напряжение на аккумуляторе прыгает от 12 до 15 вольт при работающем двигателе, скорее всего, проблема в <strong>реле-регуляторе</strong>. В этом случае замена щеточного узла может не помочь, если электронная часть уже повреждена.</p>
+
+<p>Другой частой проблемой является окисление контактов в разъеме. Из-за вибрации и перепадов температур металл может окислиться, что приведет к увеличению сопротивления. Это вызывает падение напряжения на входе в генератор и неправильную работу системы управления. Для устранения проблемы необходимо зачистить контакты и обработать их специальным контактным спреем.</p>
+
+<p>Иногда проблема кроется в самом проводе. Тонкие сигнальные провода могут переламываться внутри изоляции, создавая "плавающий" контакт. Визуально это может быть незаметно, поэтому при подозрении на обрыв нужно прозвонить цепь от разъема генератора до разъема ЭБУ. Если провод поврежден, его необходимо заменить целиком, а не просто склеить.</p>
+
+<blockquote>⚠️ Внимание: Если вы заменяете генератор на аналог от другой модели, убедитесь, что распиновка 4-контактного разъема полностью совпадает. Иначе вы рискуете сжечь новый узел при первом запуске двигателя.</blockquote>
+
+<details class="faq-item"><summary>Что делать, если нет оригинального реле-регулятора?</summary><div class="faq-answer"><p>Если оригинальная деталь недоступна, можно попробовать найти универсальное реле, но его нужно правильно настроить. Часто проще найти б/у генератор на разборке. Главное — не менять распиновку без глубоких знаний электроники, так как логика Honda уникальна.</p></div></details>
+
+<h2 id="замена-реле-регулятора">Замена реле-регулятора</h2>
+
+<p>Процесс замены реле-регулятора требует аккуратности и внимательности. Сначала необходимо снять минусовую клемму с аккумулятора, чтобы избежать короткого замыкания. Затем отсоедините разъем от генератора и открутите крепежные болты крышки. Будьте осторожны с пружинными фиксаторами, так как они могут вылететь при снятии крышки.</p>
+
+<p>После снятия крышки вы увидите щеточный узел и плату реле-регулятора. Отсоедините провода, запомнив или сфотографировав их расположение. Снимите старый регулятор и установите новый, убедившись, что все контакты плотно прилегают. Не затягивайте болты слишком сильно, чтобы не повредить пластиковый корпус новой детали.</p>
+
+<p>Перед сборкой проверьте состояние щеток. Если они стерлись до минимума, замените их. Также осмотрите контактные кольца ротора на предмет износа. Если кольца сильно изношены, замена регулятора не даст длительного эффекта. Установите крышку на место и закрепите ее болтами.</p>
+
+<p>Подключите разъем генератора и присоедините минусовую клемму аккумулятора. Запустите двигатель и проверьте напряжение на клеммах аккумулятора. Оно должно быть в пределах 13,5–14,5 вольт. Если напряжение стабильно, работа выполнена успешно.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед установкой нового реле-регулятора нанесите на его контакты тонкий слой диэлектрической смазки. Это защитит их от окисления и улучшит теплоотвод.</p></div>
+
+<h2 id="влияние-на-бортовую-электронику">Влияние на бортовую электронику</h2>
+
+<p>Неисправный генератор с неправильной распиновкой может нанести серьезный ущерб бортовой электронике автомобиля <em>Honda</em>. Скачки напряжения могут привести к сбоям в работе блока управления двигателем, аудиосистемы и других электронных модулей. Именно поэтому так важно вовремя выявить и устранить проблему с <strong>сигналом FRP</strong>.</p>
+
+<p>Если вы заметили, что на приборной панели загорелась лампа зарядки, но напряжение в норме, проблема может быть в цепи контроля лампы. Это не влияет на работу генератора, но вызывает дискомфорт. Проверьте предохранитель, отвечающий за приборную панель, и целостность проводки до лампы.</p>
+
+<p>В современных автомобилях с системой Start-Stop требования к генератору еще выше. Он должен быстро реагировать на изменения нагрузки и поддерживать стабильное напряжение при частых остановках двигателя. Любая задержка в передаче сигнала может привести к тому, что система Start-Stop перестанет работать.</p>
+
+<blockquote>⚠️ Внимание: При диагностике систем Start-Stop используйте только специализированное оборудование. Обычные мультиметры могут не успеть зафиксировать быстрые изменения напряжения, что приведет к ошибочному диагнозу.</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная диагностика 4-контактного генератора Honda требует понимания логики работы сигналов FRP и FLD, а не просто измерения статического напряжения.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Почему горит лампа зарядки при исправном генераторе?</summary>
+<p>Это может быть вызвано обрывом в цепи сигнала L (Lamp) или неисправностью самого индикатора на приборной панели. Также возможно окисление контактов в разъеме.</p>
+</details>
+
+<details>
+<summary>Можно ли запустить двигатель без подключения разъема к генератору?</summary>
+<p>Технически двигатель запустится, если есть искра и топливо, но генератор не будет заряжать аккумулятор. Машина проработает недолго, пока не разрядится батарея.</p>
+</details>
+
+<details>
+<summary>Как проверить сигнал FRP без осциллографа?</summary>
+<p>Без осциллографа точно проверить форму импульса сложно. Можно попробовать измерить среднее напряжение на выводе FR, но это не даст полной картины. Лучше использовать авто-тестер с функцией проверки ШИМ.</p>
+</details>
+
+<details>
+<summary>Что будет, если перепутать провода L и IG?</summary>
+<p>Система может работать некорректно: лампа зарядки может гореть постоянно или не загораться при старте. В некоторых случаях это может привести к перегрузке цепи и сгоранию предохранителя.</p>
+</details>
+
+<details>
+<summary>Как часто нужно проверять натяжение ремня генератора?</summary>
+<p>Рекомендуется проверять натяжение при каждом ТО, но не реже одного раза в 15 000 км. Слабый ремень проскальзывает, что приводит к падению напряжения и перегреву генератора.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#основы-работы-системы-зарядки-honda">Основы работы системы зарядки Honda</a></li><li><a href="#распиновка-4-контактного-разъема">Распиновка 4-контактного разъема</a></li><li><a href="#диагностика-сигналов-возбуждения">Диагностика сигналов возбуждения</a></li><li><a href="#устранение-распространенных-неисправностей">Устранение распространенных неисправностей</a></li><li><a href="#замена-реле-регулятора">Замена реле-регулятора</a></li><li><a href="#влияние-на-бортовую-электронику">Влияние на бортовую электронику</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/d/do/domkrat-khonda-tsivik-4d.html" class="related-card">Домкрат для Honda Civic 4D: выбор, установка и правила безопасности</a></li><li><a href="/articles/k/kh/khonda-tsivik-v-rossii.html" class="related-card">Honda Civic в России: цены, надежность и рынок подержанных авто</a></li><li><a href="/articles/p/pn/pnevmopodveska-khonda-tsivik-4d.html" class="related-card">Пневмоподвеска Honda Civic 4D: Установка, эксплуатация и цены</a></li><li><a href="/articles/p/po/podushki-dvigatelya-honda-civic-4d.html" class="related-card">Подушки двигателя Honda Civic 4D: признаки износа и замена</a></li><li><a href="/articles/k/kh/khonda-tsivik-4-d-razboltovka-koles.html" class="related-card">Разболтовка колес Honda Civic 4D: размеры, PCD и диски</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/d/do/domkrat-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Домкрат для Honda Civic 4D: выбор, установка и правила безопасности</span><span class="related-bottom-desc">Полный гайд по выбору и использованию домкрата для Honda Civic 4D. Типы подъемников, точки поддомкра</span></a><a href="/articles/k/kh/khonda-tsivik-v-rossii.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic в России: цены, надежность и рынок подержанных авто</span><span class="related-bottom-desc">Полный обзор Honda Civic в РФ: история модели, выбор б/у, цены, надежность двигателей и нюансы владе</span></a><a href="/articles/p/pn/pnevmopodveska-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Пневмоподвеска Honda Civic 4D: Установка, эксплуатация и цены</span><span class="related-bottom-desc">Полный гид по пневмоподвеске для Honda Civic 4D. Обзор систем, плюсы и минусы установки, стоимость р</span></a><a href="/articles/p/po/podushki-dvigatelya-honda-civic-4d.html" class="related-bottom-card"><span class="related-bottom-title">Подушки двигателя Honda Civic 4D: признаки износа и замена</span><span class="related-bottom-desc">Как определить износ опор двигателя на Honda Civic 4D. Причины вибрации, диагностика и пошаговая инс</span></a><a href="/articles/k/kh/khonda-tsivik-4-d-razboltovka-koles.html" class="related-bottom-card"><span class="related-bottom-title">Разболтовка колес Honda Civic 4D: размеры, PCD и диски</span><span class="related-bottom-desc">Полный гид по разболтовке Honda Civic 4D. Узнайте точные параметры PCD, вылет, диаметр центровочного</span></a><a href="/articles/z/za/zadnie-fonari-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Задние фонари Honda Civic 4D: выбор, замена и тюнинг</span><span class="related-bottom-desc">Полный гид по задним фонарям Honda Civic 4D. Обзор штатных и LED-оптики, инструкция по замене, устра</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

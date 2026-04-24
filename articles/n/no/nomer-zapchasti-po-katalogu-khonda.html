@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Номер запчасти по каталогу Honda: Как найти VIN и подобрать деталь — Honda Library</title>
+    <meta name="description" content="Узнайте, как правильно найти номер запчасти по каталогу Honda. Подробная инструкция по VIN-коду, поиску OEM-номеров и проверке совместимости.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/n/no/nomer-zapchasti-po-katalogu-khonda.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Номер запчасти по каталогу Honda: Как найти VIN и подобрать деталь">
+    <meta property="og:description" content="Узнайте, как правильно найти номер запчасти по каталогу Honda. Подробная инструкция по VIN-коду, поиску OEM-номеров и проверке совместимости.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Номер запчасти по каталогу Honda: Как найти VIN и подобрать деталь</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Поиск и расшифровка номера запчасти по каталогу Honda</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#значение-vin-кода-и-его-роль-в-поиске">Значение VIN-кода и его роль в поиске</a></li><li><a href="#структура-oem-номера-и-правила-его-чтения">Структура OEM-номера и правила его чтения</a></li><li><a href="#инструменты-и-ресурсы-для-поиска-по-каталогам">Инструменты и ресурсы для поиска по каталогам</a></li><li><a href="#пошаговая-инструкция-по-подбору-детали">Пошаговая инструкция по подбору детали</a></li><li><a href="#анализ-совместимости-и-кросс-номера">Анализ совместимости и кросс-номера</a></li><li><a href="#типичные-ошибки-и-как-их-избежать">Типичные ошибки и как их избежать</a></li><li><a href="#специфика-поиска-для-популярных-моделей">Специфика поиска для популярных моделей</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Владение автомобилем марки <em>Honda</em> требует ответственного подхода к техническому обслуживанию, и ключевым моментом здесь является точность подбора комплектующих. Ошибки при выборе детали могут привести к дорогостоящему ремонту и снижению эксплуатационных характеристик транспортного средства. Чтобы избежать подобных ситуаций, необходимо знать, как найти <strong>номер запчасти по каталогу Honda</strong>, используя заводские данные.</p>
+
+<p>Каждая деталь на конвейере маркируется уникальным идентификатором, который является вашим главным инструментом в мире автозапчастей. Независимо от того, обслуживаете ли вы <em>Accord</em>, <em>CR-V</em> или <em>Pilot</em>, алгоритм поиска остается неизменным, но требует внимательности. Мы разберем, где искать информацию, как интерпретировать сложные коды и почему визуальное совпадение детали часто бывает обманчивым.</p>
+
+<h2 id="значение-vin-кода-и-его-роль-в-поиске">Значение VIN-кода и его роль в поиске</h2>
+
+<p>В основе любой корректной операции по подбору запчастей лежит <strong>VIN-код</strong> (Vehicle Identification Number). Это 17-значный уникальный идентификатор, который содержит зашифрованную информацию о годе выпуска, месте производства, типе двигателя и даже о комплектации салона вашего автомобиля. Без этого кода любой поиск в каталоге будет напоминать гадание на кофейной гуще.</p>
+
+<p>Сам VIN-код можно найти в нескольких местах: на табличке в моторном отсеке, на стойке водительской двери или в техпаспорте транспортного средства. Однако для работы с электронными каталогами вам потребуется не просто переписать цифры, а убедиться в их точности. Ошибка даже в одной букве или цифре может привести к тому, что система покажет деталь от <em>Legend</em> или <em>Odyssey</em>, которая физически не подойдет к вашему <em>City</em>.</p>
+
+<p>Многие владельцы ошибочно полагают, что название модели достаточно для поиска. Это неверно. Например, <em>Honda Civic</em> выпускался десятилетиями с огромным количеством модификаций двигателей и кузовов. Номер запчасти может отличаться даже для одной и той же детали на машинах, выпущенных с разницей в полгода. Поэтому использование <strong>VIN-декодера</strong> или обращение к официальной базе данных является обязательным этапом.</p>
+
+<h2 id="структура-oem-номера-и-правила-его-чтения">Структура OEM-номера и правила его чтения</h2>
+
+<p>Заводской номер запчасти, часто называемый OEM-номером, представляет собой специфический набор цифр и букв, разделенных дефисами. Стандартная структура выглядит как пять цифр, дефис, три цифры, дефис и три цифры (например, 15400-RTA-003). Понимание логики этого кода поможет вам быстрее ориентироваться в каталогах и проверять совместимость аналогов.</p>
+
+<p>Первые пять цифр обычно обозначают группу детали и ее базовый тип. Например, цифры, начинающиеся на <code>15400</code>, чаще всего относятся к масляному насосу или системе смазки, а <code>45020</code> — к компонентам подвески. Срединная часть (три цифры) часто указывает на модификацию или серию, а суффикс (последние три символа) может обозначать цвет, материал или конкретный поставщик, если деталь собирается на аутсорсинге.</p>
+
+<p>При вводе номера в поисковую строку каталога важно соблюдать регистр, если система требует его, и не игнорировать дефисы. Некоторые старые базы данных могут не принимать символы, но современные сервисы, такие как Partsouq или Amayama, отлично справляются с форматированием. Если вы видите номер с буквой "X" или "Z" в конце, это может означать, что деталь была заменена на более новую версию, и вам нужно искать именно этот обновленный код.</p>
+
+<p><strong>Важно помнить</strong>, что номера запчастей для рынков Северной Америки, Европы и Японии могут иметь различия, несмотря на внешнюю идентичность деталей. Это связано с особенностями экологических норм и климатических условий эксплуатации.</p>
+
+<h2 id="инструменты-и-ресурсы-для-поиска-по-каталогам">Инструменты и ресурсы для поиска по каталогам</h2>
+
+<p>Сегодня существует множество способов найти нужную деталь, от бумажных справочников до сложных онлайн-платформ. Наиболее надежными считаются официальные веб-сервисы, такие как <em>Honda Parts Online</em> (доступен для дилеров и партнеров) и крупные агрегаторы, например, Partsouq, Amayama или Honda-Parts.ru. Эти ресурсы используют базы данных, которые обновляются по мере выхода новых модификаций автомобилей.</p>
+
+<p>Алгоритм работы в таких системах обычно прост: вы вводите VIN-код, выбираете визуальную схему автомобиля, находите нужный узел на exploded view (разобранной схеме) и кликаете по детали. Система выдаст <strong>OEM-номер</strong>, название, а также наличие на складах. Для сложных узлов, таких как электронные блоки управления или двигатели, это единственно верный способ избежать ошибок.</p>
+
+<ul>
+<li>🔍 Используйте официальные дилерские каталоги для проверки точности номера перед заказом.</li>
+<li>🌐 Агрегаторы позволяют сравнивать цены и наличие детали на складах в разных странах.</li>
+<li>📱 Мобильные приложения часто имеют функцию сканирования штрих-кода на старых деталях для поиска замены.</li>
+</ul>
+
+<p>Не стоит полагаться только на визуальный поиск по фотографиям. Детали могут выглядеть идентично, но иметь разную жесткость пружин, материал корпуса или разъемы подключения. Всегда сверяйтесь с каталожным номером. Если вы ищете, например, <em>ремень ГРМ</em>, убедитесь, что номер соответствует именно вашему объему двигателя (1.5, 1.8 или 2.0 литра).</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой метод поиска запчастей вы используете чаще всего?</strong><ul><li>Официальный дилерский каталог</li><li>Онлайн-агрегаторы (Partsouq и др.)</li><li>Поиск по фото/визуально</li><li>По совету знакомых/мастеров</li></ul></div></div>
+
+<h2 id="пошаговая-инструкция-по-подбору-детали">Пошаговая инструкция по подбору детали</h2>
+
+<p>Чтобы самостоятельно найти номер запчасти, следуйте этому алгоритму. Сначала найдите VIN-код вашего автомобиля и убедитесь в его чистоте. Затем откройте выбранный каталог и введите код в соответствующее поле. Система предложит выбрать модель и год выпуска, если она не определила их автоматически.</p>
+
+<p>Далее вам предстоит навигация по разделам каталога. Обычно они разделены на крупные узлы: <em>Двигатель</em>, <em>Трансмиссия</em>, <em>Ходовая часть</em>, <em>Кузов</em>, <em>Электрика</em>. Откройте нужный раздел и переходите к подразделам. Здесь вы увидите схемы с пронумерованными деталями. Внимательно изучите расположение элемента, который вам нужен, чтобы не перепутать левую и правую сторону.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед заказом</h4><label class="check-item"><input type="checkbox"><span>Сверить VIN-код</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в правильности года выпуска</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие модификаций</span></label><label class="check-item"><input type="checkbox"><span>Сравнить номер на старой детали с новым</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Когда вы найдете нужную деталь на схеме, кликните по ней. Откроется карточка, где будет указан полный <strong>OEM-номер</strong>. Запишите его или скопируйте. Обратите внимание на примечания: иногда там указывается, что деталь продается только в сборе или что есть несколько вариантов исполнения (например, с прокладкой или без).</p>
+
+<p>Если вы видите, что деталь имеет несколько кодов (например, "заменен на" или "аналог"), выбирайте самый свежий, актуальный номер. Старые номера могут быть сняты с производства, и поиск по ним не даст результата. В некоторых случаях система может предложить <strong>аналоги</strong> от сторонних производителей, но для критических узлов лучше придерживаться заводских спецификаций.</p>
+
+<details class="faq-item"><summary>Что делать, если деталь не найдена по VIN?</summary><div class="faq-answer"><p>Если деталь не находится по VIN, возможно, она была снята с производства или заменена на новый артикул. Попробуйте найти аналогичную деталь по визуальному коду группы или обратитесь к официальному дилеру для уточнения истории изменений. Иногда помогает поиск по более старому VIN-коду предыдущего владельца, если машина меняла "железо" по гарантии.</p></div></details>
+
+<h2 id="анализ-совместимости-и-кросс-номера">Анализ совместимости и кросс-номера</h2>
+
+<p>Иногда заводской номер запчасти <em>Honda</em> может совпадать с номерами деталей для других марок, например, <em>Acura</em>, <em>Rover</em> или <em>Isuzu</em>. Это явление называется кросс-совместимостью. Понимание кросс-номеров открывает возможности для более выгодных покупок, так как некоторые оригинальные детали могут стоить дешевле под другим брендом.</p>
+
+<p>Однако использовать кросс-номера нужно с осторожностью. Деталь может подходить по креплению, но иметь другой ресурс или характеристики материала. Например, тормозные колодки для <em>Honda Civic</em> и <em>Acura CSX</em> могут иметь одинаковый номер, но отличаться составом摩擦-материала из-за разных требований к тормозному усилию.</p>
+
+<p>При поиске аналогов обращайте внимание на производителей. Известные бренды, такие как <em>NTN</em>, <em>NSK</em>, <em>Denso</em>, часто поставляют детали прямо на конвейер. Если вы найдете номер запчасти в каталоге этих брендов, это будет гарантией качества, идентичного оригиналу, но часто по более низкой цене. Главное — убедиться, что это именно OEM-поставка, а не реплика.</p>
+
+<p><strong>Внимание</strong>! При использовании кросс-номеров всегда проверяйте габаритные размеры и параметры резьбы. Даже незначительное отклонение в 0.5 мм может сделать установку невозможной или привести к быстрому разрушению узла.</p>
+
+<table>
+<thead>
+<tr>
+<th>Группа детали</th>
+<th>Пример OEM-номера</th>
+<th>Возможный аналог (бренд)</th>
+<th>Особенности совместимости</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Масляный фильтр</td>
+<td>15400-RTA-003</td>
+<td>Denso, Knecht</td>
+<td>Полная идентичность размеров и пропускной способности</td>
+</tr>
+<tr>
+<td>Тормозные колодки (передние)</td>
+<td>45022-S9A-E50</td>
+<td>TRW, Akebono</td>
+<td>Могут отличаться составом накладки</td>
+</tr>
+<tr>
+<td>Свеча зажигания</td>
+<td>98079-56846</td>
+<td>NGK, Denso</td>
+<td>Важно соблюдать зазор и калильное число</td>
+</tr>
+<tr>
+<td>Ремень ГРМ</td>
+<td>14400-RNA-A00</td>
+<td>Gates, Contitech</td>
+<td>Строго по шагу и количеству зубьев</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="типичные-ошибки-и-как-их-избежать">Типичные ошибки и как их избежать</h2>
+
+<p>Одной из самых распространенных ошибок является покупка детали по внешнему виду без проверки номера. Мастер может визуально оценить, что деталь подходит, но не учесть тонкости, такие как наличие встроенного датчика или изменение жесткости пружины. Это особенно актуально для <em>электронных блоков</em> и <em>сенсоров</em>.</p>
+
+<p>Другая ошибка — игнорирование региональной специфики. Японские автомобили часто имеют более компактные узлы, чем их американские или европейские аналоги. Если вы попытаетесь поставить деталь от американского <em>Pilot</em> на японский <em>Stepwgn</em>, вы можете столкнуться с проблемой установки из-за разницы в шасси.</p>
+
+<ul>
+<li>❌ Не покупайте детали "наугад" без сверки с каталогом, даже если продавец гарантирует совместимость.</li>
+<li>❌ Избегайте использования устаревших VIN-кодов, если машина проходила серьезный ремонт с заменой агрегатов.</li>
+<li>❌ Не игнорируйте предупреждения в каталоге о необходимости замены смежных узлов (например, прокладок при замене головки блока).</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед покупкой всегда просите продавца показать фото детали с заводской маркировкой. Часто на новых деталях номер выбит на корпусе, и его можно сравнить с тем, что вы нашли в каталоге.</p></div>
+
+<p>Также стоит учитывать, что некоторые детали могут иметь "заводские" замены. Например, если вы ищете старый номер, а его нет в продаже, каталог может предложить новый, который является прямым аналогом. В этом случае не стоит паниковать, а нужно внимательно изучить описание замены.</p>
+
+<h2 id="специфика-поиска-для-популярных-моделей">Специфика поиска для популярных моделей</h2>
+
+<p>Для таких моделей, как <em>Honda Civic</em> и <em>Accord</em>, существует огромное количество модификаций. Например, для Civic с турбодвигателем 1.5 VTEC Turbo запчасти системы впуска отличаются от версий с атмосферным мотором 1.8. Поэтому при поиске обязательно указывайте тип двигателя и мощность.</p>
+
+<p>Модели <em>CR-V</em> и <em>Pilot</em> часто имеют общие элементы подвески и трансмиссии, но их кузовные детали и электроника могут иметь существенные различия в зависимости от года выпуска. Для кроссоверов также важно учитывать тип привода (передний или полный), так как это влияет на выбор карданного вала и дифференциала.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Точность ввода VIN-кода и проверка номера детали по каталогу — это единственный способ гарантировать, что купленная запчасть подойдет к вашему автомобилю без доработок.</p></div>
+
+<p>Для раритетных моделей, таких как <em>Prelude</em> или <em>NSX</em>, поиск может быть затруднен из-за снятия деталей с производства. В таких случаях каталоги могут не показывать наличие, и потребуется поиск по кросс-номерам или обращение к специализированным поставщикам запчастей для старых Honda.</p>
+
+<blockquote>
+<p>⚠️ Внимание! Никогда не доверяйте слепо номерам, написанным продавцами на досках объявлений. Номер, указанный в тексте, может быть ошибочным или подделкой. Всегда перепроверяйте его в независимом каталоге по VIN вашего автомобиля.</p>
+</blockquote>
+
+<details>
+<summary>Можно ли использовать номер запчасти от другой модели Honda?</summary>
+<p>Только если в каталоге указано, что эти номера взаимозаменяемы. Иногда детали от разных моделей могут подходить, но это исключение, а не правило. Всегда проверяйте схему узла.</p>
+</details>
+
+<details>
+<summary>Что делать, если VIN-код не читается?</summary>
+<p>Если VIN-код на табличке стерся, можно использовать данные из техпаспорта, но лучше всего обратиться к дилеру для восстановления данных через базу данных завода-изготовителя. Это критично для точного подбора.</p>
+</details>
+
+<details>
+<summary>Как отличить оригинальную деталь от подделки по номеру?</summary>
+<p>Подделки часто имеют нечеткую гравировку номера, неправильный шрифт или отсутствие защитных голограмм. Но самый надежный способ — купить деталь у официального дилера или проверенного поставщика, который гарантирует подлинность.</p>
+</details>
+
+<details>
+<summary>Можно ли найти номер запчасти без VIN-кода?</summary>
+<p>Технически можно, выбрав модель, год и двигатель вручную, но это повышает риск ошибки. Без VIN-кода система не знает точную комплектацию вашего автомобиля, и вы можете купить неподходящую деталь.</p>
+</details>
+
+<blockquote>
+<p>⚠️ Внимание! Если вы покупаете б/у запчасть, обязательно снимите ее с автомобиля и сверьте номер с каталогом. На вторичном рынке часто продают детали от разных машин, и визуальное сходство может вводить в заблуждение.</p>
+</blockquote>
+
+<details>
+<summary>Где лучше всего искать номер запчасти для Honda?</summary>
+<p>Лучшими источниками являются официальные онлайн-каталоги (Partsouq, Amayama) и дилерские базы данных. Они содержат актуальную информацию о всех модификациях и замене старых номеров на новые.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#значение-vin-кода-и-его-роль-в-поиске">Значение VIN-кода и его роль в поиске</a></li><li><a href="#структура-oem-номера-и-правила-его-чтения">Структура OEM-номера и правила его чтения</a></li><li><a href="#инструменты-и-ресурсы-для-поиска-по-каталогам">Инструменты и ресурсы для поиска по каталогам</a></li><li><a href="#пошаговая-инструкция-по-подбору-детали">Пошаговая инструкция по подбору детали</a></li><li><a href="#анализ-совместимости-и-кросс-номера">Анализ совместимости и кросс-номера</a></li><li><a href="#типичные-ошибки-и-как-их-избежать">Типичные ошибки и как их избежать</a></li><li><a href="#специфика-поиска-для-популярных-моделей">Специфика поиска для популярных моделей</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-s-mopedom-v-bagazhnike.html" class="related-card">Honda с мопедом в багажнике: Как вписать двухколесного друга</a></li><li><a href="/articles/z/za/zamena-podushki-dvigatelya-khonda-tsivik-4d.html" class="related-card">Замена подушки двигателя Honda Civic 4D: Пошаговая инструкция и цены</a></li><li><a href="/articles/n/na/nakladki-na-porogi-khonda-tsivik-5d.html" class="related-card">Накладки на пороги Хонда Цивик 5D: выбор и установка</a></li><li><a href="/articles/z/za/zamena-toplivnogo-filtra-honda-civic-4d.html" class="related-card">Замена топливного фильтра Honda Civic 4D: Пошаговая инструкция</a></li><li><a href="/articles/z/za/zadnie-stojki-stabilizatora-khonda-tsivik-4d.html" class="related-card">Задние стойки стабилизатора Honda Civic 4D: выбор, замена и нюансы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-s-mopedom-v-bagazhnike.html" class="related-bottom-card"><span class="related-bottom-title">Honda с мопедом в багажнике: Как вписать двухколесного друга</span><span class="related-bottom-desc">Полное руководство по транспортировке мопеда в Honda. Обзор моделей, методы крепления, разборка и со</span></a><a href="/articles/z/za/zamena-podushki-dvigatelya-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Замена подушки двигателя Honda Civic 4D: Пошаговая инструкция и цены</span><span class="related-bottom-desc">Полное руководство по диагностике и замене опор двигателя Honda Civic 4D. Узнайте признаки неисправн</span></a><a href="/articles/n/na/nakladki-na-porogi-khonda-tsivik-5d.html" class="related-bottom-card"><span class="related-bottom-title">Накладки на пороги Хонда Цивик 5D: выбор и установка</span><span class="related-bottom-desc">Лучшие накладки на пороги Хонда Цивик 5д: из нержавейки, ABS и пленки. Инструкция по монтажу, защита</span></a><a href="/articles/z/za/zamena-toplivnogo-filtra-honda-civic-4d.html" class="related-bottom-card"><span class="related-bottom-title">Замена топливного фильтра Honda Civic 4D: Пошаговая инструкция</span><span class="related-bottom-desc">Полное руководство по замене топливного фильтра на Honda Civic 4D. Инструменты, нюансы демонтажа, вы</span></a><a href="/articles/z/za/zadnie-stojki-stabilizatora-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Задние стойки стабилизатора Honda Civic 4D: выбор, замена и нюансы</span><span class="related-bottom-desc">Полный гид по задним стойкам стабилизатора для Honda Civic 4D. Разбор симптомов износа, сравнение бр</span></a><a href="/articles/p/pr/pruzhiny-honda-civic-4d.html" class="related-bottom-card"><span class="related-bottom-title">Пружины Honda Civic 4D: Выбор, замена и тюнинг подвески</span><span class="related-bottom-desc">Полный гид по пружинам для Honda Civic 4D. Обзор брендов, сравнение оригинала и аналогов, нюансы уст</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

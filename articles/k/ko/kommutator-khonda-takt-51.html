@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Коммутатор Хонда Такт 51: диагностика, схемы и ремонт — Honda Library</title>
+    <meta name="description" content="Полный гид по коммутатору Honda Tact 51: как проверить CDI, подобрать аналог, расшифровать коды неисправностей и восстановить искру.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/k/ko/kommutator-khonda-takt-51.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Коммутатор Хонда Такт 51: диагностика, схемы и ремонт">
+    <meta property="og:description" content="Полный гид по коммутатору Honda Tact 51: как проверить CDI, подобрать аналог, расшифровать коды неисправностей и восстановить искру.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Коммутатор Хонда Такт 51: диагностика, схемы и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Коммутатор Хонда Такт 51: диагностика, схемы и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#устройство-и-принцип-работы-системы-зажигания">Устройство и принцип работы системы зажигания</a></li><li><a href="#типичные-признаки-неисправности-коммутатора">Типичные признаки неисправности коммутатора</a></li><li><a href="#методы-диагностики-и-проверки-cdi">Методы диагностики и проверки CDI</a></li><li><a href="#инструкция-по-снятию-и-установке-модуля">Инструкция по снятию и установке модуля</a></li><li><a href="#совместимость-и-подбор-аналогов">Совместимость и подбор аналогов</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Скутер <em>Honda Tact 51</em> остается одним из самых популярных транспортных средств для городской езды благодаря своей надежности и экономичности. Однако, как и любой механизм с двигателем внутреннего сгорания, он подвержен износу, и чаще всего владельцы сталкиваются с проблемами в системе зажигания. <strong>Коммутатор</strong> (или CDI) является сердцем этой системы, отвечая за формирование искры в нужный момент. Если ваш скутер перестал заводиться или двигатель начал работать с перебоями, именно этот узел часто становится первым подозреваемым.</p>
+
+<p>Понимание принципа работы и умение провести базовую диагностику <strong>CDI-блока</strong> позволяет сэкономить значительные средства на услугах сервисных центров. В этой статье мы детально разберем конструкцию, методы проверки и нюансы подбора запасных частей для <em>AF27</em> и <em>AF30</em>. Вы научитесь отличать неисправность коммутатора от проблем с катушкой или генератором, используя минимальный набор инструментов.</p>
+
+<p>Важно отметить, что электроника скутеров Honda чувствительна к качеству напряжения и состоянию проводки. Прежде чем делать выводы о выходе из строя <strong>блока зажигания</strong>, необходимо убедиться в целостности соединений. Мы рассмотрим типичные симптомы, которые указывают на необходимость замены или ремонта модуля, а также обсудим совместимость различных версий деталей.</p>
+
+<h2 id="устройство-и-принцип-работы-системы-зажигания">Устройство и принцип работы системы зажигания</h2>
+<p>Система зажигания скутера <em>Honda Tact 51</em> построена на базе электронного коммутатора типа CDI (Capacitor Discharge Ignition). Этот блок получает переменный ток от генератора (статора), накапливает энергию в конденсаторе и в строго определенный момент времени разряжает её на первичную обмотку катушки зажигания. Ключевым элементом здесь является <strong>датчик Холла</strong> или индукционный датчик, который посылает сигнал о положении поршня в такте сжатия.</p>
+
+<p>Внутри пластикового корпуса <strong>коммутатора</strong> расположена печатная плата с тиристором, диодами и конденсаторами. Именно эти компоненты формируют высоковольтный импульс. На моделях <em>Tact 51</em> часто используется система с ограничением оборотов, которая прекращает подачу искры при достижении определенного порога RPM, чтобы защитить двигатель от перегрузок. Нарушение работы любого из этих элементов приводит к исчезновению искры или нестабильной работе мотора.</p>
+
+<blockquote>⚠️ Внимание: Попытка вскрыть залитый эпоксидной смолой корпус коммутатора часто приводит к окончательному выходу детали из строя. Ремонт возможен только при аккуратном нагреве и наличии навыков пайки микросхем.</blockquote>
+
+<p>Современные аналоги могут отличаться по внутренней схемотехнике, но принцип действия остается неизменным. Важно понимать, что <strong>CDI-модуль</strong> не работает в вакууме: он тесно связан с катушкой зажигания и свечным колпачком. Если сопротивление катушки выходит за пределы нормы, коммутатор может работать некорректно или сгореть от обратной нагрузки.</p>
+
+<details class="faq-item"><summary>Почему греется коммутатор?</summary><div class="faq-answer"><p>Коммутатор может нагреваться из-за плохого контакта массы, использования свечи с неправильным калильным числом или внутреннего короткого замыкания в обмотках катушки. Постоянный перегрев сокращает срок службы конденсаторов.</p></div></details>
+
+<h2 id="типичные-признаки-неисправности-коммутатора">Типичные признаки неисправности коммутатора</h2>
+<p>Определить, что вышел из строя именно <strong>блок управления зажиганием</strong>, можно по ряду характерных симптомов. Чаще всего это полное отсутствие реакции двигателя на прокрутку стартером или кик-стартером. Однако, иногда двигатель может схватывать и глохнуть, что указывает на периодические сбои в формировании искры.</p>
+
+<ul>
+<li>🔥 Полное отсутствие искры на свече при исправной катушке и свече.</li>
+<li>📉 Двигатель не развивает полные обороты, наблюдается «провал» мощности.</li>
+<li>⚡ Нестабильная работа на холостом ходу, плавающие обороты.</li>
+<li>💥 Двигатель глохнет после прогрева, когда холодный запускается нормально.</li>
+</ul>
+
+<p>Стоит отметить, что схожие симптомы может вызывать и неисправный <strong>генератор</strong> (статор). Если зарядка аккумулятора слабая или отсутствует, система зажигания может не получать достаточного питания для работы. Поэтому диагностика должна быть комплексной. Проверьте напряжение на входе в коммутатор перед тем, как принимать решение о его замене.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Всегда имейте под рукой заведомо исправную свечу и свечной колпачок для быстрой проверки системы зажигания методом исключения.</p></div>
+
+<p>Особое внимание следует уделить ситуации, когда скутер заводится, но через несколько минут работы начинает троить. Это может свидетельствовать о пробое <strong>тиристора</strong> или конденсатора внутри модуля при нагреве. В таких случаях визуальный осмотр ничего не даст, потребуется инструментальная проверка или метод подмены.</p>
+
+<h2 id="методы-диагностики-и-проверки-cdi">Методы диагностики и проверки CDI</h2>
+<p>Проверка <strong>коммутатора</strong> мультиметром дает лишь косвенные результаты, так как полноценно тестировать работу тиристоров и конденсаторов нужно под нагрузкой. Однако, прозвонка цепей позволяет исключить обрывы и короткое замыкание. Первым делом необходимо проверить сопротивление между контактами разъема и массой.</p>
+
+<p>Для более точной диагностики рекомендуется использовать метод подмены. Установите заведомо исправный <strong>CDI-блок</strong> от другого скутера или новый аналог. Если искра появилась и двигатель заработал ровно, значит, проблема была в старом модуле. Это самый надежный способ проверки в гаражных условиях.</p>
+
+<p>При проверке мультиметром обратите внимание на следующие параметры:</p>
+<ul>
+<li>🔌 Сопротивление между контактами входа и выхода должно быть в пределах нормы (обычно несколько кОм).</li>
+<li>🛑 Отсутствие короткого замыкания на корпус (бесконечное сопротивление).</li>
+<li>⚡ Проверка приходящего напряжения от генератора (должно быть переменным).</li>
+</ul>
+
+<blockquote>⚠️ Внимание: При проверке мультиметром не пытайтесь измерить высокое напряжение на выходе катушки в режиме измерения постоянного тока — это может повредить прибор. Используйте разрядник или визуальный метод с осторожностью.</blockquote>
+
+<p>Также стоит проверить целостность проводки, идущей к <strong>разъему коммутатора</strong>. Окисленные контакты или перетертые провода часто становятся причиной отсутствия искры. Зачистите контакты спреем для электроконтактов и убедитесь в плотном прилегании фишки.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 С каким методом диагностики коммутатора вы сталкивались чаще?</strong><ul><li>Прозвонка мультиметром</li><li>Метод подмены на исправный</li><li>Визуальный осмотр</li><li>Замена всех элементов сразу</li></ul></div></div>
+
+<h2 id="инструкция-по-снятию-и-установке-модуля">Инструкция по снятию и установке модуля</h2>
+<p>Процесс замены <strong>коммутатора</strong> на <em>Honda Tact 51</strong> не требует сложного оборудования, но требует внимательности. Расположение блока может варьироваться в зависимости от модификации кузова, но обычно он находится под облицовкой пола или в районе переднего щитка. Для доступа потребуется снять пластиковые панели.</p>
+
+<div class="checklist-block"><h4>☑️ Алгоритм замены коммутатора</h4><label class="check-item"><input type="checkbox"><span>Снять пластиковые панели облицовки</span></label><label class="check-item"><input type="checkbox"><span>Отсоединить клемму аккумулятора</span></label><label class="check-item"><input type="checkbox"><span>Открутить крепление старого CDI</span></label><label class="check-item"><input type="checkbox"><span>Отключить разъемы проводки</span></label><label class="check-item"><input type="checkbox"><span>Установить новый блок и собрать обратно</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>После снятия облицовки вы увидите черный пластиковый блок с двумя или тремя разъемами. Аккуратно отсоедините фишки, стараясь не дергать за сами провода, чтобы не повредить контакты. Крепление обычно выполнено на одном или двух болтах. При установке нового <strong>модуля зажигания</em> убедитесь, что разъемы защелкнулись до характерного щелчка.</p>
+
+<p>Важно правильно подключить провода, если вы используете универсальный аналог. Цветовая маркировка проводов на <em>Honda Tact 51</em> стандартна, но на китайских копиях может отличаться. Используйте схему распиновки для вашей конкретной модели. Ошибка в подключении может привести к сгоранию нового коммутатора или катушки.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильное подключение проводов по цветам — критически важный этап. Черный провод — это масса, белый с красным — питание от генератора, черно-желтый — сигнал на катушку.</p></div>
+
+<h2 id="совместимость-и-подбор-аналогов">Совместимость и подбор аналогов</h2>
+<p>Оригинальный коммутатор <em>Honda</em> (артикул 30410-GS3-003 или аналоги) считается эталоном надежности, но его стоимость высока, а на рынке много подделок. Для <em>Tact 51</em> (двигатель <em>AF27</em>) подходят также коммутаторы от <em>Dio 27/34</em>, <em>Lead 50</em> и других моделей с аналогичной схемой. Важно обращать внимание на количество контактов в разъеме.</p>
+
+<p>Китайские аналоги делятся на две основные группы: с ограничителем оборотов и без него (или с возможностью снятия ограничения). <strong>Бесконтактный CDI</strong> без ограничителя может дать прирост скорости, но увеличит нагрузку на двигатель. Для повседневной езды лучше выбирать варианты, максимально близкие к заводским параметрам.</p>
+
+<p>При выборе обратите внимание на качество исполнения корпуса и герметичность. Дешевые модели часто залиты некачественным компаундом, который трескается от вибрации, пропуская влагу внутрь. Это приводит к окислению контактов и выходу из строя <strong>электронной начинки</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Оригинал Honda</th>
+<th>Китайский аналог</th>
+<th>Тюнинг версия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Цена</td>
+<td>Высокая</td>
+<td>Низкая</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Ресурс</td>
+<td>Высокий</td>
+<td>Средний/Низкий</td>
+<td>Зависит от нагрузки</td>
+</tr>
+<tr>
+<td>Ограничитель</td>
+<td>Есть</td>
+<td>Часто есть</td>
+<td>Снят/Отсутствует</td>
+</tr>
+<tr>
+<td>Герметичность</td>
+<td>Отличная</td>
+<td>Требует проверки</td>
+<td>Разная</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+<summary>Можно ли ездить на скутере, если искра есть, но она слабая?</summary>
+<p>Ездить можно, но нежелательно. Слабая искра приводит к неполному сгоранию топлива, что вызывает нагар на свече, падение мощности и повышенный расход. Кроме того, это может указывать на скорый выход из строя <strong>катушки</strong> или самого коммутатора.</p>
+</details>
+
+<details>
+<summary>Почему сгорает новый коммутатор сразу после установки?</summary>
+<p>Чаще всего причина кроется в неисправности высоковольтной катушки (пробой на массу) или коротком замыкании в проводке. Также возможно использование свечи с неподходящим калильным числом, что создает избыточное сопротивление.</p>
+</details>
+
+<details>
+<summary>В чем разница между коммутаторами DC и AC?</summary>
+<p>Коммутаторы <strong>AC CDI</strong> питаются переменным током от генератора (как на Tact 51), а <strong>DC CDI</strong> — постоянным током от аккумулятора. Они не взаимозаменяемы без переделки проводки. Установка неподходящего типа приведет к неработоспособности системы.</p>
+</details>
+
+<details>
+<summary>Как снять ограничение скорости с коммутатора?</summary>
+<p>На некоторых моделях ограничение снимается перерезанием определенного провода (обычно серого или розового) или заменой чипа внутри. Однако на <em>Honda Tact 51</em> проще приобрести тюнинговую версию CDI, где эта функция уже реализована программно.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#устройство-и-принцип-работы-системы-зажигания">Устройство и принцип работы системы зажигания</a></li><li><a href="#типичные-признаки-неисправности-коммутатора">Типичные признаки неисправности коммутатора</a></li><li><a href="#методы-диагностики-и-проверки-cdi">Методы диагностики и проверки CDI</a></li><li><a href="#инструкция-по-снятию-и-установке-модуля">Инструкция по снятию и установке модуля</a></li><li><a href="#совместимость-и-подбор-аналогов">Совместимость и подбор аналогов</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/p/pr/prodazha-khonda-spajk-vo-vladivostoke.html" class="related-card">Продажа Honda Spike во Владивостоке: выбор, цены, нюансы</a></li><li><a href="/articles/k/kh/khonda-v-rossii-ofitsialnyj-sajt-tseny.html" class="related-card">Honda в России: официальный сайт, цены и актуальные модели</a></li><li><a href="/articles/p/pl/plastik-honda-giorno-af24.html" class="related-card">Пластик Honda Giorno AF24: замена, реставрация и уход</a></li><li><a href="/articles/k/ka/kalibrovka-robota-khonda-vezel.html" class="related-card">Калибровка робота-пылесоса Honda Vezel: Полное руководство</a></li><li><a href="/articles/s/sk/skuter-honda-dio-18.html" class="related-card">Honda Dio 18: Характеристики, обслуживание и тюнинг скутера</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/p/pr/prodazha-khonda-spajk-vo-vladivostoke.html" class="related-bottom-card"><span class="related-bottom-title">Продажа Honda Spike во Владивостоке: выбор, цены, нюансы</span><span class="related-bottom-desc">Ищете Honda Spike во Владивостоке? Полный разбор рынка, цены, особенности эксплуатации в Приморье и </span></a><a href="/articles/k/kh/khonda-v-rossii-ofitsialnyj-sajt-tseny.html" class="related-bottom-card"><span class="related-bottom-title">Honda в России: официальный сайт, цены и актуальные модели</span><span class="related-bottom-desc">Полный обзор ситуации с брендом Honda в РФ. Актуальные цены, наличие официальных дилеров, параллельн</span></a><a href="/articles/p/pl/plastik-honda-giorno-af24.html" class="related-bottom-card"><span class="related-bottom-title">Пластик Honda Giorno AF24: замена, реставрация и уход</span><span class="related-bottom-desc">Где купить пластик на Honda Giorno AF24? Инструкция по снятию, покраске и ремонту. Обзор оригинальны</span></a><a href="/articles/k/ka/kalibrovka-robota-khonda-vezel.html" class="related-bottom-card"><span class="related-bottom-title">Калибровка робота-пылесоса Honda Vezel: Полное руководство</span><span class="related-bottom-desc">Пошаговая инструкция по калибровке сенсоров и колес робота-пылесоса Honda Vezel. Устранение ошибок н</span></a><a href="/articles/s/sk/skuter-honda-dio-18.html" class="related-bottom-card"><span class="related-bottom-title">Honda Dio 18: Характеристики, обслуживание и тюнинг скутера</span><span class="related-bottom-desc">Полный обзор Honda Dio AF18. Технические характеристики, особенности настройки карбюратора, замена м</span></a><a href="/articles/n/ni/nissan-serena-ili-khonda-stepvagon-ili-tojota-noakh.html" class="related-bottom-card"><span class="related-bottom-title">Ниссан Серена, Хонда Степвагон или Тойота Ноах: сравнение минивэнов</span><span class="related-bottom-desc">Сравнительный обзор лучших японских минивэнов: Nissan Serena, Honda Stepwgn, Toyota Noah. Узнайте, к</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

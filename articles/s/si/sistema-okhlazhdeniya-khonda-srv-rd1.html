@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Система охлаждения Honda CR-V RD1: диагностика и ремонт — Honda Library</title>
+    <meta name="description" content="Полный гид по обслуживанию радиатора и термостата Honda CR-V первого поколения. Причины перегрева, замена помпы и выбор антифриза для двигателя D17A.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/si/sistema-okhlazhdeniya-khonda-srv-rd1.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Система охлаждения Honda CR-V RD1: диагностика и ремонт">
+    <meta property="og:description" content="Полный гид по обслуживанию радиатора и термостата Honda CR-V первого поколения. Причины перегрева, замена помпы и выбор антифриза для двигателя D17A.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Система охлаждения Honda CR-V RD1: диагностика и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Система охлаждения Honda CR-V RD1: полное руководство по диагностике и ремонту</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#конструктивные-особенности-контура-охлаждения-двигателя-d17a">Конструктивные особенности контура охлаждения двигателя D17A</a></li><li><a href="#типичные-проблемы-и-признаки-неисправности">Типичные проблемы и признаки неисправности</a></li><li><a href="#диагностика-радиатора-и-патрубков">Диагностика радиатора и патрубков</a></li><li><a href="#замена-термостата-и-помпы">Замена термостата и помпы</a></li><li><a href="#выбор-охлаждающей-жидкости-и-процедура-прокачки">Выбор охлаждающей жидкости и процедура прокачки</a></li><li><a href="#особенности-работы-вентилятора-и-датчиков">Особенности работы вентилятора и датчиков</a></li><li><a href="#профилактика-перегрева-и-капитальный-ремонт">Профилактика перегрева и капитальный ремонт</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Автомобили <em>Honda CR-V</em> первого поколения, получившие индекс кузова <em>RD1</em>, зарекомендовали себя как надежные кроссоверы, однако их моторы серии <em>D17A</em> имеют свои особенности, требующие внимательного отношения к системе охлаждения. Эксплуатация в условиях суровых зим или жаркого лета создает колоссальную нагрузку на радиатор, помпу и термостат, что может привести к критическим последствиям для двигателя.</p>
+<p>Многие владельцы сталкиваются с проблемой перегрева или потери антифриза, не понимая истинных причин. Своевременная диагностика и правильная замена компонентов способны продлить жизнь силовому агрегату на десятки тысяч километров, избегая дорогостоящего капитального ремонта. В этой статье мы разберем устройство контура охлаждения, типичные неисправности и алгоритм их устранения.</p>
+
+<h2 id="конструктивные-особенности-контура-охлаждения-двигателя-d17a">Конструктивные особенности контура охлаждения двигателя D17A</h2>
+<p>Система охлаждения на <em>Honda CR-V RD1</em> является замкнутой и работает под давлением, что позволяет повысить температуру кипения жидкости выше стандартных 100 градусов Цельсия. Основным элементом является алюминиевый радиатор с пластиковыми бачками, которые со временем теряют эластичность и начинают трескаться.</p>
+<p>Циркуляция антифриза обеспечивается центробежным насосом (помпой), приводимым в действие зубчатым ремнем ГРМ. Это критически важный момент, так как отказ помпы часто влечет за собой обрыв ремня и столкновение клапанов с поршнями. Термостат, расположенный в корпусе, отвечает за регулировку потока жидкости между малым и большим кругом циркуляции.</p>
+<p>Особое внимание следует уделить расширительному бачку, который выполнен из полупрозрачного пластика. Он служит не только для компенсации объема жидкости при нагреве, но и для визуального контроля уровня. Неправильный выбор охлаждающей жидкости может вызвать коррозию внутренних каналов блока цилиндров, что приведет к закупорке системы.</p>
+
+<h2 id="типичные-проблемы-и-признаки-неисправности">Типичные проблемы и признаки неисправности</h2>
+<p>Первым сигналом о проблемах в системе охлаждения становится стрелка температуры на приборной панели, уходящая в красную зону, или появление паров из-под капота. Владельцы часто игнорируют легкие утечки, пока не происходит критический перегрев двигателя.</p>
+<p>Частой проблемой является "завоздушивание" системы, которое возникает после неграмотной замены антифриза без должной прокачки. Воздушная пробка блокирует циркуляцию, из-за чего датчик температуры показывает ложно низкие значения, пока двигатель не перегреется локально.</p>
+<ul>
+  <li>🚗 Появление белого пара из выхлопной трубы, указывающего на попадание антифриза в камеры сгорания.</li>
+  <li>💧 Мокрое пятно под автомобилем после длительной стоянки, свидетельствующее о течи патрубков или радиатора.</li>
+  <li>🌡️ Нестабильные показания температуры двигателя при движении по городу и на трассе.</li>
+</ul>
+<p>Если вы заметили, что печка в салоне дует холодным воздухом при прогретом двигателе, это верный признак того, что циркуляция жидкости нарушена. В таком случае необходимо немедленно остановить движение и проверить уровень жидкости, не открывая крышку радиатора на горячем моторе.</p>
+
+<h2 id="диагностика-радиатора-и-патрубков">Диагностика радиатора и патрубков</h2>
+<p>Радиатор <em>Honda CR-V RD1</em> подвергается воздействию реагентов и механических повреждений от летящих камней. Трещины в пластиковых бачках часто появляются в местах соединения с алюминиевыми сотами. Проверку необходимо проводить визуально, осматривая нижнюю часть радиатора на наличие подтеков.</p>
+<p>Патрубки, соединяющие компоненты системы, со временем дубеют и теряют свои свойства. Резиновые манжеты могут потрескаться, а хомуты — проржаветь. Замена старых шлангов должна производиться комплексно, так как риск разрыва на ходу крайне высок.</p>
+<blockquote>
+<p>⚠️ Внимание: Никогда не пытайтесь открыть крышку радиатора или расширительного бачка на горячем двигателе. Давление в системе может достигать 1,5 атм, и выброс кипящего антифриза приведет к серьезным ожогам лица и рук.</p>
+</blockquote>
+<p>Для проверки герметичности можно использовать специальный опрессовочный насос, который создает давление в системе, имитирующее работу двигателя. Это позволяет найти микротрещины, которые не видны при внешнем осмотре. Если радиатор течет, его часто невозможно восстановить, и требуется полная замена.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая проблема с охлаждением у вас была чаще всего?</strong><ul><li>Перегрев двигателя</li><li>Потеря антифриза</li><li>Забит радиатор</li><li>Пробой прокладки ГБЦ</li></ul></div></div>
+
+<h2 id="замена-термостата-и-помпы">Замена термостата и помпы</h2>
+<p>Термостат на моторах <em>D17A</em> является расходным материалом, который требует замены каждые 80-100 тысяч километров. Если он заклинивает в закрытом положении, двигатель перегревается, а в открытом — долго не выходит на рабочую температуру, что ведет к повышенному расходу топлива.</p>
+<p>При замене помпы настоятельно рекомендуется сразу менять ремень ГРМ и ролик натяжителя, так как доступ к помпе осуществляется именно через снятие этого ремня. Игнорирование этой рекомендации может привести к повторному снятию узла через короткий срок, удорожая ремонт в два раза.</p>
+<div class="checklist-block"><h4>☑️ Подготовка к замене помпы и термостата</h4><label class="check-item"><input type="checkbox"><span>Слить антифриз</span></label><label class="check-item"><input type="checkbox"><span>Снять ремень ГРМ</span></label><label class="check-item"><input type="checkbox"><span>Демонтировать шкив помпы</span></label><label class="check-item"><input type="checkbox"><span>Установить новую помпу и ремень</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+<p>Процесс замены термостата относительно прост, но требует аккуратности. Корпус термостата прикручен к блоку цилиндров двумя болтами. Необходимо тщательно зачистить поверхность прилегания от старой прокладки перед установкой новой.</p>
+<ul>
+  <li>🔧 Используйте динамометрический ключ для затяжки болтов корпуса термостата, чтобы не повредить алюминиевый корпус.</li>
+  <li>⚙️ Проверьте состояние крыльчатки помпы на предмет эрозии, которая может случиться из-за использования некачественного антифриза.</li>
+  <li>🛠️ Обязательно замените уплотнительные кольца и прокладки, входящие в ремкомплект.</li>
+</ul>
+
+<details class="faq-item"><summary>Почему важно менять помпу вместе с ремнем ГРМ?|Если ремень ГРМ порвется, клапана ударятся о поршни и двигатель потребует капитального ремонта. Помпа приводится этим ремнем, и её выход из строя часто ведет к обрыву.-->
+
+<h2 id="выбор-охлаждающей-жидкости-и-процедура-прокачки">Выбор охлаждающей жидкости и процедура прокачки</h2>
+<p>Для двигателей Honda первого поколения производитель рекомендует использовать оригинальную жидкость <em>Prolong</em> или аналоги с гипофосфатной формулой. Обычные силикатные антифризы могут вызвать образование отложений в системе, что снизит эффективность теплоотдачи.</p>
+<p>Смешивание разных типов антифриза недопустимо, так как химические компоненты могут вступить в реакцию и образовать гелеобразную массу, полностью забивающую радиатор и каналы блока. Перед заливкой новой жидкости необходимо полностью слить старую и промыть систему дистиллированной водой.</p>
+<p>Прокачка системы — самый ответственный этап. Неправильное выполнение этой процедуры гарантированно приведет к образованию воздушных пробок. Необходимо прогреть двигатель до включения вентилятора и убедиться в отсутствии пузырьков воздуха в расширительном бачке.</p>
+<pre><code>1. Откройте крышку радиатора
+<p>2. Запустите двигатель на холостых оборотах</p>
+<p>3. Включите печку на максимум (горячий воздух)</p>
+<p>4. Дождитесь включения вентилятора охлаждения</p>
+<p>5. Долейте жидкость до уровня MAX</code></pre></p>
+<blockquote>
+<p>⚠️ Внимание</summary><div class="faq-answer"><p> Если после прокачки температура двигателя продолжает расти, возможно, в системе осталась воздушная пробка или неисправен датчик температуры. В этом случае необходимо повторить процедуру прокачки или проверить работу термостата.</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>Компонент</th>
+      <th>Рекомендуемый интервал замены</th>
+      <th>Признаки износа</th>
+      <th>Сложность замены</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Антифриз</td>
+      <td>Каждые 2 года или 40 000 км</td>
+      <td>Изменение цвета, осадок</td>
+      <td>Низкая</td>
+    </tr>
+    <tr>
+      <td>Термостат</td>
+      <td>Каждые 80 000 - 100 000 км</td>
+      <td>Перегрев или долгий прогрев</td>
+      <td>Средняя</td>
+    </tr>
+    <tr>
+      <td>Патрубки</td>
+      <td>Каждые 60 000 км (проверка)</td>
+      <td>Трещины, мягкость, течь</td>
+      <td>Низкая</td>
+    </tr>
+    <tr>
+      <td>Помпа</td>
+      <td>Вместе с ремнем ГРМ (100 000 км)</td>
+      <td>Шум, люфт, течь из дренажа</td>
+      <td>Высокая</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="особенности-работы-вентилятора-и-датчиков">Особенности работы вентилятора и датчиков</h2>
+<p>Электрическая система охлаждения <em>CR-V RD1</em> управляется двумя вентиляторами, расположенными перед радиатором. Они срабатывают при достижении определенной температуры, которую определяет датчик в головке блока цилиндров. Если один из вентиляторов не включается, перегрев гарантирован даже в движении.</p>
+<p>Частой причиной отказа вентиляторов является перегорание предохранителя или выход из строя резистора вентилятора, отвечающего за низкую скорость вращения. Иногда проблема кроется в самом электромоторе, щетки которого стираются со временем.</p>
+<p>Для проверки работоспособности вентиляторов можно замкнуть контакты на датчике температуры (при осторожном выполнении), чтобы принудительно включить систему. Если вентиляторы заработают, значит, проблема в датчике или проводке. Если нет — неисправен сам вентилятор или реле.</p>
+
+
+
+<h2 id="профилактика-перегрева-и-капитальный-ремонт">Профилактика перегрева и капитальный ремонт</h2>
+<p>Регулярная чистка радиатора от пыли, пуха и насекомых значительно улучшает теплоотдачу. Для этого можно использовать специальные средства для мойки радиаторов или аккуратно промыть его водой под небольшим давлением, соблюдая осторожность, чтобы не погнуть соты.</p>
+<p>Если двигатель уже подвергался перегреву, необходимо проверить головку блока цилиндров на предмет деформации и проверить прокладку ГБЦ. Даже если двигатель работает нормально, микротрещины в прокладке могут привести к попаданию газов в систему охлаждения, что вызовет быстрое закипание.</p>
+<p>Владельцы <em>Honda CR-V</em> должны помнить, что система охлаждения — это сердце терморегуляции мотора. Любые отклонения в работе требуют немедленной реакции. <mark>Игнорирование малейших признаков перегрева на моторе D17A может привести к необратимой деформации головки блока цилиндров уже за несколько минут езды.</mark></p>
+<ul>
+  <li>🔍 Проводите визуальный осмотр подкапотного пространства перед каждой длительной поездкой.</li>
+  <li>🧪 Используйте только сертифицированные антифризы, соответствующие спецификации Honda.</li>
+  <li>🛑 При появлении запаха горелого антифриза немедленно остановитесь и заглушите двигатель.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная замена антифриза и контроль уровня жидкости являются самыми дешевыми и эффективными способами предотвращения дорогостоящего ремонта двигателя.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+<details>
+  <summary>Можно ли смешивать красный и зеленый антифриз в системе Honda CR-V?</summary>
+  <p>Категорически нет. Смешивание антифризов разных цветов и химического состава (гипофосфатного и силикатного) приводит к выпадению осадка, который забивает радиатор и каналы охлаждения, вызывая перегрев двигателя.</p>
+</details>
+<details>
+  <summary>Как часто нужно менять помпу на Honda CR-V RD1?</summary>
+  <p>Официальная рекомендация Honda — менять помпу одновременно с ремнем ГРМ, то есть каждые 100 000 километров пробега. Это связано с тем, что доступ к помпе закрыт ремнем, и повторная работа по снятию ремня экономически нецелесообразна.</p>
+</details>
+<details>
+  <summary>Почему печка дует холодным, а двигатель горячий?</summary>
+  <p>Это верный признак наличия воздушной пробки в системе охлаждения или неисправности термостата. Воздух перекрывает поток жидкости к печному радиатору, из-за чего тепло не передается в салон.</p>
+</details>
+<details>
+  <summary>Как проверить работоспособность вентилятора охлаждения?</summary>
+  <p>На прогретом двигателе (после включения печки на максимум) вентилятор должен запуститься. Если этого не произошло, проверьте предохранители, реле и сам электромотор вентилятора.</p>
+</details>
+<details>
+  <summary>Какой антифриз лучше заливать в Honda CR-V первого поколения?</summary>
+  <p>Лучшим выбором является оригинальный антифриз Honda Long Life Coolant (обычно красного или синего цвета, в зависимости от региона поставки) или качественные аналоги с гипофосфатной формулой, не содержащие силикатов.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#конструктивные-особенности-контура-охлаждения-двигателя-d17a">Конструктивные особенности контура охлаждения двигателя D17A</a></li><li><a href="#типичные-проблемы-и-признаки-неисправности">Типичные проблемы и признаки неисправности</a></li><li><a href="#диагностика-радиатора-и-патрубков">Диагностика радиатора и патрубков</a></li><li><a href="#замена-термостата-и-помпы">Замена термостата и помпы</a></li><li><a href="#выбор-охлаждающей-жидкости-и-процедура-прокачки">Выбор охлаждающей жидкости и процедура прокачки</a></li><li><a href="#особенности-работы-вентилятора-и-датчиков">Особенности работы вентилятора и датчиков</a></li><li><a href="#профилактика-перегрева-и-капитальный-ремонт">Профилактика перегрева и капитальный ремонт</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/6/69/69-01-oshibka-khonda-srv.html" class="related-card">Ошибка 69 01 на Honda CR-V: причины, диагностика и ремонт</a></li><li><a href="/articles/v/vs/vsa-honda-zagorelsya-znachok.html" class="related-card">Загорелся значок VSA Honda: причины, диагностика и ремонт</a></li><li><a href="/articles/k/kh/khonda-srv-sverlovka-diskov.html" class="related-card">Сверловка дисков для Honda CR-V: параметры, PCD и советы</a></li><li><a href="/articles/k/kh/khonda-srv-3-razboltovka-diskov.html" class="related-card">Разболтовка дисков Honda CR-V: полные параметры и подбор колес</a></li><li><a href="/articles/z/za/zamena-grm-khonda-tsrv.html" class="related-card">Замена ГРМ Хонда CR-V: сроки, цены и особенности для 2,0 и 2,4 литра</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/6/69/69-01-oshibka-khonda-srv.html" class="related-bottom-card"><span class="related-bottom-title">Ошибка 69 01 на Honda CR-V: причины, диагностика и ремонт</span><span class="related-bottom-desc">Код ошибки 69 01 на Honda CR-V указывает на неисправность системы рекуперации тепла. Узнайте симптом</span></a><a href="/articles/v/vs/vsa-honda-zagorelsya-znachok.html" class="related-bottom-card"><span class="related-bottom-title">Загорелся значок VSA Honda: причины, диагностика и ремонт</span><span class="related-bottom-desc">Ваша Honda VSA загорелся значок? Узнайте реальные причины, как сбросить ошибку, отличия от ESP и пош</span></a><a href="/articles/k/kh/khonda-srv-sverlovka-diskov.html" class="related-bottom-card"><span class="related-bottom-title">Сверловка дисков для Honda CR-V: параметры, PCD и советы</span><span class="related-bottom-desc">Полное руководство по сверловке дисков для Honda CR-V. Узнайте параметры PCD, центральный отверстия </span></a><a href="/articles/k/kh/khonda-srv-3-razboltovka-diskov.html" class="related-bottom-card"><span class="related-bottom-title">Разболтовка дисков Honda CR-V: полные параметры и подбор колес</span><span class="related-bottom-desc">Точные параметры разболтовки Honda CR-V 1, 2 и 3 поколения. Диаметр ступицы, вылет, болты и нюансы у</span></a><a href="/articles/z/za/zamena-grm-khonda-tsrv.html" class="related-bottom-card"><span class="related-bottom-title">Замена ГРМ Хонда CR-V: сроки, цены и особенности для 2,0 и 2,4 литра</span><span class="related-bottom-desc">Полный гид по замене ремня ГРМ на Honda CR-V. Интервалы, симптомы износа, выбор запчастей и нюансы о</span></a><a href="/articles/r/ra/razmery-khonda-srv-2008.html" class="related-bottom-card"><span class="related-bottom-title">Размеры Honda CR-V 2008: габариты, клиренс, объем багажника</span><span class="related-bottom-desc">Полные размеры Хонда СРВ 2008 года: длина, ширина, высота, дорожный просвет. Технические характерист</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

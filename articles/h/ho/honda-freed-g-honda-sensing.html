@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Honda Freed и Honda Sensing: Полный обзор систем безопасности — Honda Library</title>
+    <meta name="description" content="Подробный разбор технологий Honda Sensing в минивэне Honda Freed. Как работают системы предотвращения столкновений, адаптивный круиз и удержание в полосе.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/h/ho/honda-freed-g-honda-sensing.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Honda Freed и Honda Sensing: Полный обзор систем безопасности">
+    <meta property="og:description" content="Подробный разбор технологий Honda Sensing в минивэне Honda Freed. Как работают системы предотвращения столкновений, адаптивный круиз и удержание в полосе.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Honda Freed и Honda Sensing: Полный обзор систем безопасности</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Honda Freed и Honda Sensing: Полный разбор технологий безопасности</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#архитектура-безопасности-в-honda-freed">Архитектура безопасности в Honda Freed</a></li><li><a href="#система-предотвращения-столкновений-cmbs">Система предотвращения столкновений CMBS</a></li><li><a href="#адаптивный-круиз-контроль-и-удержание-в-полосе">Адаптивный круиз-контроль и удержание в полосе</a></li><li><a href="#настройка-и-калибровка-систем-honda-sensing">Настройка и калибровка систем Honda Sensing</a></li><li><a href="#особенности-работы-в-сложных-условиях">Особенности работы в сложных условиях</a></li><li><a href="#влияние-honda-sensing-на-стоимость-и-ликвидность">Влияние Honda Sensing на стоимость и ликвидность</a></li><li><a href="#перспективы-развития-и-обновления">Перспективы развития и обновления</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Современный минивэн <em>Honda Freed</em> перестал быть просто утилитарным автомобилем для перевозки семьи и груза. Сегодня это технологический комплекс, в котором ключевую роль играет пакет интеллектуальных систем безопасности <strong>Honda Sensing</strong>. Интеграция этих решений кардинально меняет восприятие вождения, превращая рутинные поездки в безопасный и комфортный процесс.</p>
+
+<p>Владельцы <em>Honda Freed</em> всё чаще отмечают, что автомобиль сам становится «соавтором» управления, беря на себя часть рутинных задач. От мониторинга слепых зон до автоматического торможения в экстренных ситуациях — технологии <strong>Honda Sensing</strong> работают на опережение угроз. Понимание принципов работы этих систем критически важно для любого водителя, желающего раскрыть весь потенциал своего автомобиля.</p>
+
+<h2 id="архитектура-безопасности-в-honda-freed">Архитектура безопасности в Honda Freed</h2>
+<p>Основа работы <strong>Honda Sensing</strong> на борту <em>Honda Freed</em> — это сложный симбиоз радарных датчиков и камер высокого разрешения. Камера, расположенная за лобовым стеклом, сканирует дорожную разметку и знаки, в то время как радар в переднем бампере отслеживает дистанцию до впереди идущего транспорта. Именно такая комбинация позволяет системе принимать взвешенные решения в реальном времени.</p>
+
+<p>Важно понимать, что <strong>Honda Sensing</strong> не является автономным роботом, заменяющим водителя. Это ассистент, который постоянно мониторит ситуацию вокруг <em>Honda Freed</em> и вмешивается только тогда, когда водитель не реагирует на потенциальную опасность. Система настроена так, чтобы минимизировать ложные срабатывания, сохраняя при этом максимальную бдительность в сложных городских условиях.</p>
+
+<p>Ключевым элементом здесь является программное обеспечение, которое обрабатывает входящие данные с невероятной скоростью. Алгоритмы анализируют траекторию движения, скорость сближения и поведение других участников дорожного движения. Это позволяет системе заранее предупредить о риске столкновения или инициировать экстренное торможение.</p>
+
+<blockquote>⚠️ Внимание: Рабочая температура камеры и радара может влиять на их эффективность. В сильные морозы или при сильном загрязнении датчиков грязью и снегом функционал <strong>Honda Sensing</strong> может быть временно ограничен или отключен.</blockquote>
+
+<h2 id="система-предотвращения-столкновений-cmbs">Система предотвращения столкновений CMBS</h2>
+<p>Функция <strong>Collision Mitigation Braking System (CMBS)</strong> является краеугольным камнем безопасности в <em>Honda Freed</em>. Она работает в несколько этапов, предупреждая водителя звуковыми сигналами и вибрацией руля. Если реакция не последует, система сама плавно нажмет на тормоз, чтобы снизить скорость удара или вовсе избежать его.</p>
+
+<p>В городских пробках, где остановки происходят часто и неожиданно, CMBS становится незаменимым помощником. Система распознает не только автомобили, но и пешеходов, а также велосипедистов. Это особенно актуально для <em>Honda Freed</em>, который часто используется в плотном городском трафике с большим количеством уязвимых участников движения.</p>
+
+<p>Существует несколько уровней настройки чувствительности этой системы, что позволяет адаптировать её под стиль вождения. Вы можете выбрать раннее, среднее или позднее срабатывание предупреждений. Однако даже при выборе позднего срабатывания критическое торможение всегда будет активировано в последний момент.</p>
+
+<ul>
+<li>🚗 Система распознает автомобили, движущиеся в том же направлении, что и <em>Honda Freed</em>.</li>
+<li>🚶‍♂️ Функция обнаружения пешеходов работает как днем, так и в сумерках при хорошем освещении.</li>
+<li>🚴‍♀️ Велосипедисты также попадают в зону мониторинга камеры высокого разрешения.</li>
+<li>🛑 Автоматическое торможение активируется, если водитель не реагирует на визуальные и звуковые предупреждения.</li>
+</ul>
+
+<details class="faq-item"><summary>Детали работы CMBS при низких скоростях</summary><div class="faq-answer"><p>При скоростях ниже 10 км/ч система может не активировать полное торможение, ограничиваясь лишь звуковым сигналом, чтобы избежать блокировки колес в тесном пространстве парковки.</p></div></details>
+
+<h2 id="адаптивный-круиз-контроль-и-удержание-в-полосе">Адаптивный круиз-контроль и удержание в полосе</h2>
+<p>Долгие поездки на <em>Honda Freed</em> становятся менее утомительными благодаря системе <strong>Adaptive Cruise Control (ACC)</strong> с функцией Low Speed Follow. Эта технология не просто поддерживает заданную скорость, но и автоматически регулирует её в зависимости от дистанции до впереди идущего автомобиля. Если поток останавливается, <strong>Honda Freed</strong> также остановится и, при кратковременном простое, тронется снова.</p>
+
+<p>Параллельно с этим работает система <strong>Lane Keeping Assist System (LKAS)</strong>, которая мягко подруливает автомобиль, удерживая его в центре полосы. Это не жесткое удержание, а скорее подсказка рулем, которая помогает избежать непроизвольного ухода с полосы из-за усталости или невнимательности. В сочетании с ACC это создает эффект полуавтономного движения по трассе.</p>
+
+<p>Важно отметить, что для корректной работы LKAS необходима четкая разметка на дороге. На заснеженных или изношенных участках трассы система может не видеть границы полосы и временно отключать функцию подруливания. В таком случае ответственность за направление движения полностью ложится на водителя.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Как часто вы пользуетесь адаптивным круиз-контролем?</strong><ul><li>Каждый день на трассе</li><li>Только в дальних поездках</li><li>Редко, предпочитаю сам</li><li>Не использую вообще</li></ul></div></div>
+
+<ul>
+<li>🛣️ ACC поддерживает дистанцию до впереди идущего авто, выбирая один из четырех интервалов.</li>
+<li>🚦 Функция Low Speed Follow позволяет системе работать даже при полной остановке транспорта.</li>
+<li>🔄 После остановки на срок до 3 секунд система сама возобновляет движение при нажатии кнопки.</li>
+<li>⚙️ Интеллектуальное управление газом предотвращает рывки при движении в плотном потоке.</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Система удержания в полосе (LKAS) может некорректно работать при резком повороте руля или при попытке обгона. Водитель обязан сохранять контроль над рулем в любой ситуации.</blockquote>
+
+<h2 id="настройка-и-калибровка-систем-honda-sensing">Настройка и калибровка систем Honda Sensing</h2>
+<p>Для того чтобы <strong>Honda Sensing</strong> функционировал безупречно, критически важно соблюдать рекомендации по обслуживанию датчиков. Камера за лобовым стеклом и радар в бампере должны быть всегда чистыми. Любое загрязнение, даже слой пыли или брызги грязи, может исказить данные и привести к ошибочным срабатываниям или полному отключению систем.</p>
+
+<p>После замены лобового стекла или проведения работ, затрагивающих геометрию кузова <em>Honda Freed</em>, обязательна процедура калибровки. Это сложный процесс, требующий специального оборудования и программного обеспечения. Неправильная настройка угла обзора камеры может привести к тому, что система будет видеть препятствия там, где их нет, или, наоборот, проигнорировать реальную угрозу.</p>
+
+<p>Настройки систем можно изменять через мультимедийный экран или комбинацию приборов. Рекомендуется изучить меню <code>Настройки → Безопасность → Honda Sensing</code>, чтобы понять текущие параметры работы. Здесь можно отрегулировать чувствительность предупреждений о столкновении или настроить интервалы для адаптивного круиза.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед поездкой</h4><label class="check-item"><input type="checkbox"><span>Очистить лобовое стекло перед камерой</span></label><label class="check-item"><input type="checkbox"><span>Протереть передний радар</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие ошибок на приборной панели</span></label><label class="check-item"><input type="checkbox"><span>Убедиться, что камера не затемнена тонировкой</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Местоположение</th>
+<th>Функция</th>
+<th>Требования к обслуживанию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Монокулярная камера</td>
+<td>Верхняя часть лобового стекла</td>
+<td>Распознавание разметки, знаков и объектов</td>
+<td>Чистота стекла, отсутствие трещин в поле зрения</td>
+</tr>
+<tr>
+<td>Радар миллиметрового диапазона</td>
+<td>Задняя часть переднего бампера</td>
+<td>Измерение дистанции и скорости сближения</td>
+<td>Чистота бампера, отсутствие металлических вставок</td>
+</tr>
+<tr>
+<td>Датчик угла поворота руля</td>
+<td>Колонка рулевого управления</td>
+<td>Определение направления движения</td>
+<td>Проверка при замене рулевого механизма</td>
+</tr>
+<tr>
+<td>Блок управления</td>
+<td>Под торпедо</td>
+<td>Обработка данных и управление исполнительными механизмами</td>
+<td>Защита от влаги и вибрации</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="особенности-работы-в-сложных-условиях">Особенности работы в сложных условиях</h2>
+<p>Несмотря на высокую технологичность, системы <strong>Honda Sensing</strong> имеют свои ограничения, которые необходимо учитывать. В условиях сильного дождя, снегопада или тумана дальность действия радара и видимость камеры могут быть существенно снижены. В таких ситуациях система может автоматически отключить некоторые функции и выдать соответствующее предупреждение на дисплей.</p>
+
+<p>Ночное вождение также накладывает отпечаток на работу систем. Хотя камера обладает высокой светочувствительностью, ослепление фарами встречных автомобилей может привести к временной потере отслеживания разметки. В таких случаях система удержания в полосе может отключиться, и водителю следует быть особенно внимательным.</p>
+
+<p>Особое внимание следует уделить дорожным работам. Временная разметка, конусы и рабочие в жилетах могут быть неправильно интерпретированы алгоритмами. <em>Honda Freed</em> может попытаться объехать препятствие или, наоборот, не заметить его, если оно не попадает в стандартные шаблоны. В зонах ремонта дорог лучше отключить активные ассистенты и управлять автомобилем вручную.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если система выдает ошибку "Камера заблокирована", попробуйте очистить лобовое стекло снаружи и изнутри. Часто проблема решается удалением конденсата или насекомых с поверхности стекла за зеркалом заднего вида.</p></div>
+
+<h2 id="влияние-honda-sensing-на-стоимость-и-ликвидность">Влияние Honda Sensing на стоимость и ликвидность</h2>
+<p>Наличие пакета <strong>Honda Sensing</strong> в комплектации <em>Honda Freed</em> значительно повышает его привлекательность на вторичном рынке. Покупатели всё чаще рассматривают эти системы не как опцию, а как обязательный стандарт безопасности. Автомобили с полностью рабочими датчиками и камерами продаются быстрее и по более высокой цене.</p>
+
+<p>Кроме того, наличие современных систем безопасности может положительно влиять на стоимость страховки. Страховые компании всё чаще учитывают наличие систем предотвращения столкновений при расчете тарифов, так как статистика показывает снижение аварийности у таких автомобилей. Это делает владение <em>Honda Freed</em> с <strong>Honda Sensing</strong> экономически выгодным в долгосрочной перспективе.</p>
+
+<p>Однако стоит помнить, что ремонт и замена компонентов системы безопасности обходятся дороже, чем стандартных элементов кузова. Стоимость замены лобового стекла с камерой или переднего бампера с радаром может быть существенной. Поэтому важно бережно относиться к автомобилю и своевременно проходить техническое обслуживание.</p>
+
+<ul>
+<li>💰 Повышенная ликвидность на рынке подержанных автомобилей благодаря пакету безопасности.</li>
+<li>📉 Возможность снижения стоимости страховки при наличии активных систем помощи.</li>
+<li>🛠️ Увеличенные расходы на ремонт при повреждении датчиков и оптики.</li>
+<li>🔒 Высокий спрос на комплектации с полным набором функций Honda Sensing.</li>
+</ul>
+
+<blockquote>⚠️ Внимание: При покупке подержанного <em>Honda Freed</em> обязательно проверьте работоспособность всех систем Honda Sensing. Ошибки в работе датчиков могут указывать на скрытые дефекты кузова или некачественный ремонт после ДТП.</blockquote>
+
+<h2 id="перспективы-развития-и-обновления">Перспективы развития и обновления</h2>
+<p>Технологии <strong>Honda Sensing</strong> продолжают развиваться, и <em>Honda Freed</em> может получить новые функции через обновления программного обеспечения. Honda регулярно выпускает патчи, которые улучшают алгоритмы распознавания объектов и расширяют возможности систем. Важно следить за обновлениями и устанавливать их через официальный дилерский центр или дилерский портал.</p>
+
+<p>Будущие версии пакета безопасности обещают еще более глубокую интеграцию с навигационными системами и смартфонами. Ожидается, что системы смогут предсказывать поведение других участников движения на основе анализа больших данных и геолокации. Это позволит <em>Honda Freed</em> заблаговременно предупреждать о потенциальных опасностях даже до их появления в поле зрения камеры.</p>
+
+<p>Интеграция с инфраструктурой умных городов также является одним из векторов развития. В перспективе автомобиль сможет получать данные о светофорах и дорожных знаках напрямую от городской сети, что повысит точность работы адаптивного круиза и систем помощи водителю. Это шаг к полноценной автономности, где водитель будет лишь наблюдателем.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярное обновление программного обеспечения и калибровка датчиков — залог того, что Honda Freed будет оставаться одним из самых безопасных автомобилей в своем классе на протяжении всего срока службы.</p></div>
+
+<h2 id="часто-задаваемые-вопросы">Часто задаваемые вопросы</h2>
+<details>
+<summary>Можно ли полностью отключить систему Honda Sensing?</summary>
+<p>Да, большинство функций пакета <strong>Honda Sensing</strong> можно отключить через меню настроек автомобиля. Однако некоторые базовые предупреждения, такие как звуковой сигнал о сближении, могут оставаться активными по умолчанию для обеспечения минимального уровня безопасности.</p>
+</details>
+<details>
+<summary>Как часто нужно калибровать камеру и радар?</summary>
+<p>Калибровка требуется только после замены лобового стекла, ремонта переднего бампера или при появлении ошибок в работе систем. Плановой периодической калибровки не предусмотрено, если датчики не подвергались механическому воздействию.</p>
+</details>
+<details>
+<summary>Работает ли Honda Sensing в пробках на скорости ниже 10 км/ч?</summary>
+<p>Да, функция Low Speed Follow работает в широком диапазоне скоростей, включая полный останов и старт в пробке. Однако при очень низких скоростях система может ограничивать торможение для избежания блокировки колес.</p>
+</details>
+<details>
+<summary>Влияет ли тонировка лобового стекла на работу камеры?</summary>
+<p>Да, если тонировка перекрывает область обзора камеры или затемняет её, система может работать некорректно или отключиться. Рекомендуется использовать качественную тонировку или оставлять зону перед камерой чистой.</p>
+</details>
+<details>
+<summary>Что делать, если система выдает ошибку "Система временно недоступна"?</summary>
+<p>Чаще всего это связано с загрязнением датчиков или неблагоприятными погодными условиями. Очистите лобовое стекло и передний бампер. Если ошибка не исчезает после улучшения условий, обратитесь в сервис для диагностики.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#архитектура-безопасности-в-honda-freed">Архитектура безопасности в Honda Freed</a></li><li><a href="#система-предотвращения-столкновений-cmbs">Система предотвращения столкновений CMBS</a></li><li><a href="#адаптивный-круиз-контроль-и-удержание-в-полосе">Адаптивный круиз-контроль и удержание в полосе</a></li><li><a href="#настройка-и-калибровка-систем-honda-sensing">Настройка и калибровка систем Honda Sensing</a></li><li><a href="#особенности-работы-в-сложных-условиях">Особенности работы в сложных условиях</a></li><li><a href="#влияние-honda-sensing-на-стоимость-и-ликвидность">Влияние Honda Sensing на стоимость и ликвидность</a></li><li><a href="#перспективы-развития-и-обновления">Перспективы развития и обновления</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/r/ra/raskhod-topliva-honda-freed.html" class="related-card">Расход топлива Honda Freed: реальные цифры и способы экономии</a></li><li><a href="/articles/c/ch/chita-drom-khonda-frid.html" class="related-card">Чип-тюнинг Honda Freed: прошивка, тюнинг и удаление EGR</a></li><li><a href="/articles/r/ra/razmer-dvornikov-na-khonda-frid.html" class="related-card">Размер дворников на Хонда Фрид: таблица, замена и нюансы</a></li><li><a href="/articles/k/kh/khonda-zummer-50-otzyvy.html" class="related-card">Honda Zoomer 50: честные отзывы владельцев, плюсы и минусы</a></li><li><a href="/articles/k/kh/khodovye-ogni-na-khonda-frid.html" class="related-card">Ходовые огни на Honda Freed: установка, подключение и настройка</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/r/ra/raskhod-topliva-honda-freed.html" class="related-bottom-card"><span class="related-bottom-title">Расход топлива Honda Freed: реальные цифры и способы экономии</span><span class="related-bottom-desc">Подробный анализ расхода топлива Honda Freed разных поколений. Сравнение бензиновых и гибридных верс</span></a><a href="/articles/c/ch/chita-drom-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Чип-тюнинг Honda Freed: прошивка, тюнинг и удаление EGR</span><span class="related-bottom-desc">Полный гид по чиповке Honda Freed. Увеличение мощности, удаление EGR, сажевого фильтра и катализатор</span></a><a href="/articles/r/ra/razmer-dvornikov-na-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Размер дворников на Хонда Фрид: таблица, замена и нюансы</span><span class="related-bottom-desc">Полный гид по размерам стеклоочистителей для Honda Freed. Таблица для всех поколений, инструкция по </span></a><a href="/articles/k/kh/khonda-zummer-50-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Honda Zoomer 50: честные отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Подробный обзор Honda Zoomer 50 по отзывам реальных владельцев. Расход топлива, надежность двигателя</span></a><a href="/articles/k/kh/khodovye-ogni-na-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Ходовые огни на Honda Freed: установка, подключение и настройка</span><span class="related-bottom-desc">Полное руководство по установке и настройке дневных ходовых огней на Honda Freed. Разбор штатных реш</span></a><a href="/articles/k/ka/kak-nastroit-karbyurator-na-mopede-khonda-dio.html" class="related-bottom-card"><span class="related-bottom-title">Как настроить карбюратор на мопеде Honda Dio: полная инструкция</span><span class="related-bottom-desc">Пошаговое руководство по регулировке карбюратора Honda Dio. Настройка холостого хода, смеси и качест</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

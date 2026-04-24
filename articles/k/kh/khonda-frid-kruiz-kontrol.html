@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Круиз-контроль Honda Freed: настройка, использование и нюансы работы — Honda Library</title>
+    <meta name="description" content="Полное руководство по работе с круиз-контролем на Honda Freed. Как включить систему, настроить скорость и избежать частых ошибок при эксплуатации.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/k/kh/khonda-frid-kruiz-kontrol.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Круиз-контроль Honda Freed: настройка, использование и нюансы работы">
+    <meta property="og:description" content="Полное руководство по работе с круиз-контролем на Honda Freed. Как включить систему, настроить скорость и избежать частых ошибок при эксплуатации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Круиз-контроль Honda Freed: настройка, использование и нюансы работы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Как работает круиз-контроль на Honda Freed: подробный гайд</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-системы-на-разных-поколениях-freed">Особенности системы на разных поколениях Freed</a></li><li><a href="#панель-управления-и-активация-функций">Панель управления и активация функций</a></li><li><a href="#настройка-дистанции-и-интервалов-следования">Настройка дистанции и интервалов следования</a></li><li><a href="#безопасность-и-ограничения-системы">Безопасность и ограничения системы</a></li><li><a href="#типичные-ошибки-и-методы-диагностики">Типичные ошибки и методы диагностики</a></li><li><a href="#особенности-работы-в-гибридном-режиме">Особенности работы в гибридном режиме</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Многие владельцы минивэнов <em>Honda Freed</em> недооценивают потенциал системы поддержания скорости, считая её лишь вспомогательной опцией для длительных трассовых перегонов. На самом деле, грамотное использование этой функции позволяет существенно снизить утомляемость водителя и оптимизировать расход топлива в городском цикле с частыми пробками. Особую актуальность тема приобретает с выходом гибридных версий, где логика работы <strong>круиз-контроля</strong> имеет свои уникальные особенности.</p>
+
+<p>Понимание принципов взаимодействия электронных систем автомобиля с механикой управления двигателем и трансмиссией является ключом к безопасной езде. Владельцы часто сталкиваются с тем, что система не активируется или отключается в неожиданный момент, что вызывает недоумение и раздражение. Разберемся, как правильно настроить <strong>адаптивный режим</strong> и почему важно соблюдать дистанцию даже при наличии автоматики.</p>
+
+<h2 id="особенности-системы-на-разных-поколениях-freed">Особенности системы на разных поколениях Freed</h2>
+
+<p>Производитель существенно изменил философию оснащения минивэна с приходом второго поколения (модельный ряд FP). Если в ранних версиях (первое поколение) система часто отсутствовала или была базовой, то современные модификации оснащаются продвинутыми модулями. <strong>Адаптивный круиз-контроль</strong> (ACC) стал стандартом для многих комплектаций, используя радарные датчики для отслеживания препятствий.</p>
+
+<p>Важно понимать, что логика работы системы зависит от типа силовой установки. На бензиновых версиях <em>Honda Freed</em> система управляет дроссельной заслонкой и тормозами, тогда как на гибридных модификациях <em>Honda Freed Hybrid</em> добавляется управление рекуперативным торможением. Это влияет на плавность замедления и поведение автомобиля в потоке.</p>
+
+<ul>
+<li>🚗 Первое поколение: базовая система без возможности автоматического торможения</li>
+<li>🚙 Второе поколение: внедрение радара и функции Stop & Go</li>
+<li>🔋 Гибридные версии: специфическая работа рекуперации при сбросе скорости</li>
+</ul>
+
+<p>При эксплуатации необходимо учитывать, что радарные датчики, расположенные в решетке радиатора, могут загрязняться или замерзать, что приводит к отключению системы. В таких случаях на приборной панели загорается соответствующий индикатор ошибки. Водителю следует регулярно проверять чистоту зоны расположения сенсора.</p>
+
+<h2 id="панель-управления-и-активация-функций">Панель управления и активация функций</h2>
+
+<p>Для управления системой на рулевом колесе предусмотрен специальный блок кнопок, который интуитивно понятен после краткого ознакомления с инструкцией. Ключевым элементом является кнопка <code>MAIN</code>, которая подает питание на блок управления. Без её нажатия любые остальные действия будут бесполезны, так как система находится в спящем режиме.</p>
+
+<p>После активации основного питания водитель может задать желаемую скорость с помощью рычагов <code>SET/COAST</code> и <code>RES/ACCEL</code>. Первый рычаг снижает установленный параметр или фиксирует текущую скорость при нажатии, второй — повышает её или возвращает к предыдущему значению. </p>
+
+<ul>
+<li>🔘 Кнопка <code>MAIN</code>: включает систему, но не устанавливает скорость</li>
+<li>⬇️ Рычаг <code>SET</code>: фиксирует текущую скорость как целевую</li>
+<li>⬆️ Кнопка <code>RES</code>: возобновляет движение до ранее заданного лимита</li>
+</ul>
+
+<p>Особое внимание следует уделить кнопке <code>CANCEL</code>. Она временно отключает поддержание скорости, не сбрасывая запомненные параметры в памяти контроллера. Это удобно использовать при необходимости кратковременного торможения, например, при объезде препятствия, с последующим быстрым возобновлением режима.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Как часто вы используете круиз-контроль?</strong><ul><li>Только на трассе</li><li>В пробках</li><li>Редко</li><li>Никогда</li></ul></div></div>
+
+<h2 id="настройка-дистанции-и-интервалов-следования">Настройка дистанции и интервалов следования</h2>
+
+<p>Для владельцев <em>Honda Freed</em>, оснащенных адаптивной системой, критически важно правильно настроить дистанцию до впереди идущего транспорта. Эта функция позволяет избежать резких рывков при торможении и обеспечивает комфортное следование в плотном потоке. Интервалы регулируются через меню на комбинации приборов или через кнопки на руле, в зависимости от года выпуска.</p>
+
+<p>Чем меньше выбранный интервал, тем агрессивнее автомобиль реагирует на замедление впереди идущей машины. Однако слишком малая дистанция может создать стрессовую ситуацию при резком торможении лидера. Рекомендуется выбирать средние значения для городской езды и максимальные для скоростных магистралей с высокой скоростью потока.</p>
+
+<table>
+<thead>
+<tr>
+<th>Уровень дистанции</th>
+<th>Описание</th>
+<th>Рекомендуемое применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (Минимальный)</td>
+<td>Короткая дистанция, быстрая реакция</td>
+<td>Плотный городской трафик</td>
+</tr>
+<tr>
+<td>2 (Средний)</td>
+<td>Комфортный интервал</td>
+<td>Загородные трассы</td>
+</tr>
+<tr>
+<td>3 (Максимальный)</td>
+<td>Большая дистанция, плавное торможение</td>
+<td>Высокие скорости, плохая видимость</td>
+</tr>
+<tr>
+<td>4 (Самый большой)</td>
+<td>Максимальный запас времени</td>
+<td>Автомагистрали, дождь</td>
+</tr>
+</tbody>
+</table>
+
+<p>Неправильная настройка может привести к тому, что система будет воспринимать повороты или соседние полосы как препятствия. В некоторых случаях это вызывает ложные срабатывания тормозной системы, что пугает пассажиров и других участников движения. Необходимо учитывать геометрию дороги при выборе параметров.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед активацией</h4><label class="check-item"><input type="checkbox"><span>Скорость выше 40 км/ч</span></label><label class="check-item"><input type="checkbox"><span>Дорога сухая и ровная</span></label><label class="check-item"><input type="checkbox"><span>Датчики чистые</span></label><label class="check-item"><input type="checkbox"><span>Нет снега на решетке</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="безопасность-и-ограничения-системы">Безопасность и ограничения системы</h2>
+
+<p>Несмотря на высокую степень автоматизации, <strong>круиз-контроль</strong> не является беспилотной системой и требует постоянного контроля со стороны водителя. Электроника имеет ряд физических ограничений, связанных с геометрией датчиков и возможностями программного обеспечения. Игнорирование этих ограничений может привести к аварийным ситуациям.</p>
+
+<p>Система может отключиться или не сработать в следующих ситуациях: на крутых поворотах, при резких изменениях профиля дороги, в условиях сильного дождя, снега или тумана. Радар не способен «видеть» сквозь плотные завесы осадков или неметаллические препятствия, такие как бетонные барьеры или живые изгороди.</p>
+
+<blockquote>⚠️ Внимание: Не полагайтесь на систему при движении по скользкому покрытию. Тормозной путь увеличивается, и автоматика может не успеть предотвратить столкновение. Всегда держите ногу на педали тормоза в аварийных ситуациях.</blockquote>
+
+<p>Владельцам гибридных версий стоит помнить, что при низком заряде батареи или неисправности системы рекуперации, функционал адаптивного контроля может быть ограничен. В таких случаях автомобиль будет работать как обычный минивэн с базовым круизом, без функции автоматического торможения до полной остановки.</p>
+
+<details class="faq-item"><summary>Что происходит при резком торможении?</summary><div class="faq-answer"><p>Если водитель резко нажмет на тормоз, система мгновенно отключается и сбрасывает все настройки. Для возобновления необходимо снова нажать кнопку MAIN и установить скорость.</p></div></details>
+
+<h2 id="типичные-ошибки-и-методы-диагностики">Типичные ошибки и методы диагностики</h2>
+
+<p>Частой проблемой при эксплуатации <em>Honda Freed</em> становится невозможность активации системы при исправном состоянии всех датчиков. В большинстве случаев причина кроется в некорректной работе педали тормоза или выключателя стоп-сигналов. Если лампа стоп-сигнала не загорается, система блокирует работу круиз-контроля в целях безопасности.</p>
+
+<p>Другой распространенной ошибкой является попытка активации функции на скорости ниже допустимого порога. Контроллер просто не примет команду и не подаст индикацию на приборную панель. Также стоит проверить состояние предохранителей, отвечающих за систему стабилизации и торможения, так как они взаимосвязаны с работой адаптивного контроля.</p>
+
+<ul>
+<li>🔧 Проверьте работу выключателя стоп-сигнала на педали тормоза</li>
+<li>🔍 Очистите радарный датчик от грязи, снега и льда</li>
+<li>📉 Убедитесь, что скорость превышает минимальный порог активации</li>
+</ul>
+
+<p>Если на приборной панели горит желтый значок системы, а управление не реагирует, возможно, требуется программная калибровка датчиков. Это особенно актуально после замены лобового стекла или ремонта переднего бампера.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При замене лобового стекла обязательно требуйте у сервисного центра перенастройки и калибровки радара круиз-контроля, иначе система будет работать некорректно.</p></div>
+
+<h2 id="особенности-работы-в-гибридном-режиме">Особенности работы в гибридном режиме</h2>
+
+<p>Гибридная версия <em>Honda Freed</em> предлагает уникальные возможности благодаря взаимодействию бензинового двигателя и электромотора. Система круиз-контроля здесь умеет максимально эффективно использовать рекуперативное торможение для заряда батареи перед ускорением. Это позволяет снизить расход топлива даже при динамичной езде.</p>
+
+<p>В режиме Eco Drive система стремится удерживать скорость с минимальным вмешательством двигателя внутреннего сгорания. Если требуется замедление, сначала задействуется электромотор как генератор, и лишь при необходимости подключаются механические тормоза. Это обеспечивает плавность хода и отсутствие резких толчков.</p>
+
+<blockquote>⚠️ Внимание: При длительном движении в гору с включенным круиз-контролем на гибриде может быть превышен лимит скорости, если батарея разряжена. Система переключится на полный газ двигателя.</blockquote>
+
+<p>Пользователи отмечают, что в гибридных версиях система более предсказуема в городе благодаря возможности точной настройки момента перехода на электрическую тягу. Однако в условиях сильного гололеда стоит быть осторожнее, так как рекуперация может вызвать блокировку колес при низком сцеплении с дорогой.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Гибридный круиз-контроль экономит топливо за счет приоритета рекуперации, но требует более внимательного контроля на скользких поверхностях из-за специфики работы электродвигателя.</p></div>
+
+<h2 id="часто-задаваемые-вопросы">Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Почему круиз-контроль не включается на Honda Freed?</summary>
+<p>Чаще всего причина в том, что скорость автомобиля ниже минимального порога (обычно 30-40 км/ч). Также система не активируется, если педаль тормоза заедает, датчик чистоты радара загрязнен или есть неисправность в системе стабилизации.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать круиз-контроль в пробках?</summary>
+<p>Да, в современных поколениях <em>Honda Freed</em> с системой Stop & Go это возможно. Автомобиль сам остановится при полной остановке впереди идущей машины и тронется с места, когда она начнет движение. Однако водителю нужно быть готовым вмешаться при длительных паузах.</p>
+</details>
+
+<details>
+<summary>Как отключить круиз-контроль полностью?</summary>
+<p>Для временного отключения нажмите педаль тормоза или кнопку <code>CANCEL</code>. Для полного выключения системы нажмите кнопку <code>MAIN</code> еще раз, пока индикатор на панели приборов не погаснет. Сброс запомненной скорости происходит автоматически при выключении зажигания.</p>
+</details>
+
+<details>
+<summary>Влияет ли загрузка автомобиля на работу системы?</summary>
+<p>Да, при полной загрузке минивэна система может работать иначе. Увеличивается инерция, и для поддержания скорости требуется больше мощности. На подъемах система может кратковременно превышать установленную скорость, чтобы сохранить динамику.</p>
+</details>
+
+<details>
+<summary>Что делать, если система отключается на поворотах?</summary>
+<p>Это нормальное поведение для многих систем, если угол поворота слишком велик для датчика. Если отключение происходит на пологих поворотах, возможно, требуется калибровка радара или проверка его установки после ремонта бампера.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-системы-на-разных-поколениях-freed">Особенности системы на разных поколениях Freed</a></li><li><a href="#панель-управления-и-активация-функций">Панель управления и активация функций</a></li><li><a href="#настройка-дистанции-и-интервалов-следования">Настройка дистанции и интервалов следования</a></li><li><a href="#безопасность-и-ограничения-системы">Безопасность и ограничения системы</a></li><li><a href="#типичные-ошибки-и-методы-диагностики">Типичные ошибки и методы диагностики</a></li><li><a href="#особенности-работы-в-гибридном-режиме">Особенности работы в гибридном режиме</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-cbr-600-rr.html" class="related-card">Honda CBR 600 RR: полный обзор, характеристики и секреты модели</a></li><li><a href="/articles/s/sp/spada-cool-spirit-honda-sensing.html" class="related-card">Honda Spada Cool Spirit: Обзор, Honda Sensing и характеристики</a></li><li><a href="/articles/k/kh/khonda-shattl-vo-vladivostoke.html" class="related-card">Honda Shuttle во Владивостоке: цены, отзывы и выбор</a></li><li><a href="/articles/h/ho/honda-crf1000l-africa-twin.html" class="related-card">Honda CRF1000L Africa Twin: Полный обзор легендарного эндуро</a></li><li><a href="/articles/k/ko/komplektatsii-khonda-strim-2-pokoleniya.html" class="related-card">Комплектации Honda Stream 2: обзор всех версий и двигателей</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-cbr-600-rr.html" class="related-bottom-card"><span class="related-bottom-title">Honda CBR 600 RR: полный обзор, характеристики и секреты модели</span><span class="related-bottom-desc">Подробный гид по Honda CBR 600 RR: технические характеристики, отличия от F4i, настройки подвески и </span></a><a href="/articles/s/sp/spada-cool-spirit-honda-sensing.html" class="related-bottom-card"><span class="related-bottom-title">Honda Spada Cool Spirit: Обзор, Honda Sensing и характеристики</span><span class="related-bottom-desc">Полный гид по Honda Spada Cool Spirit. Разбор комплектаций, работы системы Honda Sensing, расход топ</span></a><a href="/articles/k/kh/khonda-shattl-vo-vladivostoke.html" class="related-bottom-card"><span class="related-bottom-title">Honda Shuttle во Владивостоке: цены, отзывы и выбор</span><span class="related-bottom-desc">Honda Shuttle во Владивостоке: актуальные цены, особенности эксплуатации на Дальнем Востоке, плюсы и</span></a><a href="/articles/h/ho/honda-crf1000l-africa-twin.html" class="related-bottom-card"><span class="related-bottom-title">Honda CRF1000L Africa Twin: Полный обзор легендарного эндуро</span><span class="related-bottom-desc">Детальный анализ Honda CRF1000L Africa Twin. Технические характеристики, особенности мотора DCT, сов</span></a><a href="/articles/k/ko/komplektatsii-khonda-strim-2-pokoleniya.html" class="related-bottom-card"><span class="related-bottom-title">Комплектации Honda Stream 2: обзор всех версий и двигателей</span><span class="related-bottom-desc">Полный разбор комплектаций Honda Stream 2 поколения (RN6-RN9). Двигатели R18A, R20A, K24A, полный пр</span></a><a href="/articles/s/st/stepvagon-khonda-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stepwgn: честные отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Полный разбор Honda Stepwgn: отзывы реальных владельцев, надежность двигателя, особенности подвески </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

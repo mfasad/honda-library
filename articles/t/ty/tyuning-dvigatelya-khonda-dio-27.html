@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Тюнинг Honda Dio 27: доработка двигателя, вариатора и карбюратора — Honda Library</title>
+    <meta name="description" content="Полный гид по тюнингу Honda Dio AF27. Распил цилиндра, настройка карбюратора, установка вариатора и фильтров нулевого сопротивления для 2-тактного мотора.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/t/ty/tyuning-dvigatelya-khonda-dio-27.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Тюнинг Honda Dio 27: доработка двигателя, вариатора и карбюратора">
+    <meta property="og:description" content="Полный гид по тюнингу Honda Dio AF27. Распил цилиндра, настройка карбюратора, установка вариатора и фильтров нулевого сопротивления для 2-тактного мотора.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Тюнинг Honda Dio 27: доработка двигателя, вариатора и карбюратора</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Тюнинг двигателя Honda Dio 27: этапы доработки и настройка</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#анализ-стоковой-конфигурации-и-подготовка-к-доработкам">Анализ стоковой конфигурации и подготовка к доработкам</a></li><li><a href="#доработка-цилиндро-поршневой-группы-цпг">Доработка цилиндро-поршневой группы (ЦПГ)</a></li><li><a href="#настройка-системы-впуска-и-выпуска">Настройка системы впуска и выпуска</a></li><li><a href="#модернизация-трансмиссии-и-вариатора">Модернизация трансмиссии и вариатора</a></li><li><a href="#система-зажигания-и-электронное-управление">Система зажигания и электронное управление</a></li><li><a href="#сборка-настройка-и-обкатка-двигателя">Сборка, настройка и обкатка двигателя</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Японский скутер <em>Honda Dio AF27</em> уже давно стал легендой среди любителей бюджетной техники, однако его стоковая производительность часто вызывает вопросы у опытных райдеров. Стандартная конфигурация двигателя объемом 50 кубических сантиметров ограничена японскими нормами, что не позволяет раскрыть весь потенциал двухтактного агрегата. Именно поэтому грамотный <strong>тюнинг двигателя Хонда Дио 27</strong> является обязательной процедурой для тех, кто хочет получить комфортную динамику разгона и уверенный набор скорости на трассе.</p>
+
+<p>Процесс доработки требует комплексного подхода, так как простое увеличение подачи топлива или воздуха без изменения геометрии выпускной системы может привести лишь к перегреву и потере ресурса. Владельцы часто недооценивают важность балансировки всей системы, начиная от впуска и заканчивая трансмиссией. В этой статье мы подробно разберем этапы модернизации, которые превратят ваш скутер в резвый аппарат для городских пробок и загородных поездок.</p>
+
+<p>Стоит отметить, что любые вмешательства в конструкцию транспортного средства вы несете на свой страх и риск, однако правильное выполнение операций позволяет существенно продлить жизнь мотора при возросших нагрузках. <em>Двухтактный цикл</em> работы двигателя диктует свои правила: здесь критически важны температурные режимы и качество смазки. Поэтому перед началом работ необходимо подготовить не только инструменты, но и качественные расходные материалы, включая высокооктановое топливо и синтетические масла.</p>
+
+<h2 id="анализ-стоковой-конфигурации-и-подготовка-к-доработкам">Анализ стоковой конфигурации и подготовка к доработкам</h2>
+
+<p>Прежде чем браться за ключи, необходимо четко понимать, с чем именно мы имеем дело. Двигатель <em>AF27E</em>, устанавливаемый на Dio 27, конструктивно повторяет многие решения серии AF18, но имеет свои нюансы в настройке фаз газораспределения. Стандартный цилиндр имеет узкий перепускной канал и неоптимальную форму выпускного окна, что душит мотор на высоких оборотах. <strong>Расточка цилиндра</strong> или его замена на спортивный аналог — это первый шаг к освобождению потенциала.</p>
+
+<p>Важно сразу определиться с бюджетом и целью тюнинга. Если вам нужна просто чуть более резвая "табуретка" для города, то можно ограничиться минимальными вмешательствами. Однако для серьезной динамики потребуется замена поршневой группы на 70 или 80 кубических сантиметров. В любом случае, <mark>штатный коленчатый вал Honda Dio 27 выдерживает обороты до 8500-9000 об/мин</mark>, и превышение этого порога без усиления КШМ грозит разрушением шатунно-поршневой группы.</p>
+
+<p>Подготовка включает в себя тщательную мойку двигателя и демонтаж навесного оборудования. Вам потребуется снять вариатор, карбюратор, глушитель и головку цилиндра. Осмотрите состояние сальников коленвала: при тюнинге давление в картере меняется, и старые уплотнители могут потечь, что приведет к подсосу воздуха и беднению смеси. Это критический момент, который часто игнорируют новички.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой у вас сейчас опыт тюнинга скутеров?</strong><ul><li>Полный новичок, делаю впервые</li><li>Менял только масло и ремень</li><li>Делал расточку цилиндра</li><li>Собираю моторы профессионально</li></ul></div></div>
+
+<p>Не забывайте про диагностику электрики. Увеличение оборотов двигателя требует исправной работы системы зажигания. <em>Коммутатор</em> на стоковых моделях часто имеет ограничитель оборотов, который необходимо устранить или заменить на спортивный вариант без ограничения. Проверьте катушку зажигания и высоковольтный провод — при высоких оборотах слабая искра приведет к пропускам воспламенения.</p>
+
+<h2 id="доработка-цилиндро-поршневой-группы-цпг">Доработка цилиндро-поршневой группы (ЦПГ)</h2>
+
+<p>Сердцем любого тюнинга является ЦПГ. Для <em>Honda Dio 27</em> наиболее популярным решением является установка поршневой группы объемом 70 кубических сантиметров. Это позволяет сохранить ресурс двигателя, но существенно поднять мощность. При установке новой ЦПГ необходимо обратить внимание на качество обработки окон. <strong>Совпадение окон</strong> цилиндра и картера — залог правильной наполняемости и отсутствия завихрений.</p>
+
+<p>Процесс притирки колец и поршня требует терпения. Не следует сразу давать полный газ. Обкатка должна проходить в щадящем режиме, постепенно увеличивая нагрузку. Многие мастера рекомендуют делать дополнительную полировку выпускного канала, чтобы улучшить отвод газов. Это особенно актуально для двухтактных моторов, где скорость выхлопа напрямую влияет на эффективность продувки.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист сборки ЦПГ</h4><label class="check-item"><input type="checkbox"><span>Проверить зазоры поршневых колец</span></label><label class="check-item"><input type="checkbox"><span>Смазать подшипники пальцевым маслом</span></label><label class="check-item"><input type="checkbox"><span>Проверить плоскость цилиндра на деформацию</span></label><label class="check-item"><input type="checkbox"><span>Установить новые прокладки ГБЦ</span></label><label class="check-item"><input type="checkbox"><span>Затянуть гайки ГБЦ динамометрическим ключом</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<blockquote>
+<p>⚠️ Внимание: При установке алюминиевого цилиндра обязательно используйте термостойкий герметик высокого качества и следите за равномерностью затяжки головки, чтобы избежать перекоса и залегания колец.</p>
+</blockquote>
+
+<p>Если вы выбрали путь расточки стокового цилиндра под ремонтный поршень, убедитесь, что хонинговка выполнена качественно. Шероховатость стенок должна соответствовать требованиям для двухтактных двигателей. Слишком гладкая стенка не будет держать масло, а слишком грубая — быстро убьет кольца. <em>Компрессия</em> в собранном двигателе должна быть в пределах 9-11 атмосфер для уверенного старта и работы.</p>
+
+<details class="faq-item"><summary>Секреты обработки окон</summary><div class="faq-answer"><p>Опытные мотористы рекомендуют делать "ступеньку" на выходе из перепускных каналов, направляющую поток смеси вверх, к свече. Это улучшает сгорание и снижает расход топлива.</p></div></details>
+
+<h2 id="настройка-системы-впуска-и-выпуска">Настройка системы впуска и выпуска</h2>
+
+<p>Эффективный двигатель должен не только сжимать, но и дышать. Стандартный воздушный фильтр <em>Honda Dio 27</em> довольно душный, поэтому его замена на фильтр нулевого сопротивления (нулевик) — обязательный шаг. Однако просто поставить "нулевик" мало: нужно перенастроить карбюратор, иначе мотор будет работать на бедной смеси, что грозит прогаром поршня. <strong>Объем карбюратора</strong> также имеет значение: для стока или легкой расточки хватит 16-18 мм, для 70 кубов лучше ставить 19-21 мм.</p>
+
+<p>Выпускная система — это второй фронт работ. Стоковой глушитель создает большое сопротивление. Установка расширительной камеры (резонатора) или спортивного глушителя позволяет выиграть несколько лошадиных сил за счет эффекта резонанса. Важно подобрать резонатор именно под обороты вашего двигателя. Если резонатор рассчитан на 6000 оборотов, а мотор крутится до 9000, эффекта не будет.</p>
+
+<ul>
+<li>🔹 Установка <em>лепесткового клапана</em> (например, Polini или Malossi) вместо лепестков в картере улучшает наполняемость на низких и средних оборотах.</li>
+<li>🔹 Настройка иглы карбюратора: поднятие иглы обогащает смесь на средних оборотах, опускание — обедняет.</li>
+<li>🔹 Замена жиклеров: основной жиклер подбирается опытным путем по цвету свечи (черный — богатая, белый — бедная, кирпичный — норма).</li>
+</ul>
+
+<p>Не стоит забывать и о герметичности впускного тракта. Подсос воздуха между карбюратором и цилиндром — частая проблема после тюнинга. Используйте качественные уплотнительные кольца и проверяйте все соединения. <strong>Обороты холостого хода</strong> должны быть стабильными, а отклик на ручку газа — мгновенным, без провалов.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Для быстрой проверки герметичности впускного тракта побрызгайте очистителем карбюратора на стыки работающего двигателя. Если обороты изменятся — значит, есть подсос воздуха.</p></div>
+
+<h2 id="модернизация-трансмиссии-и-вариатора">Модернизация трансмиссии и вариатора</h2>
+
+<p>Даже самый мощный мотор не поедет, если трансмиссия не настроена правильно. Вариатор на <em>Honda Dio 27</em> — ключевой элемент передачи крутящего момента. Замена стоковых грузов на более легкие позволяет двигателю быстрее набирать обороты и дольше оставаться в зоне максимальной мощности. Однако слишком легкие груза приведут к тому, что мотор будет "визжать", а динамика на высоких скоростях пропадет.</p>
+
+<p>Важную роль играет также ремень и щеки вариатора. Спортивный ремень имеет другую форму и лучше работает с измененным профилем щек. Расточка подвижной щеки вариатора позволяет ремню глубже садиться, что фактически меняет передаточное отношение. Это дает прирост максимальной скорости, но может ухудшить разгон с места. Здесь нужен баланс.</p>
+
+<p>Таблица ниже поможет сориентироваться в весах грузов для разных целей эксплуатации:</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип эксплуатации</th>
+<th>Вес грузов (грамм)</th>
+<th>Ожидаемый эффект</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Город / Пробки</td>
+<td>5.0 - 5.5 г</td>
+<td>Быстрый старт, хорошая тяга на низах</td>
+</tr>
+<tr>
+<td>Смешанный цикл</td>
+<td>6.0 - 6.5 г</td>
+<td>Баланс разгона и максималки</td>
+</tr>
+<tr>
+<td>Трасса / Максимальная скорость</td>
+<td>7.0 - 7.5 г</td>
+<td>Увеличение максималки, вялый старт</td>
+</tr>
+<tr>
+<td>Спорт / Драйв</td>
+<td>4.0 - 4.5 г</td>
+<td>Агрессивный разгон, высокие обороты</td>
+</tr>
+</tbody>
+</table>
+
+<p>Не забывайте про смазку вала вариатора и установку игольчатого подшипника вместо втулки, если это возможно. Это снизит потери на трение и улучшит работу системы. <em>Пружина торк-драйва</em> также подлежит замене: более жесткая пружина предотвращает проскальзывание ремня при резком открытии дросселя.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильно подобранный вес грузов вариатора важнее, чем установка самого дорогого спортивного вариатора. Экспериментируйте с шагом в 0.5 грамма.</p></div>
+
+<h2 id="система-зажигания-и-электронное-управление">Система зажигания и электронное управление</h2>
+
+<p>Электроника на <em>Dio 27</em> довольно проста, но и она требует внимания при тюнинге. Как уже упоминалось, коммутатор — первый кандидат на замену. Спортивные коммутаторы (без ограничения оборотов или с опережением зажигания) позволяют двигателю раскручиваться выше отсечки. Это дает ощутимый прирощ мощности в верхнем диапазоне.</p>
+
+<p>Свеча зажигания должна соответствовать тепловому режиму двигателя. При форсировании мотора тепловая нагрузка растет, поэтому часто приходится переходить на более "холодные" свечи (например, с калильным числом 9 или 10 вместо стоковых 7-8). <strong>Зазор свечи</strong> также влияет на качество искрообразования: слишком большой зазор может привести к пробоям на высоких оборотах.</p>
+
+<ul>
+<li>🔸 Проверка катушки зажигания на предмет пробоя изоляции при высоких нагрузках.</li>
+<li>🔸 Установка дополнительного конденсатора в цепь питания для стабилизации напряжения.</li>
+<li>🔸 Использование высоковольтных проводов с силиконовой изоляцией для предотвращения потерь энергии.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Установка некачественного спортивного коммутатора может привести к перегреву и оплавлению обмотки статора генератора. Следите за температурой узла после поездки.</p>
+</blockquote>
+
+<h2 id="сборка-настройка-и-обкатка-двигателя">Сборка, настройка и обкатка двигателя</h2>
+
+<p>Финальный этап — сборка и первичный запуск. Здесь важна чистота и аккуратность. Все сопрягаемые поверхности должны быть обезжирены. Моменты затяжки болтов ГБЦ и картера должны строго соблюдаться, лучше всего использовать динамометрический ключ. Перетяжка резьбы в алюминиевом картере <em>Honda Dio 27</em> может привести к срыву резьбы и дорогостоящему ремонту.</p>
+
+<p>Первый запуск производите без установки воздушного фильтра, контролируя подачу топлива. Двигатель должен запуститься и уверенно держать холостые обороты. Если мотор глохнет при открытии ручки газа — смесь слишком бедная (мало топлива), если дымит и захлебывается — богатая. Регулировка производится подбором жиклеров и положения иглы.</p>
+
+<details class="faq-item"><summary>Как правильно обкатывать?</summary><div class="faq-answer"><p>Первые 500 км не открывайте дроссель более чем на 70%. Меняйте масло в редукторе после первых 100 км, чтобы удалить стружку от притирки шестерен.</p></div></details>
+
+<p>После初步тельной настройки необходимо провести тестовый заезд. Оцените динамику разгона, максимальную скорость и температуру двигателя. <strong>Цвет свечи</strong> после заезда расскажет больше, чем любые приборы: черный нагар — переобогащение, белый нагар или оплавление электрода — переобеднение, светло-коричневый — идеальная настройка.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Какой максимальный объем цилиндра можно поставить на Honda Dio 27 без замены коленвала?</summary>
+<p>Без замены коленчатого вала и усиления кривошипно-шатунного механизма безопасным пределом считается объем 70 кубических сантиметров. Установка 80 кубов и выше требует замены вала на усиленный, так как возрастают инерционные нагрузки.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять карбюратор при установке 70-кубовой поршневой?</summary>
+<p>Желательно. Стоковый карбюратор диаметром 16 мм может не справляться с возросшим объемом воздуха. Оптимальным решением будет установка карбюратора диаметром 19-21 мм (например, Dellorto или его качественные копии), что обеспечит правильное смесеобразование.</p>
+</details>
+
+<details>
+<summary>Почему после тюнинга упала максимальная скорость?</summary>
+<p>Скорее всего, нарушена балансировка системы "впуск-выпуск" или неправильно настроен вариатор. Возможно, вы поставили слишком легкие груза, и ремень не поднимается по щекам вариатора на достаточную высоту, либо резонатор не настроен под ваши обороты.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять масло в двигателе после тюнинга?</summary>
+<p>При активной эксплуатации и форсированном двигателе интервалы замены смеси бензина и масла (для 2Т моторов) сокращаются. Рекомендуется использовать качественное синтетическое масло и соблюдать пропорцию 1:30 или 1:25 в зависимости от нагрузки, а также чаще чистить свечу и выхлопную систему.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#анализ-стоковой-конфигурации-и-подготовка-к-доработкам">Анализ стоковой конфигурации и подготовка к доработкам</a></li><li><a href="#доработка-цилиндро-поршневой-группы-цпг">Доработка цилиндро-поршневой группы (ЦПГ)</a></li><li><a href="#настройка-системы-впуска-и-выпуска">Настройка системы впуска и выпуска</a></li><li><a href="#модернизация-трансмиссии-и-вариатора">Модернизация трансмиссии и вариатора</a></li><li><a href="#система-зажигания-и-электронное-управление">Система зажигания и электронное управление</a></li><li><a href="#сборка-настройка-и-обкатка-двигателя">Сборка, настройка и обкатка двигателя</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-strim-2011-goda.html" class="related-card">Honda Stream 2011: Полная характеристика, надежность и обслуживание</a></li><li><a href="/articles/k/kh/khonda-gold-ving-1800-s-kolyaskoj.html" class="related-card">Honda Gold Wing 1800 с коляской: Обзор, преимущества и нюансы</a></li><li><a href="/articles/k/kh/khonda-stepvagon-tekhnicheskie-kharakteristiki.html" class="related-card">Хонда Степвагон: полные технические характеристики и обзор</a></li><li><a href="/articles/t/to/tojota-vish-ili-khonda-strim.html" class="related-card">Toyota Wish vs Honda Stream: Сравнение кроссвэнов 2026</a></li><li><a href="/articles/h/ho/honda-steed-400-kharakteristiki.html" class="related-card">Honda Steed 400 характеристики: обзор, параметры и отзывы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-strim-2011-goda.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stream 2011: Полная характеристика, надежность и обслуживание</span><span class="related-bottom-desc">Подробный обзор Honda Stream 2011 года. Анализ двигателей, трансмиссии, типичные поломки и советы по</span></a><a href="/articles/k/kh/khonda-gold-ving-1800-s-kolyaskoj.html" class="related-bottom-card"><span class="related-bottom-title">Honda Gold Wing 1800 с коляской: Обзор, преимущества и нюансы</span><span class="related-bottom-desc">Полный разбор мотоцикла Honda Gold Wing 1800 с прицепом-коляской. Технические особенности, комфорт д</span></a><a href="/articles/k/kh/khonda-stepvagon-tekhnicheskie-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Степвагон: полные технические характеристики и обзор</span><span class="related-bottom-desc">Подробный разбор технических характеристик Honda Stepwgn. Двигатели, трансмиссия, габариты, расход т</span></a><a href="/articles/t/to/tojota-vish-ili-khonda-strim.html" class="related-bottom-card"><span class="related-bottom-title">Toyota Wish vs Honda Stream: Сравнение кроссвэнов 2026</span><span class="related-bottom-desc">Полное сравнение Toyota Wish и Honda Stream. Разбор двигателей, коробок передач, надежности, комфорт</span></a><a href="/articles/h/ho/honda-steed-400-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Honda Steed 400 характеристики: обзор, параметры и отзывы</span><span class="related-bottom-desc">Полные характеристики Honda Steed 400. Расход топлива, габариты, мощность двигателя и особенности об</span></a><a href="/articles/e/el/elektroskhema-khonda-dio-27.html" class="related-bottom-card"><span class="related-bottom-title">Электросхема Хонда Дио 27: ремонт, проводка, датчики</span><span class="related-bottom-desc">Полная электросхема Honda Dio 27 AF57. Диагностика генератора, стартера, коммутатора. Цветовая марки</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

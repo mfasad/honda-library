@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Хонда СР-В нет искры: поиск и устранение неисправностей зажигания — Honda Library</title>
+    <meta name="description" content="Полное руководство по диагностике отсутствия искры на Honda CR-V. Причины, проверка катушек, датчиков и модуля зажигания с пошаговыми инструкциями.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/k/kh/khonda-srv-net-iskry.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Хонда СР-В нет искры: поиск и устранение неисправностей зажигания">
+    <meta property="og:description" content="Полное руководство по диагностике отсутствия искры на Honda CR-V. Причины, проверка катушек, датчиков и модуля зажигания с пошаговыми инструкциями.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Хонда СР-В нет искры: поиск и устранение неисправностей зажигания</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Почему на Honda CR-V пропала искра: полная диагностика системы</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#первичная-диагностика-и-визуальный-осмотр">Первичная диагностика и визуальный осмотр</a></li><li><a href="#проверка-катушек-зажигания-и-модуля">Проверка катушек зажигания и модуля</a></li><li><a href="#роль-датчика-положения-коленвала-и-распредвала">Роль датчика положения коленвала и распредвала</a></li><li><a href="#анализ-работы-топливного-насоса-и-форсунок">Анализ работы топливного насоса и форсунок</a></li><li><a href="#влияние-эбу-и-проводки-на-систему-зажигания">Влияние ЭБУ и проводки на систему зажигания</a></li><li><a href="#пошаговая-инструкция-по-замене-катушки-зажигания">Пошаговая инструкция по замене катушки зажигания</a></li><li><a href="#таблица-типичных-неисправностей-и-решений">Таблица типичных неисправностей и решений</a></li><li><a href="#специфические-проблемы-двигателей-серии-r-и-k">Специфические проблемы двигателей серии R и K</a></li><li><a href="#диагностика-с-помощью-сканера-obd2">Диагностика с помощью сканера OBD2</a></li><li><a href="#частые-вопросы-владельцев-faq">Частые вопросы владельцев (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Проблема отсутствия искры на двигателе <em>Honda CR-V</em> является одной из самых критичных, так как автомобиль просто не запустится, даже если стартер крутит коленвал с нормальной скоростью. Владельцы часто сталкиваются с ситуацией, когда мотор перестает работать внезапно или после длительного простоя, и без искры дальнейшая эксплуатация невозможна. Важно понимать, что система зажигания современных японских автомобилей устроена сложнее, чем на старых моделях, и требует последовательного подхода к диагностике.</p>
+
+<p>Часто причина кроется не в самом бензонасосе или топливной системе, а именно в электрической цепи подачи высокого напряжения на свечи. Неправильная диагностика может привести к лишним затратам на замену исправных деталей, поэтому необходимо четко следовать алгоритму проверки. Мы разберем основные узлы, которые могут стать виновниками остановки двигателя, и подскажем, как проверить каждый из них самостоятельно.</p>
+
+<h2 id="первичная-диагностика-и-визуальный-осмотр">Первичная диагностика и визуальный осмотр</h2>
+
+<p>Прежде чем лезть внутрь моторного отсека и разбирать сложные узлы, необходимо провести базовый визуальный осмотр подкапотного пространства. Часто проблема заключается в банальном окислении контактов или механическом повреждении проводов, что легко устраняется без дорогостоящего оборудования. Осмотрите высоковольтные провода (если они есть в вашей комплектации) или наконечники катушек на предмет трещин и следов пробоя.</p>
+
+<p>Особое внимание уделите состоянию самих свечей зажигания. Если на них видны сильные нагары, масло или следы эрозии электродов, это может указывать на проблему с искрообразованием или подачей топлива. Выкрутите одну свечу и проверьте зазор, а также наличие искры при прокрутке стартером, поднеся ее к массе двигателя.</p>
+
+<ul>
+<li>🔍 Осмотрите разъемы катушек зажигания на предмет окисления или отсоединения</li>
+<li>🔌 Проверьте целостность предохранителей в блоке под капотом, отвечающих за зажигание</li>
+<li>🛠️ Оцените состояние массы двигателя, так как плохой контакт может блокировать работу системы</li>
+</ul>
+
+<p>Если визуальный осмотр не дал результатов, необходимо переходить к более глубоким методам проверки с использованием мультиметра. Важно не спешить и методично исключать возможные причины, начиная от самых простых и дешевых.</p>
+
+<h2 id="проверка-катушек-зажигания-и-модуля">Проверка катушек зажигания и модуля</h2>
+
+<p>На большинстве поколений <em>Honda CR-V</em> используются индивидуальные катушки зажигания, установленные непосредственно на свечах. Именно этот элемент чаще всего выходит из строя, вызывая пропуски зажигания и полную потерю искры на одном или нескольких цилиндрах. Катушка может перегореть из-за перегрева, вибрации или скачка напряжения в бортовой сети.</p>
+
+<p>Для проверки катушки необходимо снять разъем и замерить сопротивление на первичной и вторичной обмотках с помощью мультиметра. Значения должны соответствовать техническим данным производителя, которые обычно указываются в сервисной книжке или на корпусе детали. Если сопротивление бесконечно велико или слишком мало, катушка требует замены.</p>
+
+<ul>
+<li>⚡ Используйте мультиметр в режиме измерения сопротивления (Ом)</li>
+<li>📉 Сравните полученные значения с эталонными параметрами для вашей модели двигателя</li>
+<li>🔄 Попробуйте поменять местами подозрительную катушку с исправной, чтобы проверить реакцию двигателя</li>
+</ul>
+
+<h2 id="роль-датчика-положения-коленвала-и-распредвала">Роль датчика положения коленвала и распредвала</h2>
+
+<p>Электронный блок управления (ЭБУ) не может сформировать импульс для искры, если он не получает информацию о положении поршней. Ключевым элементом здесь является <strong>датчик положения коленчатого вала</strong>. Если этот датчик неисправен, загрязнен или имеет обрыв цепи, система зажигания просто не сработает, так как ЭБУ "не видит" момент для воспламенения смеси.</p>
+
+<p>Датчик положения распределительного вала также играет важную роль в синхронизации фаз газораспределения и зажигания. Неисправность этого элемента может привести к тому, что искра будет появляться в неправильный момент или не появляться вовсе. Проверка этих датчиков требует снятия их с двигателя и измерения выходного сигнала или сопротивления.</p>
+
+<blockquote>⚠️ Внимание: Никогда не пытайтесь запустить двигатель, если вы подозреваете неисправность датчика коленвала, так как это может привести к заливу свечей и гидроудару в редких случаях.</blockquote>
+
+<ul>
+<li>📡 Проверьте наличие сигнала с датчика коленвала на осциллографе или мультиметре при прокрутке стартером</li>
+<li>🧹 Очистите наконечник датчика от металлической стружки и грязи, которые могут мешать работе</li>
+<li>🔗 Осмотрите проводку от датчика до разъема ЭБУ на предмет перетирания или обрыва</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой из симптомов чаще всего предшествовал пропаже искры?</strong><ul><li>Двигатель глох на ходу</li><li>Машина не заводилась с утра</li><li>Были пропуски зажигания</li><li>Сработала сигнализация</li></ul></div></div>
+
+<h2 id="анализ-работы-топливного-насоса-и-форсунок">Анализ работы топливного насоса и форсунок</h2>
+
+<p>Хотя вопрос касается именно отсутствия искры, иногда проблема маскируется под неисправность системы зажигания. Если топливный насос не создает нужное давление или форсунки не открываются, двигатель может вести себя так, будто искры нет. Однако, в отличие от проблем с зажиганием, при отсутствии топлива стартер будет крутить двигатель очень легко, и он не схватит.</p>
+
+<p>Проверьте работу топливного насоса, включив зажигание и прислушавшись к характерному жужжанию из-под заднего сиденья. Если звука нет, проверьте реле бензонасоса и предохранители. Также стоит проверить давление в топливной рампе манометром, чтобы убедиться, что топливо подается к цилиндрам.</p>
+
+<ul>
+<li>🔊 Прислушайтесь к работе топливного насоса при включении зажигания</li>
+<li>📉 Проверьте давление топлива в рампе с помощью специального манометра</li>
+<li>🔌 Проверьте наличие питания на разъеме форсунок при прокрутке стартером</li>
+</ul>
+
+<h2 id="влияние-эбу-и-проводки-на-систему-зажигания">Влияние ЭБУ и проводки на систему зажигания</h2>
+
+<p>Электронный блок управления (ЭБУ) является мозгом автомобиля, и его неисправность может полностью отключить систему зажигания. Однако это случается крайне редко и обычно сопровождается другими симптомами, такими как невозможность входа в диагностику или ошибки по другим системам. Чаще проблема кроется в проводке, ведущей к ЭБУ, или в плохом контакте в разъемах самого блока.</p>
+
+<p>Необходимо проверить наличие питания и массы на разъеме ЭБУ, а также целостность сигнальных проводов, идущих к катушкам зажигания. Окисление контактов в разъемах или коррозия в местах соединения может прервать цепь управления.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка проводки ЭБУ</h4><label class="check-item"><input type="checkbox"><span>Проверить предохранители EFI</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть разъемы ЭБУ</span></label><label class="check-item"><input type="checkbox"><span>Прозвонить провода к катушкам</span></label><label class="check-item"><input type="checkbox"><span>Проверить массу кузова</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="пошаговая-инструкция-по-замене-катушки-зажигания">Пошаговая инструкция по замене катушки зажигания</h2>
+
+<p>Если диагностика показала, что катушка зажигания неисправна, ее замена не представляет особой сложности даже для новичка. Необходимо лишь соблюдать последовательность действий и использовать правильный инструмент. Для работы вам понадобится набор ключей, отвертка и новая катушка, соответствующая вашей модели <em>Honda CR-V</em>.</p>
+
+<p>Сначала отключите отрицательную клемму аккумулятора, чтобы избежать короткого замыкания. Затем снимите пластиковый декоративный кожух двигателя, если он мешает доступу к катушкам. Отсоедините электрический разъем и открутите крепежный болт, удерживающий катушку.</p>
+
+<ul>
+<li>🔧 Открутите болт крепления катушки ключом на 10 мм</li>
+<li>🔌 Аккуратно отсоедините разъем, нажав на фиксатор</li>
+<li>🚀 Извлеките старую катушку и установите новую, убедившись в плотном прилегании</li>
+</ul>
+
+<p>После установки новой детали соберите все в обратном порядке и попробуйте запустить двигатель. Если проблема была в катушке, машина должна заработать сразу.</p>
+
+<details class="faq-item"><summary>Что делать, если после замены искра не появилась?</summary><div class="faq-answer"><p>Возможно, проблема не в катушке, а в датчике коленвала или проводке. Также проверьте, не перепутали ли вы порядок подключения разъемов, если меняли несколько катушек сразу.</p></div></details>
+
+<h2 id="таблица-типичных-неисправностей-и-решений">Таблица типичных неисправностей и решений</h2>
+
+<p>Для удобства анализа проблем мы собрали основные причины отсутствия искры в сводную таблицу. Это поможет быстрее сориентироваться в диагностике и понять, с чего начать проверку.</p>
+
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Симптом</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Катушка зажигания</td>
+<td>Пропуски, отсутствие искры на цилиндре</td>
+<td>Замена катушки</td>
+</tr>
+<tr>
+<td>Свечи зажигания</td>
+<td>Мокрая свеча, черный нагар</td>
+<td>Очистка или замена свечей</td>
+</tr>
+<tr>
+<td>Датчик коленвала</td>
+<td>Нет искры на всех цилиндрах</td>
+<td>Проверка сигнала, замена датчика</td>
+</tr>
+<tr>
+<td>Блок предохранителей</td>
+<td>Нет питания на катушках</td>
+<td>Замена предохранителя или реле</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед покупкой новой катушки обязательно проверьте маркировку на старой детали, так как для разных годов выпуска <em>Honda CR-V</em> могут использоваться разные типы катушек с отличающимися характеристиками.</p></div>
+
+<h2 id="специфические-проблемы-двигателей-серии-r-и-k">Специфические проблемы двигателей серии R и K</h2>
+
+<p>Двигатели серии R, установленные на многих поколениях <em>Honda CR-V</em>, имеют свои особенности в системе зажигания. Иногда проблема может быть связана с неисправностью модуля управления зажиганием, который интегрирован в саму катушку или выполнен отдельно. Также стоит обратить внимание на качество свечных проводов, если они используются в вашей конфигурации.</p>
+
+<p>На двигателях серии K, которые встречаются на более мощных версиях, система зажигания может быть более чувствительна к качеству топлива и состоянию системы вентиляции картера. Засорение системы вентиляции может привести к попаданию масла в катушки, вызывая их пробой.</p>
+
+<blockquote>⚠️ Внимание: Если вы меняете катушки на двигателе <em>Honda CR-V</em> с пробегом более 100 тысяч километров, настоятельно рекомендуется заменить все сразу, а не по одной, так как остальные могут выйти из строя в ближайшее время.</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная замена свечей и контроль состояния катушек зажигания — залог стабильной работы двигателя без проблем с искрой.</p></div>
+
+<h2 id="диагностика-с-помощью-сканера-obd2">Диагностика с помощью сканера OBD2</h2>
+
+<p>Современные автомобили <em>Honda CR-V</em> оснащены системой самодиагностики, которая хранит коды ошибок в памяти ЭБУ. Использование сканера OBD2 позволяет быстро выявить проблемные зоны, даже если визуальный осмотр не дал результатов. Подключите сканер к диагностическому разъему и считайте ошибки.</p>
+
+<p>Частыми кодами, указывающими на проблемы с зажиганием, являются P0300 (случайные пропуски зажигания), P0301-P0304 (пропуски в конкретном цилиндре), а также P0335 (неисправность датчика положения коленвала). Эти коды помогут сузить круг поиска неисправности.</p>
+
+<ul>
+<li>📲 Подключите OBD2 сканер к разъему под рулевой колонкой</li>
+<li>🔍 Считайте и расшифруйте коды ошибок, записав их</li>
+<li>🔄 Сбросьте ошибки после ремонта и проверьте, не появятся ли они снова</li>
+</ul>
+
+<details class="faq-item"><summary>Что делать, если сканер не подключается?</summary><div class="faq-answer"><p>Проверьте предохранитель OBD2, убедитесь, что зажигание включено, и попробуйте использовать другой сканер, так как некоторые дешевые модели могут не работать с японскими автомобилями.</p></div></details>
+
+<h2 id="частые-вопросы-владельцев-faq">Частые вопросы владельцев (FAQ)</h2>
+
+<details>
+<summary>Почему искра есть на одной катушке, но нет на другой?</summary>
+<p>Это может указывать на неисправность конкретной катушки зажигания или обрыв в проводе, идущем к ней. Также стоит проверить целостность разъема и наличие питания на проблемной катушке.</p>
+</details>
+
+<details>
+<summary>Может ли быть проблема с искрой из-за плохого бензина?</summary>
+<p>Сам по себе плохой бензин не отключает искру, но может вызвать детонацию, которая повредит датчики или катушки. Однако чаще всего причина кроется в засорении форсунок или неисправности топливного насоса.</p>
+</details>
+
+<details>
+<summary>Как проверить катушку без мультиметра?</summary>
+<p>Можно попробовать поменять местами катушки с разных цилиндров. Если проблема переместится вместе с катушкой, значит, она неисправна. Также можно визуально осмотреть катушку на предмет пробоя или трещин.</p>
+</details>
+
+<details>
+<summary>Почему пропадает искра только на горячую?</summary>
+<p>Это классический признак неисправности катушки зажигания, которая теряет свойства при нагреве. Также может быть проблема с проводкой, которая расширяется от тепла и теряет контакт.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять все свечи, если одна не работает?</summary>
+<p>Рекомендуется менять все свечи одновременно, так как старые свечи могут быть изношены и вызвать проблемы с другими цилиндрами. Это обеспечит равномерную работу двигателя.</p>
+</details>
+
+<blockquote>⚠️ Внимание: <mark>Если двигатель не запускается более 10 секунд подряд, дайте стартеру остыть, чтобы избежать его перегрева и выхода из строя.</mark></blockquote>
+
+<p>Правильная диагностика и своевременное устранение неисправностей системы зажигания на <em>Honda CR-V</em> позволят вам избежать дорогостоящего ремонта и обеспечить надежную работу автомобиля в любых условиях. Не игнорируйте первые признаки проблем, такие как пропуски зажигания или затрудненный пуск, и проводите регулярное техническое обслуживание.</p></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#первичная-диагностика-и-визуальный-осмотр">Первичная диагностика и визуальный осмотр</a></li><li><a href="#проверка-катушек-зажигания-и-модуля">Проверка катушек зажигания и модуля</a></li><li><a href="#роль-датчика-положения-коленвала-и-распредвала">Роль датчика положения коленвала и распредвала</a></li><li><a href="#анализ-работы-топливного-насоса-и-форсунок">Анализ работы топливного насоса и форсунок</a></li><li><a href="#влияние-эбу-и-проводки-на-систему-зажигания">Влияние ЭБУ и проводки на систему зажигания</a></li><li><a href="#пошаговая-инструкция-по-замене-катушки-зажигания">Пошаговая инструкция по замене катушки зажигания</a></li><li><a href="#таблица-типичных-неисправностей-и-решений">Таблица типичных неисправностей и решений</a></li><li><a href="#специфические-проблемы-двигателей-серии-r-и-k">Специфические проблемы двигателей серии R и K</a></li><li><a href="#диагностика-с-помощью-сканера-obd2">Диагностика с помощью сканера OBD2</a></li><li><a href="#частые-вопросы-владельцев-faq">Частые вопросы владельцев (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/d/dl/dlina-khonda-srv-5-pokoleniya.html" class="related-card">Длина Хонда СРВ 5 поколения: точные размеры кузова и салона</a></li><li><a href="/articles/k/kh/khonda-srv-5-obzor.html" class="related-card">Honda CR-V 5 поколение: полный обзор, характеристики, плюсы и минусы</a></li><li><a href="/articles/r/ra/razboltovka-koles-khonda-tsrv.html" class="related-card">Разболтовка колес Honda CR-V: Полная таблица PCD, центровочных колец и параметров</a></li><li><a href="/articles/r/re/rele-startera-khonda-srv-rd1.html" class="related-card">Реле стартера Honda CR-V RD1: диагностика, замена и неисправности</a></li><li><a href="/articles/k/kh/khonda-cr-v-otzyvy.html" class="related-card">Honda CR-V отзывы владельцев: плюсы, минусы и реальный опыт</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/d/dl/dlina-khonda-srv-5-pokoleniya.html" class="related-bottom-card"><span class="related-bottom-title">Длина Хонда СРВ 5 поколения: точные размеры кузова и салона</span><span class="related-bottom-desc">Подробный разбор габаритов Honda CR-V 5 поколения. Длина кузова, колесная база, размеры багажника и </span></a><a href="/articles/k/kh/khonda-srv-5-obzor.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 5 поколение: полный обзор, характеристики, плюсы и минусы</span><span class="related-bottom-desc">Детальный обзор нового Honda CR-V 5 поколения. Технические характеристики, особенности дизайна, инте</span></a><a href="/articles/r/ra/razboltovka-koles-khonda-tsrv.html" class="related-bottom-card"><span class="related-bottom-title">Разболтовка колес Honda CR-V: Полная таблица PCD, центровочных колец и параметров</span><span class="related-bottom-desc">Узнайте точную разболтовку колес для всех поколений Honda CR-V. Таблица PCD, диаметр отверстия, пара</span></a><a href="/articles/r/re/rele-startera-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Реле стартера Honda CR-V RD1: диагностика, замена и неисправности</span><span class="related-bottom-desc">Полное руководство по диагностике и замене реле стартера на Honda CR-V первого поколения (RD1). Прич</span></a><a href="/articles/k/kh/khonda-cr-v-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V отзывы владельцев: плюсы, минусы и реальный опыт</span><span class="related-bottom-desc">Полный разбор отзывов на Honda CR-V: надежность двигателей, расход топлива, проблемы подвески и кузо</span></a><a href="/articles/a/ak/akpp-khonda-tsrv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">АКПП Honda CR-V RD1: диагностика, ремонт и особенности коробки</span><span class="related-bottom-desc">Подробный гид по автоматической коробке передач Honda CR-V второго поколения (RD1). Разбор типичных </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Прошивка Honda Legend KB1: Обновление навигации и ПО — Honda Library</title>
+    <meta name="description" content="Экспертное руководство по прошивке Honda Legend 4-го поколения (KB1). Обновление карт, установка Android, настройка мультимедиа и устранение ошибок.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/p/pr/proshivka-honda-legend-kb1.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Прошивка Honda Legend KB1: Обновление навигации и ПО">
+    <meta property="og:description" content="Экспертное руководство по прошивке Honda Legend 4-го поколения (KB1). Обновление карт, установка Android, настройка мультимедиа и устранение ошибок.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Прошивка Honda Legend KB1: Обновление навигации и ПО</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Прошивка Honda Legend KB1: Полное руководство по обновлению</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-архитектуры-электроники-honda-legend-kb1">Особенности архитектуры электроники Honda Legend KB1</a></li><li><a href="#подготовка-оборудования-и-программного-обеспечения">Подготовка оборудования и программного обеспечения</a></li><li><a href="#методы-обновления-навигационной-системы">Методы обновления навигационной системы</a></li><li><a href="#установка-android-и-мультимедийные-модификации">Установка Android и мультимедийные модификации</a></li><li><a href="#диагностика-и-устранение常见-ошибок">Диагностика и устранение常见 ошибок</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Владельцы премиального седана <em>Honda Legend</em> четвертого поколения (кузов KB1) часто сталкиваются с вопросом актуализации программного обеспечения бортовых систем. Автомобили этого класса, выпускавшиеся в период с 2004 по 2008 годы, оснащались сложной электроникой, которая к настоящему времени требует модернизации для совместимости с современными гаджетами.</p>
+<p>Процесс обновления <strong>прошивки Honda Legend KB1</strong> не ограничивается лишь заменой навигационных карт, хотя именно это требуется чаще всего из-за устаревания баз данных. Глубокая модернизация позволяет интегрировать новые мультимедийные функции, улучшить работу климат-контроля и даже адаптировать интерфейс под европейские стандарты, если речь идет о праворульных версиях из Японии.</p>
+<p>В этом материале мы детально разберем все доступные методы обновления, риски, связанные с вмешательством в электронные блоки управления, и пошаговые инструкции для самостоятельного выполнения работ. <em>Японский автопром</em> славится надежностью, но его программное обеспечение часто закрыто от посторонних, что требует специфического подхода.</p>
+
+<h2 id="особенности-архитектуры-электроники-honda-legend-kb1">Особенности архитектуры электроники Honda Legend KB1</h2>
+<p>Электронная архитектура <em>Honda Legend</em> четвертого поколения базируется наproprietary-протоколах компании, которые существенно отличаются от общепринятых OBDII стандартов, используемых для диагностики двигателя. <strong>Головное устройство</strong> (Head Unit) в этих автомобилях представляет собой сложный компьютер, объединяющий функции навигации, аудиосистемы и управления климатом, что делает процедуру прошивки критически важной и требующей осторожности.</p>
+<p>Основной процессор мультимедийной системы работает под управлением операционной системы реального времени, оптимизированной для быстрого отклика, но не предназначенной для установки сторонних приложений вроде YouTube или Skype без эмуляции. При попытке загрузить <strong>нестандартный код</strong> или битый файл прошивки, система может заблокировать загрузочный сектор, превратив экран в черный прямоугольник.</p>
+<blockquote>⚠️ Внимание: Попытка перепрошить основной блок навигации (HDD или Flash-память) без наличия источника бесперебойного питания или заряженного аккумулятора-бустера может привести к необратимому повреждению микросхем памяти.</blockquote>
+<p>Существует несколько типов обновлений, которые различаются по глубине вмешательства: обновление карт навигации, обновление микрокода (firmware) самого головного устройства и полная замена программного обеспечения на кастомные сборки на базе <em>Android</em>. Каждый тип требует своих инструментов и уровней подготовки.</p>
+<p>Важно понимать, что <strong>региональные версии</strong> прошивок (JDM для Японии, EDM для Европы/СНГ) имеют разные частотные диапазоны FM-радио и логику работы навигационных алгоритмов. Неправильный выбор версии может привести к тому, что радио перестанет ловить станции, а навигация будет работать некорректно.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой тип обновления вас интересует больше всего?</strong><ul><li>Обновление карт навигации</li><li>Установка Android</li><li>Перевод меню на русский</li><li>Диагностика ошибок</li></ul></div></div>
+
+<h2 id="подготовка-оборудования-и-программного-обеспечения">Подготовка оборудования и программного обеспечения</h2>
+<p>Перед началом любых работ по модификации ПО вашего <em>Honda Legend</em>, необходимо тщательно подготовить инструментарий. Халатность на этом этапе является причиной 90% всех неудачных попыток прошивки. Вам потребуется ноутбук с операционной системой Windows (предпочтительно версии 7, 10 или 11 с установленными драйверами совместимости), так как старые утилиты <strong>Honda HDS</strong> или специализированные загрузчики могут некорректно работать на новых ОС.</p>
+<p>Ключевым элементом является качественный интерфейс подключения. Для связи с автомобилем чаще всего используется ноутбук, соединенный через USB-порт со специальным адаптером, который в свою очередь подключается к диагностическому разъему OBDII или напрямую к порту навигационного блока. Использование дешевых китайских клонов кабелей часто приводит к обрыву связи в критический момент записи данных.</p>
+<ul>
+<li>🔌 <strong>Интерфейсный кабель</strong>: Оригинальный HDS или качественный аналог с чипом FTDI для стабильной связи.</li>
+<li>💻 <strong>Ноутбук</strong>: С полностью заряженной батареей и подключенным блоком питания во избежание скачков напряжения.</li>
+<li>🔋 <strong>Зарядное устройство</strong>: Для автомобиля, способное поддерживать напряжение в сети не ниже 12.5 Вольт во время процедуры.</li>
+<li>💾 <strong>USB-накопитель</strong>: Флешка объемом до 32 Гб, отформатированная в файловую систему FAT32 (для обновления карт).</li>
+</ul>
+<p>Программное обеспечение должно быть скачано из проверенных источников. Файлы прошивок для <em>Honda Legend KB1</em> часто имеют большие объемы (от 2 до 8 Гб для карт), поэтому убедитесь в целостности архивов, проверив контрольные суммы (CRC или MD5), если они предоставлены автором прошивки.</p>
+<p>Также рекомендуется отключить все энергосберегающие функции на ноутбуке, запретить отключение USB-портов и закрыть все фоновые приложения, которые могут прервать процесс записи. <strong>Стабильность соединения</strong> — это единственный фактор, гарантирующий успех.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности к прошивке</h4><label class="check-item"><input type="checkbox"><span>Зарядить аккумулятор автомобиля</span></label><label class="check-item"><input type="checkbox"><span>Подключить внешнее питание</span></label><label class="check-item"><input type="checkbox"><span>Проверить целостность кабеля</span></label><label class="check-item"><input type="checkbox"><span>Скачать корректную версию ПО</span></label><label class="check-item"><input type="checkbox"><span>Отключить антивирус на ПК</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="методы-обновления-навигационной-системы">Методы обновления навигационной системы</h2>
+<p>Наиболее распространенным запросом среди владельцев <em>Honda Legend</em> является обновление навигационных карт. Штатная система использует данные, которые без обновления становятся бесполезными через несколько лет из-за появления новых развязок и изменений в организации дорожного движения. Существует два основных пути решения этой проблемы: использование официальных обновлений через USB и установка сторонних навигационных пакетов.</p>
+<p>Официальный метод предполагает запись специального образа на USB-флешку. В меню головного устройства необходимо перейти в раздел <code>Setup → Map Update</code> (или аналогичный, в зависимости от версии прошивки). Система сама распознает накопитель и предложит начать процесс. Однако, для автомобилей, выпущенных более 10 лет назад, серверы поддержки могут уже не предоставлять актуальные данные бесплатно.</p>
+<table>
+<thead>
+<tr>
+<th>Тип обновления</th>
+<th>Сложность</th>
+<th>Риски</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Официальное (USB)</td>
+<td>Низкая</td>
+<td>Минимальные</td>
+<td>Актуальные карты региона</td>
+</tr>
+<tr>
+<td>Стороннее (SD/USB)</td>
+<td>Средняя</td>
+<td>Средние</td>
+<td>Карты всего мира (Navitel, Igo)</td>
+</tr>
+<tr>
+<td>Полная замена ПО</td>
+<td>Высокая</td>
+<td>Высокие</td>
+<td>Новая ОС, Android, Wi-Fi</td>
+</tr>
+<tr>
+<td>Патчи локализации</td>
+<td>Средняя</td>
+<td>Средние</td>
+<td>Русский язык в меню</td>
+</tr>
+</tbody>
+</table>
+<p>Альтернативный метод — установка сторонних навигационных программ, таких как <em>Navitel</em> или <em>Igo Primo</em>, адаптированных для платформы Honda. Это требует наличия SD-карты большого объема или подключения внешнего жесткого диска, если головное устройство поддерживает чтение с таких носителей. Часто для активации этого функционала требуется предварительно установить специальный патч-активатор.</p>
+<blockquote>⚠️ Внимание: При установке неофициальных карт навигации штатный голосовой помощник может перестать работать или начать некорректно произносить названия улиц из-за конфликта кодировок.</blockquote>
+<p>Если вы решили пойти путем установки <strong>кастомных карт</strong>, обязательно сделайте резервную копию оригинальных файлов конфигурации. Это позволит вам в любой момент откатиться к заводскому состоянию, если новая навигация будет работать медленно или ошибаться в определении местоположения.</p>
+
+
+
+<h2 id="установка-android-и-мультимедийные-модификации">Установка Android и мультимедийные модификации</h2>
+<p>Самым радикальным, но и самым rewarding способом modernize ваш <em>Honda Legend KB1</em> является установка операционной системы <strong>Android</strong>. Это превращает старую магнитолу в полноценный мультимедийный центр с доступом в интернет, YouTube, онлайн-картами и возможностью установки любых приложений из Play Market.</p>
+<p>Реализация этого процесса обычно требует замены штатного экрана или установки дополнительного модуля-эмулятора, который "обманывает" головное устройство, заставляя его думать, что выводит изображение с DVD-чейнджера, хотя на самом деле транслируется картинка с Android-блока. Существуют также решения, позволяющие запускать Android непосредственно на штатном процессоре, но это требует глубоких знаний в программировании и пайке.</p>
+<p>Преимущества такой модификации очевидны: вы получаете современный интерфейс, поддержку <strong>Wi-Fi</strong> и <strong>4G/LTE</strong> модемов, возможность подключения камеры заднего вида с парктрониками (если штатная не устраивает) и управление звуком через эквалайзеры нового поколения.</p>
+<ul>
+<li>📱 <strong>Интерфейс</strong>: Полностью адаптируется под разрешение штатного экрана Legend (обычно 800x480 или выше).</li>
+<li>🎵 <strong>Звук</strong>: Сохраняется качество штатного усилителя, управление идет через эмуляцию кнопок руля.</li>
+<li>🌐 <strong>Связь</strong>: Поддержка SIM-карт для выхода в интернет в любой точке.</li>
+</ul>
+<p>Однако, стоит учитывать и минусы. Установка стороннего Android-блока может привести к появлению задержек в отображении информации о автомобиле (расход топлива, температура) на дисплее, если интеграция выполнена некачественно. Кроме того, <em>аудиофилы</em> могут заметить изменение в характере звучания из-за дополнительного цифро-аналогового преобразования в бюджетных андроидах.</p>
+
+
+
+<h2 id="диагностика-и-устранение常见-ошибок">Диагностика и устранение常见 ошибок</h2>
+<p>В процессе эксплуатации или после неудачного обновления владельцы <em>Honda Legend KB1</em> могут столкнуться с различными программными сбоями. Часто встречается ситуация, когда система загружается до логотипа <strong>Honda</strong> и далее цикл перезагрузки повторяется бесконечно. Это указывает на повреждение загрузочного сектора или критических системных файлов.</p>
+<p>Если экран гаснет или показывает "снег", проблема может быть не в программном обеспечении, а в физической неисправности шлейфа или самого дисплея, который со временем деградирует. Однако, прежде чем менять "железо", стоит попробовать выполнить <strong>Hard Reset</strong>. Для этого часто требуется зажать комбинацию кнопок (например, <code>Power + Eject + Seek Up</code>) при выключенном зажигании, а затем включить автомобиль.</p>
+<p>Еще одна распространенная проблема — рассинхронизация времени и даты, а также потеря настроек радиостанций после сброса клеммы аккумулятора. Это может свидетельствовать о разряженной внутренней батарейке памяти CMOS внутри головного блока, которая отвечает за сохранение настроек при обесточивании.</p>
+<blockquote>⚠️ Внимание: Если после прошивки пропали звуковые сигналы парктроников или климат-контроль перестал реагировать, возможно, была залита несовместимая версия прошивки (например, для модели с другим набором опций). Требуется откат.</blockquote>
+<p>Для диагностики deeper level ошибок можно использовать инженерное меню. Вход в него обычно осуществляется через скрытую комбинацию кнопок на панели управления. Там можно увидеть <strong>версию ПО</strong>, количество ошибок в памяти и провести тесты динамиков и экрана.</p>
+
+
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+<details>
+<summary>Можно ли обновить навигацию Honda Legend KB1 бесплатно?</summary>
+<p>Официально бесплатные обновления доступны только в рамках гарантийного периода, который давно истек. Однако, в интернете существуют сообщества, где пользователи делятся дампами карт и инструкциями по их самостоятельной установке на флеш-карту, что можно считать условно бесплатным методом.</p>
+</details>
+<details>
+<summary>Слетит ли гарантия при прошивке?</summary>
+<p>Автомобилям Honda Legend KB1 уже более 15 лет, поэтому вопрос заводской гарантии для них не актуален. Однако, если вы планируете продавать автомобиль, наличие кастомной прошивки может смутить потенциального покупателя, поэтому рекомендуется сохранять возможность возврата к стоковому состоянию.</p>
+</details>
+<details>
+<summary>Какой риск "окирпичивания" магнитолы?</summary>
+<p>Риск реален, особенно при использовании нестабильного электропитания. Если прервать запись в сектор загрузчика, устройство перестанет реагировать на команды. Восстановление возможно только через программатор, подключенный напрямую к плате головного устройства, что требует услуг специализированного сервиса.</p>
+</details>
+<details>
+<summary>Работает ли русский язык в штатной системе?</summary>
+<p>В японских версиях (JDM) русского языка в штатном меню нет. Для его появления требуется установка специального языкового пакета (локализатора), который внедряется в систему и заменяет иероглифы на кириллицу в меню и навигации.</p>
+</details>
+<details>
+<summary>Нужно ли снимать головное устройство для прошивки?</summary>
+<p>Для обновления карт через USB или простых патчей снимать устройство не нужно. Однако, для глубокой перепрошивки через инженерный порт или замены чипов памяти может потребоваться демонтаж магнитолы из торпедо для доступа к разъемам.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-архитектуры-электроники-honda-legend-kb1">Особенности архитектуры электроники Honda Legend KB1</a></li><li><a href="#подготовка-оборудования-и-программного-обеспечения">Подготовка оборудования и программного обеспечения</a></li><li><a href="#методы-обновления-навигационной-системы">Методы обновления навигационной системы</a></li><li><a href="#установка-android-и-мультимедийные-модификации">Установка Android и мультимедийные модификации</a></li><li><a href="#диагностика-и-устранение常见-ошибок">Диагностика и устранение常见 ошибок</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/z/za/zamena-masla-v-variatore-khonda-shattl.html" class="related-card">Замена масла в вариаторе Honda Shuttle: интервалы и нюансы</a></li><li><a href="/articles/k/kh/khonda-frid-7-mest.html" class="related-card">Honda Freed 7 мест: Полное руководство по выбору и особенностям</a></li><li><a href="/articles/s/sr/sravnenie-tojota-vish-i-khonda-strim.html" class="related-card">Toyota Wish vs Honda Stream: полное сравнение минивэнов</a></li><li><a href="/articles/f/fi/filtr-maslyanyj-honda-shuttle.html" class="related-card">Фильтр масляный Honda Shuttle: выбор, замена и нюансы обслуживания</a></li><li><a href="/articles/k/kh/khonda-stepvagon-spada-2016-kharakteristiki.html" class="related-card">Honda Stepwgn Spada 2016: полные характеристики, двигатели и оснащение</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/z/za/zamena-masla-v-variatore-khonda-shattl.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в вариаторе Honda Shuttle: интервалы и нюансы</span><span class="related-bottom-desc">Полная инструкция по замене жидкости CVT в Honda Shuttle. Выбор масла, проверка уровня, интервалы и </span></a><a href="/articles/k/kh/khonda-frid-7-mest.html" class="related-bottom-card"><span class="related-bottom-title">Honda Freed 7 мест: Полное руководство по выбору и особенностям</span><span class="related-bottom-desc">Подробный обзор Honda Freed с 7 местами. Технические характеристики, плюсы и минусы, сравнение покол</span></a><a href="/articles/s/sr/sravnenie-tojota-vish-i-khonda-strim.html" class="related-bottom-card"><span class="related-bottom-title">Toyota Wish vs Honda Stream: полное сравнение минивэнов</span><span class="related-bottom-desc">Сравнение Toyota Wish и Honda Stream: технические характеристики, надежность, расход топлива и особе</span></a><a href="/articles/f/fi/filtr-maslyanyj-honda-shuttle.html" class="related-bottom-card"><span class="related-bottom-title">Фильтр масляный Honda Shuttle: выбор, замена и нюансы обслуживания</span><span class="related-bottom-desc">Полный гайд по выбору и замене масляного фильтра на Honda Shuttle. Артикулы оригинала и аналогов, по</span></a><a href="/articles/k/kh/khonda-stepvagon-spada-2016-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stepwgn Spada 2016: полные характеристики, двигатели и оснащение</span><span class="related-bottom-desc">Обзор Honda Stepwgn Spada 2016 года: технические характеристики, особенности кузова, двигатели, коро</span></a><a href="/articles/m/mo/mototsikl-khonda-s-4.html" class="related-bottom-card"><span class="related-bottom-title">Мотоцикл Honda CB 400: обзор, характеристики, модификации</span><span class="related-bottom-desc">Подробный обзор легендарного мотоцикла Honda CB 400. Технические характеристики, отличия версий SF, </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

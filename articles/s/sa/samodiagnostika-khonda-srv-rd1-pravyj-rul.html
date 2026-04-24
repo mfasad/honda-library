@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Самодиагностика Хонда СРВ РД1: Как проверить правый руль без сканера — Honda Library</title>
+    <meta name="description" content="Полное руководство по входу в инженерное меню Honda CR-V RD1. Диагностика датчиков, проверка моторов и считывание ошибок бортового компьютера японского авто.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/sa/samodiagnostika-khonda-srv-rd1-pravyj-rul.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Самодиагностика Хонда СРВ РД1: Как проверить правый руль без сканера">
+    <meta property="og:description" content="Полное руководство по входу в инженерное меню Honda CR-V RD1. Диагностика датчиков, проверка моторов и считывание ошибок бортового компьютера японского авто.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Самодиагностика Хонда СРВ РД1: Как проверить правый руль без сканера</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полный гид по самодиагностике Honda CR-V RD1 (правый руль)</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-к-входу-в-инженерное-меню">Подготовка к входу в инженерное меню</a></li><li><a href="#алгоритм-активации-режима-самодиагностики">Алгоритм активации режима самодиагностики</a></li><li><a href="#считывание-и-интерпретация-кодов-ошибок">Считывание и интерпретация кодов ошибок</a></li><li><a href="#диагностика-климатической-системы">Диагностика климатической системы</a></li><li><a href="#таблица-основных-диагностических-кодов">Таблица основных диагностических кодов</a></li><li><a href="#проверка-электрики-и-датчиков">Проверка электрики и датчиков</a></li><li><a href="#специфика-праворульных-моделей">Специфика праворульных моделей</a></li><li><a href="#сброс-ошибок-и-завершение-процедуры">Сброс ошибок и завершение процедуры</a></li><li><a href="#частые-вопросы-и-ответы">Частые вопросы и ответы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владельцы японских автомобилей часто сталкиваются с необходимостью быстрой проверки технических систем без обращения в специализированный сервис. Для модели <em>Honda CR-V</em> первого поколения с кузовом <strong>RD1</strong> эта процедура особенно актуальна, так как машина обладает богатой электроникой, скрытой от глаз обычного водителя. Правый руль в данном случае не является препятствием, а лишь требует знания специфических комбинаций кнопок, заложенных японскими инженерами.</p>
+
+<p>Система самодиагностики позволяет выявить неисправности в работе двигателя, трансмиссии, климат-контроля и приборной панели, считывая коды ошибок напрямую с бортового компьютера. Это экономит время и деньги, давая возможность владельцу самостоятельно оценить состояние <em>автомобиля</em> перед покупкой или после ремонта. Главное — понимать логику работы интерфейса и не бояться нажимать нужные комбинации.</p>
+
+<h2 id="подготовка-к-входу-в-инженерное-меню">Подготовка к входу в инженерное меню</h2>
+<p>Перед началом диагностики необходимо убедиться, что автомобиль находится в исправном техническом состоянии, хотя бы минимально. Запустите двигатель и дайте ему прогреться до рабочей температуры, так как многие параметры, включая показания датчиков кислорода, будут некорректны на холодном моторе. Если вы планируете проверять только электрику, достаточно включить зажигание в положение <code>ON</code> без запуска двигателя.</p>
+
+<p>Ключевым элементом процесса является понимание того, где находятся нужные переключатели на панели управления. В моделях с правым рулем расположение кнопок идентично леворульным аналогам, но иногда водителю требуется привыкнуть кreach-зоны. Вам нужно найти кнопку сброса суточного пробега (Trip Reset) на приборной панели и кнопку переключения режимов работы климат-контроля.</p>
+
+<p>Для входа в режим диагностики на панели приборов найдите кнопку сброса суточного пробега. Она обычно расположена внизу спидометра или тахометра. На некоторых модификациях <em>Honda CR-V</em> может потребоваться комбинация с кнопкой переключения дисплея бортового компьютера. Важно убедиться, что все предохранители, отвечающие за приборную панель, в порядке.</p>
+
+<h2 id="алгоритм-активации-режима-самодиагностики">Алгоритм активации режима самодиагностики</h2>
+<p>Процедура входа в меню требует точности и последовательности действий. Сначала выключите зажигание, чтобы полностью обесточить электронные блоки управления. Затем зажмите кнопку сброса суточного пробега и удерживайте её, одновременно поворачивая ключ зажигания в положение <code>ON</code> (II).</p>
+
+<p>Не отпускайте кнопку, пока на дисплее не появятся все сегменты индикаторов, а затем не начнут мигать лампочки проверки двигателя. Как только это произойдет, можно отпустить кнопку. Система перейдет в режим самотестирования, где все индикаторы на панели загораются по очереди, проверяя работоспособность светодиодов и жидкокристаллического дисплея.</p>
+
+<p>Если вы все сделали правильно, вы увидите, как мигает индикатор <strong>Check Engine</strong>, а на дисплее бортового компьютера может появиться код <code>0</code> или <code>12</code>, что означает вход в меню. В некоторых случаях требуется дополнительно нажать кнопку переключения режимов климата, если диагностика связана с системой кондиционирования. Ошибки могут высвечиваться в виде мигающих ламп или цифровых кодов.</p>
+
+<h2 id="считывание-и-интерпретация-кодов-ошибок">Считывание и интерпретация кодов ошибок</h2>
+<p>После входа в режим диагностики система начинает выводить коды неисправностей. Они отображаются миганием индикатора Check Engine или цифрами на дисплее. Короткие вспышки обозначают десятки, длинные — единицы. Например, одна длинная и две короткие вспышки означают код <strong>12</strong>, который указывает на проблему с датчиком положения дроссельной заслонки.</p>
+
+<p>Для расшифровки полученных кодов необходимо свериться с таблицей диагностических ошибок для <em>RD1</em>. Некоторые коды могут быть постоянными (актуальными в данный момент), а другие — историческими (сохраненными в памяти после устранения проблемы). Важно отличать их, чтобы не менять исправные детали.</p>
+
+<p>Если код ошибки не исчезает после устранения видимой причины, попробуйте сбросить память компьютера. Для этого нужно отключить минусовую клемму аккумулятора на 10-15 минут или использовать специальную процедуру сброса через меню. Однако, перед сбросом запишите все найденные коды, так как после очистки они будут недоступны.</p>
+
+<p>Особое внимание уделите кодам, связанным с системой управления двигателем и трансмиссией. В модели <em>CR-V</em> часто встречаются ошибки по системе рециркуляции выхлопных газов (EGR) или по датчикам кислорода. Их игнорирование может привести к повышенному расходу топлива и нестабильной работе мотора.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Вход в диагностику</strong><ul><li>Удалось с первого раза</li><li>Потребовалось несколько попыток</li><li>Не получилось войти</li><li>Использую OBDII сканер</li></ul></div></div>
+
+<h2 id="диагностика-климатической-системы">Диагностика климатической системы</h2>
+<p>Климат-контроль в <em>Honda CR-V</em> RD1 также поддается глубокой диагностике через панель управления. Для активации режима нажмите и удерживайте кнопку <code>OFF</code> на блоке управления кондиционером, одновременно нажимая кнопку <code>MODE</code>. Удерживайте их около 5 секунд, пока не загорятся все индикаторы на панели.</p>
+
+<p>После входа в меню система автоматически проверит работу всех сервоприводов заслонок. Вы услышите характерные звуки движения заслонок, что свидетельствует об их исправности. Если какой-то привод не срабатывает или издает странный скрип, это может указывать на механическую поломку или неисправность моторчика.</p>
+
+<p>Далее можно проверить датчики температуры. Система покажет текущие значения температуры воздуха на входе, в салоне и на выходе из дефлекторов. Сравните эти показатели с реальными термометрами. Если данные сильно расходятся, возможно, датчик требует замены или калибровки.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка климата</h4><label class="check-item"><input type="checkbox"><span>Вход в режим диагностики</span></label><label class="check-item"><input type="checkbox"><span>Слушать работу заслонок</span></label><label class="check-item"><input type="checkbox"><span>Проверить датчики температуры</span></label><label class="check-item"><input type="checkbox"><span>Сбросить ошибки климата</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="таблица-основных-диагностических-кодов">Таблица основных диагностических кодов</h2>
+<p>Для удобства анализа неисправностей ниже приведена таблица наиболее распространенных ошибок для двигателя и трансмиссии модели RD1. Используйте её как шпаргалку при чтении мигающих ламп.</p>
+
+<table>
+<thead>
+<tr>
+<th>Код ошибки</th>
+<th>Описание неисправности</th>
+<th>Возможная причина</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>Датчик положения дроссельной заслонки (TPS)</td>
+<td>Нарушение контакта, износ резистивного слоя</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Датчик абсолютного давления (MAP)</td>
+<td>Засорение шланга, неисправность датчика</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Сигнал от датчика положения коленвала</td>
+<td>Обрыв цепи, загрязнение датчика</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Датчик температуры охлаждающей жидкости</td>
+<td>Некорректные показания, обрыв цепи</td>
+</tr>
+<tr>
+<td>85</td>
+<td>Проблема с блоком управления трансмиссией</td>
+<td>Сбой электроники АКПП</td>
+</tr>
+</tbody>
+</table>
+
+<p>Важно понимать, что наличие кода не всегда означает необходимость немедленной замены детали. Иногда проблема кроется в проводке или разъемах. Прозвоните цепи мультиметром перед тем, как отправляться в магазин за запчастями.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не игнорируйте мигающий индикатор Check Engine во время движения. Это может указывать на критическую неисправность, способную привести к выходу катализатора из строя или повреждению поршневой группы.</p>
+</blockquote>
+
+<h2 id="проверка-электрики-и-датчиков">Проверка электрики и датчиков</h2>
+<p>Диагностика электроники позволяет выявить проблемы, которые не видны глазу. Например, проверка цепей питания форсунок или катушек зажигания может спасти двигатель от пропусков зажигания. Используйте мультиметр для измерения сопротивления на выводах датчиков.</p>
+
+<p>Особое внимание стоит уделить системе ABS и подушкам безопасности. Для проверки ABS зажмите кнопку сброса одометра на панели приборов и включите зажигание. Индикатор ABS должен мигнуть определенным количеством раз, если есть ошибка. То же самое касается системы SRS (Airbag).</p>
+
+<p>Если вы не уверены в своих силах, лучше обратиться к специалисту. Неправильные действия могут привести к сбросу настроек или повреждению блоков управления. Однако базовые проверки под силу любому автовладельцу с минимальными навыками.</p>
+
+<details class="faq-item"><summary>Что делать при невозможности сброса ошибок?</summary><div class="faq-answer"><p>Если код не стирается после отключения аккумулятора, возможно, неисправность носит постоянный характер или требуется сброс через дилерский сканер. Иногда помогает многократное включение и выключение зажигания при нажатой кнопке сброса.</p></div></details>
+
+<h2 id="специфика-праворульных-моделей">Специфика праворульных моделей</h2>
+<p>Модели с правым рулем имеют некоторые особенности в расположении блоков управления. Часто основной блок управления двигателем (ECU) находится под приборной панелью со стороны водителя. Это облегчает доступ к разъемам для подключения сканера, если стандартная самодиагностика не помогает.</p>
+
+<p>Важно учитывать, что в праворульных автомобилях проводка может иметь отличия в цветовой маркировке или длине жгутов. При самостоятельном ремонте используйте специализированные схемы именно для праворульных версий, чтобы не перепутать цепи.</p>
+
+<p>Иногда при диагностике на праворульных машинах возникают ложные срабатывания датчиков из-за особенностей установки. Например, датчик уровня топлива может показывать неверные данные, если бак был установлен криво при замене. Всегда проверяйте механическую часть перед заменой электроники.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При покупке подержанного Honda CR-V RD1 обязательно проведите полную самодиагностику перед торгом. Наличие скрытых ошибок может стать поводом для существенного снижения цены или отказа от сделки.</p></div>
+
+<h2 id="сброс-ошибок-и-завершение-процедуры">Сброс ошибок и завершение процедуры</h2>
+<p>После устранения неисправностей необходимо сбросить коды ошибок, чтобы индикатор Check Engine погас. Для этого можно отключить аккумулятор на 15 минут или использовать комбинацию кнопок на панели приборов. В некоторых случаях требуется проехать несколько километров, чтобы система перепроверила параметры.</p>
+
+<p>Если ошибка возвращается сразу после сброса, значит, проблема не устранена. Вернитесь к диагностике и проверьте все компоненты еще раз. Иногда причиной может быть плохой контакт в разъеме или обрыв провода, который трудно заметить визуально.</p>
+
+<p>Завершая процедуру, убедитесь, что все системы работают нормально. Прислушайтесь к работе двигателя, проверьте работу кондиционера и тормозной системы. Только после этого можно считать диагностику завершенной.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не оставляйте автомобиль в режиме диагностики дольше 10-15 минут без запуска двигателя, так как это может привести к разрядке аккумуляторной батареи и сбою в работе электронных блоков.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная самодиагностика позволяет выявлять мелкие проблемы на ранней стадии, предотвращая дорогостоящий ремонт и обеспечивая безопасность движения.</p></div>
+
+<h2 id="частые-вопросы-и-ответы">Частые вопросы и ответы</h2>
+
+<details>
+<summary>Как часто нужно проводить самодиагностику Honda CR-V RD1?</summary>
+<p>Рекомендуется проводить проверку раз в 3-6 месяцев, а также перед длительными поездками. Это поможет выявить скрытые проблемы до того, как они приведут к серьезной поломке в дороге.</p>
+</details>
+
+<details>
+<summary>Что делать, если индикатор Check Engine мигает, а не горит постоянно?</summary>
+<p>Мигающий индикатор указывает на критическую неисправность, при которой происходит пропуск зажигания и несгоревшее топливо попадает в катализатор. Необходимо немедленно снизить нагрузку на двигатель и обратиться в сервис для срочной диагностики.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать самодиагностику для проверки коробки передач?</summary>
+<p>Да, система позволяет считать ошибки АКПП. Коды обычно начинаются с цифры 8 или 9. Однако для точной диагностики гидротрансформатора и соленоидов часто требуется специализированное оборудование.</p>
+</details>
+
+<details>
+<summary>Почему после сброса ошибок индикатор снова загорается?</summary>
+<p>Это означает, что неисправность не была устранена полностью. Система снова зафиксировала отклонение параметров и сохранила код ошибки. Проверьте датчики и проводку еще раз.</p>
+</details>
+
+<details>
+<summary>Нужен ли компьютер для сброса ошибок на Honda CR-V?</summary>
+<p>Нет, для базового сброса достаточно отключить аккумулятор или использовать комбинацию кнопок на приборной панели. Компьютер нужен только для сложной диагностики и адаптации систем.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#подготовка-к-входу-в-инженерное-меню">Подготовка к входу в инженерное меню</a></li><li><a href="#алгоритм-активации-режима-самодиагностики">Алгоритм активации режима самодиагностики</a></li><li><a href="#считывание-и-интерпретация-кодов-ошибок">Считывание и интерпретация кодов ошибок</a></li><li><a href="#диагностика-климатической-системы">Диагностика климатической системы</a></li><li><a href="#таблица-основных-диагностических-кодов">Таблица основных диагностических кодов</a></li><li><a href="#проверка-электрики-и-датчиков">Проверка электрики и датчиков</a></li><li><a href="#специфика-праворульных-моделей">Специфика праворульных моделей</a></li><li><a href="#сброс-ошибок-и-завершение-процедуры">Сброс ошибок и завершение процедуры</a></li><li><a href="#частые-вопросы-и-ответы">Частые вопросы и ответы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/z/za/zadnie-kolodki-khonda-srv-rd1.html" class="related-card">Задние тормозные колодки для Honda CR-V RD1: выбор, замена и нюансы</a></li><li><a href="/articles/r/ra/razborka-dveri-khonda-srv-rd1.html" class="related-card">Разборка двери Honda CR-V RD1: полная инструкция</a></li><li><a href="/articles/p/po/pompa-na-khonda-srv-rd1.html" class="related-card">Помпа на Хонда СРВ РД1: выбор, замена и признаки неисправности</a></li><li><a href="/articles/h/ho/honda-cr-v-1.html" class="related-card">Honda CR-V 1 поколение: Полный гид по надежности и ремонту</a></li><li><a href="/articles/h/ho/honda-cr-v-1-tyuning.html" class="related-card">Тюнинг Honda CR-V 1: Как улучшить внешний вид и характеристики</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/z/za/zadnie-kolodki-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Задние тормозные колодки для Honda CR-V RD1: выбор, замена и нюансы</span><span class="related-bottom-desc">Полный гайд по выбору и замене задних колодок на Honda CR-V первого поколения (RD1). Обзор брендов, </span></a><a href="/articles/r/ra/razborka-dveri-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Разборка двери Honda CR-V RD1: полная инструкция</span><span class="related-bottom-desc">Подробный гид по разборке двери Honda CR-V RD1. Снятие обшивки, замена замков, стекол и ремонт прово</span></a><a href="/articles/p/po/pompa-na-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Помпа на Хонда СРВ РД1: выбор, замена и признаки неисправности</span><span class="related-bottom-desc">Полный гид по замене водяного насоса на Honda CR-V RD1. Признаки поломки, выбор оригинала или аналог</span></a><a href="/articles/h/ho/honda-cr-v-1.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 1 поколение: Полный гид по надежности и ремонту</span><span class="related-bottom-desc">Подробный обзор первого поколения Honda CR-V. Технические характеристики, слабые места, особенности </span></a><a href="/articles/h/ho/honda-cr-v-1-tyuning.html" class="related-bottom-card"><span class="related-bottom-title">Тюнинг Honda CR-V 1: Как улучшить внешний вид и характеристики</span><span class="related-bottom-desc">Полный гид по тюнингу Honda CR-V первого поколения. Обвесы, чип-тюнинг, подвеска, оптика и стайлинг.</span></a><a href="/articles/t/tu/tumanki-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Туманки на Хонда СРВ 3: Выбор, установка и настройка света</span><span class="related-bottom-desc">Полное руководство по выбору и установке противотуманных фар на Honda CR-V 3. Обзор ламп, схемы подк</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

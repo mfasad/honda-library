@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Подключение к интернету Honda Civic 5D: Как настроить систему Connect — Honda Library</title>
+    <meta name="description" content="Полное руководство по настройке и подключению системы Connect 2 для Honda Civic 5D. Решение проблем с Bluetooth, Wi-Fi и навигацией.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/c/co/connect-2-honda-civic-5d.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Подключение к интернету Honda Civic 5D: Как настроить систему Connect">
+    <meta property="og:description" content="Полное руководство по настройке и подключению системы Connect 2 для Honda Civic 5D. Решение проблем с Bluetooth, Wi-Fi и навигацией.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Подключение к интернету Honda Civic 5D: Как настроить систему Connect</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Настройка и подключение системы Connect 2 для Honda Civic 5D</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-мультимедийной-системы-honda-civic">Особенности мультимедийной системы Honda Civic</a></li><li><a href="#подготовка-смартфона-и-автомобиля-к-сопряжению">Подготовка смартфона и автомобиля к сопряжению</a></li><li><a href="#процесс-сопряжения-через-bluetooth">Процесс сопряжения через Bluetooth</a></li><li><a href="#настройка-wi-fi-и-обновление-карт-навигации">Настройка Wi-Fi и обновление карт навигации</a></li><li><a href="#решение-частых-проблем-с-подключением">Решение частых проблем с подключением</a></li><li><a href="#функциональные-ограничения-и-нюансы">Функциональные ограничения и нюансы</a></li><li><a href="#сброс-настроек-и-восстановление-системы">Сброс настроек и восстановление системы</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Многие владельцы <em>Honda Civic 5D</em> сталкиваются с необходимостью обновить функционал штатной мультимедиа или подключить современные сервисы. Система <strong>Connect 2</strong> открывает доступ к навигации, потоковому аудио и интеграции смартфонов, но процесс настройки требует внимания к деталям. Без правильного конфигурирования вы рискуете не получить ожидаемого комфорта вождения.</p>
+
+<p>Существует несколько способов активации функций, от простого сопряжения по Bluetooth до сложной настройки Wi-Fi модуля для обновления карт. В этой статье мы разберем каждый этап, чтобы вы могли максимально эффективно использовать потенциал своего автомобиля.</p>
+
+<h2 id="особенности-мультимедийной-системы-honda-civic">Особенности мультимедийной системы Honda Civic</h2>
+
+<p>Мультимедийная платформа в <em>Honda Civic 5D</em> разработана с упором на интуитивное управление, но имеет свои специфические требования к подключению внешних устройств. Система <strong>Connect 2</strong> представляет собой эволюцию штатного головного устройства, добавляя возможность работы с мобильными приложениями и улучшенную обработку звука. Важно понимать архитектуру интерфейса, чтобы не запутаться в меню настроек.</p>
+
+<p>Владельцы часто путают базовую версию мультимедиа с расширенной, что приводит к ошибкам при попытке подключить дополнительные модули. Убедитесь, что ваше головное устройство поддерживает протокол <strong>Apple CarPlay</strong> или <strong>Android Auto</strong>, так как это фундамент для работы всех современных функций.</p>
+
+<ul>
+<li>🚗 Совместимость смартфонов: iOS версии 12+ и Android 8.0 и выше</li>
+<li>📡 Поддерживаемые частоты Wi-Fi: 2.4 ГГц и 5 ГГц</li>
+<li>🔌 Тип разъемов USB: USB 2.0 Type-A (стандартный порт)</li>
+</ul>
+
+<h2 id="подготовка-смартфона-и-автомобиля-к-сопряжению">Подготовка смартфона и автомобиля к сопряжению</h2>
+
+<p>Перед началом процедуры подключения необходимо выполнить ряд подготовительных действий, которые обеспечат стабильность соединения. Сначала очистите кэш приложений на вашем телефоне, особенно если вы ранее пытались подключиться и неудачно. Это устранит конфликтующие файлы конфигурации.</p>
+
+<p>Затем перейдите в настройки Bluetooth на вашем смартфоне и убедитесь, что он находится в режиме обнаружения. В автомобиле включите зажигание, но не запускайте двигатель, чтобы не создавать помех от работы генератора в момент поиска устройств. Навигация по меню должна быть выполнена точно по инструкции.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к подключению</h4><label class="check-item"><input type="checkbox"><span>Включить Bluetooth на телефоне</span></label><label class="check-item"><input type="checkbox"><span>Очистить кэш приложений</span></label><label class="check-item"><input type="checkbox"><span>Включить зажигание авто</span></label><label class="check-item"><input type="checkbox"><span>Подготовить USB-кабель</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>В некоторых случаях система <em>Honda Civic</em> может не видеть устройство из-за устаревшего программного обеспечения. Проверьте наличие обновлений прошивки для вашего смартфона и установите их через официальный магазин приложений. Это критически важно для корректной работы протоколов обмена данными.</p>
+
+<h2 id="процесс-сопряжения-через-bluetooth">Процесс сопряжения через Bluetooth</h2>
+
+<p>Основной метод подключения для звонков и аудио — это стандартное сопряжение по Bluetooth. Зайдите в меню <code>Настройки → Телефон → Подключить новое устройство</code> на экране головного устройства. Система начнет поиск доступных устройств в радиусе действия.</p>
+
+<p>На вашем смартфоне выберите в списке <strong>Honda Civic</strong> или аналогичное название. На экране автомобиля появится пин-код, который необходимо ввести на телефоне для подтверждения соединения. Если код не совпадает, попробуйте перезагрузить оба устройства и повторить попытку.</p>
+
+<ul>
+<li>🔑 Пин-код обычно состоит из 4 цифр (например, 0000 или 1234)</li>
+<li>📞 Подтвердите доступ к контактам для отображения списка звонящих</li>
+<li>🔊 Разрешите доступ к микрофону для работы системы Hands-free</li>
+</ul>
+
+<p>Если соединение устанавливается, но аудио не воспроизводится, проверьте настройки громкости. Иногда система переключает профиль на звонки, блокируя медиа-поток. Измените источник звука в плеере телефона, выбрав Bluetooth как активное устройство.</p>
+
+<h2 id="настройка-wi-fi-и-обновление-карт-навигации">Настройка Wi-Fi и обновление карт навигации</h2>
+
+<p>Для полноценной работы системы <strong>Connect 2</strong> часто требуется доступ в интернет через Wi-Fi. Это позволяет загружать актуальные карты, погоду и новости. Подключение к домашней сети или мобильной точке доступа происходит через меню <code>Настройки → Сеть и Интернет</code>.</p>
+
+<p>Введите пароль от вашей сети и дождитесь подтверждения подключения. Индикатор в правом верхнем углу экрана должен смениться с красного на зеленый, сигнализируя об успехе. Если сеть защищена сложным паролем, убедитесь, что вы ввели его корректно, учитывая регистр букв.</p>
+
+<details class="faq-item"><summary>Что делать, если Wi-Fi не подключается?</summary><div class="faq-answer"><p>Попробуйте забыть сеть в настройках автомобиля и добавить её заново. Убедитесь, что роутер не блокирует подключение по MAC-адресу.</p></div></details>
+
+<p>Важно отметить, что для обновления навигационных данных требуется стабильное соединение. Прерывание процесса может привести к повреждению базы данных карт. Поэтому <mark>ни в коем случае не отключайте питание головного устройства во время загрузки файлов</mark>.</p>
+
+<ul>
+<li>🗺️ Скачайте карты через официальный сайт Honda или приложение</li>
+<li>💾 Используйте USB-накопитель для переноса больших файлов</li>
+<li>🔄 Планируйте обновление на ночь при подключенном аккумуляторе</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Как вы подключаетесь к интернету?</strong><ul><li>Через Wi-Fi смартфона</li><li>Через встроенный модем</li><li>Не подключаюсь</li><li>Использую USB-модем</li></ul></div></div>
+
+<h2 id="решение-частых-проблем-с-подключением">Решение частых проблем с подключением</h2>
+
+<p>Иногда система может вести себя непредсказуемо, теряя соединение или не распознавая флешку. В таких случаях первым шагом является полная перезагрузка мультимедийной системы. Нажмите и удерживайте кнопку питания на головном устройстве в течение 10-15 секунд до полного выключения и последующего включения.</p>
+
+<p>Если проблема сохраняется, проверьте целостность USB-кабеля. Поврежденные провода часто становятся причиной нестабильной передачи данных. Используйте только сертифицированные кабели, так как дешевые аналоги могут не обеспечивать нужную скорость передачи.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте оригинальный кабель от производителя смартфона для наилучшей совместимости с системой Connect 2.</p></div>
+
+<p>В таблице ниже представлены основные коды ошибок и способы их устранения:</p>
+
+<table>
+<thead>
+<tr>
+<th>Код ошибки</th>
+<th>Описание проблемы</th>
+<th>Рекомендуемое решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERR-001</td>
+<td>Устройство не найдено</td>
+<td>Перезагрузите Bluetooth на телефоне</td>
+</tr>
+<tr>
+<td>ERR-004</td>
+<td>Ошибка синхронизации</td>
+<td>Удалите устройство из памяти авто</td>
+</tr>
+<tr>
+<td>ERR-012</td>
+<td>Неверный формат файла</td>
+<td>Конвертируйте аудио в MP3</td>
+</tr>
+<tr>
+<td>ERR-099</td>
+<td>Системный сбой</td>
+<td>Сброс настроек до заводских</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="функциональные-ограничения-и-нюансы">Функциональные ограничения и нюансы</h2>
+
+<p>Некоторые функции системы <strong>Connect 2</strong> могут быть недоступны при движении автомобиля со скоростью выше определенного порога. Это мера безопасности, запрещающая ввод текста или изменение сложных настроек. Однако воспроизведение аудио и управление музыкой остаются доступными.</p>
+
+<p>Также стоит учитывать, что при подключении двух смартфонов одновременно система может конфликтовать. Рекомендуется подключить только одно устройство для звонков, а второе использовать только для медиа. Переключение между устройствами происходит через меню <code>Настройки → Телефон → Приоритет устройства</code>.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При движении на высокой скорости доступ к вводу текста блокируется системой безопасности, но аудиопоток остается активным.</p></div>
+
+<p>Если вы используете навигацию через смартфон, убедитесь, что система <em>Honda</em> не перехватывает аудиоканал. В настройках звука можно выбрать приоритет: либо штатная навигация, либо приложение на телефоне. Это позволит избежать дублирования голосовых подсказок.</p>
+
+<h2 id="сброс-настроек-и-восстановление-системы">Сброс настроек и восстановление системы</h2>
+
+<p>В случае критических сбоев, когда система не загружается или зависает, может потребоваться полный сброс настроек. Это вернет головное устройство к заводскому состоянию, удалив все сохраненные контакты и маршруты. Выполняйте эту операцию только в крайнем случае.</p>
+
+<p>Перейдите в меню <code>Настройки → Система → Сброс настроек</code>. Подтвердите действие, введя пин-код, если он был установлен. После перезагрузки система потребует повторной настройки всех параметров, включая время, дату и языковые настройки.</p>
+
+<details class="faq-item"><summary>Как восстановить данные после сброса?</summary><div class="faq-answer"><p>Данные из облачных аккаунтов Google или iCloud могут быть восстановлены автоматически при повторном входе в систему на смартфоне.</p></div></details>
+
+<p>После сброса обязательно проверьте версию прошивки. Часто производители выпускают обновления, которые исправляют ошибки, вызвавшие необходимость сброса. Зайдите на официальный сайт <em>Honda</em> и проверьте наличие актуальных версий ПО для вашей модели.</p>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Почему система Connect 2 не видит мой iPhone?</summary>
+<p>Это может быть связано с устаревшей версией iOS или несовместимостью кабеля. Попробуйте обновить iOS до последней версии и использовать оригинальный кабель Lightning.</p>
+</details>
+
+<details>
+<summary>Как отключить автозапуск приложений при подключении?</summary>
+<p>В настройках телефона найдите раздел "Автозапуск приложений" и отключите автоматический запуск для мультимедийных приложений. В системе Honda также можно отключить автоматическое подключение в меню Bluetooth.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать систему без интернета?</summary>
+<p>Да, базовые функции, такие как радио, Bluetooth-звонки и воспроизведение музыки с USB, работают без интернета. Навигация и онлайн-сервисы будут недоступны.</p>
+</details>
+
+<details>
+<summary>Сколько устройств можно подключить одновременно?</summary>
+<p>Система позволяет подключить до 5 устройств по Bluetooth, но одновременно активными могут быть только два: одно для звонков и одно для медиа-аудио.</p>
+</details>
+
+<details>
+<summary>Что делать, если навигация показывает неверное местоположение?</summary>
+<p>Проверьте, не включен ли режим "Точность" или "Высокая точность" в GPS-настройках. Также возможно, что антенна GPS загрязнена или экранирована металлическими элементами кузова.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-мультимедийной-системы-honda-civic">Особенности мультимедийной системы Honda Civic</a></li><li><a href="#подготовка-смартфона-и-автомобиля-к-сопряжению">Подготовка смартфона и автомобиля к сопряжению</a></li><li><a href="#процесс-сопряжения-через-bluetooth">Процесс сопряжения через Bluetooth</a></li><li><a href="#настройка-wi-fi-и-обновление-карт-навигации">Настройка Wi-Fi и обновление карт навигации</a></li><li><a href="#решение-частых-проблем-с-подключением">Решение частых проблем с подключением</a></li><li><a href="#функциональные-ограничения-и-нюансы">Функциональные ограничения и нюансы</a></li><li><a href="#сброс-настроек-и-восстановление-системы">Сброс настроек и восстановление системы</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-tsivik-zamena-masla-akpp.html" class="related-card">Замена масла в АКПП Honda Civic: интервалы, объём, выбор</a></li><li><a href="/articles/z/za/zamena-sajlentblokov-perednikh-rychagov-khonda-tsivik-4d.html" class="related-card">Замена сайлентблоков передних рычагов Honda Civic 4D: пошаговая инструкция</a></li><li><a href="/articles/k/ko/kod-kraski-khonda-tsivik-5d.html" class="related-card">Код краски Honda Civic 5D: Как найти и подобрать цвет кузова</a></li><li><a href="/articles/s/sa/salon-khonda-tsivik-2008.html" class="related-card">Салон Honda Civic 2008: Обзор интерьера, эргономика и ремонт</a></li><li><a href="/articles/o/os/oshibka-vsa-honda-civic.html" class="related-card">Ошибка VSA Honda Civic: причины, код P1659 и способы ремонта</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-tsivik-zamena-masla-akpp.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в АКПП Honda Civic: интервалы, объём, выбор</span><span class="related-bottom-desc">Полная инструкция по замене масла в АКПП Honda Civic. Типы жидкостей, методы замены, проверка уровня</span></a><a href="/articles/z/za/zamena-sajlentblokov-perednikh-rychagov-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Замена сайлентблоков передних рычагов Honda Civic 4D: пошаговая инструкция</span><span class="related-bottom-desc">Полное руководство по диагностике и самостоятельной замене сайлентблоков на Honda Civic 4D. Советы п</span></a><a href="/articles/k/ko/kod-kraski-khonda-tsivik-5d.html" class="related-bottom-card"><span class="related-bottom-title">Код краски Honda Civic 5D: Как найти и подобрать цвет кузова</span><span class="related-bottom-desc">Узнайте, как точно определить код краски для Honda Civic 5-дверного хэтчбека. Инструкция по поиску т</span></a><a href="/articles/s/sa/salon-khonda-tsivik-2008.html" class="related-bottom-card"><span class="related-bottom-title">Салон Honda Civic 2008: Обзор интерьера, эргономика и ремонт</span><span class="related-bottom-desc">Подробный обзор салона Honda Civic 2008 года. Разбор материалов, эргономика, характерные неисправнос</span></a><a href="/articles/o/os/oshibka-vsa-honda-civic.html" class="related-bottom-card"><span class="related-bottom-title">Ошибка VSA Honda Civic: причины, код P1659 и способы ремонта</span><span class="related-bottom-desc">Подробный разбор ошибок системы VSA на Honda Civic. Диагностика датчиков, ремонт модуля, код P1659 и</span></a><a href="/articles/h/ho/honda-integra-type-r-dc5.html" class="related-bottom-card"><span class="related-bottom-title">Honda Integra Type R DC5: Полный гид по легенде японского автопрома</span><span class="related-bottom-desc">Всё о Honda Integra Type R DC5: двигатель K20A, особенности управления, тюнинг и нюансы обслуживания</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

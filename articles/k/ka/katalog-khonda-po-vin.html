@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Каталог Хонда по VIN: поиск запчастей, расшифровка кодов и OEM — Honda Library</title>
+    <meta name="description" content="Полный каталог Хонда по VIN коду: как найти оригинальные запчасти, расшифровать комплектацию и избежать ошибок при заказе узлов для японских авто.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/k/ka/katalog-khonda-po-vin.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Каталог Хонда по VIN: поиск запчастей, расшифровка кодов и OEM">
+    <meta property="og:description" content="Полный каталог Хонда по VIN коду: как найти оригинальные запчасти, расшифровать комплектацию и избежать ошибок при заказе узлов для японских авто.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Каталог Хонда по VIN: поиск запчастей, расшифровка кодов и OEM</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Каталог Хонда по VIN: Точный поиск и расшифровка</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#структура-vin-кода-и-его-значение-для-подбора">Структура VIN-кода и его значение для подбора</a></li><li><a href="#работа-с-электронными-каталогами-запчастей">Работа с электронными каталогами запчастей</a></li><li><a href="#основные-группы-узлов-и-агрегатов">Основные группы узлов и агрегатов</a></li><li><a href="#расшифровка-кодов-двигателей-honda">Расшифровка кодов двигателей Honda</a></li><li><a href="#нюансы-для-разных-рынков-сбыта">Нюансы для разных рынков сбыта</a></li><li><a href="#частые-ошибки-и-как-их-избежать">Частые ошибки и как их избежать</a></li><li><a href="#практическое-применение-каталога-для-диагностики">Практическое применение каталога для диагностики</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Поиск оригинальных компонентов для японских автомобилей требует максимальной точности, и каталог Хонда по VIN является незаменимым инструментом для владельцев и механиков. В отличие от универсальных баз, система <strong>Honda Parts Catalog</strong> учитывает тысячи нюансов, зависящих от даты выпуска и региона эксплуатации. Ошибка в подборе даже мелкой детали может привести к проблемам при сборке или некорректной работе систем.</p>
+
+<p>Идентификационный номер транспортного средства, или <em>VIN-код</em>, представляет собой уникальный 17-значный шифр, который содержит исчерпывающую информацию о конкретном экземпляре машины. Именно этот код позволяет найти <mark>оригинальный номер детали</mark>, соответствующий вашей комплектации, исключая путаницу с аналогами или деталями от других рынков. Использование <strong>электронных каталогов</strong> значительно упрощает процесс диагностики и ремонта.</p>
+
+<p>В этой статье мы подробно разберем структуру каталожных данных, научимся правильно считывать информацию и избегать распространенных ошибок при заказе запчастей через официальные каналы или специализированные сервисы.</p>
+
+<h2 id="структура-vin-кода-и-его-значение-для-подбора">Структура VIN-кода и его значение для подбора</h2>
+
+<p>Понимание структуры <strong>VIN-кода</strong> — это первый шаг к грамотному использованию каталога. Номер не является случайным набором символов; он строго регламентирован международными стандартами ISO. Первые три знака обозначают производителя и регион, что критически важно, так как <em>Honda</em> имеет заводы в Японии, США, Китае и Таиланде, и детали для них могут отличаться.</p>
+
+<p>Следующая группа символов, с 4 по 8, описывает модель кузова, тип двигателя и серию. Именно здесь кроется ответ на вопрос, почему на одну и ту же модель, например <em>Civic</em>, могут подходить разные тормозные колодки или фильтры. Завершающая часть кода содержит информацию о годе выпуска и заводском номере, что позволяет определить точную дату производства.</p>
+
+<p>При работе с каталогом важно обращать внимание на так называемый <strong>Frame Number</strong>, который часто дублируется в технической документации. В некоторых случаях, особенно для старых моделей 90-х годов, поиск по полному VIN может не дать результата, и тогда требуется ввод только номерной части рамы.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не используйте VIN-код, скопированный из фотографий документов низкого качества. Одна неверно считанная цифра (например, 'B' вместо '8') приведет к выбору деталей для совершенно другой модификации двигателя.</p>
+</blockquote>
+
+<p>Для точной идентификации часто требуется знать не только VIN, но и <strong>код модели</strong> (Model Code), который обычно начинается с букв и цифр, например, FN2 или RE5. Этот код можно найти на табличке в подкапотном пространстве или в свидетельстве о регистрации.</p>
+
+<h2 id="работа-с-электронными-каталогами-запчастей">Работа с электронными каталогами запчастей</h2>
+
+<p>Современные электронные каталоги, такие как <em>Honda EPC</em> (Electronic Parts Catalog) или онлайн-сервисы дилеров, представляют собой сложные базы данных. Они позволяют визуализировать узлы автомобиля в виде схем (взрыв-схем), где каждой позиции присвоен уникальный номер. Пользовательский интерфейс может показаться сложным, но он обеспечивает высокую точность.</p>
+
+<p>Основное преимущество цифровых систем — возможность отслеживания <strong>суперсессий</strong>. Это означает, что если деталь была снята с производства или заменена на улучшенную версию, каталог укажет новый номер, который полностью заменяет старый. Это избавляет от покупки obsolete-компонентов, которые невозможно найти в продаже.</p>
+
+<p>При поиске через веб-интерфейсы важно правильно выбрать путь навигации. Обычно он выглядит так: выбор региона -> выбор года выпуска -> выбор модели -> выбор группы узлов (двигатель, кузов, электрика). Ошибка на этапе выбора региона (например, выбор <em>Europe</em> вместо <em>General</em> или <em>USA</em>) может скрыть необходимые детали.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой способ поиска запчастей вы предпочитаете?</strong><ul><li>По VIN через дилера</li><li>Через онлайн-каталоги (Exist, Emex и др.)</li><li>По фото и названию модели</li><li>По коду детали с упаковки</li></ul></div></div>
+
+<p>Многие профессиональные системы позволяют использовать функцию <code>Search by Part Number</code>, если известен хотя бы частичный номер детали. Это полезно при кросс-проверке: вы нашли номер в одном источнике и хотите убедиться в его актуальности в официальной базе <strong>Honda</strong>.</p>
+
+<h2 id="основные-группы-узлов-и-агрегатов">Основные группы узлов и агрегатов</h2>
+
+<p>Каталог Хонда по VIN структурирован по группам, что облегчает навигацию. Знание основных разделов помогает быстрее находить нужные компоненты, не блуждая по тысячам позиций. Каждая группа имеет свой числовой код, который стандартизирован для всех моделей бренда.</p>
+
+<p>Ниже приведена таблица основных группировок, с которыми чаще всего сталкиваются пользователи при самостоятельном подборе:</p>
+
+<table>
+<thead>
+<tr>
+<th>Код группы</th>
+<th>Наименование раздела</th>
+<th>Типичные детали</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11xxx</td>
+<td>Двигатель (Engine)</td>
+<td>Поршни, клапаны, прокладки ГБЦ</td>
+</tr>
+<tr>
+<td>41xxx</td>
+<td>Тормозная система</td>
+<td>Колодки, диски, суппорты</td>
+</tr>
+<tr>
+<td>51xxx</td>
+<td>Кузов (Body)</td>
+<td>Бампера, фары, двери, стекла</td>
+</tr>
+<tr>
+<td>71xxx</td>
+<td>Электрика</td>
+<td>Датчики, жгуты, блоки управления</td>
+</tr>
+</tbody>
+</table>
+
+<p>Особое внимание стоит уделить разделу <strong>Engine</strong>, так как Honda славится разнообразием моторов серии <em>VTEC</em>, <em>i-VTEC</em> и <em>Earth Dreams</em>. Даже в рамках одной модели двигателя могут быть разные версии впускного коллектора или дроссельной заслонки, которые визуально почти идентичны, но имеют разные каталожные номера.</p>
+
+<p>В разделе <em>Body</em> важно учитывать цвет кузова. Краска подбирается по коду, указанному на табличке, но номер самой детали (например, крыла) будет общим для всех цветов, а вот код краски указывается отдельно при заказе. Для пластиковых элементов это критично, так как они могут продаваться уже грунтованными или черными.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед заказом</h4><label class="check-item"><input type="checkbox"><span>Сверить VIN-код с документами</span></label><label class="check-item"><input type="checkbox"><span>Определить точную дату выпуска</span></label><label class="check-item"><input type="checkbox"><span>Проверить код двигателя</span></label><label class="check-item"><input type="checkbox"><span>Уточнить регион поставки авто</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="расшифровка-кодов-двигателей-honda">Расшифровка кодов двигателей Honda</h2>
+
+<p>Двигатели Honda имеют собственную систему кодировки, которая тесно связана с данными каталога. Понимание этих обозначений помогает понять, какие детали <strong>совместимы</strong>. Код двигателя обычно выбит на блоке цилиндров и состоит из буквенной и цифровой части, например, <em>K20A</em> или <em>L15B</em>.</p>
+
+<p>Первая буква обозначает серию двигателя (B, D, F, H, K, L, R, Z). Цифра указывает на рабочий объем в литрах (округленно). Третья буква часто обозначает поколение или особенности конструкции.Suffix (дополнительные буквы в конце) указывает на конкретную модификацию, систему питания или экологический класс.</p>
+
+<p>Например, двигатель <em>K20A</em> и <em>K20Z</em> могут иметь разные головки блока цилиндров, несмотря на одинаковый объем. В каталоге Хонда по VIN эти различия учтены: прокладка ГБЦ для одного может не подойти к другому из-за измененной геометрии каналов.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При заказе ремней ГРМ или цепей всегда проверяйте тип двигателя. Для серии <em>R18</em> и <em>R20</em> существуют разные версии натяжителей, которые не взаимозаменяемы.</p>
+</blockquote>
+
+<p>Использование <strong>VIN-декодера</strong> позволяет автоматически определить точный код двигателя, установленный на заводе. Однако, если двигатель подвергался свопу (замене) или серьезному ремонту с заменой блока, каталог по VIN может показать данные старого мотора. В таких случаях необходим визуальный осмотр шильдика на самом агрегате.</p>
+
+<h2 id="нюансы-для-разных-рынков-сбыта">Нюансы для разных рынков сбыта</h2>
+
+<p>Автомобили Honda производятся для разных рынков: JDM (Япония), USDM (США), EDM (Европа), AUDM (Австралия) и других. Каталог Хонда по VIN четко разделяет эти потоки. Детали для американского <em>Pilot</em> могут кардинально отличаться от деталей для японского аналога, даже если модели выглядят одинаково.</p>
+
+<p>Европейские версии часто имеют усиленную антикоррозийную защиту и измененную настройку подвески. В каталоге это отражается в номерах рычагов, сайлентблоков и элементов выхлопной системы. Например, катализаторы для Европы (<em>Euro-5/6</em>) и США имеют разные экологические стандарты и крепления.</p>
+
+<p>Японские внутренние модели (JDM) часто имеют более богатое оснащение и уникальные детали интерьера, которые не поставлялись на другие рынки. При заказе стекол или элементов салона для "праворукого" автомобиля поиск по VIN обязателен, так как зеркально симметричные детали имеют разные каталожные номера.</p>
+
+<details class="faq-item"><summary>Почему цены на детали отличаются для разных рынков?</summary><div class="faq-answer"><p>Разница в цене обусловлена не только логистикой. Детали для рынка США часто производятся массово и имеют другую упаковку, в то время как компоненты для JDM могут быть более технологичными, но дорогими из-за курса валют и требований к качеству материалов.</p></div></details>
+
+<p>При заказе через интернет-магазины часто встречается пометка <strong>"Not for US"</strong> или <em>"For European Models"</strong>. Игнорирование этих предупреждений может привести к тому, что деталь физически не встанет на место из-за миллиметровых расхождений в крепежных отверстиях.</p>
+
+<h2 id="частые-ошибки-и-как-их-избежать">Частые ошибки и как их избежать</h2>
+
+<p>Самая распространенная ошибка — попытка подобрать детали "на глаз" или по году выпуска без привязки к <strong>VIN-коду</em>. Рестайлинг модели может происходить в середине календарного года, и машины одного года выпуска могут иметь разные бампера, оптику или электронные блоки.</p>
+
+<p>Вторая ошибка — путаница между оригинальным номером (<em>OEM Number</em>) и номером производителя-заменителя. В каталоге Хонда используется только OEM. Если вы ищете аналог, убедитесь, что его кросс-номер соответствует именно вашему OEM, а не просто подходит по размерам.</p>
+
+<p>Третья проблема — игнорирование примечаний в графе <strong>Remarks</strong> в каталоге. Там может быть указано: "Produced after 05/2015" или "Only for cars with navigation system". Если не учесть эти данные, можно получить деталь, которая не подключится к вашей проводке.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При заказе кузовных элементов (крылья, капоты) всегда проверяйте наличие отверстий под крепления. Для некоторых рынков (например, США) отверстия могут быть заглушены, а для Европы — открыты, или наоборот.</p></div>
+
+<p>Также стоит помнить о <em>минимальных партиях заказа</em>. Некоторые мелкие расходники (болты, сальники, прокладки) могут продаваться только упаковками по 5 или 10 штук, что указано в графе Qty (Quantity) в каталоге.</p>
+
+<h2 id="практическое-применение-каталога-для-диагностики">Практическое применение каталога для диагностики</h2>
+
+<p>Каталог Хонда по VIN полезен не только для покупки запчастей, но и для диагностики. Зная точное расположение узлов по схемам, легче понять, какой датчик где находится и как к нему подобраться. Схемы жгутов проводки помогают найти место разрыва или окисления контакта.</p>
+
+<p>При планировании тюнинга или глубокой модернизации каталог позволяет оценить совместимость деталей от более мощных версий моделей. Например, можно проверить, встанут ли тормоза от <em>Type R</em> на обычную версию <em>Civic</em>, сравнив номера ступиц и суппортов.</p>
+
+<p>Для владельцев редких или старых моделей, таких как <em>Prelude</em> или <em>S2000</em>, каталог становится единственным источником достоверной информации, так как мануалы могут быть утеряны, а память механиков — не всегда надежна.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Использование официального каталога по VIN — это гарантия того, что вы заказываете именно ту деталь, которая была установлена заводом-изготовителем, что критически важно для безопасности и надежности автомобиля.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Где найти VIN-код на автомобиле Honda?</summary>
+<p>VIN-код обычно расположен в нижней части лобового стекла со стороны водителя (виден снаружи), на стойке кузова у водительской двери (на наклейке) и выбит на кузове в подкапотном пространстве или на пороге. Также он всегда указан в свидетельстве о регистрации (СТС) и ПТС.</p>
+</details>
+
+<details>
+<summary>Можно ли подобрать запчасти по VIN для праворульных Honda?</summary>
+<p>Да, каталог Хонда по VIN поддерживает поиск для праворульных автомобилей (JDM, AUDM). Важно правильно выбрать регион при входе в каталог или убедиться, что система автоматически определила машину как праворульную по первым символам VIN.</p>
+</details>
+
+<details>
+<summary>Что делать, если по VIN деталь не находится?</summary>
+<p>Если поиск по VIN не дает результатов, возможно, деталь имеет составную структуру и подбирается по отдельным элементам, либо она снята с производства. В таких случаях рекомендуется искать номер на самой старой детали или консультироваться с дилером, используя <em>Model Code</em>.</p>
+</details>
+
+<details>
+<summary>Отличаются ли каталоги для гибридов Honda?</summary>
+<p>Да, гибридные модели (серии <em>Insight</em>, <em>CR-Z</em>, гибридные <em>Accord</em> и <em>Fit</em>) имеют отдельные разделы в каталоге, связанные с высоковольтной батареей, инвертором и электромотором. Обычные ДВС-компоненты могут быть схожи, но системы охлаждения и навесное оборудование часто уникальны.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#структура-vin-кода-и-его-значение-для-подбора">Структура VIN-кода и его значение для подбора</a></li><li><a href="#работа-с-электронными-каталогами-запчастей">Работа с электронными каталогами запчастей</a></li><li><a href="#основные-группы-узлов-и-агрегатов">Основные группы узлов и агрегатов</a></li><li><a href="#расшифровка-кодов-двигателей-honda">Расшифровка кодов двигателей Honda</a></li><li><a href="#нюансы-для-разных-рынков-сбыта">Нюансы для разных рынков сбыта</a></li><li><a href="#частые-ошибки-и-как-их-избежать">Частые ошибки и как их избежать</a></li><li><a href="#практическое-применение-каталога-для-диагностики">Практическое применение каталога для диагностики</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-n-wgn-zamena-masla-v-variatore.html" class="related-card">Замена масла в вариаторе Honda N-WGN: инструкция и нормы</a></li><li><a href="/articles/s/sk/skuter-khonda-dio-35-zx.html" class="related-card">Honda Dio 35 ZX: Полное руководство по ремонту и тюнингу</a></li><li><a href="/articles/k/ko/kolenval-khonda-dio-34-gbl.html" class="related-card">Коленвал Хонда Дио 34 GBL: размеры, артикулы, замена</a></li><li><a href="/articles/k/ka/kak-snyat-starter-khonda-frid.html" class="related-card">Как снять стартер на Honda Freed: пошаговая инструкция</a></li><li><a href="/articles/t/ty/tyuning-khonda-stepvagon-rp5.html" class="related-card">Тюнинг Honda Stepwgn RP5: Чип-тюнинг, подвеска и стайлинг</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-n-wgn-zamena-masla-v-variatore.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в вариаторе Honda N-WGN: инструкция и нормы</span><span class="related-bottom-desc">Полное руководство по замене масла в CVT Honda N-WGN. Разбор интервалов, выбор жидкости, пошаговая и</span></a><a href="/articles/s/sk/skuter-khonda-dio-35-zx.html" class="related-bottom-card"><span class="related-bottom-title">Honda Dio 35 ZX: Полное руководство по ремонту и тюнингу</span><span class="related-bottom-desc">Подробный обзор скутера Honda Dio 35 ZX. Технические характеристики, диагностика, тюнинг вариатора, </span></a><a href="/articles/k/ko/kolenval-khonda-dio-34-gbl.html" class="related-bottom-card"><span class="related-bottom-title">Коленвал Хонда Дио 34 GBL: размеры, артикулы, замена</span><span class="related-bottom-desc">Полный гид по коленвалу Honda Dio 34 GBL. Размеры шатуна, артикулы подшипников, признаки износа и по</span></a><a href="/articles/k/ka/kak-snyat-starter-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Как снять стартер на Honda Freed: пошаговая инструкция</span><span class="related-bottom-desc">Подробный гайд по замене стартера на Honda Freed. Схема демонтажа, инструменты, нюансы доступа и час</span></a><a href="/articles/t/ty/tyuning-khonda-stepvagon-rp5.html" class="related-bottom-card"><span class="related-bottom-title">Тюнинг Honda Stepwgn RP5: Чип-тюнинг, подвеска и стайлинг</span><span class="related-bottom-desc">Полное руководство по тюнингу Honda Stepwgn RP5. Обзор чип-тюнинга, модернизация подвески, установка</span></a><a href="/articles/v/vi/video-obzor-khonda-vezel.html" class="related-bottom-card"><span class="related-bottom-title">Видео обзор Хонда Везел: стоит ли покупать этот кроссовер?</span><span class="related-bottom-desc">Подробный видео обзор Хонда Везел 2026 года. Тест-драйв, анализ салона, расход топлива, плюсы и мину</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

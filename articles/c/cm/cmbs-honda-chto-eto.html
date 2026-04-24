@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>CMBS Honda: что это за система и как работает — Honda Library</title>
+    <meta name="description" content="Разбираем систему CMBS в Honda: принцип работы, отличия от AEB, случаи ложных срабатываний и нюансы эксплуатации. Полное руководство автовладельца.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/c/cm/cmbs-honda-chto-eto.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CMBS Honda: что это за система и как работает">
+    <meta property="og:description" content="Разбираем систему CMBS в Honda: принцип работы, отличия от AEB, случаи ложных срабатываний и нюансы эксплуатации. Полное руководство автовладельца.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">CMBS Honda: что это за система и как работает</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Система CMBS в Honda: назначение, принцип работы и особенности эксплуатации</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-техническое-оснащение">Принцип работы и техническое оснащение</a></li><li><a href="#этапы-реагирования-на-препятствие">Этапы реагирования на препятствие</a></li><li><a href="#ограничения-системы-и-условия-эксплуатации">Ограничения системы и условия эксплуатации</a></li><li><a href="#частые-причины-ложных-срабатываний">Частые причины ложных срабатываний</a></li><li><a href="#настройки-и-отключение-функции">Настройки и отключение функции</a></li><li><a href="#техническое-обслуживание-и-диагностика">Техническое обслуживание и диагностика</a></li><li><a href="#отличия-cmbs-от-других-систем-безопасности">Отличия CMBS от других систем безопасности</a></li><li><a href="#перспективы-развития-технологии">Перспективы развития технологии</a></li><li><a href="#вопросы-и-ответы">Вопросы и ответы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Многие владельцы автомобилей японского бренда сталкиваются с аббревиатурой <strong>CMBS</strong> в документах или на приборной панели, но не всегда понимают её истинное значение. Эта технология является частью комплексной системы безопасности, призванной защитить водителя, пассажиров и пешеходов в критических ситуациях.</p>
+
+<p>Если вы заметили значок на панели приборов или получили уведомление о неисправности, важно сразу разобраться в сути системы. <em>Collision Mitigation Braking System</em> — это не просто датчик парковки, а сложный алгоритм, способный самостоятельно задействовать тормоза.</p>
+
+<p>В отличие от простых систем предупреждения, CMBS способна физически вмешаться в процесс управления, если водитель не реагирует на опасность. Понимание её логики работы поможет избежать паники и правильно эксплуатировать автомобиль в сложных дорожных условиях.</p>
+
+<h2 id="принцип-работы-и-техническое-оснащение">Принцип работы и техническое оснащение</h2>
+
+<p>Основой функционирования системы является постоянный мониторинг пространства перед автомобилем с помощью специализированных датчиков. В современных моделях <em>Honda</em> для этого используются комбинация радаров и камер, установленных в верхней части лобового стекла и за решёткой радиатора.</p>
+
+<p>Радиолокационный датчик измеряет расстояние до впереди идущего объекта и скорость его сближения, в то время как стереокамера распознает тип препятствия — будь то другой автомобиль, пешеход или даже велосипедист. Эти данные обрабатываются центральным компьютером мгновенно.</p>
+
+<p>Система работает в нескольких этапах, постепенно повышая уровень вмешательства. Сначала происходит визуальное и звуковое предупреждение, затем — легкое подтормаживание для привлечения внимания, и только в последнюю очередь — полное автоматическое торможение.</p>
+
+<p>Важно отметить, что эффективность работы зависит от чистоты датчиков и погодных условий. Сильный дождь, снег или грязь могут временно снизить точность определения объектов.</p>
+
+<h2 id="этапы-реагирования-на-препятствие">Этапы реагирования на препятствие</h2>
+
+<p>Алгоритм срабатывания <strong>CMBS</strong> строго регламентирован и зависит от скорости сближения с объектом. Первый этап — это этап предупреждения. Когда компьютер фиксирует потенциальную угрозу столкновения, на приборной панели загорается красный значок автомобиля с восклицательным знаком.</p>
+
+<p>Одновременно с визуальным сигналом раздается резкий звуковой сигнал, а на дисплее может появиться надпись "Brake" или "Collision Warning". В этот момент система только информирует вас, что дистанция слишком мала и необходимо принять меры.</p>
+
+<p>Если вы не реагируете на предупреждение и скорость сближения продолжает расти, система переходит ко второму этапу — частичному торможению. Тормозные колодки слегка прижимаются к дискам, создавая ощущение "подталкивания" педали тормоза.</p>
+
+<p>Это сделано для того, чтобы водитель физически почувствовал необходимость нажать на тормоз. Если же и на этом этапе реакция отсутствует, система переходит к третьему, финальному этапу — автоматическому экстренному торможению.</p>
+
+<ul>
+<li>🚨 Звуковое и визуальное оповещение о приближении к препятствию</li>
+<li>🛑 Легкое торможение для привлечения внимания водителя</li>
+<li>💥 Полное автоматическое торможение при неизбежности удара</li>
+<li>🔒 Фиксация ремней безопасности перед ударом для защиты пассажиров</li>
+</ul>
+
+<h2 id="ограничения-системы-и-условия-эксплуатации">Ограничения системы и условия эксплуатации</h2>
+
+<p>Несмотря на высокую эффективность, <em>Collision Mitigation Braking System</em> имеет ряд физических ограничений. Она не является "автопилотом" и не может гарантировать безопасность в любых условиях. Производитель четко указывает диапазоны скоростей, при которых система активна.</p>
+
+<p>Радиус действия радаров ограничен, а в условиях плохой видимости или сложного рельефа местности эффективность может падать. Также система может не сработать, если препятствие находится слишком близко или движется по сложной траектории.</p>
+
+<p>Особое внимание стоит уделить погодным факторам. Сильный туман, ливень или снег могут "ослепить" камеру, а грязь на радаре полностью выведет его из строя. В таких случаях на панели загорится соответствующая ошибка.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Система может не сработать при резком торможении на поворотах или при движении по неровной дороге, где датчики теряют точность измерения дистанции.</p>
+</blockquote>
+
+<p>Вам необходимо регулярно проверять состояние переднего стекла и решетки радиатора. Даже небольшая наклейка или грязь могут стать причиной ложных срабатываний или отказа системы.</p>
+
+<ul>
+<li>🌧️ Сильные осадки могут снизить дальность работы радара</li>
+<li>🌫️ Густой туман затрудняет работу стереокамеры</li>
+<li>🚧 Дорожные работы и временные ограждения могут вызвать ложное срабатывание</li>
+<li>🏔️ Резкие перепады высоты дороги влияют на точность датчиков</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Насколько часто вы сталкиваетесь с ложными срабатываниями CMBS?</strong><ul><li>Никогда</li><li>Редко</li><li>Часто</li><li>Очень часто</li></ul></div></div>
+
+<h2 id="частые-причины-ложных-срабатываний">Частые причины ложных срабатываний</h2>
+
+<p>Одной из самых частых проблем, с которой сталкиваются владельцы <em>Honda</em>, являются ложные срабатывания системы. Водитель может почувствовать резкое торможение на пустой дороге, что вызывает стресс и недоверие к технологии.</p>
+
+<p>Причинами этого часто становятся металлические конструкции: мосты, ограждения, шлагбаумы или даже большие дорожные знаки. Радар может принять их за движущееся препятствие, особенно если они находятся под определенным углом.</p>
+
+<p>Также стоит учитывать особенности движения в тоннелях или на въездах в гаражи. Резкая смена освещения и наличие металлических конструкций на потолке могут ввести систему в заблуждение.</p>
+
+<p>Вам нужно понимать, что алгоритм работы настроен на минимизацию риска столкновения, поэтому система предпочитает сработать лишний раз, чем пропустить реальную опасность. Это называется "безопасным сбоем".</p>
+
+<p>Если ложные срабатывания происходят слишком часто, возможно, требуется калибровка датчиков после замены лобового стекла или ремонта бампера.</p>
+
+<details class="faq-item"><summary>Что делать при постоянных ложных срабатываниях?</summary><div class="faq-answer"><p>Если система тормозит без причины на пустой дороге, проверьте чистоту радара и камеры. Если проблема не исчезла, обратитесь в дилерский центр для перенастройки параметров чувствительности, так как заводские настройки могут не подходить под ваши условия эксплуатации.</p></div></details>
+
+<blockquote>
+<p>⚠️ Внимание: Не пытайтесь самостоятельно отключать систему или заклеивать датчики — это может привести к некорректной работе других систем безопасности, таких как адаптивный круиз-контроль.</p>
+</blockquote>
+
+<div class="checklist-block"><h4>☑️ Проверка системы перед поездкой</h4><label class="check-item"><input type="checkbox"><span>Очистить камеру и радар от грязи</span></label><label class="check-item"><input type="checkbox"><span>Проверить отсутствие ошибок на приборной панели</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в работе звукового сигнала</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу тормозной системы</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="настройки-и-отключение-функции">Настройки и отключение функции</h2>
+
+<p>В некоторых ситуациях водителю может потребоваться временно отключить <strong>CMBS</strong>. Например, при проезде по узким участкам с постоянными препятствиями или при буксировке прицепа. Однако полностью отключить систему через меню автомобиля невозможно — она активируется при каждом запуске двигателя.</p>
+
+<p>Для временного отключения используйте специальную кнопку на панели приборов или руле. Обычно она имеет значок автомобиля с тормозными следами и надписью <code>CMBS OFF</code>. При нажатии на неё загорится индикатор на панели, указывающий на отключение.</p>
+
+<p>Помните, что отключение системы не снимает с вас ответственности за управление автомобилем. Вы должны быть готовы к полной ответственности за торможение в экстренной ситуации.</p>
+
+<p>После выключения зажигания система автоматически вернется в активное состояние. Это сделано для вашей безопасности, чтобы вы не забыли включить её после длительной стоянки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Режим работы</th>
+<th>Уровень вмешательства</th>
+<th>Скорость активации</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Предупреждение</td>
+<td>Низкий</td>
+<td>от 5 км/ч</td>
+<td>Звук и индикация</td>
+</tr>
+<tr>
+<td>Легкое торможение</td>
+<td>Средний</td>
+<td>от 10 км/ч</td>
+<td>Тактильное ощущение</td>
+</tr>
+<tr>
+<td>Экстренное торможение</td>
+<td>Высокий</td>
+<td>от 15 км/ч</td>
+<td>Полная остановка</td>
+</tr>
+<tr>
+<td>Отключено</td>
+<td>Нет</td>
+<td>Любая</td>
+<td>Нет вмешательства</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед отключением системы убедитесь, что вы находитесь в безопасной зоне, так как при повторном запуске двигателя она включится автоматически без вашего ведома.</p></div>
+
+<h2 id="техническое-обслуживание-и-диагностика">Техническое обслуживание и диагностика</h2>
+
+<p>Система <em>Collision Mitigation Braking System</em> требует регулярного обслуживания, как и любая другая часть автомобиля. Основной уход заключается в поддержании чистоты оптических и радиолокационных элементов.</p>
+
+<p>При замене лобового стекла обязательно требуйте от сервиса проведения калибровки камеры. Даже небольшой сдвиг угла установки может привести к тому, что система будет видеть препятствия там, где их нет, или, наоборот, не замечать реальные угрозы.</p>
+
+<p>Диагностика системы должна проводиться при появлении ошибок на панели приборов. Не игнорируйте значки, связанные с безопасностью, так как неисправность одного датчика может отключить всю цепочку систем.</p>
+
+<p>Вам нужно знать, что при серьезных ударах в переднюю часть автомобиля система может заблокироваться. В этом случае потребуется полная диагностика и, возможно, замена модуля управления.</p>
+
+<p>Не забывайте проверять уровень тормозной жидкости и состояние колодок, так как система использует стандартную тормозную систему автомобиля для выполнения своих функций.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная калибровка датчиков после замены стекла или ремонта бампера критически важна для корректной работы системы CMBS.</p></div>
+
+<h2 id="отличия-cmbs-от-других-систем-безопасности">Отличия CMBS от других систем безопасности</h2>
+
+<p>Многие путают <strong>CMBS</strong> с адаптивным круиз-контролем (ACC) или просто системой предотвращения столкновений. Хотя эти технологии работают в связке, у них разные задачи и алгоритмы.</p>
+
+<p>Адаптивный круиз-контроль следит за дистанцией до впереди идущего автомобиля и поддерживает её, замедляя или ускоряя машину. CMBS же активируется только в критической ситуации, когда есть риск удара, и не участвует в обычном движении.</p>
+
+<p>Система также интегрирована с другими модулями безопасности, такими как <em>Honda Sensing</em>. Это комплексная платформа, включающая контроль полосы движения, распознавание знаков и другие функции.</p>
+
+<p>Главное отличие заключается в том, что CMBS может полностью остановить автомобиль даже на низкой скорости, в то время как другие системы чаще работают на скоростях выше 30-40 км/ч.</p>
+
+<ul>
+<li>🚗 ACC — поддерживает дистанцию на трассе, CMBS — экстренное торможение</li>
+<li>🛣️ Система контроля полосы работает с разметкой, CMBS — с физическими объектами</li>
+<li>🚦 CMBS активна даже на парковке, другие системы требуют движения</li>
+<li>🤝 Все системы объединены в платформу Honda Sensing для максимальной защиты</li>
+</ul>
+
+<details class="faq-item"><summary>Мифы о работе системы</summary><div class="faq-answer"><p>Существует миф, что система не сработает на пешеходах в темное время суток. На самом деле, современные камеры <em>Honda</em> оснащены функциями ночного видения и могут распознавать людей даже при слабом освещении, хотя дальность действия в таких условиях снижена.</p></div></details>
+
+<h2 id="перспективы-развития-технологии">Перспективы развития технологии</h2>
+
+<p>Технология не стоит на месте, и разработчики постоянно совершенствуют алгоритмы работы. В будущих поколениях автомобилей <em>Honda</em> ожидается внедрение более мощных радаров с большим радиусом действия.</p>
+
+<p>Также планируется расширение зоны ответственности системы на боковые направления и движение задним ходом. Это позволит предотвращать столкновения при маневрах на парковке или перестроении.</p>
+
+<p>Искусственный интеллект позволит системе лучше распознавать сложные сценарии, например, движение велосипедистов по обочине или внезапное появление детей на дороге.</p>
+
+<p> <mark>Человеческий фактор остается ключевым элементом безопасности на дороге.</mark></p>
+
+<p>Вам следует всегда быть готовым к вмешательству и контролировать ситуацию, используя систему как надежного помощника, а не как замену собственному вниманию.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не полагайтесь полностью на автоматические системы. Они являются вспомогательными средствами и могут иметь ограничения в нестандартных дорожных ситуациях.</p>
+</blockquote>
+
+<h2 id="вопросы-и-ответы">Вопросы и ответы</h2>
+
+<details>
+<summary>Можно ли полностью отключить систему CMBS в автомобиле Honda?</summary>
+<p>Полностью отключить систему через настройки меню невозможно. Она активируется автоматически при каждом запуске двигателя. Однако вы можете временно отключить её, нажав кнопку <code>CMBS OFF</code> на панели приборов, но после выключения зажигания система снова включится.</p>
+</details>
+
+<details>
+<summary>Почему система срабатывает ложно при движении по мосту?</summary>
+<p>Металлические конструкции мостов и ограждений могут отражать радиосигналы радара, создавая иллюзию препятствия. Система интерпретирует это как угрозу и пытается затормозить. Это нормальная реакция алгоритма, настроенного на максимальную безопасность.</p>
+</details>
+
+<details>
+<summary>Требуется ли калибровка камеры после замены лобового стекла?</summary>
+<p>Да, это обязательная процедура. Любое нарушение геометрии установки камеры или её угла наклона приведет к некорректной работе системы. Без калибровки в специализированном сервисе система может работать неэффективно или выдавать ошибки.</p>
+</details>
+
+<details>
+<summary>Работает ли система при движении задним ходом?</summary>
+<p>В стандартной конфигурации система CMBS работает только при движении вперед. Для контроля заднего хода используются другие датчики парковки и камеры, хотя в новых моделях появляются функции автоматического торможения и при заднем ходе.</p>
+</details>
+
+<details>
+<summary>Влияет ли грязь на решетке радиатора на работу системы?</summary>
+<p>Да, значительное загрязнение радара, расположенного за решеткой, может снизить его чувствительность или полностью блокировать работу. Регулярно мойте переднюю часть автомобиля, особенно в зимний период и после поездок по бездорожью.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-техническое-оснащение">Принцип работы и техническое оснащение</a></li><li><a href="#этапы-реагирования-на-препятствие">Этапы реагирования на препятствие</a></li><li><a href="#ограничения-системы-и-условия-эксплуатации">Ограничения системы и условия эксплуатации</a></li><li><a href="#частые-причины-ложных-срабатываний">Частые причины ложных срабатываний</a></li><li><a href="#настройки-и-отключение-функции">Настройки и отключение функции</a></li><li><a href="#техническое-обслуживание-и-диагностика">Техническое обслуживание и диагностика</a></li><li><a href="#отличия-cmbs-от-других-систем-безопасности">Отличия CMBS от других систем безопасности</a></li><li><a href="#перспективы-развития-технологии">Перспективы развития технологии</a></li><li><a href="#вопросы-и-ответы">Вопросы и ответы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-stepwgn-komplektatsii-v-yaponii.html" class="related-card">Honda Stepwgn: полный разбор комплектаций и опций в Японии</a></li><li><a href="/articles/h/ho/honda-gyro-canopy-otzyvy.html" class="related-card">Honda Gyro Canopy: честные отзывы владельцев и разбор плюсов</a></li><li><a href="/articles/k/kh/khonda-stepvagon-skolko-masla-v-dvigatele.html" class="related-card">Сколько масла в двигателе Honda Stepwgn: полные объемы и типы</a></li><li><a href="/articles/k/kh/khonda-sb-750-maksimalnaya-skorost.html" class="related-card">Honda CB 750: Максимальная скорость и технические характеристики</a></li><li><a href="/articles/k/kr/krash-test-khonda-frid.html" class="related-card">Краш-тест Хонда Фрид: разбор безопасности, подушек и кузова</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-stepwgn-komplektatsii-v-yaponii.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stepwgn: полный разбор комплектаций и опций в Японии</span><span class="related-bottom-desc">Подробный гид по комплектациям Honda Stepwgn в Японии. Сравнение Spada, G-RS и普通, цены, двигатели и </span></a><a href="/articles/h/ho/honda-gyro-canopy-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Honda Gyro Canopy: честные отзывы владельцев и разбор плюсов</span><span class="related-bottom-desc">Полный разбор отзывов о Honda Gyro Canopy. Достоинства, недостатки, эксплуатация под дождем, надежно</span></a><a href="/articles/k/kh/khonda-stepvagon-skolko-masla-v-dvigatele.html" class="related-bottom-card"><span class="related-bottom-title">Сколько масла в двигателе Honda Stepwgn: полные объемы и типы</span><span class="related-bottom-desc">Точные данные по объему моторного масла для Honda Stepwgn всех поколений. Типы смазки, допуски, инст</span></a><a href="/articles/k/kh/khonda-sb-750-maksimalnaya-skorost.html" class="related-bottom-card"><span class="related-bottom-title">Honda CB 750: Максимальная скорость и технические характеристики</span><span class="related-bottom-desc">Какова реальная максимальная скорость Honda CB 750? Обзор динамики, разгона и технических нюансов ле</span></a><a href="/articles/k/kr/krash-test-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Краш-тест Хонда Фрид: разбор безопасности, подушек и кузова</span><span class="related-bottom-desc">Полный анализ краш-теста Honda Freed. Реальные результаты Euro NCAP и JNCAP, состояние подушек, жест</span></a><a href="/articles/h/ho/honda-eto-kakaya-strana.html" class="related-bottom-card"><span class="related-bottom-title">Honda это какая страна: история бренда и производство</span><span class="related-bottom-desc">Узнайте, Honda это какая страна и где собирают автомобили. Полный разбор истории концерна, заводов в</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

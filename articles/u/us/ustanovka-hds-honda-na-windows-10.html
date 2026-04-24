@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Установка HDS Honda на Windows 10: Полная инструкция и драйверы — Honda Library</title>
+    <meta name="description" content="Пошаговое руководство по установке диагностического софта HDS Honda на Windows 10. Решение проблем с драйверами, режимом совместимости и подключением интерфейса.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/u/us/ustanovka-hds-honda-na-windows-10.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Установка HDS Honda на Windows 10: Полная инструкция и драйверы">
+    <meta property="og:description" content="Пошаговое руководство по установке диагностического софта HDS Honda на Windows 10. Решение проблем с драйверами, режимом совместимости и подключением интерфейса.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Установка HDS Honda на Windows 10: Полная инструкция и драйверы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полное руководство по установке HDS Honda на Windows 10</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#требования-к-системе-и-подготовка-окружения">Требования к системе и подготовка окружения</a></li><li><a href="#пошаговая-инсталляция-программного-обеспечения">Пошаговая инсталляция программного обеспечения</a></li><li><a href="#управление-драйверами-интерфейса">Управление драйверами интерфейса</a></li><li><a href="#конфигурация-совместимости-и-прав-доступа">Конфигурация совместимости и прав доступа</a></li><li><a href="#решение-распространенных-проблем">Решение распространенных проблем</a></li><li><a href="#безопасность-и-стабильность-работы">Безопасность и стабильность работы</a></li><li><a href="#итоги-и-рекомендации-по-выбору-версии">Итоги и рекомендации по выбору версии</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Установка диагностического программного обеспечения <em>HDS</em> (Honda Diagnostic System) на операционную систему <em>Windows 10</em> часто вызывает серьезные трудности у пользователей. Официальная поддержка со стороны производителя была прекращена еще до выхода этой версии ОС, что приводит к конфликтам драйверов и невозможности распознавания интерфейса. Однако опытные специалисты нашли обходные пути, позволяющие успешно запустить систему на современных компьютерах.</p>
+
+<p>Ключевым моментом является правильная настройка параметров совместимости и ручная инсталляция драйверов в режиме администратора. Игнорирование этих нюансов приведет к тому, что программа просто не увидит подключенный <em>PGM Tester</em> или <em>Diagbox</em>. В этой статье мы детально разберем процесс, исключив типичные ошибки, которые могут превратить диагностику в головную боль.</p>
+
+<h2 id="требования-к-системе-и-подготовка-окружения">Требования к системе и подготовка окружения</h2>
+<p>Прежде чем начинать процесс инсталляции, необходимо убедиться, что ваш компьютер соответствует минимальным требованиям для стабильной работы <strong>HDS</strong>. Хотя программа не требует мощного железа, отсутствие специфических библиотек может стать фатальным препятствием.</p>
+
+<p>Вам понадобится чистая установка <em>Windows 10</em> версии 1809 или новее, но с обязательным отключением функции проверки подписи драйверов. Это критически важно, так как драйверы для диагностических интерфейсов <em>Honda</em> часто не имеют цифровой подписи Microsoft.</p>
+
+<ul>
+<li>🖥️ Процессор не ниже <em>Intel Core i3</em> или аналогичный от AMD</li>
+<li>💾 Минимум 4 ГБ оперативной памяти, желательно 8 ГБ</li>
+<li>💿 Свободное место на диске не менее 20 ГБ для базовой установки</li>
+</ul>
+
+<p>Убедитесь, что на вашем ПК установлены все необходимые пакеты <strong>Microsoft .NET Framework</strong>. Без них запуск модулей программы будет невозможен. Часто пользователи упускают этот момент, пытаясь установить только сам <em>HDS</em>, что приводит к вылету приложения при попытке открыть модуль <code>Engine</code> или <code>ABS</code>.</p>
+
+<h2 id="пошаговая-инсталляция-программного-обеспечения">Пошаговая инсталляция программного обеспечения</h2>
+<p>Процесс установки требует строгого следования очередности действий. Не пытайтесь запустить установщик сразу после скачивания — сначала нужно подготовить систему. Отключите антивирусное ПО, так как оно часто блокирует запуск служебных файлов диагностического софта.</p>
+
+<p>Запустите файл установки от имени администратора. Если вы видите окно контроля учетных записей, обязательно нажмите «Да». Выберите путь установки, отличный от стандартного, например <code>C:\HDS</code>, чтобы избежать проблем с правами доступа в папке Program Files.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к установке</h4><label class="check-item"><input type="checkbox"><span>Отключить антивирус</span></label><label class="check-item"><input type="checkbox"><span>Запустить от имени администратора</span></label><label class="check-item"><input type="checkbox"><span>Выбрать путь C:\HDS</span></label><label class="check-item"><input type="checkbox"><span>Установить .NET Framework</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Важно выбрать правильную версию дистрибутива. Для <em>Windows 10</em> лучше всего подходят версии <em>HDS</em> 2016-2018 годов, так как более новые версии могут требовать специфических обновлений ОС, которые конфликтуют с драйверами интерфейса.</p>
+
+<p>Установка может занять от 15 до 40 минут в зависимости от скорости диска. Не прерывайте процесс, даже если кажется, что система зависла. В это время происходит распаковка больших объемов баз данных для различных моделей автомобилей.</p>
+
+<h2 id="управление-драйверами-интерфейса">Управление драйверами интерфейса</h2>
+<p>Самый сложный этап — это корректная установка драйверов для интерфейса <em>PGM Tester</em> или <em>VCI</em>. Стандартный установщик часто не может подхватить драйвер в <em>Windows 10</em> автоматически из-за обновлений безопасности системы.</p>
+
+<p>Вам придется использовать Диспетчер устройств. Подключите интерфейс к USB-порту, дождитесь появления устройства с желтым восклицательным знаком в списке оборудования. Нажмите правой кнопкой мыши и выберите «Обновить драйвер».</p>
+
+<ul>
+<li>🔌 Выберите «Выполнить поиск драйверов на этом компьютере»</li>
+<li>📂 Укажите путь к папке <code>C:\HDS\Drivers</code> или аналогичной в вашей установке</li>
+<li>✅ Разрешите установку неподписанных драйверов, если система выдаст предупреждение</li>
+</ul>
+
+<p>Если автоматический поиск не дает результатов, попробуйте вручную выбрать модель устройства из списка. Найдите раздел «Контроллеры HID» или «Устройства обработки данных» и выберите соответствующий драйвер <em>Honda</em> из списка.</p>
+
+<details class="faq-item"><summary>Что делать, если драйвер не устанавливается?</summary><div class="faq-answer"><p>Попробуйте отключить «Запрет принудительной подписи драйверов» в параметрах загрузки Windows. Для этого зайдите в Параметры → Обновление и безопасность → Восстановление → Особые варианты загрузки. Перезагрузите компьютер и выберите «Поиск неисправностей и дополнительные параметры» → «Параметры загрузки» → «Перезагрузить». После перезагрузки нажмите F7 для отключения проверки подписи.</p></div></details>
+
+<h2 id="конфигурация-совместимости-и-прав-доступа">Конфигурация совместимости и прав доступа</h2>
+<p>Даже после успешной установки программа может не запускаться или выдавать ошибку при попытке подключения. Это связано с тем, что <em>HDS</em> был разработан для <em>Windows XP</em> или <em>Windows 7</em> и не адаптирован под архитектуру <em>Windows 10</em>.</p>
+
+<p>Необходимо настроить свойства ярлыка запуска. Кликните правой кнопкой мыши по иконке программы, выберите «Свойства» и перейдите во вкладку «Совместимость». Установите галочку напротив «Запустить эту программу в режиме совместимости с» и выберите <em>Windows 7</em> или <em>Windows XP (Service Pack 3)</em>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Рекомендуемое значение</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Режим совместимости</td>
+<td>Windows 7</td>
+<td>Обеспечивает корректную работу старых API</td>
+</tr>
+<tr>
+<td>Права доступа</td>
+<td>Запуск от имени администратора</td>
+<td>Необходимо для доступа к портам и драйверам</td>
+</tr>
+<tr>
+<td>Графический режим</td>
+<td>Отключить оптимизацию во весь экран</td>
+<td>Предотвращает мерцание интерфейса</td>
+</tr>
+</tbody>
+</table>
+
+<p>После изменения настроек попробуйте запустить программу. Если ошибка сохраняется, проверьте, не блокирует ли фаервол доступ к локальной сети, так как <em>HDS</em> использует локальные порты для связи с интерфейсом.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Настройка совместимости с Windows 7 и запуск от имени администратора — это обязательные условия для работы HDS на Windows 10.</p></div>
+
+<h2 id="решение-распространенных-проблем">Решение распространенных проблем</h2>
+<p>Пользователи часто сталкиваются с тем, что программа запускается, но не видит подключенный кабель. В этом случае проблема почти всегда кроется в конфликте драйверов или неправильном выборе COM-порта в настройках.</p>
+
+<p>Зайдите в раздел <code>Settings</code> внутри программы и проверьте, какой порт назначен для подключения. Если там выбрано значение <code>None</code> или <code>USB</code> без указания номера, измените его на соответствующий COM-порт, который вы видите в Диспетчере устройств.</p>
+
+<ul>
+<li>⚙️ Проверьте наличие службы <em>HDS Service</em> в списке служб Windows</li>
+<li>🔄 Перезагрузите компьютер после установки всех компонентов</li>
+<li>🔍 Убедитесь, что кабель подключен в порт USB 2.0, а не USB 3.0</li>
+</ul>
+
+<p>Иногда помогает полное удаление программы и повторная установка с отключенным интернетом. Это предотвращает автоматическое обновление компонентов, которые могут сломать совместимость.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если интерфейс не определяется, попробуйте переподключить его в другой USB-порт, желательно расположенный на задней панели системного блока, где питание более стабильно.</p></div>
+
+<h2 id="безопасность-и-стабильность-работы">Безопасность и стабильность работы</h2>
+<p>Работа с диагностическим оборудованием требует внимания к деталям, так как ошибка может привести к сбоям в работе электронных блоков управления автомобилем. Всегда убедитесь, что аккумулятор автомобиля заряжен перед началом диагностики.</p>
+
+<p>Не используйте ноутбук на батарейном питании во время прошивки блоков. Резкое отключение питания может превратить ЭБУ в «кирпич». Используйте источник бесперебойного питания или подключите ноутбук к сети.</p>
+
+<blockquote>⚠️ Внимание: Никогда не отключайте интерфейс во время процесса записи данных в блок управления. Это может привести к необратимому повреждению программного обеспечения автомобиля.</blockquote>
+
+<p>Регулярно обновляйте базы данных <em>HDS</em>, но делайте это только из проверенных источников. Неофициальные патчи могут содержать вредоносный код или вызывать нестабильность работы системы.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какую версию HDS вы используете?</strong><ul><li>2014-2016</li><li>2017-2019</li><li>2020 и новее</li><li>Не знаю версию</li></ul></div></div>
+
+<h2 id="итоги-и-рекомендации-по-выбору-версии">Итоги и рекомендации по выбору версии</h2>
+<p>Выбор версии <em>HDS</em> для <em>Windows 10</em> — это баланс между функциональностью и стабильностью. Версии 2015-2017 годов считаются наиболее стабильными на этой платформе, тогда как новые версии требуют сложной настройки.</p>
+
+<p>Для большинства задач, таких как чтение и удаление ошибок, сброс сервисных интервалов, достаточно базовой версии. Если вам необходима кодировка новых опций или работа с гибридными системами, придется потратить больше времени на настройку драйверов.</p>
+
+<p>В заключение, установка <em>HDS</em> на <em>Windows 10</em> возможна, но требует терпения и внимательности к деталям настройки системы. Следуйте инструкции, и вы получите мощный инструмент для диагностики автомобилей <em>Honda</em> и <em>Acura</em>.</p>
+
+<blockquote>⚠️ Внимание: Если вы не уверены в своих действиях при работе с электроникой автомобиля, лучше доверьте диагностику профессионалам, чтобы избежать дорогостоящего ремонта.</blockquote>
+
+<h2 id="часто-задаваемые-вопросы">Часто задаваемые вопросы</h2>
+<details>
+<summary>Почему HDS не видит интерфейс после установки драйверов?</summary>
+<p>Чаще всего проблема в том, что драйвер установлен на виртуальный COM-порт, а программа ищет его на другом. Проверьте номер порта в Диспетчере устройств и укажите его вручную в настройках HDS.</p>
+</details>
+<details>
+<summary>Можно ли использовать HDS на Windows 11?</summary>
+<p>Да, принцип установки тот же, что и на Windows 10, но могут потребоваться дополнительные настройки безопасности для отключения проверки подписи драйверов.</p>
+</details>
+<details>
+<summary>Нужен ли оригинальный интерфейс для работы с Windows 10?</summary>
+<p>Оригинальный интерфейс работает стабильнее, но многие клоны также поддерживаются, если правильно установлены их драйверы. Главное — корректная настройка COM-порта.</p>
+</details>
+<details>
+<summary>Как откатить версию HDS, если она не работает?</summary>
+<p>Полностью удалите программу через Панель управления, удалите папки в Program Files и реестре (если умеете), затем установите более старую, проверенную версию.</p>
+</details>
+<details>
+<summary>Можно ли обновлять базы данных онлайн?</summary>
+<p>Официально — нет, так как доступ закрыт. Пользователи используют локальные обновления, скачанные из специализированных источников.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#требования-к-системе-и-подготовка-окружения">Требования к системе и подготовка окружения</a></li><li><a href="#пошаговая-инсталляция-программного-обеспечения">Пошаговая инсталляция программного обеспечения</a></li><li><a href="#управление-драйверами-интерфейса">Управление драйверами интерфейса</a></li><li><a href="#конфигурация-совместимости-и-прав-доступа">Конфигурация совместимости и прав доступа</a></li><li><a href="#решение-распространенных-проблем">Решение распространенных проблем</a></li><li><a href="#безопасность-и-стабильность-работы">Безопасность и стабильность работы</a></li><li><a href="#итоги-и-рекомендации-по-выбору-версии">Итоги и рекомендации по выбору версии</a></li><li><a href="#часто-задаваемые-вопросы">Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/s/st/starter-na-khonda-dio-34.html" class="related-card">Стартер на Хонда Дио 34: Замена, ремонт и диагностика неисправностей</a></li><li><a href="/articles/p/pr/prodazha-khonda-stepvagon-v-ulan-ude.html" class="related-card">Купить Honda Stepwgn в Улан-Удэ: цены, выбор и особенности</a></li><li><a href="/articles/m/mo/motoblok-mtz-s-dvigatelem-khonda.html" class="related-card">Мотоблок МТЗ с двигателем Хонда: обзор, характеристики и выбор</a></li><li><a href="/articles/p/pr/proshivka-khonda-stepvagon-15-turbo.html" class="related-card">Прошивка Honda Stepwgn 1.5 Turbo: чип-тюнинг и обновление ПО</a></li><li><a href="/articles/k/ka/kakoj-akkumulyator-na-khonda-frid-spajk.html" class="related-card">Аккумулятор для Honda Freed Spike: выбор, замена и параметры</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/s/st/starter-na-khonda-dio-34.html" class="related-bottom-card"><span class="related-bottom-title">Стартер на Хонда Дио 34: Замена, ремонт и диагностика неисправностей</span><span class="related-bottom-desc">Полное руководство по ремонту стартера на скутере Honda Dio AF34. Диагностика, замена щеток, разборк</span></a><a href="/articles/p/pr/prodazha-khonda-stepvagon-v-ulan-ude.html" class="related-bottom-card"><span class="related-bottom-title">Купить Honda Stepwgn в Улан-Удэ: цены, выбор и особенности</span><span class="related-bottom-desc">Полный гид по покупке Honda Stepwgn в Улан-Удэ. Анализ рынка, цены на Spada и RP, советы по проверке</span></a><a href="/articles/m/mo/motoblok-mtz-s-dvigatelem-khonda.html" class="related-bottom-card"><span class="related-bottom-title">Мотоблок МТЗ с двигателем Хонда: обзор, характеристики и выбор</span><span class="related-bottom-desc">Полный гид по мотоблокам МТЗ, оснащённым японскими двигателями Honda. Сравнение моделей, технические</span></a><a href="/articles/p/pr/proshivka-khonda-stepvagon-15-turbo.html" class="related-bottom-card"><span class="related-bottom-title">Прошивка Honda Stepwgn 1.5 Turbo: чип-тюнинг и обновление ПО</span><span class="related-bottom-desc">Полное руководство по обновлению и чип-тюнингу Honda Stepwgn 1.5 Turbo (RP1/RP5). Особенности работы</span></a><a href="/articles/k/ka/kakoj-akkumulyator-na-khonda-frid-spajk.html" class="related-bottom-card"><span class="related-bottom-title">Аккумулятор для Honda Freed Spike: выбор, замена и параметры</span><span class="related-bottom-desc">Какую АКБ выбрать для Honda Freed Spike? Обзор типов, размеры, полярность и советы по замене. Полное</span></a><a href="/articles/z/za/zamena-antifriza-khonda-stepvagon.html" class="related-bottom-card"><span class="related-bottom-title">Замена антифриза Хонда Степвэн: инструкции и сроки</span><span class="related-bottom-desc">Полное руководство по замене антифриза Honda Stepwgn. Выбор охлаждающей жидкости, пошаговая инструкц</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Хонда Дио не заводится: искра есть, бензин есть — поиск неисправности — Honda Library</title>
+    <meta name="description" content="Диагностика скутера Honda Dio при наличии искры и топлива. Причины отказа запуска: компрессия, качество смеси, клапаны, карбюратор. Пошаговое решение.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/k/kh/khonda-dio-ne-zavoditsya-iskra-est-benzin-postupaet.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Хонда Дио не заводится: искра есть, бензин есть — поиск неисправности">
+    <meta property="og:description" content="Диагностика скутера Honda Dio при наличии искры и топлива. Причины отказа запуска: компрессия, качество смеси, клапаны, карбюратор. Пошаговое решение.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Хонда Дио не заводится: искра есть, бензин есть — поиск неисправности</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Хонда Дио не заводится: искра есть, бензин поступает, а мотор молчит</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#проверка-реальной-компрессии-и-состояния-цилиндро-поршневой-группы">Проверка реальной компрессии и состояния цилиндро-поршневой группы</a></li><li><a href="#точная-настройка-клапанного-зазора-и-фаз-газораспределения">Точная настройка клапанного зазора и фаз газораспределения</a></li><li><a href="#качество-топливной-смеси-и-работа-карбюратора">Качество топливной смеси и работа карбюратора</a></li><li><a href="#система-зажигания-скрытые-проблемы-искры">Система зажигания: скрытые проблемы искры</a></li><li><a href="#таблица-возможных-неисправностей-и-методов-диагностики">Таблица возможных неисправностей и методов диагностики</a></li><li><a href="#проверка-системы-вентиляции-картера-и-отвода-газов">Проверка системы вентиляции картера и отвода газов</a></li><li><a href="#финальная-диагностика-и-профилактика">Финальная диагностика и профилактика</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Ситуация, когда скутер <em>Honda Dio</em> отказывается заводиться, при этом вы уверены в наличии искры и подаче топлива, является классической «загадкой» для многих владельцев. Часто проблема кроется не в отсутствии компонентов, а в их неправильной работе или нарушенной синхронизации. Двигатель требует идеального сочетания трех факторов: качественного воспламенения, правильной топливной смеси и достаточного сжатия в цилиндре. Если два первых фактора присутствуют, но мотор не запускается, значит, третий фактор нарушен или нарушена сама геометрия сгорания.</p>
+
+<p>Часто владельцы совершают ошибку, полагая, что если искра видна на свече, а бензин льется в карбюратор, то проблема решена. На самом деле, искра может быть слабой, а топливо — слишком жидким или слишком густым для холодного старта. В этой статье мы разберем, почему <strong>компрессия</strong> может быть в норме, но не обеспечивать запуск, и как проверить <strong>фазы газораспределения</strong> на <em>AF18</em> и <em>AF27</em>. Мы отойдем от поверхностных советов и углубимся в механику процесса, чтобы вы могли самостоятельно найти и устранить причину.</p>
+
+<h2 id="проверка-реальной-компрессии-и-состояния-цилиндро-поршневой-группы">Проверка реальной компрессии и состояния цилиндро-поршневой группы</h2>
+
+<p>Наличие искры и бензина не гарантирует, что в цилиндре создается необходимое давление для воспламенения смеси. Многие владельцы полагаются на ощущение сопротивления при прокрутке двигателя стартером, но это ненадежный метод. Для <em>Honda Dio</em> критически важно измерить компрессию специальным прибором — компрессометром. Без него вы будете гадать, не является ли проблема износом поршневой группы.</p>
+
+<p>Если компрессия ниже допустимого минимума, смесь просто не воспламеняется, даже при идеальной искре. Это происходит из-за того, что поршень не может сжать воздух до температуры самовоспламенения, либо газы прорываются в картер, не создавая нужного давления. Причины могут быть банальными: задиры на стенках цилиндра, износ поршневых колец или прогоревший клапан.</p>
+
+<ul>
+<li>🛠️ Проверьте состояние поршневых колец — они могут «зависнуть» в канавках из-за нагара.</li>
+<li>🛠️ Осмотрите цилиндр на предмет продольных царапин и задиров под ярким светом.</li>
+<li>🛠️ Измерьте компрессию при полностью прогретом двигателе для точных данных.</li>
+</ul>
+
+<p>Важно учитывать, что даже небольшая утечка может быть фатальной для запуска. Если при прокрутке вы слышите характерное «шуршание» или свист в районе карбюратора или глушителя, это явный признак потери компрессии. В таком случае простой замены свечей будет недостаточно. Вам потребуется полная переборка двигателя или замена КШМ.</p>
+
+<blockquote>⚠️ Внимание: Если компрессия на холодном двигателе в норме, но падает после прогрева, это верный признак износа поршневой группы, так как металл расширяется и зазоры увеличиваются.</blockquote>
+
+<h2 id="точная-настройка-клапанного-зазора-и-фаз-газораспределения">Точная настройка клапанного зазора и фаз газораспределения</h2>
+
+<p>Одной из самых частых причин отказа запуска при наличии всех ресурсов является неправильно отрегулированный <strong>клапанный зазор</strong>. В двигателях <em>AF18</em> и <em>AF27</em> зазоры критически важны. Если зазор слишком большой, клапан не закрывается до конца, и газы уходят, снижая компрессию. Если зазор слишком мал, клапан может не открыться в нужный момент, нарушая процесс наполнения или выпуска.</p>
+
+<p>Часто проблема возникает после замены цилиндра или просто из-за естественной выработки. Впускной и выпускной клапаны требуют индивидуальной настройки. Неправильная регулировка может привести к тому, что искра есть, бензин есть, но смесь не сжимается до нужного состояния или выхлопные газы не выходят, перекрывая путь свежему заряду.</p>
+
+<p>Для правильной настройки необходимо повернуть коленвал до совпадения меток и использовать щупы соответствующей толщины. Процесс требует терпения и точности. Не стоит полагаться на «на глаз», так как даже 0.05 мм могут кардинально изменить работу двигателя. Используйте специальные щупы, предназначенные именно для мототехники.</p>
+
+<ul>
+<li>⚙️ Заводской зазор для впускного клапана: 0.05-0.07 мм.</li>
+<li>⚙️ Заводской зазор для выпускного клапана: 0.05-0.07 мм.</li>
+<li>⚙️ Регулировку проводите только на холодном двигателе.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Проверка клапанного механизма</h4><label class="check-item"><input type="checkbox"><span>Снять клапанную крышку</span></label><label class="check-item"><input type="checkbox"><span>Повернуть коленвал по меткам</span></label><label class="check-item"><input type="checkbox"><span>Измерить зазор щупом</span></label><label class="check-item"><input type="checkbox"><span>Отрегулировать винтом</span></label><label class="check-item"><input type="checkbox"><span>Зафиксировать контргайкой</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Если вы недавно меняли ремень ГРМ, обязательно проверьте совпадение меток. Даже один пропущенный зуб может сбить фазы так, что двигатель перестанет работать. В этом случае искра будет проскакивать в момент, когда поршень находится не в той точке хода, и смесь не воспламенится.</p>
+
+<h2 id="качество-топливной-смеси-и-работа-карбюратора">Качество топливной смеси и работа карбюратора</h2>
+
+<p>Даже если вы видите, что бензин поступает в карбюратор и попадает в цилиндр, это не означает, что смесь правильная. Слишком богатая смесь (много бензина, мало воздуха) не воспламеняется от искры, так как бензин гасит искровой разряд. Слишком бедная смесь (мало бензина, много воздуха) также не горит, так как не имеет足够的 энергии для воспламенения.</p>
+
+<p>На <em>Honda Dio</em> часто забивается жиклер холостого хода или главная топливная система. Это приводит к тому, что смесь становится некорректной. Кроме того, вода в бензобаке может создать эффект «пробки» или просто испортить качество горючего. Проверьте, не отсырел ли карбюратор или воздушный фильтр.</p>
+
+<p>Особое внимание уделите качеству самого бензина. Если вы заправлялись на сомнительной заправке, возможно, в баке оказался низкооктановый бензин или примеси. Для <strong>двухтактных</strong> двигателей критически важно соблюдение пропорции масла и бензина. Если масла слишком много, свеча может быть залита, и искра будет слабой или отсутствовать вовсе, несмотря на наличие напряжения на катушке.</p>
+
+<blockquote>⚠️ Внимание: Залитая свеча — частая причина. Если свеча мокрая и пахнет бензином, просушите её и продуйте цилиндр, прокрутив двигатель без свечи.</blockquote>
+
+<p>Проверьте работу системы отсечки. На некоторых моделях <em>Honda Dio</em> есть топливный кран с вакуумным управлением. Если мембрана крана порвана, бензин может не поступать под нагрузкой, хотя на холостом ходу всё кажется нормальным. Также проверьте состояние воздушного фильтра — забитый фильтр может создавать вакуум, который не позволяет смеси нормально формироваться.</p>
+
+<ul>
+<li>🔥 Прочистите все жиклеры карбюратора сжатым воздухом.</li>
+<li>🔥 Проверьте уровень поплавка в поплавковой камере.</li>
+<li>🔥 Убедитесь в отсутствии конденсата в бензобаке.</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая у вас модель скутера?</strong><ul><li>Honda Dio AF18</li><li>Honda Dio AF27</li><li>Honda Dio AF25</li><li>Другая модель</li></ul></div></div>
+
+<h2 id="система-зажигания-скрытые-проблемы-искры">Система зажигания: скрытые проблемы искры</h2>
+
+<p>Наличие видимой искры на свече не всегда означает, что она достаточной силы для воспламенения смеси под давлением. Искра может быть слабой, синей или прерывистой. Это может быть вызвано неисправностью катушки зажигания, CDI-блока или генератора. На <em>Honda Dio</em> часто выходят из строя CDI-блоки, которые могут работать на малых оборотах, но отключаться при попытке запуска.</p>
+
+<p>Проверьте свечу зажигания. Даже если она выглядит нормально, её электрод может быть изношен, или зазор слишком велик. Используйте только рекомендованные производителем свечи, например, <em>NGK</em> или <em>Denso</em>. Неправильный тип свечи (например, с неправильным калильным числом) может привести к тому, что свеча перегревается или, наоборот, не очищается от нагара.</p>
+
+<p>Особое внимание уделите высоковольтному проводу и колпачку. Если в проводке есть пробой, искра будет уходить на «массу» до того, как достигнет свечи. Визуально это трудно заметить, так как провод может быть целым снаружи, но иметь микротрещины внутри. Проверьте сопротивление провода и целостность контактов.</p>
+
+<p>Если искра есть, но двигатель не запускается, попробуйте поднести свечу к металлической части двигателя, создав зазор 2-3 мм, и прокрутите двигатель. Если искра сильная и синяя, проблема не в системе зажигания. Если искра слабая или красная, ищите неисправность в катушке или CDI.</p>
+
+<blockquote>⚠️ Внимание: Никогда не проверяйте искру, держа свечу в руках — это может привести к удару током, особенно если двигатель работает на высоких оборотах.</blockquote>
+
+<h2 id="таблица-возможных-неисправностей-и-методов-диагностики">Таблица возможных неисправностей и методов диагностики</h2>
+
+<p>Для систематизации поиска неисправности используйте следующую таблицу. Она поможет быстро определить наиболее вероятную причину отказа запуска при наличии искры и топлива.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Метод устранения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Искра слабая, красная</td>
+<td>Неисправность катушки или CDI</td>
+<td>Замена катушки зажигания или CDI-блока</td>
+</tr>
+<tr>
+<td>Свеча залита бензином</td>
+<td>Перелив карбюратора или залитая свеча</td>
+<td>Продуть цилиндр, просушить свечу, отрегулировать карбюратор</td>
+</tr>
+<tr>
+<td>Компрессия низкая</td>
+<td>Износ поршневой группы</td>
+<td>Замена поршня, колец или цилиндра</td>
+</tr>
+<tr>
+<td>Мотор крутится легко</td>
+<td>Прогорел клапан или прокладка</td>
+<td>Регулировка клапанов или замена прокладки</td>
+</tr>
+<tr>
+<td>Искра пропадает на высоких оборотах</td>
+<td>Неисправность CDI</td>
+<td>Замена блока CDI</td>
+</tr>
+</tbody>
+</table>
+
+<p>Иногда проблема может быть комплексной. Например, износ поршневой группы приводит к падению компрессии, что, в свою очередь, требует более богатой смеси для запуска. Если вы не устраните основную причину, подстройка карбюратора не даст результата. Поэтому важно проводить диагностику комплексно.</p>
+
+
+
+<h2 id="проверка-системы-вентиляции-картера-и-отвода-газов">Проверка системы вентиляции картера и отвода газов</h2>
+
+<p>Многие владельцы <em>Honda Dio</em> забывают о системе вентиляции картера. Если она забита, давление в картере возрастает, что может препятствовать движению поршня и ухудшать смазку. Это также может привести к подсосу воздуха через сальники, что нарушает работу карбюратора. Проверьте состояние шлангов вентиляции и клапана.</p>
+
+<p>Забитый глушитель или катализатор (если он есть) также могут стать причиной отказа запуска. Если выхлопные газы не могут выйти, двигатель не сможет втянуть новую порцию смеси. Это особенно актуально для старых моделей, где в глушителе накапливается нагар.</p>
+
+<p>Проверьте состояние сальников коленвала. Если сальники изношены, через них может подсасываться лишний воздух, обедняя смесь. Это приводит к тому, что двигатель работает нестабильно или не заводится вовсе. Замените сальники, если есть сомнения в их герметичности.</p>
+
+<ul>
+<li>🔧 Очистите систему вентиляции картера от нагара.</li>
+<li>🔧 Проверьте глушитель на предмет засора.</li>
+<li>🔧 Замените изношенные сальники коленвала.</li>
+</ul>
+
+
+
+<h2 id="финальная-диагностика-и-профилактика">Финальная диагностика и профилактика</h2>
+
+<p>После устранения найденных неисправностей обязательно проведите тестовый запуск. Дайте двигателю прогреться и проверьте работу на разных оборотах. Если двигатель работает стабильно, проблема решена. Если нет, вернитесь к началу диагностики и проверьте каждый этап еще раз.</p>
+
+<p>Профилактика таких проблем проста: регулярное техническое обслуживание, использование качественного топлива и своевременная замена расходных материалов. Не пренебрегайте проверкой клапанов и компрессии, особенно если вы используете скутер интенсивно.</p>
+
+<blockquote>⚠️ Внимание: Регулярная проверка компрессии и состояния клапанов может предотвратить дорогостоящий ремонт двигателя в будущем.</blockquote>
+
+<p>Помните, что <em>Honda Dio</em> — надежный скутер, но он требует внимательного отношения. Если вы не уверены в своих силах, лучше доверить диагностику профессионалам. Однако, зная основные причины отказа запуска, вы сможете быстро оценить ситуацию и принять правильное решение.</p>
+
+
+
+<details>
+<summary>Почему искра есть, но двигатель не заводится?</summary>
+<p>Это может быть связано с отсутствием компрессии, неправильной смесью топлива и воздуха, или неисправностью системы зажигания, когда искра слишком слабая для воспламенения под давлением.</p>
+</details>
+
+<details>
+<summary>Как проверить компрессию на Honda Dio?</summary>
+<p>Вам понадобится компрессометр. Выкрутите свечу, вставьте компрессометр в отверстие и прокрутите двигатель стартером несколько раз. Сравните полученное значение с нормой (обычно около 10-12 кг/см²).</p>
+</details>
+
+<details>
+<summary>Что делать, если свеча залита бензином?</summary>
+<p>Выкрутите свечу, просушите её и продуйте цилиндр, прокрутив двигатель без свечи. Проверьте уровень топлива и работу карбюратора, чтобы исключить перелив.</p>
+</details>
+
+<details>
+<summary>Может ли проблема быть в CDI-блоке?</summary>
+<p>Да, неисправный CDI-блок может давать искру на холостых оборотах, но отключаться при попытке запуска. Попробуйте заменить блок на заведомо исправный для проверки.</p>
+</details>
+
+<details>
+<summary>Как часто нужно регулировать клапаны на Honda Dio?</summary>
+<p>Рекомендуется проверять и регулировать зазоры клапанов каждые 4000-6000 км пробега или при появлении посторонних шумов в двигателе.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#проверка-реальной-компрессии-и-состояния-цилиндро-поршневой-группы">Проверка реальной компрессии и состояния цилиндро-поршневой группы</a></li><li><a href="#точная-настройка-клапанного-зазора-и-фаз-газораспределения">Точная настройка клапанного зазора и фаз газораспределения</a></li><li><a href="#качество-топливной-смеси-и-работа-карбюратора">Качество топливной смеси и работа карбюратора</a></li><li><a href="#система-зажигания-скрытые-проблемы-искры">Система зажигания: скрытые проблемы искры</a></li><li><a href="#таблица-возможных-неисправностей-и-методов-диагностики">Таблица возможных неисправностей и методов диагностики</a></li><li><a href="#проверка-системы-вентиляции-картера-и-отвода-газов">Проверка системы вентиляции картера и отвода газов</a></li><li><a href="#финальная-диагностика-и-профилактика">Финальная диагностика и профилактика</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-sobrat-dvigatel-honda-dio.html" class="related-card">Как собрать двигатель Honda Dio: пошаговая инструкция</a></li><li><a href="/articles/h/ho/honda-n-box-otzyvy-vladeltsev.html" class="related-card">Honda N-Box отзывы владельцев: плюсы, минусы и реальная эксплуатация</a></li><li><a href="/articles/k/kh/khonda-strim-v-obvese.html" class="related-card">Honda Stream в обвесе: тюнинг, модели кузова RN1-RN9 и советы</a></li><li><a href="/articles/r/re/regulirovka-klapanov-honda-steed.html" class="related-card">Регулировка клапанов Honda Steed: пошаговая инструкция и нюансы</a></li><li><a href="/articles/s/sk/skhema-elektroprovodki-khonda-dio-35.html" class="related-card">Схема электропроводки Honda Dio 35: полная распиновка и ремонт</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-sobrat-dvigatel-honda-dio.html" class="related-bottom-card"><span class="related-bottom-title">Как собрать двигатель Honda Dio: пошаговая инструкция</span><span class="related-bottom-desc">Полное руководство, как собрать двигатель Honda Dio 27, 28, 34. Советы по установке поршня, коленвал</span></a><a href="/articles/h/ho/honda-n-box-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Honda N-Box отзывы владельцев: плюсы, минусы и реальная эксплуатация</span><span class="related-bottom-desc">Честные отзывы владельцев Honda N-Box о надежности, расходе топлива, комфорте и особенностях эксплуа</span></a><a href="/articles/k/kh/khonda-strim-v-obvese.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stream в обвесе: тюнинг, модели кузова RN1-RN9 и советы</span><span class="related-bottom-desc">Полный гид по тюнингу Honda Stream. Выбираем обвесы, диски и дорабатываем RN1-RN9. Аэродинамика, сти</span></a><a href="/articles/r/re/regulirovka-klapanov-honda-steed.html" class="related-bottom-card"><span class="related-bottom-title">Регулировка клапанов Honda Steed: пошаговая инструкция и нюансы</span><span class="related-bottom-desc">Полное руководство по регулировке клапанов на Honda Steed. Узнайте о зазорах, инструментах, этапах р</span></a><a href="/articles/s/sk/skhema-elektroprovodki-khonda-dio-35.html" class="related-bottom-card"><span class="related-bottom-title">Схема электропроводки Honda Dio 35: полная распиновка и ремонт</span><span class="related-bottom-desc">Подробный разбор электрической схемы мопеда Honda Dio AF35. Распиновка реле, генератора, поиск обрыв</span></a><a href="/articles/k/kh/khonda-aoyama-ofitsialnyj-diler-v-moskve.html" class="related-bottom-card"><span class="related-bottom-title">Honda Aoyama в Москве: официальный дилер, цены, контакты</span><span class="related-bottom-desc">Honda Aoyama официальный дилер в Москве: полный модельный ряд, условия Trade-In, кредитования и серв</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

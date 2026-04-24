@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Русификация Honda Stepwgn Spada: Полная инструкция и меню — Honda Library</title>
+    <meta name="description" content="Как русифицировать Honda Stepwgn Spada: установка GPS, навигации и русского меню. Подробный гид по прошивке и адаптации японского минивэна.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/ru/rusifikatsiya-honda-stepwgn-spada.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Русификация Honda Stepwgn Spada: Полная инструкция и меню">
+    <meta property="og:description" content="Как русифицировать Honda Stepwgn Spada: установка GPS, навигации и русского меню. Подробный гид по прошивке и адаптации японского минивэна.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Русификация Honda Stepwgn Spada: Полная инструкция и меню</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Русификация Honda Stepwgn Spada: Полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#особенности-штатной-навигации-и-мультимедиа">Особенности штатной навигации и мультимедиа</a></li><li><a href="#необходимое-оборудование-и-подготовка">Необходимое оборудование и подготовка</a></li><li><a href="#методы-внедрения-русского-языка">Методы внедрения русского языка</a></li><li><a href="#установка-gps-антенны-и-настройка-навигации">Установка GPS-антенны и настройка навигации</a></li><li><a href="#адаптация-мультимедиа-и-видеовходов">Адаптация мультимедиа и видеовходов</a></li><li><a href="#частые-проблемы-и-их-решение">Частые проблемы и их решение</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владение японским минивэном <em>Honda Stepwgn Spada</em> — это не просто комфорт и надежность, но и постоянный вызов в виде языкового барьера. Интерфейс мультимедийной системы и навигации изначально заточен под внутреннего потребителя, что создает очевидные трудности при эксплуатации в странах СНГ. Полноценная <strong>русификация Honda Stepwgn Spada</strong> становится ключевым шагом для превращения "японца" в понятный и удобный автомобиль для всей семьи.</p>
+
+<p>Процесс адаптации может варьироваться от простой замены карт памяти до сложной перепрошивки головного устройства с заменой чипов памяти. Важно понимать, что глубина вмешательства зависит от года выпуска модели и типа установленной системы навигации <em>Internavi</em>. Современные методы позволяют внедрить русскоязычный интерфейс, сохранив при этом штатную функциональность и эстетику салона.</p>
+
+<p>В этой статье мы детально разберем все доступные способы перевода меню, установки GPS-навигации и настройки мультимедиа. Вы узнаете о рисках, необходимых инструментах и тонкостях, которые помогут избежать дорогостоящих ошибок. <mark>Критически важно определить тип вашего головного устройства (Garage или Internavi 7/8) перед началом любых работ.</mark> Только точная диагностика позволит выбрать верный путь модернизации.</p>
+
+<h2 id="особенности-штатной-навигации-и-мультимедиа">Особенности штатной навигации и мультимедиа</h2>
+
+<p>Штатные системы в <em>Honda Stepwgn Spada</em> базируются на платформе <strong>Internavi</strong>, которая жестко привязана к серверам в Японии. Это означает, что без вмешательства пользователя карты не обновляются, а поиск адресов работает только по японской фонетике и иероглифам. Базовая версия часто идет с навигацией <em>Garage Navigation</em>, которая хранит карты на внутреннем накопителе, а не на съемной SD-карте, что усложняет процесс их замены.</p>
+
+<p>Основная проблема заключается в закрытости программного обеспечения. Японские инженеры не предусматривали возможность смены языка интерфейса пользователем. Поэтому стандартное меню <code>Settings → Language</code> либо отсутствует, либо содержит только японский и иногда английский языки, которые переводят лишь часть системных сообщений, оставляя навигацию нечитаемой.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Попытка сбросить настройки головного устройства до заводских (<code>Factory Reset</code>) без наличия русифицированной прошивки приведет к полному возврату японского интерфейса и потере всех внесенных изменений.</p>
+</blockquote>
+
+<p>Существует два основных подхода к решению проблемы: программная эмуляция через внешние устройства и аппаратная перепрошивка. Первый вариант менее инвазивен, но часто требует наличия внешнего экрана или использования проекции смартфона. Второй вариант дает наиболее органичный результат, интегрируя русский язык прямо в штатное меню.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой тип навигации установлен у вас?</strong><ul><li>Garage Navigation (в памяти)</li><li>Internavi (SD карта)</li><li>Не знаю / Внешний блок</li><li>Пользуюсь только телефоном</li></ul></div></div>
+
+<h2 id="необходимое-оборудование-и-подготовка">Необходимое оборудование и подготовка</h2>
+
+<p>Прежде чем приступать к <strong>русификации Honda Stepwgn Spada</strong>, необходимо подготовить инструментарий. Для работы с электроникой автомобиля требуются не только навыки, но и специфическое оборудование. Ошибки на этапе подготовки могут привести к выходу из строя дорогостоящего головного устройства.</p>
+
+<ul>
+<li>🛠 Программатор для чипов памяти (например, CH341A) и паяльное оборудование для перепайки микросхем.</li>
+<li>💾 Карта памяти microSD высокого класса скорости (Class 10 и выше) объемом от 16 до 64 Гб.</li>
+<li>💻 Ноутбук с установленным софтом для редактирования.hex и.bin файлов прошивки.</li>
+<li>🔌 Стабилизированный источник питания 12В для подключения головного устройства вне автомобиля.</li>
+</ul>
+
+<p>Если вы планируете использовать метод внешней навигации, список оборудования значительно сокращается. Вам потребуется лишь качественный видеовход и, возможно, адаптер для управления кнопками на руле. В любом случае, перед началом работ рекомендуется <strong>сфотографировать</strong> все текущие подключения и настройки.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к русификации</h4><label class="check-item"><input type="checkbox"><span>Определить модель головного устройства:Найти номер модели на наклейке</span></label><label class="check-item"><input type="checkbox"><span>Проверить совместимость прошивок:Изучить форумы по вашей модели</span></label><label class="check-item"><input type="checkbox"><span>Подготовить инструменты:Паяльник, флюс, отсос</span></label><label class="check-item"><input type="checkbox"><span>Сделать бэкап:Считать родную прошивку перед изменением</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Особое внимание стоит уделить поиску правильной прошивки. Файлы для <em>Honda Stepwgn RK1/RK2/RK5</em> могут отличаться даже в пределах одного модельного года. Использование несовместимого ПО приведет к "кирпичу" системы, восстановление которой потребует обращения в специализированный сервис.</p>
+
+<h2 id="методы-внедрения-русского-языка">Методы внедрения русского языка</h2>
+
+<p>Существует несколько проверенных способов адаптации интерфейса. Выбор метода зависит от ваших технических навыков и желаемого конечного результата. Рассмотрим основные из них.</p>
+
+<p>Первый метод — <strong>замена карт памяти</strong>. Он актуален для систем, где карты хранятся на SD. Вы покупаете или создаете образ карты с русскими картами (часто это карты <em>Navitel</em> или <em>CityGuide</em>, адаптированные под интерфейс Honda). Этот способ не переводит меню настроек, но делает навигацию понятной.</p>
+
+<p>Второй метод — <strong>перепрошивка EEPROM</strong>. Это наиболее сложный, но и самый эффективный путь. Он заключается в выпаивании микросхемы памяти из платы головного устройства, считывании её содержимого, модификации языковых пакетов и записи обратно. После такой процедуры в меню появляется полноценный русский язык.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При пайке микросхем необходимо строго соблюдать температурный режим. Перегрев чипа более чем на 3-5 секунд может безвозвратно повредить его структуру.</p>
+</blockquote>
+
+<p>Третий вариант — использование <strong>внешних блоков</strong> (Android-боксов), которые подключаются в разрыв штатной системы. Они выводят изображение поверх штатного экрана и позволяют запускать любые приложения, включая <em>Яндекс.Навигатор</em> или <em>Google Maps</em>. Это современное решение, не требующее вмешательства в "железо" автомобиля.</p>
+
+<details class="faq-item"><summary>Риски самостоятельной перепрошивки</summary><div class="faq-answer"><p>Самостоятельная перепрошивка EEPROM без опыта может привести к нарушению калибровки сенсора, потере функции управления климатом через экран или полному отказу аудиосистемы. Восстановление оригинальной прошивки часто требует наличия донорского устройства.</p></div></details>
+
+<h2 id="установка-gps-антенны-и-настройка-навигации">Установка GPS-антенны и настройка навигации</h2>
+
+<p>Штатные GPS-антенны в японских автомобилях часто настроены на частоты и спутники, актуальные для региона Японии, что может снижать точность позиционирования в других широтах. Для стабильной работы русской навигации часто требуется установка <strong>внешней GPS-антенны</strong> с поддержкой ГЛОНАСС.</p>
+
+<p>Процесс установки антенны обычно involves прокладку кабеля от задней части головного устройства к лобовому стеклу или крыше автомобиля. Важно экранировать кабель, чтобы избежать помех от других электронных систем <em>Honda Stepwgn Spada</em>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Штатная антенна</th>
+<th>Внешняя GPS/ГЛОНАСС</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Точность позиционирования</td>
+<td>Средняя (японский регион)</td>
+<td>Высокая (глобальная)</td>
+</tr>
+<tr>
+<td>Поддержка ГЛОНАСС</td>
+<td>Часто отсутствует</td>
+<td>Поддерживается</td>
+</tr>
+<tr>
+<td>Скорость холодного старта</td>
+<td>Длительная</td>
+<td>Быстрая</td>
+</tr>
+<tr>
+<td>Стоимость внедрения</td>
+<td>0 руб. (штатно)</td>
+<td>Требует покупки и монтажа</td>
+</tr>
+</tbody>
+</table>
+
+<p>После физической установки необходимо настроить программный порт подключения в навигационной программе. Обычно это порт <code>COM</code> с определенной скоростью (например, <code>4800</code> или <code>9600</code> бод). Неверные настройки приведут к тому, что навигация будет видеть спутники, но не сможет определить координаты.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте ферритовые кольца при прокладке кабеля GPS-антенны. Это поможет избавиться от характерных помех в виде треска в динамиках при работе навигации.</p></div>
+
+<h2 id="адаптация-мультимедиа-и-видеовходов">Адаптация мультимедиа и видеовходов</h2>
+
+<p>Помимо навигации, важным аспектом является воспроизведение видео и аудио. Штатные плееры часто не поддерживают современные форматы файлов или кодеки. Решением становится установка сторонних лаунчеров или использование внешних медиа-боксов.</p>
+
+<p>Для подключения камеры заднего вида или сторонних источников видео (TV-тюнер, игровая консоль) часто требуется активация видеовхода. В <em>Honda Stepwgn Spada</code> это делается через инженерное меню или замыкание определенного контакта в разъеме.</p>
+
+<ul>
+<li>🎥 Активация видеовхода в движении: позволяет смотреть видео на переднем дисплее (требуется осторожность!).</li>
+<li>🔊 Настройка эквалайзера: русифицированные прошивки часто открывают доступ к расширенным настройкам звука.</li>
+<li>📱 Подключение смартфона: через AUX или Bluetooth (если поддерживается прошивкой).</li>
+</ul>
+
+<p> Используйте эту функцию только когда автомобиль неподвижен. Инженерное меню вызывается комбинацией кнопок, которая зависит от модели ГУ (часто это длительное удержание кнопок <code>Menu</code> + <code>Map</code>).</p>
+
+<blockquote>
+<p>⚠️ Внимание: Изменение настроек в инженерном меню (Service Menu) без понимания их назначения может привести к неработоспособности тачскрина или искажению цветопередачи дисплея.</p>
+</blockquote>
+
+<h2 id="частые-проблемы-и-их-решение">Частые проблемы и их решение</h2>
+
+<p>В процессе <strong>русификации Honda Stepwgn Spada</em> пользователи сталкиваются с рядом типичных проблем. Знание способов их решения сэкономит вам время и нервы. Большинство проблем связано с программными конфликтами или некорректной установкой файлов.</p>
+
+<p>Одна из распространенных проблем — "слет" времени и даты после перезагрузки. Это указывает на то, что прошивка некорректно работает с часовым поясом или села батарейка резервного питания внутри ГУ. Решение кроется в правке конфигурационных файлов или замене элемента питания.</p>
+
+<p>Также часто встречается проблема с тачскрином: точки нажатия не совпадают с изображением. В этом случае требуется калибровка. Обычно она вызывается через скрытое меню или специальной утилитой на карте памяти. Если калибровка не помогает, возможно, драйвер тачскрина в прошивке не подходит для вашей матрицы.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>90% проблем после русификации решаются возвратом к оригинальной прошивке (бэкапу) и повторной попыткой с проверенным источником файлов. Не бойтесь начинать заново.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Сбросится ли русификация при снятии клеммы аккумулятора?</summary>
+<p>Если русификация выполнена методом перепрошивки чипа памяти (EEPROM), то снятие клеммы не повлияет на наличие русского языка. Прошивка "зашита" физически. Если же использовался метод с загрузкой с SD-карты, то настройки могут сбиться, но сам язык останется, если файлы на карте не повреждены.</p>
+</details>
+
+<details>
+<summary>Можно ли обновить карты через Wi-Fi после русификации?</summary>
+<p>Как правило, штатная система обновлений <em>Internavi</em> перестает работать или работает некорректно после внедрения сторонних карт. Обновление карт придется производить вручную, копируя новые файлы на SD-карту через компьютер.</p>
+</details>
+
+<details>
+<summary>Сохранится ли гарантия на автомобиль?</summary>
+<p>Вмешательство в электрическую цепь и программное обеспечение головного устройства формально является причиной для снятия гарантии на мультимедийную систему и смежные электронные узлы. На двигатель и ходовую часть это не влияет, но дилер может отказать в гарантийном ремонте электроники.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять динамик для голосовых подсказок?</summary>
+<p>Нет, менять динамик не нужно. Русскоязычные голосовые пакеты (например, от <em>Navitel</em> или <em>СитиГид</em>) воспроизводятся через штатную акустику. Однако, если вы хотите слышать подсказки поверх музыки, может потребоваться настройка микшера в приложении навигации.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#особенности-штатной-навигации-и-мультимедиа">Особенности штатной навигации и мультимедиа</a></li><li><a href="#необходимое-оборудование-и-подготовка">Необходимое оборудование и подготовка</a></li><li><a href="#методы-внедрения-русского-языка">Методы внедрения русского языка</a></li><li><a href="#установка-gps-антенны-и-настройка-навигации">Установка GPS-антенны и настройка навигации</a></li><li><a href="#адаптация-мультимедиа-и-видеовходов">Адаптация мультимедиа и видеовходов</a></li><li><a href="#частые-проблемы-и-их-решение">Частые проблемы и их решение</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/m/ma/maslo-v-akpp-khonda-strim.html" class="related-card">Замена масла в АКПП Honda Stream: выбор, проверка и инструкция</a></li><li><a href="/articles/h/ho/honda-atf-dw1-4l-artikul.html" class="related-card">Honda ATF DW1 4л: Артикул, цена и замена масла</a></li><li><a href="/articles/k/kh/khonda-stepvagon-spada-zamena-masla-v-variatore.html" class="related-card">Замена масла в вариаторе Honda Stepwgn Spada: Инструкция и сроки</a></li><li><a href="/articles/p/pr/prodazha-khonda-strim-v-krasnoyarske.html" class="related-card">Купить Honda Stream в Красноярске: цены, отзывы и где искать</a></li><li><a href="/articles/z/za/zamena-masla-v-akpp-khonda-akkord-6.html" class="related-card">Замена масла в АКПП Хонда Аккорд 6: Полная инструкция</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/m/ma/maslo-v-akpp-khonda-strim.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в АКПП Honda Stream: выбор, проверка и инструкция</span><span class="related-bottom-desc">Полное руководство по замене масла в автоматической коробке Honda Stream. Разбор вязкости, интервало</span></a><a href="/articles/h/ho/honda-atf-dw1-4l-artikul.html" class="related-bottom-card"><span class="related-bottom-title">Honda ATF DW1 4л: Артикул, цена и замена масла</span><span class="related-bottom-desc">Оригинальный артикул Honda ATF DW1 4л. Подробная инструкция по замене масла в АКПП Хонда, спецификац</span></a><a href="/articles/k/kh/khonda-stepvagon-spada-zamena-masla-v-variatore.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в вариаторе Honda Stepwgn Spada: Инструкция и сроки</span><span class="related-bottom-desc">Полное руководство по замене масла в вариаторе Honda Stepwgn Spada. Выбор смазки, интервалы, пошагов</span></a><a href="/articles/p/pr/prodazha-khonda-strim-v-krasnoyarske.html" class="related-bottom-card"><span class="related-bottom-title">Купить Honda Stream в Красноярске: цены, отзывы и где искать</span><span class="related-bottom-desc">Ищете Honda Stream в Красноярске? Полный гид по покупке: анализ цен, типичные поломки, выбор двигате</span></a><a href="/articles/z/za/zamena-masla-v-akpp-khonda-akkord-6.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в АКПП Хонда Аккорд 6: Полная инструкция</span><span class="related-bottom-desc">Пошаговая замена масла в автоматической коробке Honda Accord 6. Выбор ATF, проверка уровня, интервал</span></a><a href="/articles/h/ho/honda-acura-nsx-1990.html" class="related-bottom-card"><span class="related-bottom-title">Honda Acura NSX 1990: Легендарный суперкар Японии</span><span class="related-bottom-desc">Обзор Honda Acura NSX 1990 года. Технические характеристики, история создания, особенности двигателя</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

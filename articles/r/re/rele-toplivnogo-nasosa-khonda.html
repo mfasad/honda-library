@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Реле топливного насоса Honda: диагностика, замена и распиновка — Honda Library</title>
+    <meta name="description" content="Полное руководство по поиску неисправностей реле топливного насоса на Honda. Схема, симптомы поломки, проверка мультиметром и нюансы замены для моделей Civic, Accord, CR-V.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/re/rele-toplivnogo-nasosa-khonda.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Реле топливного насоса Honda: диагностика, замена и распиновка">
+    <meta property="og:description" content="Полное руководство по поиску неисправностей реле топливного насоса на Honda. Схема, симптомы поломки, проверка мультиметром и нюансы замены для моделей Civic, Accord, CR-V.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/авто/">Авто</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Реле топливного насоса Honda: диагностика, замена и распиновка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Реле топливного насоса Honda: диагностика, замена и распиновка</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#расположение-и-назначение-реле-на-автомобилях-honda">Расположение и назначение реле на автомобилях Honda</a></li><li><a href="#симптомы-неисправности-и-диагностика">Симптомы неисправности и диагностика</a></li><li><a href="#проверка-реле-топливного-насоса-мультиметром">Проверка реле топливного насоса мультиметром</a></li><li><a href="#процедура-замены-и-подбор-аналогов">Процедура замены и подбор аналогов</a></li><li><a href="#особенности-работы-с-системой-pgm-fi">Особенности работы с системой PGM-FI</a></li><li><a href="#безопасность-и-меры-предосторожности">Безопасность и меры предосторожности</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Бензонасос является сердцем топливной системы любого автомобиля, но его работа невозможна без управляющего элемента — <strong>реле топливного насоса</strong>. На автомобилях марки <em>Honda</em> этот компонент часто становится причиной внезапных отказов двигателя, которые водители ошибочно принимают за более серьезные поломки. Без подачи питания от реле <strong>топливный насос</strong> не сможет создать необходимое давление в рампе, и запуск мотора станет невозможным.</p>
+
+<p>Проблема усугубляется тем, что в автомобилях <em>Honda</em> с пробегом контакты реле подгорают, а катушка может терять свои магнитные свойства. Владельцы <em>Civic</em>, <em>Accord</em> и <em>CR-V</em> сталкиваются с ситуацией, когда стартер крутит двигатель, но он не схватывает. Паника застает водителя врасплох, однако часто решение лежит на поверхности — в блоке предохранителей.</p>
+
+<p>Понимание принципа работы и умение быстро диагностировать эту деталь могут сэкономить вам время и деньги в пути. В этой статье мы разберем, где находится реле, как его проверить без сложного оборудования и какие нюансы замены существуют для разных поколений <em>Honda</em>.</p>
+
+<h2 id="расположение-и-назначение-реле-на-автомобилях-honda">Расположение и назначение реле на автомобилях Honda</h2>
+<p>На большинстве моделей <em>Honda</em> реле топливного насоса интегрировано в основной блок предохранителей и реле, расположенный в моторном отсеке. Однако в некоторых старых модификациях или специфических комплектациях оно может находиться в салоне, под панелью приборов со стороны водителя. Точное расположение зависит от года выпуска и модели автомобиля.</p>
+
+<p>Основная задача этого элемента — кратковременная подача напряжения на насос при включении зажигания для создания начального давления, а затем постоянная подача тока при работающем двигателе. Как только двигатель глохнет или выключается зажигание, <strong>реле</strong> размыкает цепь, обесточивая насос для безопасности. Это критически важный элемент системы управления двигателем.</p>
+
+<p>Для современных моделей, таких как <em>Honda Accord</em> восьмого поколения или <em>CR-V</em> третьего поколения, реле часто имеет маркировку <code>PGM-FI MAIN</code> или <code>FUEL PUMP</code>. В старых автомобилях <em>Integra</em> или <em>Prelude</em> оно может быть отдельным маленьким блоком черного цвета. Всегда сверяйтесь с крышкой блока предохранителей, где нарисована схема.</p>
+
+<h2 id="симптомы-неисправности-и-диагностика">Симптомы неисправности и диагностика</h2>
+<p>Первый признак того, что с <strong>реле топливного насоса</strong> что-то не так — это характерный щелчок при повороте ключа в замке зажигания. Если вы поворачиваете ключ в положение <code>ON</code> и не слышите жужжания насоса из-под заднего сиденья или бака, проблема может быть именно в нем. Однако отсутствие звука не всегда гарантирует поломку реле, так как мог сгореть сам насос.</p>
+
+<p>Другой распространенный симптом — автомобиль глохнет на ходу и не заводится сразу. Иногда машина может завестись с пол-оборота, а через пару минут снова умереть. Это классическая картина перегрева контактов внутри реле: пока они холодные, контакт есть, но при нагреве он пропадает. Владельцы <em>Honda Fit</em> и <em>Jazz</em> часто сталкиваются с такой проблемой.</p>
+
+<ul>
+<li>🚗 Автомобиль не заводится, стартер крутит, но нет звука работы бензонасоса.</li>
+<li>🔥 Двигатель глохнет на горячую и заводится только после остывания.</li>
+<li>⚡ Отсутствие характерного щелчка реле при включении зажигания.</li>
+</ul>
+
+<p>Для точной диагностики необходимо проверить наличие напряжения на разъеме насоса. Используйте мультиметр, переключив его в режим измерения постоянного напряжения. Подключите щупы к контактам разъема насоса (обычно это два толстых провода) и попросите помощника включить зажигание. Если напряжения нет, проверьте реле.</p>
+
+<blockquote>⚠️ Внимание: Перед началом диагностики обязательно отключите минусовую клемму аккумулятора, чтобы избежать короткого замыкания при случайном касании проводов инструментом.</blockquote>
+
+<h2 id="проверка-реле-топливного-насоса-мультиметром">Проверка реле топливного насоса мультиметром</h2>
+<p>Процедура проверки требует минимальных навыков работы с электрикой. Первым делом извлеките реле из гнезда. На корпусе <strong>реле</strong> всегда указана схема распиновки, которая показывает, какие контакты являются катушкой управления, а какие — силовыми. Стандартная маркировка включает контакты 85, 86 (катушка) и 30, 87 (силовая цепь).</p>
+
+<p>Сначала проверьте целостность катушки управления. Подключите щупы мультиметра к контактам 85 и 86. Сопротивление должно находиться в диапазоне от 50 до 120 Ом. Если прибор показывает бесконечность, катушка оборвана и реле подлежит замене. Это самый простой тест, который исключает внутреннее обрывание провода.</p>
+
+<p>Далее проверьте силовые контакты. При отсутствии питания они должны быть разомкнуты (бесконечное сопротивление). Теперь подайте напряжение 12 вольт от аккумулятора на контакты 85 и 86. Вы должны услышать четкий щелчок, означающий, что якорь притянулся. В этом положении проверьте сопротивление между контактами 30 и 87 — оно должно быть близким к нулю.</p>
+
+<ul>
+<li>🛠️ Используйте мультиметр в режиме омметра для проверки катушки.</li>
+<li>🔋 Подавайте 12В от внешнего источника для проверки срабатывания якоря.</li>
+<li>📉 Ищите сопротивление близкое к 0 Ом на замкнутых силовых контактах.</li>
+</ul>
+
+<p>Если реле не щелкает или контакты не замыкаются, оно неисправно. Не пытайтесь его разобрать и почистить, так как современные герметичные корпуса не предназначены для ремонта. Замена на новое — единственный надежный вариант восстановления работоспособности.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая у вас модель Honda?</strong><ul><li>Civic</li><li>Accord</li><li>CR-V</li><li>Другая</li><li>Не знаю</li></ul></div></div>
+
+<h2 id="процедура-замены-и-подбор-аналогов">Процедура замены и подбор аналогов</h2>
+<p>Замена <strong>реле топливного насоса</strong> — это процедура, которую можно выполнить самостоятельно за несколько минут. Вам понадобится новый элемент, соответствующий спецификации вашего автомобиля. Оригинальные детали <em>Honda</em> обозначаются номерами вроде <code>39790-P2A-003</code> или <code>39790-S9A-003</code>, в зависимости от модели.</p>
+
+<p>Важно знать, что на многих моделях <em>Honda</em> реле топливного насоса конструктивно идентично другим реле в блоке (например, реле вентилятора или фар). Вы можете временно переставить реле из соседнего гнезда, чтобы проверить, запустится ли двигатель. Если после перестановки машина завелась — проблема точно в старом реле.</p>
+
+<p>При покупке аналогов обращайте внимание на производителя. Качественные заменители выпускают такие бренды как <em>Denso</em>, <em>Stanley</em> или <em>Tyco</em>. Избегайте дешевых подделок неизвестного происхождения, так как их контакты могут оплавиться еще быстрее, чем оригинал, что приведет к пожару.</p>
+
+<div class="checklist-block"><h4>☑️ Замена реле топливного насоса</h4><label class="check-item"><input type="checkbox"><span>Открыть капот и найти блок предохранителей</span></label><label class="check-item"><input type="checkbox"><span>Вынуть неисправное реле пинцетом или руками</span></label><label class="check-item"><input type="checkbox"><span>Вставить новое реле до щелчка</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу двигателя на холостых оборотах</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<table>
+<thead>
+<tr>
+<th>Модель Honda</th>
+<th>Годы выпуска</th>
+<th>Расположение реле</th>
+<th>Тип реле</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Civic (7-8 поколение)</td>
+<td>2001-2011</td>
+<td>Блок в моторном отсеке</td>
+<td>PGM-FI MAIN</td>
+</tr>
+<tr>
+<td>Accord (7-8 поколение)</td>
+<td>2003-2015</td>
+<td>Блок в моторном отсеке</td>
+<td>FUEL PUMP</td>
+</tr>
+<tr>
+<td>CR-V (2-3 поколение)</td>
+<td>2002-2012</td>
+<td>Блок в моторном отсеке</td>
+<td>PGM-FI MAIN</td>
+</tr>
+<tr>
+<td>Fit / Jazz (1-2 поколение)</td>
+<td>2001-2008</td>
+<td>Под торпедо (салон)</td>
+<td>Fuel Pump Relay</td>
+</tr>
+<tr>
+<td>Odyssey</td>
+<td>2004-2013</td>
+<td>Блок в моторном отсеке</td>
+<td>PGM-FI MAIN</td>
+</tr>
+</tbody>
+</table>
+
+<details class="faq-item"><summary>Нюансы установки реле на Honda Civic Type R</summary><div class="faq-answer"><p>На спортивных версиях Civic Type R (EK9, EP3, FN2) реле часто имеет усиленные контакты и отличается цветом корпуса. Установка обычного реле может привести к его быстрому выходу из строя из-за повышенной нагрузки на топливную систему при высоких оборотах.</p></div></details>
+
+<h2 id="особенности-работы-с-системой-pgm-fi">Особенности работы с системой PGM-FI</h2>
+<p>В современных автомобилях <em>Honda</em> используется система управления двигателем <strong>PGM-FI</strong> (Programmed Fuel Injection). Реле топливного насоса здесь не просто подает ток, а работает в связке с блоком управления двигателем (ECU). ЭБУ дает команду на включение реле только при наличии сигнала с датчика положения коленвала.</p>
+
+<p>Если датчик коленвала неисправен, реле не включится, даже если оно полностью исправно. Поэтому при диагностике "мертвого" мотора не стоит сразу менять реле, если есть подозрение на датчики. Проверка сигнала с датчика коленвала — важный этап перед заменой электромеханических компонентов.</p>
+
+<p>Также стоит отметить, что в некоторых случаях реле может срабатывать, но не выдавать нужное напряжение из-за высокого сопротивления на контактах. Это явление называется "просадкой напряжения". В результате насос получает питание, но не развивает нужные обороты, что приводит к бедной смеси и потере мощности под нагрузкой.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При покупке нового реле обратите внимание на маркировку на крышке блока предохранителей. Иногда производители меняют распиновку даже в пределах одной модели, и старое реле может физически подойти, но не работать из-за перепутанных контактов.</p></div>
+
+<h2 id="безопасность-и-меры-предосторожности">Безопасность и меры предосторожности</h2>
+<p>Работа с топливной системой требует особой осторожности. Бензин является легковоспламеняющейся жидкостью, и искра от короткого замыкания может привести к возгоранию. Всегда работайте в проветриваемом помещении и держите рядом огнетушитель, если планируете проводить глубокие электрические тесты.</p>
+
+<p>Никогда не проверяйте реле методом "накороткого" замыкания контактов отверткой. Это может привести к выгоранию дорожек в блоке предохранителей или повреждению проводки автомобиля. Используйте только специальные перемычки или мультиметр с изолированными щупами.</p>
+
+<ul>
+<li>🔥 Работайте только с отключенным аккумулятором при демонтаже.</li>
+<li>💧 Избегайте попадания воды на электрические компоненты при мойке моторного отсека.</li>
+<li>🧤 Используйте диэлектрические перчатки для защиты рук.</li>
+</ul>
+
+<p>После замены реле обязательно проверьте герметичность всех разъемов. Окисление контактов в месте соединения реле и гнезда — частая причина повторных отказов. Можно нанести на контакты специальную <strong>контактную смазку</strong>, но не переусердствуйте, чтобы она не попала внутрь механизма.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная диагностика реле топливного насоса экономит время и деньги, исключая ненужную замену дорогостоящих компонентов, таких как сам бензонасос или блок управления двигателем.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Почему реле топливного насоса перегревается?</summary>
+<p>Перегрев чаще всего вызван плохим контактом в гнезде реле или увеличенным током потребления из-за износа самого топливного насоса. Со временем контакты в гнезде ослабевают, что увеличивает переходное сопротивление и вызывает нагрев.</p>
+</details>
+
+<details>
+<summary>Можно ли запустить двигатель без реле?</summary>
+<p>Теоретически можно замкнуть силовые контакты реле перемычкой, подав напряжение напрямую на насос. Это делается только для экстренной проверки или кратковременной транспортировки автомобиля, так как насос не будет отключаться при остановке двигателя.</p>
+</details>
+
+<details>
+<summary>Где найти оригинальный номер реле для моей Honda?</summary>
+<p>Оригинальный номер можно найти на корпусе старого реле (если он сохранился) или в каталогах запчастей по VIN-коду автомобиля. Обычно это 10-значный код, начинающийся с цифр 39790.</p>
+</details>
+
+<details>
+<summary>Влияет ли плохой контакт массы на работу реле?</summary>
+<p>Да, плохой контакт массы на двигателе или кузове может привести к нестабильной работе реле. Если цепь заземления имеет высокое сопротивление, реле может срабатывать с задержкой или не срабатывать вовсе, даже при исправной катушке.</p>
+</details>
+
+<p>Реле топливного насоса — это мелкая деталь, но её роль в работе <em>Honda</em> невозможно переоценить. Регулярная проверка состояния контактов и своевременная замена при первых признаках неисправности обеспечат вам надежный запуск двигателя в любых условиях. Не пренебрегайте простыми диагностическими процедурами, которые могут избавить вас от серьезных проблем на трассе.</p>
+
+<blockquote>⚠️ Внимание: Если вы заменили реле, а проблема не исчезла, обязательно проверьте предохранитель топливного насоса и целостность проводки от реле до насоса. В редких случаях обрыв провода внутри изоляции может имитировать поломку реле.</blockquote>
+
+<p>Помните, что грамотный подход к обслуживанию электрооборудования продлевает жизнь автомобилю. Следите за состоянием блока предохранителей, очищайте контакты от окислов и используйте только качественные запчасти. Тогда ваш <em>Honda</em> будет радовать вас безотказной работой долгие годы.</p>
+
+<blockquote>⚠️ Внимание: При самостоятельной замене реле убедитесь, что вы не перепутали местами реле топливного насоса и реле стартера, если они имеют одинаковый размер и форму. Это может привести к непредсказуемым последствиям при попытке запуска двигателя.</blockquote></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#расположение-и-назначение-реле-на-автомобилях-honda">Расположение и назначение реле на автомобилях Honda</a></li><li><a href="#симптомы-неисправности-и-диагностика">Симптомы неисправности и диагностика</a></li><li><a href="#проверка-реле-топливного-насоса-мультиметром">Проверка реле топливного насоса мультиметром</a></li><li><a href="#процедура-замены-и-подбор-аналогов">Процедура замены и подбор аналогов</a></li><li><a href="#особенности-работы-с-системой-pgm-fi">Особенности работы с системой PGM-FI</a></li><li><a href="#безопасность-и-меры-предосторожности">Безопасность и меры предосторожности</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/m/ma/maslo-khonda-0w20-original-ili-poddelka.html" class="related-card">Оригинальное масло Honda 0W-20: как отличить подделку и не слить двигатель</a></li><li><a href="/articles/f/fi/filtr-salona-khonda-stepvagon.html" class="related-card">Фильтр салона Honda Stepwgn: выбор, замена и тонкости обслуживания</a></li><li><a href="/articles/k/kh/khonda-torneo-parametry-diskov.html" class="related-card">Параметры дисков Honda Torneo: размеры, вылет, болты и подбор шин</a></li><li><a href="/articles/c/ch/chem-otlichaetsya-khonda-ot-khendaj.html" class="related-card">Чем отличается Хонда от Хендай: Сравнение надежности и технологий</a></li><li><a href="/articles/k/ka/kakoj-benzin-zalivat-v-khonda-frid.html" class="related-card">Какой бензин заливать в Honda Freed: АИ-92 или АИ-95?</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/m/ma/maslo-khonda-0w20-original-ili-poddelka.html" class="related-bottom-card"><span class="related-bottom-title">Оригинальное масло Honda 0W-20: как отличить подделку и не слить двигатель</span><span class="related-bottom-desc">Полный гайд по проверке оригинального масла Honda 0W-20. Учимся распознавать подделки по этикетке, к</span></a><a href="/articles/f/fi/filtr-salona-khonda-stepvagon.html" class="related-bottom-card"><span class="related-bottom-title">Фильтр салона Honda Stepwgn: выбор, замена и тонкости обслуживания</span><span class="related-bottom-desc">Полное руководство по выбору и замене салонного фильтра Honda Stepwgn. Разбор отличий моделей с угол</span></a><a href="/articles/k/kh/khonda-torneo-parametry-diskov.html" class="related-bottom-card"><span class="related-bottom-title">Параметры дисков Honda Torneo: размеры, вылет, болты и подбор шин</span><span class="related-bottom-desc">Полные технические параметры колесных дисков для Honda Torneo E. Размеры R15, R16, вылет ET, разболт</span></a><a href="/articles/c/ch/chem-otlichaetsya-khonda-ot-khendaj.html" class="related-bottom-card"><span class="related-bottom-title">Чем отличается Хонда от Хендай: Сравнение надежности и технологий</span><span class="related-bottom-desc">Полное сравнение брендов Honda и Hyundai. Анализ двигателей, коробок передач, качества сборки и стои</span></a><a href="/articles/k/ka/kakoj-benzin-zalivat-v-khonda-frid.html" class="related-bottom-card"><span class="related-bottom-title">Какой бензин заливать в Honda Freed: АИ-92 или АИ-95?</span><span class="related-bottom-desc">Разбираем требования к топливу для Honda Freed. Влияние октанового числа на двигатель, расход и ресу</span></a><a href="/articles/g/gr/gruzopodemnost-khonda-frid-spajk.html" class="related-bottom-card"><span class="related-bottom-title">Грузоподъемность Honda Freed Spike: Реальные цифры и нюансы</span><span class="related-bottom-desc">Полный разбор грузоподъемности Honda Freed Spike. Сколько весит багаж, как влияет на подвеску и расх</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

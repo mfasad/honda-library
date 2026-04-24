@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Honda Dio 35 Тюнинг: Доработка двигателя и ходовой для скорости — Honda Library</title>
+    <meta name="description" content="Полное руководство по тюнингу скутера Honda Dio 35. Разбор карбюратора, вариатора, зажигания и ходовой части. Узнайте, как увеличить мощность и динамику.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/h/ho/honda-dio-35-tyuning.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Honda Dio 35 Тюнинг: Доработка двигателя и ходовой для скорости">
+    <meta property="og:description" content="Полное руководство по тюнингу скутера Honda Dio 35. Разбор карбюратора, вариатора, зажигания и ходовой части. Узнайте, как увеличить мощность и динамику.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Honda Dio 35 Тюнинг: Доработка двигателя и ходовой для скорости</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Полный гид по тюнингу скутера Honda Dio 35: от двигателя до подвески</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#модернизация-системы-впуска-и-выхлопа">Модернизация системы впуска и выхлопа</a></li><li><a href="#доработка-вариатора-и-трансмиссии">Доработка вариатора и трансмиссии</a></li><li><a href="#увеличение-объема-двигателя-и-доработка-цпг">Увеличение объема двигателя и доработка ЦПГ</a></li><li><a href="#система-зажигания-и-управление-оборотами">Система зажигания и управление оборотами</a></li><li><a href="#ходовая-часть-и-безопасность">Ходовая часть и безопасность</a></li><li><a href="#визуальный-тюнинг-и-эстетика">Визуальный тюнинг и эстетика</a></li><li><a href="#итоги-и-рекомендации-по-обслуживанию">Итоги и рекомендации по обслуживанию</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Скутер <em>Honda Dio 35</em> стал настоящей легендой среди любителей двухколесной техники благодаря своей надежности и простоте конструкции. Однако штатные настройки часто ограничивают потенциал этого аппарата, делая его медлительным на трассе и недостаточно резким при обгонах. Многие владельцы задаются вопросом, как превратить скучный городской транспорт в динамичный аппарат, способный разгоняться до 90-100 км/ч.</p>
+<p>Процесс доработки требует глубокого понимания механики и электроники. Просто поставить спортивный глушитель недостаточно для значительного прироста мощности. Необходимо комплексно подойти к вопросу, затрагивая систему впуска, сгорания, выхлопа и трансмиссии. В этой статье мы детально разберем каждый этап модернизации, чтобы вы могли получить максимальный результат без потери надежности.</p>
+
+<h2 id="модернизация-системы-впуска-и-выхлопа">Модернизация системы впуска и выхлопа</h2>
+<p>Первым шагом в создании быстрого скутера является улучшение газообмена в двигателе. Штатный глушитель и воздушный фильтр <em>Honda Dio 35</em> спроектированы с упором на экологичность и долговечность, а не на скорость. Воздушный фильтр в стоке сильно задушен, что ограничивает поступление кислорода в камеру сгорания.</p>
+<p>Замена стандартного воздушного фильтра на спортивный вариант с нулевым сопротивлением дает немедленный эффект. Однако В паре с ним необходимо установить спортивный выпускной коллектор и глушитель, которые обеспечивают правильное сечение для отвода выхлопных газов.</p>
+<p>Недостаточное сечение штатного коллектора создает обратное давление, мешающее двигателю дышать на высоких оборотах. Спортивные системы часто имеют увеличенный диаметр трубы и измененную форму резонатора. Это позволяет двигателю работать эффективнее в верхнем диапазоне оборотов, где и кроется запас мощности.</p>
+
+<ul>
+<li>🚀 Установка спортивного фильтра с нулевым сопротивлением</li>
+<li>🚀 Замена глушителя на прямоточный вариант с правильным резонатором</li>
+<li>🚀 Увеличение сечения выпускного коллектора для лучшей продувки</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: После установки спортивного глушителя и фильтра обязательно потребуется перенастройка карбюратора, иначе двигатель будет работать на обедненной смеси, что приведет к перегреву и прогару поршня.</p>
+</blockquote>
+
+<h2 id="доработка-вариатора-и-трансмиссии">Доработка вариатора и трансмиссии</h2>
+<p>Мощность двигателя бесполезна, если трансмиссия не может эффективно передать её на колесо. Вариатор скутера <em>Honda Dio 35</em> имеет свойство «залипать» в узком диапазоне оборотов, не позволяя двигателю раскручиваться до пика мощности. Для решения этой проблемы необходимо заменить штатные ролики на более легкие.</p>
+<p>Уменьшение веса роликов заставляет вариатор быстрее поднимать передаточное число, заставляя двигатель работать в более высоком диапазоне оборотов. Это дает отличный старт и резкий разгон. Однако слишком легкие ролики могут привести к тому, что скутер будет «зависать» на высоких оборотах, не набирая максимальной скорости.</p>
+<p>Второй важный элемент трансмиссии — ведущая звезда. Установка звезды с большим количеством зубьев позволит увеличить конечную скорость, но это снизит динамику разгона. Компромиссным вариантом часто становится комбинация легких роликов и звезды с увеличенным на один-два зуба количеством.</p>
+
+<ul>
+<li>💨 Замена роликов вариатора на облегченные (4-5 грамм)</li>
+<li>💨 Установка ведущей звезды с увеличенным количеством зубьев</li>
+<li>💨 Замена ремня вариатора на усиленный спортивный аналог</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой метод тюнинга вы считаете самым эффективным?</strong><ul><li>Увеличение объема двигателя</li><li>Доработка вариатора</li><li>Спортивный выхлоп</li><li>Тюнинг зажигания</li></ul></div></div>
+
+<h2 id="увеличение-объема-двигателя-и-доработка-цпг">Увеличение объема двигателя и доработка ЦПГ</h2>
+<p>Если вы хотите получить по-настоящему мощный аппарат, без увеличения рабочего объема двигателя не обойтись. Стандартный цилиндр скутера имеет объем 50 куб. см, что ограничивает его мощность законодательными рамками. Для серьезного тюнинга часто применяется расточка цилиндра или установка готового спортивного комплекта.</p>
+<p>Наиболее популярным решением является установка расточного комплекта объемом 70 или 80 кубов. Это требует качественной притирки клапанов и подбора поршневой группы. Важно также доработать головку цилиндра, увеличив каналы впуска и выпуска. Это называется «портированием», и оно значительно улучшает поток смеси.</p>
+<p>При увеличении объема неизбежно возрастает тепловая нагрузка на двигатель. Штатная система охлаждения может не справляться с новыми нагрузками, поэтому часто требуется установка дополнительного радиатора или доработка штатного. Игнорирование этого аспекта приведет к быстрому выходу из строя поршневой группы.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При расточке цилиндра необходимо строго соблюдать геометрию и использовать качественные хонинговальные камни, чтобы обеспечить идеальную приработку поршневых колец.</p>
+</blockquote>
+
+<p>Важным нюансом является подбор карбюратора под увеличенный объем. Штатный <code>Keihin</code> с диаметром жиклера 12 мм может просто не пропускать нужное количество топлива. Часто устанавливают карбюраторы с диаметром диффузора 19 мм или 21 мм, что требует тщательной настройки жиклеров.</p>
+
+<ul>
+<li>⚙️ Установка спортивного расточного комплекта (70-80 кубов)</li>
+<li>⚙️ Доработка каналов головки цилиндра (портирование)</li>
+<li>⚙️ Установка карбюратора увеличенного диаметра</li>
+</ul>
+
+<h2 id="система-зажигания-и-управление-оборотами">Система зажигания и управление оборотами</h2>
+<p>Даже самый мощный двигатель не раскроет свой потенциал без правильной системы зажигания. Штатный CDI (конденсаторный блок зажигания) на <em>Honda Dio 35</em> имеет ограничитель оборотов, который сбивает искру на высоких частотах вращения коленвала. Это сделано для защиты двигателя от разрушения, но мешает тюнингу.</p>
+<p>Установка разблокированного CDI или спортивного блока позволяет двигателю раскручиваться до 10 000 об/мин и выше. Это критически важно для спортивных двигателей с большим объемом. Однако нужно учитывать, что на низких оборотах раннее зажигание может вызвать детонацию и задиры.</p>
+
+<div class="checklist-block"><h4>☑️ Настройка системы зажигания</h4><label class="check-item"><input type="checkbox"><span>Проверить состояние свечи</span></label><label class="check-item"><input type="checkbox"><span>Установить спортивный CDI</span></label><label class="check-item"><input type="checkbox"><span>Отрегулировать угол опережения</span></label><label class="check-item"><input type="checkbox"><span>Проверить катушку зажигания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Свеча зажигания также играет роль. Для спортивного режима лучше использовать свечи с меньшим калильным числом, чтобы избежать перегрева. Также стоит обратить внимание на катушку зажигания, которая должна выдавать более мощный искровой разряд для надежного воспламенения обедненной смеси в спортивном режиме.</p>
+
+<details class="faq-item"><summary>Что такое разблокированный CDI?</summary><div class="faq-answer"><p>Разблокированный CDI — это блок управления зажиганием, из которого удален ограничитель оборотов. Это позволяет двигателю раскручиваться выше штатного предела, но требует осторожности в настройке.</p></div></details>
+
+<p>Иногда требуется доработка генератора, так как штатный может не выдерживать нагрузки от дополнительных электрических приборов или более мощной катушки зажигания. Установка усиленного генератора обеспечит стабильную работу электроники на высоких скоростях.</p>
+
+<h2 id="ходовая-часть-и-безопасность">Ходовая часть и безопасность</h2>
+<p>Увеличение мощности требует адекватной реакции на педаль газа и надежного торможения. Штатная подвеска скутера рассчитана на спокойную езду и быстро «пробивается» при агрессивном стиле вождения. Установка спортивных амортизаторов с регулировкой жесткости сделает езду комфортнее и безопаснее.</p>
+<p>Тормозная система также нуждается в доработке. Штатные колодки и диски могут не справляться с торможением на скоростях выше 80 км/ч. Рекомендуется установка переднего дискового тормоза с увеличенным суппортом или замена заднего барабана на дисковый.</p>
+<p>Покрышки должны соответствовать новым скоростным возможностям. Штатные шины часто имеют слабый корд и низкий индекс скорости. Замена их на качественные спортивные резину улучшит сцепление с дорогой и позволит уверенно проходить повороты.</p>
+
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Штатное решение</th>
+<th>Спортивное решение</th>
+<th>Эффект</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Амортизаторы</td>
+<td>Мягкие, без регулировки</td>
+<td>Спортивные, с регулировкой</td>
+<td>Стабильность на высокой скорости</td>
+</tr>
+<tr>
+<td>Тормоза</td>
+<td>Барабанные / Малый диск</td>
+<td>Дисковые, увеличенные</td>
+<td>Короткий тормозной путь</td>
+</tr>
+<tr>
+<td>Колеса</td>
+<td>Стандартный размер</td>
+<td>Усиленные диски</td>
+<td>Прочность при нагрузках</td>
+</tr>
+<tr>
+<td>Резина</td>
+<td>Экономичная, мягкая</td>
+<td>Спортивная, с кордом</td>
+<td>Улучшенное сцепление</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед установкой спортивных амортизаторов проверьте состояние сайлентблоков маятника, так как они быстро изнашиваются при увеличении нагрузок на подвеску.</p></div>
+
+<h2 id="визуальный-тюнинг-и-эстетика">Визуальный тюнинг и эстетика</h2>
+<p>Внешний вид скутера <em>Honda Dio 35</em> не менее важен, чем его технические характеристики. Стилизация под спортбайк или ретро-модель придает машине индивидуальный характер. Популярным решением является установка расширенных крыльев, спортивных обвесов и защитных сеток на фару.</p>
+<p>Освещение также можно модернизировать, заменив стандартную лампу на мощный ксенон или светодиодную оптику. Однако важно соблюдать баланс, чтобы не слепить встречных водителей. Установка подсветки днища и хромированных дисков добавляет футуристичности.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Внешний тюнинг не влияет на скорость, но значительно повышает удовольствие от управления и индивидуальность вашего скутера.</p></div>
+
+<p>Многие владельцы меняют руль на более широкий или, наоборот, спортивный низкий. Это меняет эргономику посадки и позволяет лучше управлять аппаратом на высоких скоростях. Сиденье также можно перешить или заменить на более удобное спортивное кресло с боковой поддержкой.</p>
+
+<ul>
+<li>🎨 Установка расширенных крыльев и спортивных обвесов</li>
+<li>🎨 Замена оптики на современные светодиодные или ксеноновые модули</li>
+<li>🎨 Установка хромированных элементов и подсветки днища</li>
+</ul>
+
+<h2 id="итоги-и-рекомендации-по-обслуживанию">Итоги и рекомендации по обслуживанию</h2>
+<p>После завершения всех этапов тюнинга <em>Honda Dio 35</em> требует особого внимания к обслуживанию. Двигатель, работающий на пределе возможностей, быстрее расходует масло и требует более частой замены. Рекомендуется менять масло каждые 500-700 км, используя только высококачественные синтетические смазки.</p>
+<p>Регулярно проверяйте натяжение ремня вариатора и состояние роликов. Износ этих деталей может привести к внезапной остановке двигателя или потере мощности в самый неподходящий момент. Также следите за температурой двигателя и состоянием системы охлаждения.</p>
+<p>Помните, что любой тюнинг — это изменение конструкции транспортного средства. В некоторых странах это может потребовать внесения изменений в документы или прохождения техосмотра. Будьте внимательны к законодательным нормам вашей страны при эксплуатации доработанного скутера.</p>
+
+<details class="faq-item"><summary>Частота замены масла в тюнингованном двигателе</summary><div class="faq-answer"><p>Для двигателя с увеличенным объемом и спортивным режимом работы интервал замены масла следует сократить до 500-700 км пробега, используя масла с допуском JASO MA2.</p></div></details>
+
+<p>Тюнинг — это процесс, который никогда не заканчивается. Вы можете постоянно совершенствовать свой скутер, экспериментировать с настройками карбюратора и вариатора, добиваясь идеального баланса между мощностью и управляемостью. Главное — не торопиться и делать все грамотно, используя качественные запчасти.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярное техническое обслуживание тюнингованного скутера — залог его долгой и надежной службы без критических поломок.</p></div>
+
+<details>
+<summary>Сколько стоит качественный тюнинг Honda Dio 35?</summary>
+<p>Стоимость зависит от выбранного комплекта запчастей и сложности работ. Базовый тюнинг (вариатор, выхлоп, фильтр) обойдется в сумму от 50 до 100 долларов. Полный тюнинг с увеличением объема двигателя может стоить от 200 до 500 долларов и выше, если использовать японские или итальянские комплектующие.</p>
+</details>
+
+<details>
+<summary>Можно ли тюнинговать Honda Dio 35 самостоятельно?</summary>
+<p>Да, многие работы можно выполнить самостоятельно, имея минимальный набор инструментов и навыки механики. Однако для расточки двигателя и настройки карбюратора лучше обратиться к профессионалам, так как ошибки могут привести к дорогостоящему ремонту.</p>
+</details>
+
+<details>
+<summary>Сколько можно добавить скорости после тюнинга?</summary>
+<p>При грамотном комплексном тюнинге (двигатель 70 кубов, вариатор, выхлоп) скорость может вырасти со штатных 60-65 км/ч до 90-100 км/ч. Динамика разгона также значительно улучшится.</p>
+</details>
+
+<details>
+<summary>Влияет ли тюнинг на надежность скутера?</summary>
+<p>Любое увеличение мощности снижает ресурс двигателя и трансмиссии. Тюнингованный скутер потребует более частого обслуживания и может иметь меньший срок службы без капитального ремонта по сравнению со стоковой версией.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#модернизация-системы-впуска-и-выхлопа">Модернизация системы впуска и выхлопа</a></li><li><a href="#доработка-вариатора-и-трансмиссии">Доработка вариатора и трансмиссии</a></li><li><a href="#увеличение-объема-двигателя-и-доработка-цпг">Увеличение объема двигателя и доработка ЦПГ</a></li><li><a href="#система-зажигания-и-управление-оборотами">Система зажигания и управление оборотами</a></li><li><a href="#ходовая-часть-и-безопасность">Ходовая часть и безопасность</a></li><li><a href="#визуальный-тюнинг-и-эстетика">Визуальный тюнинг и эстетика</a></li><li><a href="#итоги-и-рекомендации-по-обслуживанию">Итоги и рекомендации по обслуживанию</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-stepvagon-ili-tojota-noakh-chto-luchshe.html" class="related-card">Хонда Степвагон или Тойота Ноах: честное сравнение, выбор и нюансы</a></li><li><a href="/articles/t/to/tormoznye-diski-khonda-stepvagon.html" class="related-card">Тормозные диски Honda Stepwgn: выбор, замена и ремонт</a></li><li><a href="/articles/k/kh/khonda-afrika-tvin-1100-otzyvy-vladeltsev.html" class="related-card">Honda Africa Twin 1100: честные отзывы владельцев и разбор нюансов</a></li><li><a href="/articles/m/ma/maksimalnaya-skorost-honda-cr-85.html" class="related-card">Максимальная скорость Honda CR 85: Реальные показатели и тюнинг</a></li><li><a href="/articles/h/ho/honda-cbr-600-rr-razgon-do-100.html" class="related-card">Honda CBR 600 RR: разгон до 100 км/ч, секунды и секреты</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-stepvagon-ili-tojota-noakh-chto-luchshe.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Степвагон или Тойота Ноах: честное сравнение, выбор и нюансы</span><span class="related-bottom-desc">Сравниваем Хонду Степвагон и Тойоту Ноах по надежности, комфорту и цене. Узнайте, какой минивэн лучш</span></a><a href="/articles/t/to/tormoznye-diski-khonda-stepvagon.html" class="related-bottom-card"><span class="related-bottom-title">Тормозные диски Honda Stepwgn: выбор, замена и ремонт</span><span class="related-bottom-desc">Полный гид по тормозным дискам для Honda Stepwgn. Обзор брендов, признаки износа, таблица артикулов </span></a><a href="/articles/k/kh/khonda-afrika-tvin-1100-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Honda Africa Twin 1100: честные отзывы владельцев и разбор нюансов</span><span class="related-bottom-desc">Полный обзор Honda Africa Twin 1100 CRF1100L: реальные отзывы владельцев, плюсы и минусы, надежность</span></a><a href="/articles/m/ma/maksimalnaya-skorost-honda-cr-85.html" class="related-bottom-card"><span class="related-bottom-title">Максимальная скорость Honda CR 85: Реальные показатели и тюнинг</span><span class="related-bottom-desc">Какая максимальная скорость у Honda CR 85? Анализ стоковых характеристик, влияние веса пилота и наст</span></a><a href="/articles/h/ho/honda-cbr-600-rr-razgon-do-100.html" class="related-bottom-card"><span class="related-bottom-title">Honda CBR 600 RR: разгон до 100 км/ч, секунды и секреты</span><span class="related-bottom-desc">Анализ динамики Honda CBR 600 RR. Время разгона до 100 км/ч, влияние модификаций, сравнение с конкур</span></a><a href="/articles/k/kh/khonda-x-adv-750-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Honda X-ADV 750: Отзывы владельцев и экспертный разбор</span><span class="related-bottom-desc">Честные отзывы о Honda X-ADV 750: плюсы, минусы, особенности эксплуатации, расход топлива и сравнени</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>SRS Honda: что это такое и как работает система безопасности — Honda Library</title>
+    <meta name="description" content="Разбираем систему SRS Honda: расшифровка аббревиатуры, принцип работы подушек безопасности, датчики удара и что делать при загорании лампочки на приборной панели.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/sr/srs-honda-chto-eto.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SRS Honda: что это такое и как работает система безопасности">
+    <meta property="og:description" content="Разбираем систему SRS Honda: расшифровка аббревиатуры, принцип работы подушек безопасности, датчики удара и что делать при загорании лампочки на приборной панели.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/авто/">Авто</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">SRS Honda: что это такое и как работает система безопасности</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>SRS Honda: что это такое, как работает и почему загорается индикатор</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#расшифровка-термина-и-назначение-системы">Расшифровка термина и назначение системы</a></li><li><a href="#основные-компоненты-и-принцип-работы">Основные компоненты и принцип работы</a></li><li><a href="#диагностика-неисправностей-и-индикатор-на-панели">Диагностика неисправностей и индикатор на панели</a></li><li><a href="#типичные-проблемы-и-способы-их-устранения">Типичные проблемы и способы их устранения</a></li><li><a href="#технические-характеристики-и-совместимость">Технические характеристики и совместимость</a></li><li><a href="#правила-эксплуатации-и-безопасность">Правила эксплуатации и безопасность</a></li><li><a href="#специфика-обслуживания-и-замены-модулей">Специфика обслуживания и замены модулей</a></li><li><a href="#вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Аббревиатура <strong>SRS</strong>, которую вы видите на руле или боковых панелях салона автомобиля <em>Honda</em>, часто вызывает вопросы у владельцев и потенциальных покупателей. Многие ошибочно полагают, что это название конкретной модели или какой-то эксклюзивной опции, однако на самом деле это глобальный стандарт безопасности. Система SRS (Supplemental Restraint System) переводится как «дополнительная система сдерживания» и представляет собой комплекс пассивных средств защиты водителя и пассажиров.</p>
+
+<p>В автомобилях <em>Honda</em> эта система играет критическую роль при возникновении аварийной ситуации. Она работает в тандеме с ремнями безопасности, которые являются основным средством защиты, но именно SRS обеспечивает дополнительную страховку при сильных ударах. Понимание принципов её работы и своевременная реакция на сигналы датчиков могут спасти жизнь и сохранить здоровье в случае ДТП.</p>
+
+<h2 id="расшифровка-термина-и-назначение-системы">Расшифровка термина и назначение системы</h2>
+<p>Слово «Supplemental» (дополнительная) в названии системы <strong>SRS</strong> неслучайно. Оно подчеркивает, что подушки безопасности не заменяют ремни, а дополняют их. Без пристегнутых ремней эффективность работы подушек резко падает, а в некоторых случаях сам воздух может травмировать пассажира из-за силы удара при раскрытии. В моделях <em>Honda Civic</em> и <em>Accord</em> инженеры настроили алгоритмы срабатывания так, чтобы минимизировать риски.</p>
+
+<p>Основная задача системы — смягчить удар человека о жесткие элементы салона при резком замедлении автомобиля. Датчики фиксируют перегрузку, мгновенно обрабатывают данные и инициируют выстрел газогенератора. В результате подушка надувается за доли секунды, создавая мягкий барьер между телом и рулем или приборной панелью.</p>
+<p>Важно понимать, что система <strong>SRS Honda</strong> не срабатывает при всех типах столкновений. Она настроена на определенные векторы удара и силу замедления, чтобы избежать ложных срабатываний при обычных поездках по неровной дороге.</p>
+
+<ul>
+  <li>🛡️ Защита головы и грудной клетки при фронтальном ударе.</li>
+  <li>🚗 Предотвращение вылета пассажиров из салона при боковом столкновении.</li>
+  <li>🛑 Снижение травматизма при переворачивании автомобиля (подушки шторки).</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Никогда не пытайтесь самостоятельно разбирать рулевое колесо или боковые панели, где установлены подушки безопасности. Даже после отключения аккумулятора в модулях может сохраняться заряд, достаточный для случайного срабатывания.</blockquote>
+
+<h2 id="основные-компоненты-и-принцип-работы">Основные компоненты и принцип работы</h2>
+<p>Архитектура системы в автомобилях <em>Honda</em> состоит из нескольких ключевых узлов, связанных общей электрической цепью. Центральным элементом является блок управления <strong>SRS</strong>, который постоянно опрашивает датчики ускорения и ремней безопасности. Если параметры выходят за допустимые нормы, блок подает сигнал на пиропатроны.</p>
+
+<p>Газогенераторы содержат твердое топливо, которое при поджигании выделяет инертный газ, наполняющий подушку. Этот процесс происходит настолько быстро, что человек даже не успевает осознать, что произошло. После раскрытия подушки системы <em>Honda</em> оснащены специальными клапанами для быстрого выхода газа, чтобы не создавать избыточное давление на тело.</p>
+<p>Современные версии <strong>SRS</strong> включают в себя множество элементов: фронтальные подушки, боковые подушки, шторки безопасности, а также натяжители ремней. Каждый элемент имеет свой датчик и пиропатрон, управляемый индивидуально блоком.</p>
+
+<ul>
+  <li>📡 Датчики удара: расположены спереди, сбоку и иногда в центре салона.</li>
+  <li>🧠 Блок управления: «мозг» системы, анализирующий данные со всех сенсоров.</li>
+  <li>🔋 Аккумуляторная батарея: обеспечивает питание, даже если двигатель заглушен.</li>
+</ul>
+
+<div class="attention-box attention-info"><div><strong>📊 Как часто вы проверяете индикатор SRS на приборной панели?</strong><ul><li>Ежедневно при запуске</li><li>Только когда он загорается</li><li>Никогда не обращаю внимания</li><li>Раз в месяц</li></ul></div></div>
+
+<h2 id="диагностика-неисправностей-и-индикатор-на-панели">Диагностика неисправностей и индикатор на панели</h2>
+<p>Главным индикатором исправности системы является желтая лампочка с надписью <strong>SRS</strong> или изображением человека с подушкой. При включении зажигания она должна загореться на несколько секунд для проверки работоспособности всех цепей, а затем погаснуть. Если лампа не загорается вовсе или горит постоянно после запуска двигателя — это верный признак неисправности.</p>
+
+<p>Причины появления ошибки могут быть самыми разными: от банального окисления контактов под сиденьем до выхода из строя самого блока управления. Владельцы <em>Honda CR-V</em> и <em>Pilot</em> часто сталкиваются с проблемой плохого контакта в шлейфе под сиденьем из-за вибраций при езде.</p>
+
+<p>Игнорирование горящей лампочки опасно, так как в случае аварии система может не сработать. Диагностика требует подключения специального сканера OBDII, который считывает код ошибки из памяти блока <strong>SRS</strong>.</p>
+
+<blockquote>⚠️ Внимание: Если лампа SRS горит постоянно, система считается отключенной. Водитель теряет защиту подушек безопасности и натяжителей ремней до момента устранения неисправности.</blockquote>
+
+<ul>
+  <li>❌ Окисление контактов под сиденьями или в дверных проемах.</li>
+  <li>❌ Неисправность датчика удара или самого блока управления.</li>
+  <li>❌ Сбой в электрической цепи после некачественного ремонта.</li>
+</ul>
+
+<h2 id="типичные-проблемы-и-способы-их-устранения">Типичные проблемы и способы их устранения</h2>
+<p>Одной из самых распространенных проблем в автомобилях <em>Honda</em> является отказ контактных групп под передними сиденьями. При регулировке сидений провода могут перетираться или окисляться, что приводит к разрыву цепи. В таких случаях ошибка может быть случайной и появляться только при движении по неровностям.</p>
+
+<p>Еще одна частая проблема — это износ спирального кабеля рулевой колонки. Этот элемент отвечает за передачу сигнала от блока управления к подушке безопасности на руле. Со временем проводка внутри кабеля переламывается, и система фиксирует обрыв цепи.</p>
+<p>Для устранения этих проблем часто требуется не замена всего узла, а чистка контактов или замена конкретного разъема. Однако, если ошибка сохраняется, необходимо провести глубокую диагностику с помощью дилерского оборудования.</p>
+
+<ul>
+  <li>🔧 Замена спирального кабеля рулевой колонки.</li>
+  <li>🔧 Чистка и обработка контактов под сиденьями.</li>
+  <li>🔧 Перепрошивка блока управления для устранения программных сбоев.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед началом любых работ с электрикой автомобиля обязательно отключите отрицательную клемму аккумулятора и подождите минимум 10 минут для разряда конденсаторов в блоке SRS.</p></div>
+
+<h2 id="технические-характеристики-и-совместимость">Технические характеристики и совместимость</h2>
+<p>Система <strong>SRS</strong> в разных моделях <em>Honda</em> может иметь разное количество подушек. В базовых версиях часто устанавливаются только фронтальные подушки, тогда как в топовых комплектациях доступны боковые и шторки. Важно учитывать, что все датчики и модули должны быть совместимы с конкретной версией программного обеспечения блока управления.</p>
+
+<p>При замене компонентов после ДТП крайне важно использовать оригинальные детали или качественные аналоги, сертифицированные производителем. Установка неоригинальных подушек может привести к тому, что они сработают слишком поздно или, наоборот, преждевременно.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Компонент</th>
+      <th>Тип</th>
+      <th>Расположение</th>
+      <th>Особенности</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Фронтальная подушка</td>
+      <td>Двухступенчатая</td>
+      <td>Руль и панель</td>
+      <td>Срабатывает в зависимости от силы удара</td>
+    </tr>
+    <tr>
+      <td>Боковая подушка</td>
+      <td>Одноступенчатая</td>
+      <td>Спинка сиденья</td>
+      <td>Защита таза и грудной клетки</td>
+    </tr>
+    <tr>
+      <td>Шторка безопасности</td>
+      <td>Гибридная</td>
+      <td>Дверной проем</td>
+      <td>Защита головы при перевороте</td>
+    </tr>
+    <tr>
+      <td>Натяжитель ремня</td>
+      <td>Пиротехнический</td>
+      <td>Крепление ремня</td>
+      <td>Мгновенно затягивает ремень при ударе</td>
+    </tr>
+  </tbody>
+</table>
+
+<details class="faq-item"><summary>Что происходит после срабатывания подушек?</summary><div class="faq-answer"><p>После срабатывания подушек безопасности система фиксирует код аварии в памяти. Блок управления SRS переходит в режим блокировки, и подушки больше не сработают. Для восстановления работоспособности необходимо заменить все сработавшие элементы (подушки, натяжители, датчики) и сбросить память блока управления с помощью специального оборудования. Просто заменить подушки недостаточно, так как блок может считать их уже использованными.</p></div></details>
+
+<h2 id="правила-эксплуатации-и-безопасность">Правила эксплуатации и безопасность</h2>
+<p>Правильная эксплуатация автомобиля <em>Honda</em> напрямую влияет на надежность системы <strong>SRS</strong>. Никогда не устанавливайте чехлы на сиденья, если они не сертифицированы для использования с боковыми подушками безопасности. Плотная ткань может помешать раскрытию подушки, что сделает её бесполезной в критический момент.</p>
+
+<p>Детям до 12 лет категорически запрещается сидеть на переднем сиденье, если там установлена активная подушка безопасности. Сила выброса подушки может нанести серьезные травмы ребенку. Если у вас есть необходимость перевозить детей спереди, отключите подушку с помощью специального ключа в замке.</p>
+<p>Также важно следить за состоянием ремней безопасности. Если ремень порван или механизм блокировки неисправен, система <strong>SRS</strong> может не сработать корректно, так как датчики не зафиксируют правильное положение пассажира.</p>
+
+<ul>
+  <li>👶 Не сажайте детей на переднее сиденье с активными подушками.</li>
+  <li>🧥 Используйте только специальные чехлы с маркировкой SRS.</li>
+  <li>🔍 Регулярно проверяйте целостность ремней и их механизмов.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Проверка системы перед поездкой</h4><label class="check-item"><input type="checkbox"><span>Включить зажигание и проверить лампу SRS</span></label><label class="check-item"><input type="checkbox"><span>Убедиться, что лампа погасла через 5-7 секунд</span></label><label class="check-item"><input type="checkbox"><span>Проверить, что все ремни застегиваются и отстегиваются</span></label><label class="check-item"><input type="checkbox"><span>Убедиться, что сиденья установлены правильно</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная проверка исправности системы SRS и своевременное устранение ошибок — это гарантия того, что в аварийной ситуации все элементы сработают как часы.</p></div>
+
+<h2 id="специфика-обслуживания-и-замены-модулей">Специфика обслуживания и замены модулей</h2>
+<p>Если система <strong>SRS</strong> сработала в результате аварии, восстановление автомобиля требует замены всех пиротехнических элементов. Блок управления, как правило, также подлежит замене или перепрограммированию, так как он содержит информацию о сработавших элементах. Владельцам <em>Honda Odyssey</em> и других крупных моделей стоит быть особенно внимательными при выборе сервисов.</p>
+
+<p>Многие владельцы пытаются сэкономить и восстанавливают старые подушки, что является грубым нарушением техники безопасности. Пиропатроны имеют срок годности, и после срабатывания их невозможно восстановить. Использование старых модулей может привести к отказу системы при новой аварии.</p>
+<p>При замене модулей важно соблюдать порядок подключения. Сначала подключаются датчики, затем блок управления, и только в самую последнюю очередь — аккумуляторная батарея. Это предотвращает ложные срабатывания.</p>
+
+<blockquote>⚠️ Внимание: Не пытайтесь сбрасывать ошибку SRS простым отключением аккумулятора. Это не устранит причину неисправности, а лишь временно скроет ошибку, при этом система останется неработоспособной.</blockquote>
+
+<ul>
+  <li>🔄 Полная замена сработавших подушек и натяжителей.</li>
+  <li>🔄 Диагностика проводки на предмет обрывов и коротких замыканий.</li>
+  <li>🔄 Сброс кодов ошибок и калибровка датчиков удара.</li>
+</ul>
+
+<details class="faq-item"><summary>Можно ли сбросить ошибку SRS без сканера?</summary><div class="faq-answer"><p>В редких случаях, если ошибка вызвана временным сбоем или плохим контактом, её можно сбросить, отключив аккумулятор на длительное время и восстановив соединение. Однако для большинства ошибок, связанных с датчиками или блоком управления, необходим профессиональный диагностический сканер, способный общаться с блоком SRS по протоколу Honda.</p></div></details>
+
+<h2 id="вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</h2>
+
+<details>
+  <summary>Почему загорается лампа SRS при повороте руля?</summary>
+  <p>Это часто указывает на износ спирального кабеля (шлейфа) рулевой колонки. При повороте провода внутри кабеля натягиваются, и если есть повреждение, контакт пропадает, и блок управления фиксирует ошибку.</p>
+</details>
+
+<details>
+  <summary>Можно ли ездить с горящей лампой SRS?</summary>
+  <p>Ездить можно, но это небезопасно. Горящая лампа означает, что система подушек безопасности отключена. В случае аварии подушки не сработают, что значительно повышает риск травм.</p>
+</details>
+
+<details>
+  <summary>Как часто нужно менять подушки безопасности?</summary>
+  <p>Подушки безопасности не имеют срока годности при условии, что они не сработали. Однако после аварии их необходимо заменить. Также рекомендуется проверять состояние проводки при большом пробеге.</p>
+</details>
+
+<details>
+  <summary>Что делать, если после замены аккумулятора загорелась лампа SRS?</summary>
+  <p>Возможно, контакт был плохим при подключении, или произошел скачок напряжения. Попробуйте отключить клеммы на 10 минут и подключить снова. Если ошибка не исчезнет, потребуется диагностика сканером.</p>
+</details>
+
+<details>
+  <summary>Влияет ли установка сигнализации на работу SRS?</summary>
+  <p>Да, некачественная установка сигнализации с подключением к цепи подушек безопасности может вызвать ложные срабатывания или отказ системы. Всегда используйте сертифицированных установщиков.</p>
+</details>
+
+<p>Понимание того, что такое <strong>SRS Honda</strong>, позволяет владельцу автомобиля принимать взвешенные решения regarding безопасности. Это сложная инженерная система, требующая профессионального подхода к обслуживанию. Игнорирование сигналов о неисправности может стоить дорого, как в финансовом плане, так и в плане здоровья. Регулярная диагностика и использование качественного обслуживания — залог того, что система сработает именно тогда, когда это необходимо.</p>
+<p>Заботясь о состоянии системы безопасности, вы обеспечиваете защиту себе и своим близким. Не забывайте, что технологии <em>Honda</em> созданы для того, чтобы минимизировать последствия аварий, но только при условии их исправного состояния.</p></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#расшифровка-термина-и-назначение-системы">Расшифровка термина и назначение системы</a></li><li><a href="#основные-компоненты-и-принцип-работы">Основные компоненты и принцип работы</a></li><li><a href="#диагностика-неисправностей-и-индикатор-на-панели">Диагностика неисправностей и индикатор на панели</a></li><li><a href="#типичные-проблемы-и-способы-их-устранения">Типичные проблемы и способы их устранения</a></li><li><a href="#технические-характеристики-и-совместимость">Технические характеристики и совместимость</a></li><li><a href="#правила-эксплуатации-и-безопасность">Правила эксплуатации и безопасность</a></li><li><a href="#специфика-обслуживания-и-замены-модулей">Специфика обслуживания и замены модулей</a></li><li><a href="#вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/m/ma/maslo-motornoe-khonda-0w20.html" class="related-card">Моторное масло Honda 0W-20: Полное руководство по выбору и замене</a></li><li><a href="/articles/k/kh/khonda-frid-plyus-otzyvy-vladeltsev.html" class="related-card">Honda Freed Plus: честные отзывы владельцев, плюсы и минусы</a></li><li><a href="/articles/r/re/rejlingi-na-honda-stream.html" class="related-card">Рейлинги на Honda Stream: выбор, монтаж и совместимость</a></li><li><a href="/articles/t/to/tojota-akva-ili-khonda-fit.html" class="related-card">Тойота Аква или Хонда Фит: полное сравнение гибридов</a></li><li><a href="/articles/b/br/brake-hold-honda-chto-eto.html" class="related-card">Система Brake Hold на Honda: принцип работы, как включить и отключить</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/m/ma/maslo-motornoe-khonda-0w20.html" class="related-bottom-card"><span class="related-bottom-title">Моторное масло Honda 0W-20: Полное руководство по выбору и замене</span><span class="related-bottom-desc">Всё о синтетическом масле Honda 0W-20: характеристики, совместимость с двигателями, инструкция по за</span></a><a href="/articles/k/kh/khonda-frid-plyus-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Honda Freed Plus: честные отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Полный обзор Honda Freed Plus по отзывам реальных владельцев. Расход топлива, надежность мотора, про</span></a><a href="/articles/r/re/rejlingi-na-honda-stream.html" class="related-bottom-card"><span class="related-bottom-title">Рейлинги на Honda Stream: выбор, монтаж и совместимость</span><span class="related-bottom-desc">Полный гид по установке рейлингов на Honda Stream. Обзор совместимости, типы креплений, инструкция п</span></a><a href="/articles/t/to/tojota-akva-ili-khonda-fit.html" class="related-bottom-card"><span class="related-bottom-title">Тойота Аква или Хонда Фит: полное сравнение гибридов</span><span class="related-bottom-desc">Сравниваем Toyota Aqua и Honda Fit Hybrid. Разбор двигателей, надежности, стоимости владения и ликви</span></a><a href="/articles/b/br/brake-hold-honda-chto-eto.html" class="related-bottom-card"><span class="related-bottom-title">Система Brake Hold на Honda: принцип работы, как включить и отключить</span><span class="related-bottom-desc">Подробный разбор функции Brake Hold в автомобилях Honda. Узнайте, как работает удержание тормоза, ка</span></a><a href="/articles/r/ra/razmer-shin-honda-stepwgn-rp3.html" class="related-bottom-card"><span class="related-bottom-title">Размер шин для Honda Stepwgn RP3: Полная таблица и рекомендации</span><span class="related-bottom-desc">Узнайте штатный размер колес для Honda Stepwgn RP3. Таблица давления, зимние и летние варианты, влия</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

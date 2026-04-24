@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Ошибка P0847 Honda CR-V 3: Диагностика и ремонт трансмиссии — Honda Library</title>
+    <meta name="description" content="Полный разбор кода ошибки P0847 на Honda CR-V 3 поколения. Причины, симптомы, способы диагностики датчика давления трансмиссионной жидкости и ремонт.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/r0/r0847-oshibka-khonda-srv-3.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ошибка P0847 Honda CR-V 3: Диагностика и ремонт трансмиссии">
+    <meta property="og:description" content="Полный разбор кода ошибки P0847 на Honda CR-V 3 поколения. Причины, симптомы, способы диагностики датчика давления трансмиссионной жидкости и ремонт.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Ошибка P0847 Honda CR-V 3: Диагностика и ремонт трансмиссии</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Ошибка P0847 Honda CR-V 3: Диагностика и ремонт трансмиссии</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-означает-код-p0847-в-системе-управления-трансмиссией">Что означает код P0847 в системе управления трансмиссией</a></li><li><a href="#основные-причины-возникновения-неисправности">Основные причины возникновения неисправности</a></li><li><a href="#симптомы-и-поведение-автомобиля-при-ошибке">Симптомы и поведение автомобиля при ошибке</a></li><li><a href="#диагностика-и-проверка-электрической-цепи">Диагностика и проверка электрической цепи</a></li><li><a href="#гидравлическая-диагностика-и-проверка-давления">Гидравлическая диагностика и проверка давления</a></li><li><a href="#способы-устранения-неисправности-и-ремонт">Способы устранения неисправности и ремонт</a></li><li><a href="#профилактика-и-обслуживание-трансмиссии">Профилактика и обслуживание трансмиссии</a></li><li><a href="#таблица-характеристик-и-спецификаций">Таблица характеристик и спецификаций</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Двигатель вашего <em>Honda CR-V</em> третьего поколения может внезапно включить индикатор <strong>Check Engine</strong>, сигнализируя о серьезной проблеме в работе гидротрансформатора или автоматической коробки передач. Код <strong>P0847</strong> указывает на низкое давление в контуре жидкости автоматической трансмиссии, что чаще всего связано с неисправностью датчика давления или засорением гидроблока. Игнорирование этой неисправности может привести к полному выходу из строя дорогостоящего агрегата, поэтому диагностика должна быть проведена немедленно.</p>
+
+<p>Наиболее часто этот сбой проявляется при движении на третьей передаче или в момент переключения с третьей на четвертую, когда нагрузка на трансмиссию достигает пика. Водитель может ощущать рывки, пробуксовку или даже полную потерю тяги, что делает дальнейшее движение опасным. Понимание природы ошибки и последовательность действий по её устранению помогут вам сэкономить время и средства на ремонте у дилера.</p>
+
+<h2 id="что-означает-код-p0847-в-системе-управления-трансмиссией">Что означает код P0847 в системе управления трансмиссией</strong></h2>
+
+<p>Код <strong>P0847</strong> классифицируется как неисправность цепи датчика давления трансмиссионной жидкости (Transmission Fluid Pressure Sensor/Switch "B" Circuit Low). В конструкции <em>Honda CR-V</em> третьего поколения используется сложная система гидравлического управления, где электроника постоянно мониторит давление масла в различных контурах. Если блок управления <strong>TCM</strong> (Transmission Control Module) фиксирует напряжение сигнала ниже допустимого порога, он записывает эту ошибку и может перевести коробку в аварийный режим.</p>
+
+<p>Этот параметр критически важен для работы фрикционов и тормозных лент, которые отвечают за переключение передач. Низкое давление означает, что элементы сцепления не прижимаются с необходимой силой, что ведет к их проскальзыванию и перегреву. Система безопасности автомобиля пытается защитить механику, ограничивая диапазон передач и фиксируя коробку на определенной ступени, чтобы предотвратить разрушение шестерен.</p>
+
+<p>Важно понимать, что ошибка не всегда означает физическую поломку самого датчика. Часто проблема кроется в электрической цепи: окисление контактов, повреждение проводки или плохой контакт в разъеме могут имитировать низкое давление. Однако, если исключить электрические причины, проблема почти наверняка лежит в плоскости гидравлики или механики агрегата.</p>
+
+<h2 id="основные-причины-возникновения-неисправности">Основные причины возникновения неисправности</h2>
+
+<p>Самой распространенной причиной появления кода <strong>P0847</strong> на <em>Honda CR-V</em> является выход из строя самого датчика давления трансмиссии. Со временем его мембрана деформируется, а электронный элемент теряет чувствительность, выдавая неверные показания даже при нормальном давлении масла. Это устройство находится непосредственно в корпусе коробки передач и подвергается постоянному воздействию высоких температур и вибраций.</p>
+
+<p>Нарушение целостности проводки также является частым виновником сбоя. В подкапотном пространстве жгуты проводов проходят рядом с горячими элементами двигателя, и изоляция со временем может пересыхать и трескаться. Обрыв цепи или короткое замыкание на "массу" приводит к тому, что сигнал от датчика не доходит до блока управления, который интерпретирует это как критически низкое давление.</p>
+
+<p>Гидравлическая система может быть загрязнена продуктами износа фрикционов или металлической стружкой. Если масляный фильтр <strong>ATF</strong> забит, масло не может свободно циркулировать, создавая реальное падение давления. В таких случаях замена датчика не решит проблему, так как причина кроется в засорении каналов гидроблока или износе масляного насоса.</p>
+
+<ul>
+<li>💥 Неисправный датчик давления жидкости (Transmission Fluid Pressure Sensor)</li>
+<li>⚡ Обрыв или короткое замыкание в жгуте проводки датчика</li>
+<li>🛢️ Засорение фильтра или канала гидроблока продуктами износа</li>
+<li>🔧 Износ масляного насоса трансмиссии</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Если на приборной панели горит индикатор неисправности двигателя, а при движении ощущаются рывки, немедленно остановитесь и вызовите эвакуатор. Продолжение эксплуатации с ошибкой P0847 может привести к капитальному ремонту коробки передач.</blockquote>
+
+<h2 id="симптомы-и-поведение-автомобиля-при-ошибке">Симптомы и поведение автомобиля при ошибке</h2>
+
+<p>Первым и самым очевидным признаком проблемы является загорание лампы <strong>Check Engine</strong> на приборной панели. В некоторых случаях может мигнуть индикатор передачи или загореться значок трансмиссии, указывающий на необходимость срочной диагностики. Компьютерная диагностика сразу покажет код <strong>P0847</strong>, который нельзя просто стереть и забыть — он вернется после нескольких циклов работы двигателя, если причина не устранена.</p>
+
+<p>В процессе движения вы можете заметить, что автомобиль перестал переключаться на высшие передачи. Коробка может "застрять" на третьей передаче, не позволяя разогнаться выше 80 км/ч, или переключаться с сильными ударами и рывками. Это защитный механизм, который предотвращает дальнейшее повреждение фрикционных дисков из-за недостаточного давления масла.</p>
+
+<p>Поведение автомобиля может меняться в зависимости от температуры трансмиссионной жидкости. Холодная трансмиссия может работать нормально, но при прогреве давление падает, и симптомы становятся более выраженными. Это характерный признак износа насоса или проблем с вязкостью масла, когда оно становится слишком жидким при нагреве и не может создать необходимое давление.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Заметили ли вы рывки при переключении передач?</strong><ul><li>Да, сильные</li><li>Да, слабые</li><li>Нет, работает плавно</li><li>Не знаю</li></ul></div></div>
+
+<h2 id="диагностика-и-проверка-электрической-цепи">Диагностика и проверка электрической цепи</h2>
+
+<p>Начинать диагностику необходимо с визуального осмотра жгута проводов, идущего к датчику давления. Часто причина кроется в поврежденной изоляции или окисленных контактах в разъеме. Используйте мультиметр для проверки наличия напряжения питания на разъеме датчика и проверьте целостность цепи на "массу". Если проводка в порядке, переходите к проверке самого датчика.</p>
+
+<p>Для проверки датчика давления необходимо измерить его сопротивление и сравнить полученные значения с техническими нормами, указанными в сервисной книге <em>Honda</em>. Если сопротивление выходит за допустимые пределы или отсутствует, датчик подлежит замене. Также можно проверить работу датчика, подав на него питание и измерив изменение выходного напряжения при изменении давления (если есть возможность подключения манометра).</p>
+
+<p>Важно не забыть проверить блок управления трансмиссией <strong>TCM</strong>. В редких случаях проблема может быть в самом модуле, который некорректно обрабатывает поступающие сигналы. Однако это случается редко, и чаще всего проблема решается заменой датчика или восстановлением проводки.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика электрической цепи</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр жгута проводов</span></label><label class="check-item"><input type="checkbox"><span>Проверка напряжения питания датчика</span></label><label class="check-item"><input type="checkbox"><span>Измерение сопротивления датчика</span></label><label class="check-item"><input type="checkbox"><span>Проверка контакта массы</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="гидравлическая-диагностика-и-проверка-давления">Гидравлическая диагностика и проверка давления</h2>
+
+<p>Если электрическая цепь исправна, следующим шагом станет проверка реального давления масла в трансмиссии. Для этого необходимо подключить манометр к соответствующему разъему на корпусе коробки передач и замерить давление в разных режимах работы. Это позволит понять, является ли проблема механической или датчик просто "врет".</p>
+
+<p>При низком давлении в контуре "B" (который контролируется этим датчиком) необходимо проверить состояние масляного фильтра и гидроблока. Если фильтр забит, его замена может восстановить нормальное давление. В более сложных случаях требуется снятие и чистка гидроблока, а также проверка соленоидов на предмет заклинивания или износа.</p>
+
+<ul>
+<li>🔧 Проверка давления масла с помощью манометра</li>
+<li>🧼 Замена или очистка масляного фильтра трансмиссии</li>
+<li>🔍 Диагностика соленоидов и гидроблока</li>
+<li>🛢️ Анализ состояния трансмиссионной жидкости</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Если давление в норме, но ошибка P0847 все равно появляется, скорее всего, неисправен датчик давления. Не пытайтесь "лечить" коробку заменой масла, если проблема в электрике или самом датчике.</blockquote>
+
+<h2 id="способы-устранения-неисправности-и-ремонт">Способы устранения неисправности и ремонт</h2>
+
+<p>Самый простой и часто эффективный способ устранения ошибки P0847 — это замена датчика давления трансмиссии. При выборе запчасти лучше отдавать предпочтение оригинальным деталям <em>Honda</em> или качественным аналогам от проверенных производителей. Дешевые китайские датчики могут прослужить недолго и снова вызвать появление ошибки.</p>
+
+<details class="faq-item"><summary>Как правильно заменить датчик давления?</summary><div class="faq-answer"><p>1. Снимите аккумуляторную батарею для удобства доступа. 2. Отсоедините электрический разъем от датчика. 3. Открутите датчик ключом на 10мм. 4. Установите новый датчик, затянув его с рекомендуемым моментом. 5. Подключите разъем и установите АКБ обратно. 6. Сбросьте ошибку сканером.</p></div></details>
+
+<p>В случае, если проблема вызвана засорением гидроблока, потребуется его снятие, разборка и тщательная очистка всех каналов и соленоидов. Иногда требуется замена соленоидов давления или ремонт масляного насоса. Это более трудоемкий процесс, требующий квалификации и специального оборудования.</p>
+
+<p>Если проблема кроется в износе масляного насоса, потребуется полная переборка трансмиссии. Это дорогостоящий ремонт, который часто проводится в специализированных мастерских. В таких случаях важно тщательно проверить состояние всех фрикционов и шестерен, чтобы избежать повторных поломок.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед заменой датчика давления обязательно очистите место его установки от грязи и масла, чтобы не допустить попадания загрязнений внутрь коробки передач при монтаже.</p></div>
+
+<h2 id="профилактика-и-обслуживание-трансмиссии">Профилактика и обслуживание трансмиссии</h2>
+
+<p>Чтобы избежать появления ошибки P0847 в будущем, необходимо регулярно проверять уровень и состояние трансмиссионной жидкости. Масло должно быть чистым, без примесей металлической стружки и запаха гари. Если жидкость потемнела или имеет запах гари, это сигнал о том, что фрикционы изнашиваются и требуется срочная замена масла и фильтра.</p>
+
+<p>Своевременная замена масла и фильтра — лучший способ продлить жизнь трансмиссии <em>Honda CR-V</em>. Рекомендуется проводить эту процедуру каждые 40-50 тысяч километров пробега, особенно если вы часто ездите в городском режиме с частыми пробками. Использование качественного масла, соответствующего спецификациям <em>Honda</em>, также критически важно для работы гидротрансформатора.</p>
+
+<ul>
+<li>🛢️ Регулярная замена трансмиссионной жидкости и фильтра</li>
+<li>🌡️ Контроль температуры трансмиссии при движении</li>
+<li>🔧 Своевременная диагностика при появлении первых симптомов</li>
+<li>🚫 Избегание перегрузок и резких стартов</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Никогда не игнорируйте предупреждения о низком давлении масла в трансмиссии. Даже кратковременная эксплуатация с такой ошибкой может привести к необратимым повреждениям фрикционов и шестерен.</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярное обслуживание трансмиссии и использование качественного масла — залог долгой жизни автоматической коробки передач и отсутствие ошибок типа P0847.</p></div>
+
+<h2 id="таблица-характеристик-и-спецификаций">Таблица характеристик и спецификаций</h2>
+
+<p>Ниже приведена таблица с основными характеристиками датчика давления и требованиями к трансмиссионной жидкости для <em>Honda CR-V</em> третьего поколения. Эти данные помогут вам при выборе запчастей и диагностике неисправности.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Тип датчика</td>
+<td>Датчик давления жидкости "B"</td>
+<td>Контролирует давление в контуре третьей передачи</td>
+</tr>
+<tr>
+<td>Сопротивление</td>
+<td>1.5 - 2.5 кОм (при 20°C)</td>
+<td>Значение может варьироваться в зависимости от производителя</td>
+</tr>
+<tr>
+<td>Тип жидкости</td>
+<td>Honda ATF-Z1 или DW-1</td>
+<td>Использование других масел недопустимо</td>
+</tr>
+<tr>
+<td>Объем масла</td>
+<td>3.7 литра (при замене с фильтром)</td>
+<td>Точный объем зависит от метода замены</td>
+</tr>
+<tr>
+<td>Момент затяжки</td>
+<td>12 Нм</td>
+<td>Для датчика давления трансмиссии</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли ездить с ошибкой P0847?</summary>
+<p>Ездить с этой ошибкой не рекомендуется, так как она указывает на низкое давление масла в трансмиссии. Это может привести к пробуксовке фрикционов и их быстрому износу. Если вы все же вынуждены двигаться, делайте это с максимальной осторожностью и избегайте высоких нагрузок.</p>
+</details>
+
+<details>
+<summary>Сколько стоит замена датчика давления?</summary>
+<p>Стоимость замены датчика варьируется в зависимости от региона и сервиса. Сама деталь стоит около 3000-5000 рублей, а работа по замене — еще 1500-3000 рублей. В дилерском центре цена будет выше.</p>
+</details>
+
+<details>
+<summary>Можно ли сбросить ошибку P0847 без ремонта?</summary>
+<p>Ошибка может быть сброшена сканером, но она вернется после нескольких циклов работы двигателя, если причина неисправности не устранена. Сброс ошибки без ремонта лишь откладывает решение проблемы и может привести к более серьезным поломкам.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять масло в АКПП Honda CR-V 3?</summary>
+<p>Рекомендуется менять трансмиссионное масло каждые 40-50 тысяч километров пробега. При интенсивной эксплуатации или езде в тяжелых условиях интервал замены следует сократить до 30-40 тысяч километров.</p>
+</details>
+
+<details>
+<summary>Какие симптомы указывают на неисправность датчика давления?</summary>
+<p>Основные симптомы включают загорание индикатора Check Engine, рывки при переключении передач, потерю тяги и переход коробки в аварийный режим. Также может наблюдаться нестабильная работа двигателя на холостых оборотах.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Понимание причин ошибки P0847 и своевременное обращение к специалистам помогут избежать дорогостоящего ремонта трансмиссии и сохранить безопасность движения.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#что-означает-код-p0847-в-системе-управления-трансмиссией">Что означает код P0847 в системе управления трансмиссией</a></li><li><a href="#основные-причины-возникновения-неисправности">Основные причины возникновения неисправности</a></li><li><a href="#симптомы-и-поведение-автомобиля-при-ошибке">Симптомы и поведение автомобиля при ошибке</a></li><li><a href="#диагностика-и-проверка-электрической-цепи">Диагностика и проверка электрической цепи</a></li><li><a href="#гидравлическая-диагностика-и-проверка-давления">Гидравлическая диагностика и проверка давления</a></li><li><a href="#способы-устранения-неисправности-и-ремонт">Способы устранения неисправности и ремонт</a></li><li><a href="#профилактика-и-обслуживание-трансмиссии">Профилактика и обслуживание трансмиссии</a></li><li><a href="#таблица-характеристик-и-спецификаций">Таблица характеристик и спецификаций</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-cr-v-rd1-gabarity.html" class="related-card">Габариты Honda CR-V RD1: Полные размеры кузова и колесной базы</a></li><li><a href="/articles/k/kh/khonda-srv-3-obem-baka.html" class="related-card">Хонда СР-В 3 объем бака: полный обзор и нюансы заправки</a></li><li><a href="/articles/k/kh/khonda-srv-4-kharakteristiki.html" class="related-card">Honda CR-V 4 поколение: полные технические характеристики и особенности</a></li><li><a href="/articles/h/ho/honda-cr-v-2004-goda.html" class="related-card">Honda CR-V 2004: Полное руководство по покупке, обслуживанию и ремонту</a></li><li><a href="/articles/k/kh/khonda-srv-2000-goda-otzyvy.html" class="related-card">Honda CR-V 2000: отзывы владельцев, плюсы, минусы и надежность</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-cr-v-rd1-gabarity.html" class="related-bottom-card"><span class="related-bottom-title">Габариты Honda CR-V RD1: Полные размеры кузова и колесной базы</span><span class="related-bottom-desc">Подробный обзор габаритов Honda CR-V второго поколения (RD1). Длина, ширина, высота, дорожный просве</span></a><a href="/articles/k/kh/khonda-srv-3-obem-baka.html" class="related-bottom-card"><span class="related-bottom-title">Хонда СР-В 3 объем бака: полный обзор и нюансы заправки</span><span class="related-bottom-desc">Узнайте точный объем топливного бака Honda CR-V 3 поколения. Данные по топливу, запас хода и советы </span></a><a href="/articles/k/kh/khonda-srv-4-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 4 поколение: полные технические характеристики и особенности</span><span class="related-bottom-desc">Подробный обзор характеристик Honda CR-V 4. Двигатели, коробка передач, габариты, безопасность и ком</span></a><a href="/articles/h/ho/honda-cr-v-2004-goda.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 2004: Полное руководство по покупке, обслуживанию и ремонту</span><span class="related-bottom-desc">Обзор Honda CR-V второго поколения (2004 года). Реальные проблемы, цены на запчасти, расход топлива </span></a><a href="/articles/k/kh/khonda-srv-2000-goda-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 2000: отзывы владельцев, плюсы, минусы и надежность</span><span class="related-bottom-desc">Подробный обзор Honda CR-V 2000 года. Честные отзывы владельцев, анализ надежности двигателя и подве</span></a><a href="/articles/r/re/resurs-variatora-khonda-srv-5-pokoleniya.html" class="related-bottom-card"><span class="related-bottom-title">Ресурс вариатора Honda CR-V 5 поколения: Реальная надежность и пробег</span><span class="related-bottom-desc">Всё о ресурсе вариатора Honda CR-V 5 (RB5). Разбор коробки CVT, типичные неисправности, реальный про</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

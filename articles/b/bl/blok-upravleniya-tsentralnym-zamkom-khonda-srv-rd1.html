@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Блок управления ЦЗ Honda CR-V RD1: диагностика, ремонт и замена — Honda Library</title>
+    <meta name="description" content="Полный гайд по блоку управления центральным замком Honda CR-V первого поколения. Симптомы поломки, распиновка, проверка реле и инструкция по ремонту.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/b/bl/blok-upravleniya-tsentralnym-zamkom-khonda-srv-rd1.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Блок управления ЦЗ Honda CR-V RD1: диагностика, ремонт и замена">
+    <meta property="og:description" content="Полный гайд по блоку управления центральным замком Honda CR-V первого поколения. Симптомы поломки, распиновка, проверка реле и инструкция по ремонту.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Блок управления ЦЗ Honda CR-V RD1: диагностика, ремонт и замена</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Блок управления центральным замком Honda CR-V RD1: диагностика и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#расположение-и-конструктивные-особенности-модуля">Расположение и конструктивные особенности модуля</a></li><li><a href="#типичные-симптомы-неисправности-системы">Типичные симптомы неисправности системы</a></li><li><a href="#диагностика-и-проверка-электрических-цепей">Диагностика и проверка электрических цепей</a></li><li><a href="#внутренние-причины-отказа-электроники">Внутренние причины отказа электроники</a></li><li><a href="#процедура-ремонта-и-перепайки-компонентов">Процедура ремонта и перепайки компонентов</a></li><li><a href="#таблица-распиновки-основных-контактов">Таблица распиновки основных контактов</a></li><li><a href="#восстановление-после-ремонта-и-профилактика">Восстановление после ремонта и профилактика</a></li><li><a href="#частые-вопросы-и-ответы">Частые вопросы и ответы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владельцы <em>Honda CR-V</em> первого поколения (кузов RD1), выпускавшихся в период с 1995 по 2001 год, часто сталкиваются с капризами системы центрального замка. Эта проблема становится особенно актуальной в холодное время года или после длительной эксплуатации автомобиля в условиях высокой влажности. Блок управления центральным замком, расположенный под торпедо, является сложным электронным узлом, который со временем подвергается естественному износу контактов и окислению дорожек.</p>
+
+<p>Игнорирование симптомов неисправности может привести к полной потере возможности дистанционного управления дверями, что создает серьезные неудобства и снижает уровень безопасности транспортного средства. В некоторых случаях отказ системы блокировки дверей сопровождается потерей управления стеклоподъемниками, так как многие функции в <em>Honda</em> интегрированы в единый узел управления. Понимание принципов работы и устройства этого модуля позволит вам сэкономить на услугах специализированных сервисов и самостоятельно устранить причину сбоя.</p>
+
+<h2 id="расположение-и-конструктивные-особенности-модуля">Расположение и конструктивные особенности модуля</h2>
+
+<p>Блок управления центральным замком в кузовах <em>RD1</em> находится в труднодоступном месте, что усложняет процесс его диагностики и замены. Он смонтирован на нижней части центральной консоли, за пластиковой панелью, закрывающей блок предохранителей и реле со стороны водителя. Для доступа к узлу необходимо демонтировать нижнюю накладку панели приборов, которая крепится на нескольких клипсах и винтах.</p>
+
+<p>Конструктивно модуль представляет собой печатную плату с установленными на ней микросхемами, транзисторами и силовыми реле. Именно силовые реле отвечают за подачу напряжения на приводы замков дверей, поэтому они испытывают наибольшую нагрузку. Корпус блока выполнен из прочного пластика, который со временем может деформироваться от вибраций, что приводит к нарушению контакта между платой и корпусом или разъемами.</p>
+
+<p>Важно отметить, что в некоторых модификациях <em>Honda CR-V</em> этот блок объединяет в себе функции управления не только замками, но и сигнализацией. Поэтому при поиске неисправности необходимо учитывать комплексный характер работы электроники. Если вы чувствуете запах гари или видите следы оплавления на корпусе, это верный признак критического отказа силовой части схемы.</p>
+
+<h2 id="типичные-симптомы-неисправности-системы">Типичные симптомы неисправности системы</h2>
+
+<p>Первым признаком того, что блок управления центральным замком начинает давать сбои, является некорректная реакция дверей на нажатие кнопки брелока или ключа в замке водителя. Двери могут открываться или закрываться хаотично, срабатывать только одна дверь, либо система может полностью игнорировать команды управления. Иногда процесс сопровождается характерным щелчком реле внутри панели, но механические приводы не реагируют.</p>
+
+<p>Другим распространенным симптомом является самопроизвольное срабатывание замков во время движения или стоянки. Это может происходить без видимых причин, создавая панику у водителя и пассажиров. В некоторых случаях проблема проявляется только при включении зажигания, когда блок переходит в активный режим и пытается провести самодиагностику, выдавая ошибочные команды.</p>
+
+<p>Особое внимание стоит уделить ситуации, когда центральная блокировка отказывает только на задней двери. В кузовах <em>RD1</em> часто наблюдается разрыв цепи управления задней створкой, что связано с особенностью прокладки проводки в петле двери. Однако если проблема затрагивает все двери одновременно, то причина с вероятностью 90% кроется именно в электронном модуле управления.</p>
+
+<h2 id="диагностика-и-проверка-электрических-цепей">Диагностика и проверка электрических цепей</h2>
+
+<p>Прежде чем демонтировать блок и начинать его ремонт, необходимо исключить вероятность неисправности в проводке или самих приводах замков. Для этого потребуется мультиметр и схема подключения, соответствующая году выпуска вашего автомобиля. Проверка начинается с измерения напряжения на разъеме блока управления при подаче команд с брелока или ключа.</p>
+
+<p>Вам нужно убедиться, что сигнал управления доходит до модуля. Если сигнал приходит, но реле не срабатывают, значит проблема внутри платы. Если сигнал не приходит, следует проверить предохранители, реле в монтажном блоке и целостность проводов, идущих от дверных замков к центральному блоку. Обратите внимание на состояние контактов в разъемах, так как окисление может имитировать поломку электроники.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой симптом у вашего Honda CR-V?</strong><ul><li>Двери не закрываются</li><li>Двери открываются хаотично</li><li>Срабатывает только одна дверь</li><li>Ничего не происходит</li></ul></div></div>
+
+<h2 id="внутренние-причины-отказа-электроники">Внутренние причины отказа электроники</h2>
+
+<p>Самой частой внутренней причиной выхода из строя блока является износ или пригорание контактов силовых реле. Реле, отвечающие за открытие и закрытие замков, коммутируют токи значительной силы, что со временем приводит к образованию нагара на контактах. В результате реле перестает замыкать цепь или, что еще хуже, начинает залипать в замкнутом положении.</p>
+
+<p>Второй по значимости причиной является деградация пайки контактов микросхем и транзисторов из-за постоянных тепловых расширений и вибраций. Тонкие ножки элементов могут отойти от платы, создавая периодические обрывы цепи. Визуально это часто не заметно, так как трещины в пайке могут быть микроскопическими и проявляться только при нагреве или вибрации автомобиля.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед началом разборки обязательно сфотографируйте расположение всех разъемов и проводов, чтобы избежать ошибок при обратной сборке салона.</p></div>
+
+<h2 id="процедура-ремонта-и-перепайки-компонентов">Процедура ремонта и перепайки компонентов</h2>
+
+<p>Ремонт блока управления требует наличия паяльного оборудования и навыков работы с электроникой. Первым шагом является полная разборка корпуса и визуальный осмотр платы на предмет следов окисления, потемнений или вздувшихся конденсаторов. Особое внимание следует уделить зоне вокруг силовых реле и транзисторов, управляющих двигателями замков.</p>
+
+<p>Если вы обнаружили пригоревшие контакты реле, их необходимо заменить на новые. Для этого нужно аккуратно выпаять старые детали, используя оплетку для удаления припоя, и установить новые реле с идентичными характеристиками. Не пытайтесь чистить старые контакты спиртом или растворителями, так как это дает лишь временный эффект, и проблема вернется очень быстро.</p>
+
+<div class="checklist-block"><h4>☑️ Ремонт блока управления</h4><label class="check-item"><input type="checkbox"><span>Демонтаж блока из салона</span></label><label class="check-item"><input type="checkbox"><span>Разборка корпуса</span></label><label class="check-item"><input type="checkbox"><span>Проверка и замена реле</span></label><label class="check-item"><input type="checkbox"><span>Проверка пайки транзисторов</span></label><label class="check-item"><input type="checkbox"><span>Сборка и установка</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Если проблема кроется в плохой пайке, необходимо пропаять все силовые элементы и основные микросхемы. Используйте качественный припой и флюс, избегая перегрева компонентов. После пропайки обязательно протрите плату спиртом для удаления остатков флюса, который со временем может стать проводником и вызвать короткое замыкание.</p>
+
+<details class="faq-item"><summary>Что делать, если нет новых реле?</summary><div class="faq-answer"><p>Если найти оригинальные реле Honda не удалось, можно подобрать аналоги от других производителей, соблюдая параметры по току, напряжению и типу контактов.</p></div></details>
+
+<h2 id="таблица-распиновки-основных-контактов">Таблица распиновки основных контактов</h2>
+
+<p>Для успешной диагностики и подключения нового или восстановленного блока необходимо знать назначение контактов на разъеме. Ниже приведена таблица, описывающая основные выводы, которые чаще всего участвуют в работе системы центрального замка в кузовах <em>RD1</em>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Контакт</th>
+<th>Цвет провода</th>
+<th>Назначение</th>
+<th>Напряжение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Красный</td>
+<td>Постоянный плюс (+12В)</td>
+<td>12В</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Черный</td>
+<td>Масса (Ground)</td>
+<td>0В</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Синий</td>
+<td>Сигнал на закрытие</td>
+<td>Переменный</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Зеленый</td>
+<td>Сигнал на открытие</td>
+<td>Переменный</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Белый</td>
+<td>Датчик положения замка</td>
+<td>5В</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="восстановление-после-ремонта-и-профилактика">Восстановление после ремонта и профилактика</h2>
+
+<p>После проведения работ по замене реле или пропайке контактов необходимо тщательно собрать блок и установить его на место. Перед тем как закрывать пластиковую панель консоли, рекомендуется провести тестовый запуск системы. Включите зажигание и попробуйте несколько раз открыть и закрыть все двери с помощью брелока и ключа.</p>
+
+<p>Обратите внимание, что после ремонта может потребоваться время на полную стабилизацию работы электроники. Если вы заметили, что двери закрываются слишком медленно или с трудом, проверьте механическую часть приводов и смажьте их. Чрезмерное сопротивление привода может перегрузить новые реле и привести к их повторному выходу из строя.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная проверка состояния контактов и чистка разъема от окислений продлевают жизнь блоку управления на несколько лет даже без серьезного ремонта.</p></div>
+
+<p> Если вы не уверены в своих силах или не имеете необходимого оборудования для пайки, лучше доверить работу профессионалам. Однако, зная внутреннее устройство блока, вы сможете контролировать качество выполненного ремонта и не переплатить за замену целого узла.</p>
+
+<h2 id="частые-вопросы-и-ответы">Частые вопросы и ответы</h2>
+
+<details>
+<summary>Можно ли восстановить блок управления без пайки?</summary>
+<p>Без пайки восстановить блок практически невозможно, так как основная причина поломки — это нарушение электрических контактов внутри реле или на плате. Чистка контактов реле снаружи дает лишь временный эффект, который длится от нескольких дней до нескольких недель.</p>
+</details>
+
+<details>
+<summary>Сколько времени занимает замена блока управления?</summary>
+<p>Сам процесс демонтажа и установки блока занимает около 30-40 минут при наличии инструмента. Однако диагностика и поиск неисправности могут занять от 1 до 3 часов, в зависимости от сложности проблемы и доступа к разъемам.</p>
+</details>
+
+<details>
+<summary>Нужно ли программировать новый блок управления?</summary>
+<p>Для блоков управления центральным замком <em>Honda CR-V</em> RD1 программирование обычно не требуется. Они являются "плаг-н-плей" устройствами, которые начинают работать сразу после подключения к проводке автомобиля, если все цепи исправны.</p>
+</details>
+
+<details>
+<summary>Что делать, если после ремонта двери не открываются с брелока?</summary>
+<p>Проверьте предохранители, отвечающие за систему безопасности и центральный замок. Также убедитесь, что брелок имеет свежую батарейку и его сигнал принимается приемником автомобиля. Возможно, проблема не в блоке, а в антенне приемника или самом пульте.</p>
+</details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При работе с электропроводкой автомобиля обязательно отключайте минусовую клемму аккумулятора, чтобы избежать короткого замыкания, которое может повредить другие электронные блоки управления.</p>
+</blockquote>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> <mark>Ни в коем случае не используйте блок управления от других поколений Honda CR-V без предварительной сверки распиновки, так как разъемы могут быть физически совместимы, но электрические сигналы будут несовместимы.</mark></p>
+</blockquote>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Если вы видите следы серьезного оплавления на плате, лучше не пытайтесь её восстановить, а замените на новую или б/у исправную, так как микросхемы могли получить необратимые повреждения от перегрева.</p>
+</blockquote></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#расположение-и-конструктивные-особенности-модуля">Расположение и конструктивные особенности модуля</a></li><li><a href="#типичные-симптомы-неисправности-системы">Типичные симптомы неисправности системы</a></li><li><a href="#диагностика-и-проверка-электрических-цепей">Диагностика и проверка электрических цепей</a></li><li><a href="#внутренние-причины-отказа-электроники">Внутренние причины отказа электроники</a></li><li><a href="#процедура-ремонта-и-перепайки-компонентов">Процедура ремонта и перепайки компонентов</a></li><li><a href="#таблица-распиновки-основных-контактов">Таблица распиновки основных контактов</a></li><li><a href="#восстановление-после-ремонта-и-профилактика">Восстановление после ремонта и профилактика</a></li><li><a href="#частые-вопросы-и-ответы">Частые вопросы и ответы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/b/ba/bamper-khonda-srv-3.html" class="related-card">Бампер Хонда СРВ 3: Выбор, установка и ремонт переднего и заднего бампера</a></li><li><a href="/articles/k/kh/khonda-cr-v-2002.html" class="related-card">Honda CR-V 2002: Полный обзор, надежность и нюансы эксплуатации</a></li><li><a href="/articles/p/po/podkrylki-na-khonda-srv-3.html" class="related-card">Подкрылки на Honda CR-V 3: выбор, замена и защита арок</a></li><li><a href="/articles/l/la/lampy-blizhnego-sveta-khonda-srv-4.html" class="related-card">Лампы ближнего света Honda CR-V 4: выбор, замена, характеристики</a></li><li><a href="/articles/m/ma/manual-khonda-srv-3.html" class="related-card">Мануал Honda CR-V 3: Полное руководство по эксплуатации и ремонту</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/b/ba/bamper-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Бампер Хонда СРВ 3: Выбор, установка и ремонт переднего и заднего бампера</span><span class="related-bottom-desc">Полный гид по бамперам Honda CR-V 3 поколения: OEM номера, отличия передних и задних моделей, инстру</span></a><a href="/articles/k/kh/khonda-cr-v-2002.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 2002: Полный обзор, надежность и нюансы эксплуатации</span><span class="related-bottom-desc">Подробный разбор кроссовера Honda CR-V второго поколения 2002 года. Технические характеристики, слаб</span></a><a href="/articles/p/po/podkrylki-na-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Подкрылки на Honda CR-V 3: выбор, замена и защита арок</span><span class="related-bottom-desc">Подробный гид по подкрылкам на Хонда СРВ 3. Выбор материала, особенности установки, защита от корроз</span></a><a href="/articles/l/la/lampy-blizhnego-sveta-khonda-srv-4.html" class="related-bottom-card"><span class="related-bottom-title">Лампы ближнего света Honda CR-V 4: выбор, замена, характеристики</span><span class="related-bottom-desc">Полный гид по подбору и замене ламп ближнего света для Honda CR-V 4 поколения. Обзор типов цоколей, </span></a><a href="/articles/m/ma/manual-khonda-srv-3.html" class="related-bottom-card"><span class="related-bottom-title">Мануал Honda CR-V 3: Полное руководство по эксплуатации и ремонту</span><span class="related-bottom-desc">Подробная инструкция по эксплуатации Honda CR-V 3 поколения. Технические характеристики, обслуживани</span></a><a href="/articles/k/kh/khonda-srv-zamena-toplivnogo-filtra.html" class="related-bottom-card"><span class="related-bottom-title">Замена топливного фильтра Honda CR-V: Пошаговая инструкция</span><span class="related-bottom-desc">Полное руководство по замене топливного фильтра на Honda CR-V всех поколений. Советы по выбору детал</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Honda Civic 5d P19FF: Ремонт робота и коды ошибок — Honda Library</title>
+    <meta name="description" content="Подробный разбор кода P19FF для Honda Civic 5D с роботом. Причины, диагностика, адаптация и устранение толчков при переключении передач.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/p/p1/p19ff-khonda-tsivik-5d-robot.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Honda Civic 5d P19FF: Ремонт робота и коды ошибок">
+    <meta property="og:description" content="Подробный разбор кода P19FF для Honda Civic 5D с роботом. Причины, диагностика, адаптация и устранение толчков при переключении передач.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Honda Civic 5d P19FF: Ремонт робота и коды ошибок</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Код ошибки P19FF на Honda Civic 5D: Диагностика и ремонт робота</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#механика-возникновения-ошибки-p19ff">Механика возникновения ошибки P19FF</a></li><li><a href="#диагностика-и-поиск-неисправностей">Диагностика и поиск неисправностей</a></li><li><a href="#процедура-адаптации-и-сброса-ошибок">Процедура адаптации и сброса ошибок</a></li><li><a href="#типичные-проблемы-гидроблока-и-актуаторов">Типичные проблемы гидроблока и актуаторов</a></li><li><a href="#влияние-масла-и-технического-обслуживания">Влияние масла и технического обслуживания</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Появление кода ошибки <strong>P19FF</strong> на приборной панели <em>Honda Civic 5D</em> с роботизированной коробкой передач (i-Shift) — это сигнал, который нельзя игнорировать. Владельцы часто сталкиваются с ним после зимнего периода или при резком изменении стиля вождения. Система управления трансмиссией фиксирует рассинхронизацию работы актуаторов или проблемы с давлением в гидроблоке.</p>
+
+<p>Ситуация может варьироваться от однократного мигания индикатора коробки до полного перехода в аварийный режим, когда автомобиль отказывается переключать передачи. Понимание природы этого кода позволяет сэкономить значительные средства на диагностике в сервисе. В этой статье мы детально разберем механику возникновения неисправности и методы её устранения.</p>
+
+<h2 id="механика-возникновения-ошибки-p19ff">Механика возникновения ошибки P19FF</h2>
+
+<p>Код <strong>P19FF</strong> указывает на неисправность в цепи управления актуатором переключения передач, часто связанную с датчиком положения или самим электромагнитным клапаном. В контексте роботизированной коробки <em>Honda i-Shift</em>, установленной на Civic 5D, это означает, что блок управления (TCM) не получает корректного подтверждения о том, что шток актуатора занял требуемое положение. Это может происходить как при старте движения, так и в момент смены передачи.</p>
+
+<p>Основной причиной сбоя является рассогласование показаний датчика положения штока и реального физического положения механизма. Электроника видит расхождение и заносит ошибку в память. Если проблема носит разовый характер, она может исчезнуть после перезапуска двигателя. Однако, если код появляется снова, это свидетельствует о <strong>критическом износе</strong> или загрязнении компонентов.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Продолжительная эксплуатация автомобиля с горящим индикатором ошибки трансмиссии может привести к ускоренному износу фрикционов и перегреву актуаторов.</p>
+</blockquote>
+
+<p>Важно учитывать, что ошибка может быть вызвана не только электрической частью, но и механическим заклиниванием. Грязь, попавшая в штоки актуаторов, или загустевшая смазка при низких температурах создают сопротивление, которое соленоид преодолеть не в состоянии. Блок управления расценивает это как неисправность и выдает код <strong>P19FF</strong>.</p>
+
+<details class="faq-item"><summary>Технические детали работы актуатора</summary><div class="faq-answer"><p>Актуатор представляет собой электромотор с редуктором, который толкает шток выбора или включения передачи. Внутри него находится датчик положения, который и сообщает блоку управления, насколько выдвинут шток. Если шток уперся в грязь или ржавчину, а датчик показывает, что мотор крутится, возникает ошибка рассогласования.</p></div></details>
+
+<h2 id="диагностика-и-поиск-неисправностей">Диагностика и поиск неисправностей</h2>
+
+<p>Первым шагом в устранении проблемы должна стать качественная компьютерная диагностика. Использование простого OBDII сканера часто бывает недостаточно, так как он может не видеть специфические коды трансмиссии <em>Honda</em>. Рекомендуется использовать специализированный софт, например, <strong>HDS</strong> или продвинутые мультимарочные сканеры с поддержкой японских авто.</p>
+
+<p>В процессе диагностики необходимо обратить внимание на следующие параметры:
+<ul>
+<li>🔍 Состояние актуаторов: проверка сопротивления обмоток соленоидов на предмет обрыва или короткого замыкания.</li>
+<li>🔍 Целостность проводки: осмотр фишек и проводов на предмет окисления, особенно в местах входа в корпус КПП.</li>
+<li>🔍 Механическая подвижность: проверка хода штоков актуаторов вручную (при снятых актуаторах).</li>
+</ul>
+</p>
+
+<p>Часто владельцы забывают проверить состояние аккумуляторной батареи. Падение напряжения в бортовой сети ниже <strong>11.5 Вольт</strong> в момент переключения передачи может спровоцировать ложное появление кода P19FF. Электромоторы актуаторов потребляют большой ток, и слабый аккумулятор просто не может обеспечить необходимую мощность.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Сталкивались ли вы с ошибками робота на Honda?</strong><ul><li>Да, постоянно/Бывает иногда/Только зимой/Никогда не было</li></ul></div></div>
+
+<h2 id="процедура-адаптации-и-сброса-ошибок">Процедура адаптации и сброса ошибок</h2>
+
+<p>После проведения ремонтных работ или замены компонентов необходимо выполнить процедуру адаптации. Без этого шага коробка передач может работать рывками или ошибочно трактовать положения шестерен. Адаптация позволяет блоку управления заново «запомнить» точки схватывания сцепления и крайние положения штоков актуаторов.</p>
+
+<p>Процесс адаптации обычно выполняется через диагностический разъем. В меню диагностики следует выбрать раздел <code>Transmission</code>, затем <code>System Test</code> и запустить процедуру <strong>Clutch Initialize</strong> или <strong>Transmission Learn</strong>. Важно, чтобы двигатель был прогрет до рабочей температуры, а все потребители энергии выключены.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист перед адаптацией</h4><label class="check-item"><input type="checkbox"><span>Прогреть двигатель до 90°C</span></label><label class="check-item"><input type="checkbox"><span>Выключить кондиционер и фары</span></label><label class="check-item"><input type="checkbox"><span>Проверить уровень масла в КПП</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в исправности аккумулятора</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Если программная адаптация не помогает, может потребоваться механическая регулировка тросов кулисы или замена датчиков положения. В некоторых случаях помогает полный сброс параметров TCM (Transmission Control Module) путем снятия клемм аккумулятора на длительное время, хотя для <em>Honda Civic 5D</em> этот метод работает не всегда эффективно без сканера.</p>
+
+<h2 id="типичные-проблемы-гидроблока-и-актуаторов">Типичные проблемы гидроблока и актуаторов</h2>
+
+<p>Гидроблок и актуаторы — самые уязвимые части робота <em>i-Shift</em>. Со временем смазка внутри механизмов высыхает или превращается в абразивную массу. Это приводит к тому, что штоки начинают двигаться с заеданиями. Код <strong>P19FF</strong> в этом случае появляется регулярно, особенно в холодное время года.</p>
+
+<p>Для устранения проблемы часто требуется демонтаж актуаторов. Процесс включает:
+<ul>
+<li>🛠️ Снятие верхней части корпуса КПП для доступа к актуаторам.</li>
+<li>🛠️ Очистку штоков и направляющих от старой смазки и грязи.</li>
+<li>🛠️ Смазку механизмов специализированными составами, устойчивыми к температуре.</li>
+</ul>
+</p>
+
+<p>Также стоит проверить электрические разъемы на самих актуаторах. Вибрация и влага приводят к окислению контактов. Зачистка контактов и обработка спреем для электрики часто творит чудеса. Если же обмотка соленоида повреждена, поможет только <strong>замена узла</strong> целиком, так как ремонт обмотки в домашних условиях невозможен.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При снятии актуаторов категорически запрещено прокручивать валы вручную без соблюдения определенной последовательности, чтобы не сбить настройки валов выбора передач.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При сборке актуаторов используйте только термостойкую смазку, предназначенную для пластиковых шестерен и резиновых уплотнителей. Обычный Литол может разрушить пластиковые элементы редуктора актуатора.</p></div>
+
+<h2 id="влияние-масла-и-технического-обслуживания">Влияние масла и технического обслуживания</h2>
+
+<p>Хотя роботизированная коробка <em>Honda Civic 5D</em> считается необслуживаемой, качество трансмессионного масла напрямую влияет на работу гидравлики и смазку подшипников. Старое, потерявшее свойства масло становится слишком густым или, наоборот, жидким, что меняет характеристики работы системы.</p>
+
+<p>Рекомендуется проверять уровень и состояние масла каждые 60 000 км. Для замены следует использовать только оригинальные жидкости <strong>Honda MTF</strong> или их качественные аналоги с вязкостью, рекомендованной производителем. Использование неподходящего масла может привести к некорректной работе гидравлики и появлению ошибок.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Рекомендуемое значение</th>
+<th>Критическое состояние</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Тип масла</td>
+<td>Honda MTF / 75W-80</td>
+<td>Минеральное масло</td>
+</tr>
+<tr>
+<td>Интервал замены</td>
+<td>60 000 - 80 000 км</td>
+<td>Более 100 000 км</td>
+</tr>
+<tr>
+<td>Цвет масла</td>
+<td>Прозрачный, янтарный</td>
+<td>Темный, с металлической стружкой</td>
+</tr>
+<tr>
+<td>Запах</td>
+<td>Отсутствует или слабый</td>
+<td>Гарь</td>
+</tr>
+</tbody>
+</table>
+
+<p>Наличие металлической стружки на магнитной пробке слива говорит о механическом износе пар трения. В этом случае простая замена масла не поможет, потребуется дефектовка коробки. Игнорирование этого факта приведет к дорогостоящему ремонту всей трансмиссии.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Своевременная замена масла в роботе — это дешевый способ продлить жизнь дорогостоящим актуаторам и избежать ошибок гидравлики.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли ездить с ошибкой P19FF, если она загорается редко?</summary>
+<p>Ездить можно, но не рекомендуется игнорировать сигнал. Если ошибка появляется редко, скорее всего, проблема в контактах или временном сбое напряжения. Однако регулярное появление кода говорит о прогрессирующей неисправности, которая может застать вас в неподходящий момент, например, при обгоне.</p>
+</details>
+
+<details>
+<summary>Сколько стоит ремонт актуатора робота Honda Civic?</summary>
+<p>Стоимость зависит от региона и выбранного метода. Восстановление (чистка, смазка, замена сальников) обойдется дешевле, чем покупка нового оригинального актуатора. Цена нового узла может быть высокой, поэтому часто владельцы выбирают качественный б/у вариант или восстановление.</p>
+</details>
+
+<details>
+<summary>Почему ошибка P19FF появляется только зимой?</summary>
+<p>Зимой смазка в механизмах густеет, создавая дополнительное сопротивление. Актуатору труднее продавить шток, и блок управления фиксирует рассогласование. Также зимой чаще разряжаются аккумуляторы, что влияет на мощность электромоторов.</p>
+</details>
+
+<details>
+<summary>Нужно ли сбрасывать ошибку сканером после ремонта?</summary>
+<p>Да, обязательно. Даже если причина устранена, код останется в памяти «замороженным». Для его удаления необходимо использовать диагностический сканер. В некоторых случаях ошибка сбрасывается сама после нескольких циклов успешной работы без сбоев, но надежнее сделать это принудительно.</p>
+</details>
+
+<details>
+<summary>Можно ли переключать робот вручную при этой ошибке?</summary>
+<p>Переход в ручной режим может временно помочь доехать до сервиса, если коробка не ушла в полный аварийный режим. Однако это не решит проблему, а лишь позволит избежать пробок в работе автомата. Длительная езда в ручном режиме с неисправностью не рекомендуется.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#механика-возникновения-ошибки-p19ff">Механика возникновения ошибки P19FF</a></li><li><a href="#диагностика-и-поиск-неисправностей">Диагностика и поиск неисправностей</a></li><li><a href="#процедура-адаптации-и-сброса-ошибок">Процедура адаптации и сброса ошибок</a></li><li><a href="#типичные-проблемы-гидроблока-и-актуаторов">Типичные проблемы гидроблока и актуаторов</a></li><li><a href="#влияние-масла-и-технического-обслуживания">Влияние масла и технического обслуживания</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-tsivik-oboi-na-rabochij-stol.html" class="related-card">Хонда Цивик обои на рабочий стол: лучшие изображения и настройка</a></li><li><a href="/articles/r/re/regulyator-davleniya-topliva-khonda-tsivik-4d.html" class="related-card">Регулятор давления топлива Honda Civic 4D: признаки, замена и ремонт</a></li><li><a href="/articles/z/za/zamena-zadnikh-amortizatorov-khonda-tsivik-4d.html" class="related-card">Замена задних амортизаторов Honda Civic 4D: инструкция и выбор запчастей</a></li><li><a href="/articles/h/ho/honda-civic-6-pokolenie.html" class="related-card">Honda Civic 6 поколение: Обзор, двигатели, проблемы и характеристики</a></li><li><a href="/articles/z/za/zadnie-stojki-khonda-tsivik-4d.html" class="related-card">Задние стойки стабилизатора Honda Civic 4D: выбор, замена и диагностика</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-tsivik-oboi-na-rabochij-stol.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Цивик обои на рабочий стол: лучшие изображения и настройка</span><span class="related-bottom-desc">Подборка качественных обоев Honda Civic на рабочий стол. Разрешения 4K, Full HD, стили Type R и Si. </span></a><a href="/articles/r/re/regulyator-davleniya-topliva-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Регулятор давления топлива Honda Civic 4D: признаки, замена и ремонт</span><span class="related-bottom-desc">Полный гайд по регулятору давления топлива для Honda Civic 4D. Симптомы неисправности, проверка, сам</span></a><a href="/articles/z/za/zamena-zadnikh-amortizatorov-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Замена задних амортизаторов Honda Civic 4D: инструкция и выбор запчастей</span><span class="related-bottom-desc">Полное руководство по самостоятельной замене задних амортизаторов на Honda Civic 4D. Обзор брендов, </span></a><a href="/articles/h/ho/honda-civic-6-pokolenie.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic 6 поколение: Обзор, двигатели, проблемы и характеристики</span><span class="related-bottom-desc">Подробный гид по Honda Civic 6-го поколения (1995-2000). Обзор кузовов, технические характеристики, </span></a><a href="/articles/z/za/zadnie-stojki-khonda-tsivik-4d.html" class="related-bottom-card"><span class="related-bottom-title">Задние стойки стабилизатора Honda Civic 4D: выбор, замена и диагностика</span><span class="related-bottom-desc">Полный гайд по задним стойкам стабилизатора для Honda Civic 4D. Как выбрать, симптомы поломки, пошаг</span></a><a href="/articles/d/da/datchik-kolenvala-khonda-tsivik-4d-gde-nakhoditsya.html" class="related-bottom-card"><span class="related-bottom-title">Где находится датчик коленвала на Honda Civic 4D: поиск и замена</span><span class="related-bottom-desc">Полное руководство по locating датчика положения коленчатого вала на Honda Civic 4D. Симптомы неиспр</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

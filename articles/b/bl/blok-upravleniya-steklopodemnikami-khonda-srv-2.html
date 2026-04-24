@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Блок управления стеклоподъемниками Honda CR-V 2: Диагностика и ремонт — Honda Library</title>
+    <meta name="description" content="Полное руководство по диагностике, замене и программированию блока управления стеклоподъемниками для Honda CR-V второго поколения. Решаем проблемы с моторами и контактами.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/b/bl/blok-upravleniya-steklopodemnikami-khonda-srv-2.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Блок управления стеклоподъемниками Honda CR-V 2: Диагностика и ремонт">
+    <meta property="og:description" content="Полное руководство по диагностике, замене и программированию блока управления стеклоподъемниками для Honda CR-V второго поколения. Решаем проблемы с моторами и контактами.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Блок управления стеклоподъемниками Honda CR-V 2: Диагностика и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Блок управления стеклоподъемниками Honda CR-V 2: Полное руководство по диагностике и замене</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-устройство-системы">Принцип работы и устройство системы</a></li><li><a href="#симптомы-неисправности-и-методы-диагностики">Симптомы неисправности и методы диагностики</a></li><li><a href="#пошаговая-инструкция-по-снятию-и-проверке-блока">Пошаговая инструкция по снятию и проверке блока</a></li><li><a href="#распространенные-неисправности-и-способы-их-устранения">Распространенные неисправности и способы их устранения</a></li><li><a href="#замена-блока-и-инициализация-системы">Замена блока и инициализация системы</a></li><li><a href="#профилактика-и-обслуживание-электроники-двери">Профилактика и обслуживание электроники двери</a></li><li><a href="#сравнение-вариантов-ремонта-и-замены">Сравнение вариантов ремонта и замены</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Поломка механизма подъема стекол на автомобиле <em>Honda CR-V</em> второго поколения — это распространенная проблема, которая часто возникает из-за износа компонентов или сбоя в электронике. Владельцы кроссоверов сталкиваются с ситуацией, когда кнопки перестают реагировать или стекло опускается только вниз, но не поднимается обратно. Чаще всего корень зла кроется именно в <strong>главном блоке управления</strong>, расположенном на водительской двери.</p>
+
+<p>Электроника японского автомобиля достаточно надежна, но при длительной эксплуатации контакты окисляются, а пайка внутри модуля может отойти. <strong>Блок стеклоподъемников CR-V 2</strong> отвечает не только за движение стекла, но и за функцию «автоспуск» и защиту от защемления. Понимание принципов работы этой системы позволит вам самостоятельно провести первичную диагностику и избежать лишних трат в сервисе.</p>
+
+<h2 id="принцип-работы-и-устройство-системы">Принцип работы и устройство системы</h2>
+
+<p>Система управления окнами в <em>Honda CR-V</em> (2002-2006 гг.) построена по схеме распределенного контроля. Центральный модуль, установленный на двери водителя, получает сигналы от кнопок и передает команды на исполнительные механизмы остальных дверей. Важно понимать, что каждый мотор имеет свой собственный датчик Холла, который сообщает блоку о скорости вращения и текущем положении стекла.</p>
+
+<p>Если <strong>центральный процессор</strong> фиксирует аномальное сопротивление или обрыв цепи, он блокирует работу механизма для предотвращения повреждения проводки. В этом случае на панели приборов могут не загораться индикаторы ошибок, так как система работает в аварийном режиме. Часто проблема заключается не в поломке самого процессора, а в потере связи между ним и конкретным мотором-редуктором.</p>
+
+<p>При диагностике необходимо учитывать, что <strong>силовые реле</strong>, встроенные в блок, подвержены перегрузкам при замерзании стекла. Если вы пытаетесь открыть ледяное окно, ток потребления резко возрастает, что может привести к перегоранию дорожек на плате. В таких случаях блок управления может временно отключить конкретный канал до остывания или полной перезагрузки системы.</p>
+
+<h2 id="симптомы-неисправности-и-методы-диагностики">Симптомы неисправности и методы диагностики</h2>
+
+<p>Определить, что проблема кроется именно в электронном блоке, а не в механике, можно по ряду характерных признаков. Если стекло опускается, но не поднимается, или работает с перебоями только с водительской двери, это верный сигнал о сбоях в управляющем модуле. Иногда помогает «пинание» или простукивание двери, что временно восстанавливает контакт внутри <strong>разъема блока</strong>.</p>
+
+<p>Одной из частых проблем является отказ функции автоподъема всех стекол при закрытии машины с брелока. Это указывает на то, что <strong>сигнальная шина</strong> передачи данных нарушена. Также обратите внимание на состояние самой кнопки: если она залипает или не возвращается в исходное положение, это может вызвать короткое замыкание, которое выведет из строя управляющую микросхему.</p>
+
+<p>Для точной диагностики потребуется мультиметр и доступ к разъему, идущему к двери. Необходимо проверить наличие питания на контактах подачи +12В и массы. Если напряжение есть, а мотор не реагирует на нажатие кнопки, дело точно в управляющем сигнале или неисправности самого <strong>блока стеклоподъемников</strong>.</p>
+
+<ul>
+<li>🚗 Стекло не реагирует ни на одну кнопку (ни на водительской, ни на своей двери)</li>
+<li>🚗 Работает только в одном направлении (только вверх или только вниз)</li>
+<li>🚗 Мотор издает щелчки, но стекло не двигается, хотя питание подается</li>
+<li>🚗 Срабатывает защита от перегрузки при малейшем сопротивлении</li>
+</ul>
+
+<h2 id="пошаговая-инструкция-по-снятию-и-проверке-блока">Пошаговая инструкция по снятию и проверке блока</h2>
+
+<p>Перед началом работ необходимо отключить аккумулятор, чтобы избежать короткого замыкания при демонтаже панели. Снятие обшивки двери требует аккуратности, так как пластиковые фиксаторы на <em>Honda CR-V</em> 2 могут быть хрупкими. Начните с демонтажа ручки открывания двери и подлокотника, открутив скрытые винты.</p>
+
+<p>Далее нужно аккуратно поддеть и снять саму панель управления стеклами. Она удерживается на пластиковых клипсах и подключается к шлейфу. Отсоединяйте разъем только после нажатия на фиксатор. После извлечения модуля внимательно осмотрите <strong>контакты разъема</strong> на предмет окисления или следов оплавления пластика.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка блока управления</h4><label class="check-item"><input type="checkbox"><span>Отключить аккумулятор автомобиля</span></label><label class="check-item"><input type="checkbox"><span>Снять обшивку водительской двери</span></label><label class="check-item"><input type="checkbox"><span>Отсоединить разъем блока</span></label><label class="check-item"><input type="checkbox"><span>Визуально осмотреть контакты</span></label><label class="check-item"><input type="checkbox"><span>Проверить питание мультиметром</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Если визуально повреждений нет, необходимо проверить целостность дорожек на плате. Часто в блоке стеклоподъемников <strong>пайка под реле</strong> отходит из-за вибрации. Используйте паяльник для пропайки всех силовых контактов и контактов управления моторами. Это часто решает проблему без замены всего узла.</p>
+
+<h2 id="распространенные-неисправности-и-способы-их-устранения">Распространенные неисправности и способы их устранения</h2>
+
+<p>Самой уязвимой частью является пайка силовых транзисторов и реле. При длительной работе они нагреваются и остывают, что со временем приводит к образованию микротрещин в припое. В результате контакт пропадает, и блок перестает подавать напряжение на мотор. <strong>Ремонт пайки</strong> — это самый эффективный и дешевый способ восстановить работоспособность узла.</p>
+
+<p>Другая частая проблема — окисление контактов внутри разъема. Из-за попадания влаги в дверь (особенно если нарушена герметичность мембраны) на плате образуется налет, который нарушает передачу сигналов. Тщательная очистка <strong>разъема и контактов</strong> спиртом или специальным очистителем может вернуть жизнь блоку.</p>
+
+<p>Иногда выходит из строя кнопка-переключатель. Контакты внутри нее подгорают, и сигнал не проходит на процессор. В этом случае проще заменить весь узел кнопок, так как разборка и чистка отдельных кнопок часто дают временный эффект.</p>
+
+<ul>
+<li>🔧 Отвалившаяся пайка силовых реле на плате</li>
+<li>🔧 Окисление контактов в разъеме из-за влаги</li>
+<li>🔧 Износ контактных групп внутри кнопок управления</li>
+<li>🔧 Выход из строя микросхемы драйвера мотора</li>
+</ul>
+
+<h2 id="замена-блока-и-инициализация-системы">Замена блока и инициализация системы</h2>
+
+<p>Если ремонт невозможен, потребуется замена блока управления. При покупке важно обращать внимание на маркировку и год выпуска, так как <strong>конфигурация разъема</strong> может отличаться даже в пределах одного поколения. Убедитесь, что новый модуль совместим с вашей комплектацией автомобиля.</p>
+
+<p>После установки нового блока необходимо выполнить процедуру инициализации (обучения) стеклоподъемников. Без этого функция автоматического подъема и опускания работать не будет. Система должна запомнить верхнюю и нижнюю точки хода стекла и настроить параметры защиты от защемления.</p>
+
+<p>Процедура инициализации выполняется через <code>Настройки → Система → Обучение стеклоподъемников</code> (в меню блока, если есть доступ) или путем ручной последовательности действий. Нажмите и удерживайте кнопку подъема стекла в верхнем положении в течение 3-5 секунд после того, как оно полностью закрылось. Затем опустите стекло до конца и удерживайте кнопку опускания еще 3-5 секунд.</p>
+
+<details class="faq-item"><summary>Важные нюансы инициализации</summary><div class="faq-answer"><p>Если после установки нового блока стекло не поднимается автоматически, попробуйте отключить аккумулятор на 10 минут. Это сбросит временные ошибки в памяти контроллера. Также проверьте, не заклинило ли механизм стеклоподъемника, так как блок может блокировать функцию обучения при наличии механического сопротивления.</p></div></details>
+
+<h2 id="профилактика-и-обслуживание-электроники-двери">Профилактика и обслуживание электроники двери</h2>
+
+<p>Чтобы избежать повторных поломок, необходимо регулярно проверять состояние герметика двери. Влага — главный враг электроники, и если мембрана внутри двери повреждена, вода будет стекать прямо на блок управления. <strong>Замена мембраны</strong> и обработка стыков герметиком значительно продлят жизнь электронике.</p>
+
+<p>Также стоит периодически смазывать механизмы стеклоподъемников силиконовой смазкой. Это снизит нагрузку на моторы и, соответственно, на силовые элементы блока управления. Уменьшение трения в направляющих стекла поможет избежать ложных срабатываний защиты от перегрузки.</p>
+
+<p>Обратите внимание на состояние проводки в гофре между кузовом и дверью. Провода там часто переламываются из-за постоянных открываний и закрываний двери. <strong>Замена поврежденных проводов</strong> предотвратит короткие замыкания, которые могут сжечь блок управления.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед тем как снимать блок управления, обязательно сфотографируйте расположение проводов в разъеме, так как цвета могут совпадать у разных модификаций, и вы можете перепутать контакты при обратной сборке.</p></div>
+
+<h2 id="сравнение-вариантов-ремонта-и-замены">Сравнение вариантов ремонта и замены</h2>
+
+<p>Владельцы часто стоят перед выбором: ремонтировать старый блок или покупать новый. Ремонт обходится дешевле, но не гарантирует долговечности, так как старые компоненты могут выйти из строя в любой момент. Новый блок стоит дороже, но обеспечивает полную надежность и часто имеет улучшенную конструкцию.</p>
+
+<p>Рассмотрим основные преимущества и недостатки каждого подхода в таблице ниже. Это поможет вам принять взвешенное решение, исходя из вашего бюджета и технического состояния автомобиля.</p>
+
+<table>
+<thead>
+<tr>
+<th>Критерий</th>
+<th>Ремонт старого блока</th>
+<th>Покупка нового блока</th>
+<th>Покупка б/у блока</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Стоимость</td>
+<td>Низкая (1000-3000 руб.)</td>
+<td>Высокая (15000-25000 руб.)</td>
+<td>Средняя (5000-8000 руб.)</td>
+</tr>
+<tr>
+<td>Надежность</td>
+<td>Средняя</td>
+<td>Высокая</td>
+<td>Непредсказуемая</td>
+</tr>
+<tr>
+<td>Срок выполнения</td>
+<td>1-2 часа</td>
+<td>30 минут (замена)</td>
+<td>1-3 дня (поиск)</td>
+</tr>
+<tr>
+<td>Гарантия</td>
+<td>Короткая (1-3 мес.)</td>
+<td>Долгая (1 год и более)</td>
+<td>Отсутствует или короткая</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Ремонт пайки силовых реле — самый экономичный способ решения проблемы, но для долгосрочной эксплуатации лучше заменить блок на новый, особенно если автомобиль планируется использовать еще несколько лет.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Почему стекло на Honda CR-V 2 перестало подниматься автоматически?</summary>
+<p>Это может быть связано с потерей памяти блока управления после отключения аккумулятора или срабатывания защиты. Попробуйте выполнить процедуру инициализации, описанную выше, удерживая кнопки в крайних положениях.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать блок от другой модели Honda?</summary>
+<p>Нет, блоки управления имеют уникальную распиновку и программное обеспечение. Использование блока от Civic или Accord может привести к короткому замыканию и выходу из строя проводки.</p>
+</details>
+
+<details>
+<summary>Как проверить, неисправен ли мотор или сам блок?</summary>
+<p>Необходимо подать питание напрямую на мотор, минуя блок. Если мотор работает — проблема в блоке управления. Если мотор не реагирует — неисправен сам мотор-редуктор или проводка.</p>
+</details>
+
+<details>
+<summary>Сколько стоит замена блока управления в сервисе?</summary>
+<p>Стоимость работ по замене варьируется от 1500 до 3000 рублей, в зависимости от региона и сервиса. В эту сумму обычно входит снятие обшивки, замена модуля и инициализация.</p>
+</details>
+
+<details>
+<summary>Что делать, если после ремонта стекло работает рывками?</summary>
+<p>Рывки могут указывать на некачественную пайку или остаточные окисления на контактах. Также проверьте состояние троса и роликов в механизме подъема, возможно, там есть механическое препятствие.</p>
+</details>
+
+<div class="attention-box attention-info"><div><strong>📊 Что вы выбрали для решения проблемы?</strong><ul><li>Ремонт пайки блока</li><li>Покупка нового блока</li><li>Покупка б/у блока</li><li>Обратился в сервис</li></ul></div></div>
+
+<details class="faq-item"><summary>Дополнительная информация о диагностике</summary><div class="faq-answer"><p>Для профессиональной диагностики можно использовать сканер OBDII с поддержкой Honda. Он может показать коды ошибок, связанные с системой комфорта, которые не отображаются на панели приборов. Коды обычно начинаются с B-серии.</p></div></details>
+
+<p>Если вы столкнулись с проблемой, помните, что <mark>основная причина отказа стеклоподъемников на Honda CR-V 2 — это отпайка силовых реле внутри блока управления</mark>. В большинстве случаев это решается простым прогревом пайки без необходимости покупки дорогостоящих запчастей. Регулярный уход за механизмами и защита от влаги помогут избежать подобных проблем в будущем.</p></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-устройство-системы">Принцип работы и устройство системы</a></li><li><a href="#симптомы-неисправности-и-методы-диагностики">Симптомы неисправности и методы диагностики</a></li><li><a href="#пошаговая-инструкция-по-снятию-и-проверке-блока">Пошаговая инструкция по снятию и проверке блока</a></li><li><a href="#распространенные-неисправности-и-способы-их-устранения">Распространенные неисправности и способы их устранения</a></li><li><a href="#замена-блока-и-инициализация-системы">Замена блока и инициализация системы</a></li><li><a href="#профилактика-и-обслуживание-электроники-двери">Профилактика и обслуживание электроники двери</a></li><li><a href="#сравнение-вариантов-ремонта-и-замены">Сравнение вариантов ремонта и замены</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-srv-razmer-koles.html" class="related-card">Honda CR-V: размеры колес, диски, вылет и шины</a></li><li><a href="/articles/a/ak/akkumulyator-dlya-khonda-srv-rd1.html" class="related-card">Аккумулятор для Honda CR-V RD1: Выбор, замена и обслуживание</a></li><li><a href="/articles/k/kh/khonda-tsrv-1-pokolenie.html" class="related-card">Хонда ЦРВ 1 поколение: Полное руководство по выбору и обслуживанию</a></li><li><a href="/articles/r/ra/radiator-honda-cr-v-rd1.html" class="related-card">Радиатор Honda CR-V RD1: выбор, замена и устранение течей</a></li><li><a href="/articles/l/la/lampochki-pribornoj-paneli-khonda-srv-rd1.html" class="related-card">Лампочки приборной панели Honda CR-V RD1: Замена и подбор</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-srv-razmer-koles.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V: размеры колес, диски, вылет и шины</span><span class="related-bottom-desc">Полный гид по колесам Honda CR-V. Таблицы размеров шин и дисков для всех поколений. Вылет, сверловка</span></a><a href="/articles/a/ak/akkumulyator-dlya-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Аккумулятор для Honda CR-V RD1: Выбор, замена и обслуживание</span><span class="related-bottom-desc">Полный гайд по подбору аккумулятора для Honda CR-V первого поколения (RD1). Характеристики, типоразм</span></a><a href="/articles/k/kh/khonda-tsrv-1-pokolenie.html" class="related-bottom-card"><span class="related-bottom-title">Хонда ЦРВ 1 поколение: Полное руководство по выбору и обслуживанию</span><span class="related-bottom-desc">Всё о Honda CR-V первого поколения (RD): технические характеристики, слабые места, цены на запчасти </span></a><a href="/articles/r/ra/radiator-honda-cr-v-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Радиатор Honda CR-V RD1: выбор, замена и устранение течей</span><span class="related-bottom-desc">Полный гид по радиатору Honda CR-V первого поколения (RD1). Как выбрать оригинал, аналоги, признаки </span></a><a href="/articles/l/la/lampochki-pribornoj-paneli-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Лампочки приборной панели Honda CR-V RD1: Замена и подбор</span><span class="related-bottom-desc">Полное руководство по замене подсветки панели приборов Honda CR-V RD1. Подбор цоколей, схемы подключ</span></a><a href="/articles/d/di/diski-na-khonda-srv.html" class="related-bottom-card"><span class="related-bottom-title">Диски на Хонда СРВ: размеры, разболтовка и выбор R17-R19</span><span class="related-bottom-desc">Полный гид по выбору дисков на Honda CR-V. Разболтовка, вылет, диаметры R17-R19, отличия литых и ков</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Скутер Honda Dio не заводится: Полный гайд по диагностике и ремонту — Honda Library</title>
+    <meta name="description" content="Скутер Honda Dio не заводится? Разбираем основные причины: от свечи до карбюратора. Пошаговая инструкция по поиску неисправностей своими руками.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/sk/skuter-khonda-dio-ne-zavoditsya.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Скутер Honda Dio не заводится: Полный гайд по диагностике и ремонту">
+    <meta property="og:description" content="Скутер Honda Dio не заводится? Разбираем основные причины: от свечи до карбюратора. Пошаговая инструкция по поиску неисправностей своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Скутер Honda Dio не заводится: Полный гайд по диагностике и ремонту</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Почему не заводится скутер Honda Dio: Диагностика и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#первичная-диагностика-система-зажигания-и-искра">Первичная диагностика: Система зажигания и искра</a></li><li><a href="#проверка-топливной-системы-и-подачи-бензина">Проверка топливной системы и подачи бензина</a></li><li><a href="#компрессия-и-механическое-состояние-двигателя">Компрессия и механическое состояние двигателя</a></li><li><a href="#электроника-и-стартер-почему-мотор-не-крутит">Электроника и стартер: Почему мотор не крутит</a></li><li><a href="#частые-ошибки-владельцев-и-нюансы-настройки">Частые ошибки владельцев и нюансы настройки</a></li><li><a href="#алгоритм-действий-при-сложных-неисправностях">Алгоритм действий при сложных неисправностях</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда ваш верный <em>Honda Dio</em> внезапно отказывается заводиться, может испортить даже самый солнечный день. Чаще всего проблема кроется не в глобальных поломках двигателя, а в банальном нарушении одной из систем жизнеобеспечения мотора: подачи топлива, искры или компрессии. Многие владельцы, столкнувшись с этим, сразу бегут в сервис, но в 80% случаев неисправность можно устранить самостоятельно, обладая минимальным набором инструментов.</p>
+
+<p>Двигатели скутеров серии <em>Honda Dio</em> (AF18, AF27, AF34 и другие) отличаются высокой надежностью и простотой конструкции. Однако именно эта простота требует от владельца внимательного отношения к мелочам. Забитый жиклер, окисленный контакт или забытый кран бензобака могут полностью обездвижить технику. В этой статье мы подробно разберем алгоритм поиска неисправности, чтобы вы могли быстро вернуть скутер в строй.</p>
+
+<h2 id="первичная-диагностика-система-зажигания-и-искра">Первичная диагностика: Система зажигания и искра</h2>
+<p>Первым делом необходимо убедиться в наличии искры, так как без неё процесс воспламенения смеси невозможен. Снимите колпачок свечи, выкрутите саму свечу и наденьте колпачок обратно, прижав металлический корпус свечи к металлической части двигателя (массе). Затем прокрутите двигатель кик-стартером или электростартером.</p>
+
+<p>Если вы видите яркую синюю искру, значит, система зажигания работает исправно, и проблему следует искать в топливной системе или компрессии. Отсутствие искры или её тусклый оранжевый цвет указывают на проблемы с <strong>катушкой зажигания</strong>, <strong>CDI-модулем</strong> или <strong>свечным наконечником</strong>. Также стоит проверить зазор на свече, который для <em>Honda Dio</em> обычно составляет 0.6–0.7 мм.</p>
+
+<ul>
+  <li>🔍 Проверьте состояние <strong>свечи зажигания</strong>: она должна быть сухой и иметь светло-коричневый нагар.</li>
+  <li>🔍 Осмотрите <strong>высоковольтный провод</strong> на наличие трещин или следов пробоя изоляции.</li>
+  <li>🔍 Убедитесь в надёжности контакта <strong>массы</strong> на катушке и CDI.</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Если искра появляется только при сильном нажатии на кик-стартер, но не при работе стартера, проблема может быть в роторе генератора или катушке возбуждения, которые требуют замены.</blockquote>
+
+<h2 id="проверка-топливной-системы-и-подачи-бензина">Проверка топливной системы и подачи бензина</h2>
+<p>Если искра в норме, следующим шагом становится проверка подачи горючего. Часто владельцы забывают, что топливный кран имеет несколько положений, и он может быть просто перекрыт или установлен в положение «резерв», когда бак пуст. Откройте кран и прислушайтесь к характерному бульканью, которое говорит о притоке топлива в карбюратор.</p>
+
+<p>Для более точной диагностики снимите шланг подачи бензина с карбюратора и направьте его в ёмкость. При переключении крана бензин должен течь уверенной струёй. Если поток слабый или отсутствует, проблема может быть в <strong>засорённом топливном фильтре</strong> (сеточке), находящемся в баке, или в забитом <strong>впускном патрубке</strong>. Также проверьте работу <strong>бензонасоса</strong> (вакуумного), если он предусмотрен конструкцией вашей модели.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какая проблема чаще всего встречается на вашем скутере?</strong><ul><li>Нет искры</li><li>Нет бензина</li><li>Нет компрессии</li><li>Стартер крутит, но не заводится</li></ul></div></div>
+
+<p>Внутри самого карбюратора критическим элементом является <strong>поплавковая камера</strong>. Если уровень топлива в ней не соответствует норме, двигатель не сможет запуститься. Низкий уровень возникает из-за заклинивания иглы клапана или неправильной настройки поплавка. Высокий уровень, напротив, приводит к заливу свечи.</p>
+
+<ul>
+  <li>💧 Очистите <strong>сетчатый фильтр</strong> в карбюраторе от грязи и мусора.</li>
+  <li>💧 Продуйте <strong>жиклеры</strong> сжатым воздухом или очистителем карбюратора.</li>
+  <li>💧 Проверьте <strong>вакуумный шланг</strong> на герметичность и отсутствие трещин.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Быстрая проверка топлива</h4><label class="check-item"><input type="checkbox"><span>Кран открыт</span></label><label class="check-item"><input type="checkbox"><span>В баке есть бензин</span></label><label class="check-item"><input type="checkbox"><span>Фильтр чистый</span></label><label class="check-item"><input type="checkbox"><span>Шланги не пережаты</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="компрессия-и-механическое-состояние-двигателя">Компрессия и механическое состояние двигателя</h2>
+<p>Компрессия — это давление, создаваемое в цилиндре при ходе поршня вверх. Без достаточного давления смесь не сжимается до нужной плотности и не воспламеняется. Измерить этот параметр можно с помощью <strong>компрессометра</strong>. Для двигателей <em>Honda Dio</em> нормальное значение составляет 8–12 атмосфер. Если показатель ниже 6 атмосфер, запуск двигателя будет невозможен или нестабилен.</p>
+
+<p>Низкая компрессия чаще всего вызвана износом <strong>поршневых колец</strong> или самого <strong>цилиндра</strong>. Также причиной может стать прогоревшая <strong>прокладка головки цилиндра</strong> или неправильно отрегулированные <strong>клапаны</strong> (если двигатель 4-тактный). На двухтактных моделях, таких как многие версии <em>AF18</em>, причиной может стать негерметичность сальников коленвала, пропускающих лишний воздух.</p>
+
+<details class="faq-item"><summary>Как проверить сальники коленвала?</summary><div class="faq-answer"><p>Снимите карбюратор и, вращая коленвал, прислушайтесь к подсосу воздуха. Если слышен свист или сжатый воздух вылетает из сальника — он требует замены, иначе двигатель не наберёт компрессию.</p></div></details>
+
+<p>Особое внимание уделите состоянию <strong>резиновой муфты</strong> стартера (для моделей с электростартером). Если она изношена, шестерня не будет прокручивать двигатель, создавая иллюзию отсутствия компрессии или неисправности стартера. Проверьте, прокручивается ли вал коленчатого вала вручную через карбюратор или глушитель.</p>
+
+<ul>
+  <li>⚙️ Измерьте зазор между <strong>клапанами</strong> и коромыслами (для 4-тактных моторов).</li>
+  <li>⚙️ Проверьте целостность <strong>прокладки ГБЦ</strong> на предмет подсоса воздуха.</li>
+  <li>⚙️ Осмотрите <strong>поршневые кольца</strong> на предмет залегания или поломки.</li>
+</ul>
+
+<h2 id="электроника-и-стартер-почему-мотор-не-крутит">Электроника и стартер: Почему мотор не крутит</h2>
+<p>Иногда проблема вовсе не в топливе или искре, а в том, что двигатель просто не вращается. Если при нажатии на кнопку стартера вы слышите лишь тихий щелчок или ничего не происходит, проверьте аккумулятор. Разряженный или окисленный аккумулятор не сможет обеспечить достаточный ток для работы <strong>тягового реле</strong> и самого <strong>стартера</strong>.</p>
+
+<p>Часто виновником становится <strong>концевик тормоза</strong> (на некоторых моделях) или <strong>датчик нейтральной передачи</strong>. Если скутер стоит на передаче, стартер может быть заблокирован системой безопасности. Также проверьте <strong>реле стартера</strong>: если оно щелкает, но стартер не крутит, возможно, подгорели контакты внутри реле или износился коллектор самого стартера.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Симптом</th>
+      <th>Вероятная причина</th>
+      <th>Решение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Стартер щелкает, но не крутит</td>
+      <td>Слабый аккумулятор или подгоревшее реле</td>
+      <td>Зарядить АКБ или заменить реле</td>
+    </tr>
+    <tr>
+      <td>Стартер крутит медленно</td>
+      <td>Низкий заряд АКБ или плохой контакт массы</td>
+      <td>Проверить клеммы и зарядить батарею</td>
+    </tr>
+    <tr>
+      <td>Стартер не реагирует</td>
+      <td>Сломан выключатель или предохранитель</td>
+      <td>Заменить предохранитель или кнопку</td>
+    </tr>
+    <tr>
+      <td>Двигатель крутится, но нет искры</td>
+      <td>Неисправен CDI или катушка</td>
+      <td>Заменить модуль зажигания</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Перед проверкой стартера всегда снимайте минусовую клемму с аккумулятора, чтобы избежать короткого замыкания при работе с проводкой.</p></div>
+
+<p>Для диагностики цепи стартера можно использовать мультиметр. Проверьте наличие напряжения на клемме стартера при нажатии кнопки. Если напряжение есть, но вал не вращается — проблема в самом стартере. Если напряжения нет — ищите обрыв в цепи управления, который может проходить через <strong>реле блокировки</strong> или <strong>концевик тормоза</strong>.</p>
+
+<h2 id="частые-ошибки-владельцев-и-нюансы-настройки">Частые ошибки владельцев и нюансы настройки</h2>
+<p>Многие владельцы <em>Honda Dio</em> допускают ошибку, пытаясь завести двигатель с пережатой <strong>подсосом (воздушная заслонка)</strong>. Если двигатель залит бензином, попытки завести его с закрытой заслонкой только усугубят ситуацию. В таком случае необходимо полностью открыть подсос и несколько раз прокрутить двигатель без газа, чтобы выгнать излишки топлива.</p>
+
+<p>Также стоит обратить внимание на состояние <strong>воздушного фильтра</strong>. Если он сильно забит пылью, двигатель может завестись, но сразу глохнуть или работать с перебоями. Чрезмерное обогащение смеси из-за отсутствия воздуха приводит к образованию нагара на свече и в камере сгорания.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная чистка воздушного фильтра и замена масла — залог того, что скутер заведётся с первого раза даже после долгого простоя.</p></div>
+
+<p>Ещё один важный момент — качество топлива. Использование бензина с низким октановым числом или с примесями воды может привести к детонации и невозможности запуска. Для <em>Honda Dio</em> рекомендуется использовать только <strong>АИ-95</strong> или <strong>АИ-92</strong> в зависимости от рекомендаций производителя, избегая длительного хранения топлива в баке.</p>
+
+<h2 id="алгоритм-действий-при-сложных-неисправностях">Алгоритм действий при сложных неисправностях</h2>
+<p>Если все вышеперечисленные проверки не дали результата, возможно, проблема кроется в более глубоких неисправностях двигателя. Это может быть <strong>залегание колец</strong>, критический износ <strong>втулок коленвала</strong> или проблемы с <strong>электронным блоком управления</strong> (на инжекторных версиях AF34). В таких случаях потребуется демонтаж двигателя и его полная разборка.</p>
+
+<p>Не стоит пытаться ремонтировать двигатель на коленке без специнструмента. Для правильного замера зазоров и сборки необходимы динамометрический ключ и набор щупов. Неправильная сборка может привести к заклиниванию двигателя в движении, что гораздо опаснее, чем простой отказ завестись.</p>
+
+<details class="faq-item"><summary>Когда пора менять двигатель?</summary><div class="faq-answer"><p>Если компрессия ниже 4 атмосфер, а поршень имеет явные следы задиров, ремонт поршневой группы может быть экономически нецелесообразен. Лучше заменить мотор в сборе.</p></div></details>
+
+<p>Иногда проблема решается заменой <strong>CDI-модуля</strong>. Это устройство управляет моментом искрообразования и часто выходит из строя из-за скачков напряжения или влаги. Замена на аналогичный блок часто помогает восстановить работу двигателя без глубокой диагностики.</p>
+
+<ul>
+  <li>🛠️ Проверьте <strong>цепь ГРМ</strong> (если двигатель 4-тактный) на предмет растяжения.</li>
+  <li>🛠️ Осмотрите <strong>коленчатый вал</strong> на предмет люфтов в подшипниках.</li>
+  <li>🛠️ Замените <strong>CDI-модуль</strong> на заведомо исправный для теста.</li>
+</ul>
+
+<blockquote>⚠️ Внимание: <mark>Никогда не пытайтесь запустить двигатель, если есть запах бензина и вы не уверены в исправности системы зажигания — это может привести к возгоранию в карбюраторе.</mark></blockquote>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+<details>
+  <summary>Почему скутер заводится и сразу глохнет?</summary>
+  <p>Чаще всего это связано с загрязнением жиклеров карбюратора или неисправностью системы холостого хода. Также может быть проблема с подсосом воздуха через прокладки.</p>
+</details>
+<details>
+  <summary>Свеча мокрая, но искра есть. Что делать?</summary>
+  <p>Двигатель залит бензином. Выкрутите свечу, просушите её и цилиндр, прокрутив двигатель несколько раз без свечи. Затем установите сухую свечу и попробуйте завести с открытым подсосом.</p>
+</details>
+<details>
+  <summary>Как проверить CDI модуль без мультиметра?</summary>
+  <p>Единственный надежный способ — установка заведомо исправного модуля от аналогичного скутера. Если проблема исчезла, значит, старый CDI неисправен.</p>
+</details>
+<details>
+  <summary>Почему не работает электростартер, но кик-стартер работает?</summary>
+  <p>Проверьте аккумулятор, реле стартера и саму кнопку запуска. Также может быть изношена резиновая муфта стартера.</p>
+</details>
+<details>
+  <summary>Можно ли запустить скутер с толкача?</summary>
+  <p>Да, если есть искра и компрессия, запуск с толкача (на передаче) часто помогает, особенно в холодную погоду или при проблемах со стартером.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#первичная-диагностика-система-зажигания-и-искра">Первичная диагностика: Система зажигания и искра</a></li><li><a href="#проверка-топливной-системы-и-подачи-бензина">Проверка топливной системы и подачи бензина</a></li><li><a href="#компрессия-и-механическое-состояние-двигателя">Компрессия и механическое состояние двигателя</a></li><li><a href="#электроника-и-стартер-почему-мотор-не-крутит">Электроника и стартер: Почему мотор не крутит</a></li><li><a href="#частые-ошибки-владельцев-и-нюансы-настройки">Частые ошибки владельцев и нюансы настройки</a></li><li><a href="#алгоритм-действий-при-сложных-неисправностях">Алгоритм действий при сложных неисправностях</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-sb-1000-sf.html" class="related-card">Honda CB 1000 SF: Характеристики, тюнинг и обслуживание</a></li><li><a href="/articles/s/sp/sportivnyj-variator-na-khonda-dio-27.html" class="related-card">Спортивный вариатор на Honda Dio 27: тюнинг трансмиссии</a></li><li><a href="/articles/s/sk/skuter-honda-lead-90.html" class="related-card">Honda Lead 90: Полный обзор, характеристики и советы по обслуживанию</a></li><li><a href="/articles/o/ot/otzyvy-vladeltsev-khonda-vezel-ne-gibrid.html" class="related-card">Отзывы владельцев Honda Vezel не гибрид: плюсы, минусы, надежность</a></li><li><a href="/articles/d/dr/drom-ulan-ude-khonda-stepvagon.html" class="related-card">Дром Улан-Удэ: Honda Stepwgn — поиск, цены и нюансы покупки</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-sb-1000-sf.html" class="related-bottom-card"><span class="related-bottom-title">Honda CB 1000 SF: Характеристики, тюнинг и обслуживание</span><span class="related-bottom-desc">Полный обзор Honda CB 1000 SF (SC 19/SC 30). Технические данные, советы по обслуживанию, тюнинг и ос</span></a><a href="/articles/s/sp/sportivnyj-variator-na-khonda-dio-27.html" class="related-bottom-card"><span class="related-bottom-title">Спортивный вариатор на Honda Dio 27: тюнинг трансмиссии</span><span class="related-bottom-desc">Как сделать спортивный вариатор на Honda Dio 27? Разбор роликов, ремня, пружины и настройка трансмис</span></a><a href="/articles/s/sk/skuter-honda-lead-90.html" class="related-bottom-card"><span class="related-bottom-title">Honda Lead 90: Полный обзор, характеристики и советы по обслуживанию</span><span class="related-bottom-desc">Подробный анализ скутера Honda Lead 90. Технические характеристики, особенности эксплуатации, сравне</span></a><a href="/articles/o/ot/otzyvy-vladeltsev-khonda-vezel-ne-gibrid.html" class="related-bottom-card"><span class="related-bottom-title">Отзывы владельцев Honda Vezel не гибрид: плюсы, минусы, надежность</span><span class="related-bottom-desc">Честные отзывы о Honda Vezel с бензиновым двигателем. Разбор надежности мотора 1.5 и 1.8, расход топ</span></a><a href="/articles/d/dr/drom-ulan-ude-khonda-stepvagon.html" class="related-bottom-card"><span class="related-bottom-title">Дром Улан-Удэ: Honda Stepwgn — поиск, цены и нюансы покупки</span><span class="related-bottom-desc">Ищете Honda Stepwgn на Дром в Улан-Удэ? Полный разбор рынка: цены, особенности выбора, технические н</span></a><a href="/articles/h/ho/honda-integra-nc-700.html" class="related-bottom-card"><span class="related-bottom-title">Honda Integra NC700: Полный обзор, характеристики и особенности эксплуатации</span><span class="related-bottom-desc">Подробный анализ Honda Integra NC700: технические характеристики, преимущества DCT-коробки, обзор ин</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

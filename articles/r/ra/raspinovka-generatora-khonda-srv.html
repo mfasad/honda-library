@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Распиновка генератора Хонда СРВ: схемы, контакты, диагностика — Honda Library</title>
+    <meta name="description" content="Подробная распиновка генератора Хонда СРВ всех поколений. Схемы подключения, проверка мультиметром, коды ошибок и устранение неисправностей.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/r/ra/raspinovka-generatora-khonda-srv.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Распиновка генератора Хонда СРВ: схемы, контакты, диагностика">
+    <meta property="og:description" content="Подробная распиновка генератора Хонда СРВ всех поколений. Схемы подключения, проверка мультиметром, коды ошибок и устранение неисправностей.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/cr-v/">Cr V</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Распиновка генератора Хонда СРВ: схемы, контакты, диагностика</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Распиновка генератора Хонда СРВ: схемы, контакты и диагностика</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принципиальная-схема-и-назначение-контактов">Принципиальная схема и назначение контактов</a></li><li><a href="#особенности-распиновки-для-разных-поколений-cr-v">Особенности распиновки для разных поколений CR-V</a></li><li><a href="#детальная-диагностика-электрической-цепи">Детальная диагностика электрической цепи</a></li><li><a href="#типичные-неисправности-и-их-симптомы">Типичные неисправности и их симптомы</a></li><li><a href="#процедура-замены-и-подключения-генератора">Процедура замены и подключения генератора</a></li><li><a href="#влияние-системы-зарядки-на-работу-электроники">Влияние системы зарядки на работу электроники</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Система зарядки автомобиля является критически важным узлом, от исправности которого зависит стабильная работа всего электрооборудования <em>Honda CR-V</em>. При возникновении проблем с запуском двигателя или загорании индикатора аккумулятора на приборной панели, первым делом необходимо проверить <strong>генератор</strong> и правильность его подключения. Понимание распиновки разъемов позволяет точно диагностировать неисправность без замены исправных деталей, экономя время и деньги владельца.</p>
+
+<p>В этой статье мы детально разберем электрическую схему подключения, рассмотрим различия между поколениями и предоставим пошаговый алгоритм проверки контактов. <strong>Электрическая цепь</strong> генератора Honda имеет свои особенности, игнорирование которых может привести к выходу из строя дорогостоящего <strong>блока управления</strong> или самого альтернатора. Внимательное изучение материалов поможет вам избежать типичных ошибок при ремонте.</p>
+
+<p>Независимо от того, владеете ли вы рестайлинговой моделью или классическим кузовом, принципы работы остаются схожими, но расположение и количество контактов могут отличаться. Мы рассмотрим основные <strong>сигнальные линии</strong>, отвечающие за управление зарядкой и передачу данных на <strong>ECM</strong>. Правильная интерпретация этих данных — ключ к успешному ремонту.</p>
+
+<h2 id="принципиальная-схема-и-назначение-контактов">Принципиальная схема и назначение контактов</h2>
+
+<p>Генераторы, устанавливаемые на <em>Honda CR-V</em>, как правило, оснащены интеллектуальной системой зарядки, управляемой блоком управления двигателем. Основной разъем чаще всего содержит от двух до трех контактов, каждый из которых выполняет строго определенную функцию в общей цепи. Понимание назначения каждого вывода необходимо для корректной <strong>диагностики</strong>.</p>
+
+<p>Центральным элементом схемы является контакт, отвечающий за управление полем возбуждения. Через него <strong>ECM</strong> подает сигнал на регулятор напряжения, изменяя силу тока в обмотке ротора в зависимости от нагрузки на бортовую сеть. Это позволяет оптимизировать расход топлива и продлить срок службы <strong>ремня привода</strong>.</p>
+
+<p>Вторым важным элементом является сигнальная линия, передающая данные о состоянии генератора на приборную панель или в бортовой компьютер. Именно этот контакт обеспечивает загорание лампы разряда АКБ при неисправности. Нарушение в этой цепи часто приводит к ложным показаниям или их полному отсутствию.</p>
+
+<ul>
+<li>🔋 <strong>Контакт L (или IG):</strong> Сигнал зажигания, подающий питание на регулятор напряжения для начального возбуждения.</li>
+<li>⚡ <strong>Контакт FR (или P):</strong> Сигнал нагрузки, информирующий ЭБУ о текущей выработке генератора для коррекции холостого хода.</li>
+<li>💡 <strong>Контакт S (или B):</strong> Контрольный вывод напряжения батареи, необходимый для работы регулятора и индикации.</li>
+</ul>
+
+<details class="faq-item"><summary>Технические детали работы регулятора</summary><div class="faq-answer"><p>Внутри регулятора напряжения находится транзисторная схема, которая модулирует ток в роторе. При подаче сигнала на контакт управления, транзистор открывается, и ток течет через щетки на коллекторные кольца, создавая магнитное поле.</p></div></details>
+
+<h2 id="особенности-распиновки-для-разных-поколений-cr-v">Особенности распиновки для разных поколений CR-V</h2>
+
+<p>Модельный ряд <em>Honda CR-V</em> насчитывает несколько поколений, и электрическая схема генератора претерпевала изменения в ходе эволюции автомобиля. На ранних моделях, таких как первое поколение (RD1), часто использовались двухконтактные разъемы, где управление осуществлялось более простым способом. Здесь важно не перепутать полярность при <strong>проверке мультиметром</strong>.</p>
+
+<p>Начиная со второго и третьего поколения (RE, RE5, RE6), система стала более сложной. Появился дополнительный контакт для передачи данных о нагрузке, что позволило внедрить систему <strong>i-VTEC</strong> и более эффективно управлять работой двигателя на холостом ходу. Разъемы стали герметичнее, а цветовая маркировка проводов — стандартизирована.</p>
+
+<p>На современных моделях четвертого и пятого поколения (RM, RW) используется цифровая коммуникация по шине LIN или аналоговый сигнал высокого уровня. Ошибка в подключении или замыкание на таких моделях может привести к необходимости перепрошивки <strong>блока управления</strong>. Поэтому точное знание модификации вашего авто критически важно.</p>
+
+<table>
+<thead>
+<tr>
+<th>Поколение</th>
+<th>Тип кузова</th>
+<th>Кол-во контактов</th>
+<th>Тип управления</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-е поколение</td>
+<td>RD1, RD2</td>
+<td>2</td>
+<td>Аналоговое</td>
+</tr>
+<tr>
+<td>2-е поколение</td>
+<td>RD4, RD5</td>
+<td>2-3</td>
+<td>Аналоговое/Сигнальное</td>
+</tr>
+<tr>
+<td>3-е поколение</td>
+<td>RE, RE5</td>
+<td>3</td>
+<td>Сигнальное (P-терминал)</td>
+</tr>
+<tr>
+<td>4-е поколение</td>
+<td>RM1, RM3</td>
+<td>3</td>
+<td>LIN-шина / Сигнал</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-info"><div><strong>📊 С каким поколением Honda CR-V вы работаете?</strong><ul><li>Первое (RD)</li><li>Второе (RD)</li><li>Третье (RE)</li><li>Четвертое (RM)</li><li>Пятое (RW)</li><li>Не знаю</li></ul></div></div>
+
+<h2 id="детальная-диагностика-электрической-цепи">Детальная диагностика электрической цепи</h2>
+
+<p>Процесс диагностики начинается с визуального осмотра <strong>разъемов</strong> и проводов. Окисление контактов или повреждение изоляции — частая причина нестабильной зарядки. Перед использованием измерительных приборов необходимо убедиться, что клеммы <strong>аккумулятора</strong> чистые и надежно затянуты.</p>
+
+<p>Для проверки цепи управления возбуждением потребуется мультиметр в режиме измерения постоянного тока. При включенном зажигании (двигатель заглушен) на управляющем контакте должно присутствовать напряжение бортовой сети, обычно около 12 вольт. Отсутствие напряжения указывает на обрыв в цепи от замка зажигания до генератора.</p>
+
+<p>Следующим этапом проверяется сигнальный контакт нагрузки. При работающем двигателе и включенных потребителях (фары, печка) сигнал на этом выводе должен изменяться. Если сигнал отсутствует, <strong>ECM</strong> не получает информации о зарядке, что может привести к некорректной работе двигателя на холостом ходу.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика цепи генератора</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр проводов</span></label><label class="check-item"><input type="checkbox"><span>Проверка напряжения на контакте IG</span></label><label class="check-item"><input type="checkbox"><span>Замер сигнала на контакте FR</span></label><label class="check-item"><input type="checkbox"><span>Проверка целостности массы</span></label><label class="check-item"><input type="checkbox"><span>Контроль натяжения ремня</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<blockquote>
+<p>⚠️ Внимание: При проведении замеров на работающем двигателе соблюдайте осторожность. Вращающийся шкив и ремень представляют опасность для рук и одежды. Не допускайте короткого замыкания щупов мультиметра на корпус двигателя.</p>
+</blockquote>
+
+<h2 id="типичные-неисправности-и-их-симптомы">Типичные неисправности и их симптомы</h2>
+
+<p>Наиболее распространенной проблемой является износ <strong>щеток</strong> или контактных колец, что приводит к снижению output тока. В этом случае даже при правильной распиновке генератор не сможет выдавать необходимый ток. Симптомами являются тусклый свет фар на холостых и периодическое загорание лампы аккумулятора.</p>
+
+<p>Выход из строя <strong>регулятора напряжения</strong> часто сопровождается перезарядом или недозарядом аккумулятора. Если напряжение в бортсети превышает 14.8 В или падает ниже 13.5 В при работающем двигателе, регулятор требует замены. Это может быть вызвано пробоем внутренних диодов.</p>
+
+<p>Обрыв сигнального провода, идущего к <strong>ECM</strong>, часто не влияет на саму выработку тока, но приводит к появлению ошибки в системе диагностики. Компьютер может перейти в аварийный режим, увеличив обороты холостого хода или ограничив мощность двигателя, думая, что генератор не справляется.</p>
+
+<ul>
+<li>📉 <strong>Низкое напряжение:</strong> Износ щеток, проскальзывание ремня, КЗ в обмотке.</li>
+<li>📈 <strong>Высокое напряжение:</strong> Неисправность регулятора, плохой контакт массы.</li>
+<li>🚫 <strong>Отсутствие сигнала:</strong> Обрыв провода, окисление разъема, сгоревший предохранитель.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте спрей-очиститель для электрических контактов (Contact Cleaner) при обработке разъемов. Это удалит окислы и восстановит проводимость без разбора узла.</p></div>
+
+<h2 id="процедура-замены-и-подключения-генератора">Процедура замены и подключения генератора</h2>
+
+<p>Замена генератора на <em>Honda CR-V</em> требует соблюдения определенного порядка действий. Сначала необходимо отсоединить минусовую клемму <strong>аккумулятора</strong> во избежание короткого замыкания. Затем снимается ремень привода навесных агрегатов, для чего通常需要 ослабить натяжитель.</p>
+
+<p>После демонтажа старого устройства и установки нового, особое внимание уделите подключению разъемов. Они должны защелкнуться с характерным щелчком. Проверьте, чтобы провода не касались горячих частей двигателя или вращающихся элементов, таких как <strong>шкив коленвала</strong>.</p>
+
+<p>После сборки и подключения АКБ необходимо запустить двигатель и проверить напряжение на клеммах аккумулятора. Оно должно быть в диапазоне 13.8–14.4 В. Также рекомендуется сбросить ошибки в <strong>ECM</strong> сканером, если они накопились в процессе эксплуатации с неисправным генератором.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не отсоединяйте клеммы аккумулятора при работающем двигателе для проверки генератора. Это может вызвать скачок напряжения, который мгновенно выведет из строя электронику автомобиля, включая ЭБУ.</p>
+</blockquote>
+
+<h2 id="влияние-системы-зарядки-на-работу-электроники">Влияние системы зарядки на работу электроники</h2>
+
+<p>Современный <em>Honda CR-V</em> насыщен электроникой, чувствительной к перепадам напряжения. Нестабильная работа генератора может вызывать странные глюки: от сброса настроек магнитолы до ошибок в системе ABS или SRS. <strong>Бортовая сеть</strong> должна получать чистый и стабильный ток.</p>
+
+<p>Пульсации напряжения, возникающие при неисправности диодного моста генератора, особенно вредны для аудиосистемы и навигационных блоков. Они создают помехи, которые могут быть интерпретированы как сигналы от датчиков, вызывая хаотичное поведение систем комфорта и безопасности.</p>
+
+<p>Регулярная проверка состояния <strong>ремня</strong> и натяжителя также важна, так как проскальзывание вызывает рывки в зарядке, что фиксируется системой как неисправность. Компьютер может начать корректировать смесь и зажигание, основываясь на ложных данных о нагрузке на двигатель.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Стабильное напряжение — залог долгой жизни всей электроники Honda. Любые скачки должны быть устранены немедленно.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Какое нормальное напряжение должен выдавать генератор Honda CR-V?</summary>
+<p>Нормальным считается напряжение в диапазоне от 13.8 до 14.5 Вольт при работающем двигателе и включенных потребителях. На холостом ходу без нагрузки оно может кратковременно подниматься до 14.8 В, но не должно превышать 15 В.</p>
+</details>
+
+<details>
+<summary>Можно ли установить генератор большей мощности на CR-V?</summary>
+<p>Да, установка более мощного генератора возможна, если совпадают посадочные места и диаметр шкива. Однако может потребоваться доработка проводки силовых контактов и перенастройка <strong>ECM</strong>, если система зарядки интеллектуальная.</p>
+</details>
+
+<details>
+<summary>Почему горит лампа аккумулятора, но мультиметр показывает 14 Вольт?</summary>
+<p>Это указывает на неисправность в цепи сигнального провода, идущего к приборной панели, или на проблему с самим индикатором. Сам генератор при этом может работать исправно, но система диагностики видит обрыв сигнальной цепи.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять щетки генератора?</summary>
+<p>Ресурс щеток обычно составляет от 100 до 150 тысяч километров, но зависит от условий эксплуатации. Рекомендуется проверять их длину при каждой второй замене ремня или при появлении симптомов нестабильной зарядки.</p>
+</details>
+
+<details>
+<summary>Что делать, если после замены генератора ошибка не исчезает?</summary>
+<p>Необходимо сбросить ошибку через диагностический разъем OBDII. Если ошибка возвращается мгновенно, проверьте качество контактов, целостность проводов и соответствие установленного генератора спецификации вашего <em>Honda CR-V</em>.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принципиальная-схема-и-назначение-контактов">Принципиальная схема и назначение контактов</a></li><li><a href="#особенности-распиновки-для-разных-поколений-cr-v">Особенности распиновки для разных поколений CR-V</a></li><li><a href="#детальная-диагностика-электрической-цепи">Детальная диагностика электрической цепи</a></li><li><a href="#типичные-неисправности-и-их-симптомы">Типичные неисправности и их симптомы</a></li><li><a href="#процедура-замены-и-подключения-генератора">Процедура замены и подключения генератора</a></li><li><a href="#влияние-системы-зарядки-на-работу-электроники">Влияние системы зарядки на работу электроники</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-tsrv-2004-god.html" class="related-card">Honda CR-V 2004: Полное руководство по выбору, обслуживанию и ремонту</a></li><li><a href="/articles/k/kh/khonda-srv-2012-kharakteristiki.html" class="related-card">Хонда СР-В 2012: Полные характеристики, двигатели и оснащение</a></li><li><a href="/articles/k/kh/khonda-srv-drajv-2.html" class="related-card">Honda CR-V Drive 2: Полный обзор системы и настройки</a></li><li><a href="/articles/h/ho/honda-cr-v-pervoe-pokolenie.html" class="related-card">Honda CR-V 1 поколение: история, характеристики, слабые места</a></li><li><a href="/articles/s/sa/salnik-raspredvala-khonda-srv-rd1.html" class="related-card">Замена сальника распредвала Honda CR-V RD1: инструкция и нюансы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-tsrv-2004-god.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 2004: Полное руководство по выбору, обслуживанию и ремонту</span><span class="related-bottom-desc">Всё о Honda CR-V второго поколения (RD7). Реальные проблемы двигателей, надежность коробки, ликвидно</span></a><a href="/articles/k/kh/khonda-srv-2012-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Хонда СР-В 2012: Полные характеристики, двигатели и оснащение</span><span class="related-bottom-desc">Подробный обзор Honda CR-V 2012 года: технические характеристики двигателей 2.0 и 2.4, коробки перед</span></a><a href="/articles/k/kh/khonda-srv-drajv-2.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V Drive 2: Полный обзор системы и настройки</span><span class="related-bottom-desc">Разбираем систему Drive 2 в Honda CR-V. Инструкция по настройке, устранению ошибок и особенностям ра</span></a><a href="/articles/h/ho/honda-cr-v-pervoe-pokolenie.html" class="related-bottom-card"><span class="related-bottom-title">Honda CR-V 1 поколение: история, характеристики, слабые места</span><span class="related-bottom-desc">Полный обзор первого поколения Honda CR-V (RD1). Технические характеристики, особенности двигателей </span></a><a href="/articles/s/sa/salnik-raspredvala-khonda-srv-rd1.html" class="related-bottom-card"><span class="related-bottom-title">Замена сальника распредвала Honda CR-V RD1: инструкция и нюансы</span><span class="related-bottom-desc">Пошаговая замена переднего сальника распредвала на Honda CR-V RD1. Выбор запчастей, причины течи, ин</span></a><a href="/articles/h/ho/honda-hypoid-gear-oil.html" class="related-bottom-card"><span class="related-bottom-title">Honda Hypoid Gear Oil: Выбор, замена и спецификации масла для дифференциала</span><span class="related-bottom-desc">Полный гид по выбору масла Honda Hypoid Gear Oil. Разбор вязкости GL-5, интервалы замены, нюансы для</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

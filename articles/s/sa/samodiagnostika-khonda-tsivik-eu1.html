@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Самодиагностика Хонда Цивик EU1: коды ошибок и сброс — Honda Library</title>
+    <meta name="description" content="Полная инструкция по самодианостике Honda Civic EU1. Расшифровка кодов ошибок, методы сброса Check Engine без сканера и проверка датчиков своими руками.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/s/sa/samodiagnostika-khonda-tsivik-eu1.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Самодиагностика Хонда Цивик EU1: коды ошибок и сброс">
+    <meta property="og:description" content="Полная инструкция по самодианостике Honda Civic EU1. Расшифровка кодов ошибок, методы сброса Check Engine без сканера и проверка датчиков своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/civic/">Civic</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Самодиагностика Хонда Цивик EU1: коды ошибок и сброс</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Самодиагностика Хонда Цивик EU1: коды ошибок и алгоритмы действий</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-к-диагностике-и-типы-разъемов">Подготовка к диагностике и типы разъемов</a></li><li><a href="#алгоритм-считывания-кодов-через-scs-разъем">Алгоритм считывания кодов через SCS разъем</a></li><li><a href="#диагностика-через-порт-obd-ii-и-кнопку-maintenance">Диагностика через порт OBD-II и кнопку Maintenance</a></li><li><a href="#расшифровка-основных-кодов-ошибок-honda">Расшифровка основных кодов ошибок Honda</a></li><li><a href="#сброс-ошибок-и-адаптация-эбу">Сброс ошибок и адаптация ЭБУ</a></li><li><a href="#частые-проблемы-civic-eu1-и-их-связь-с-ошибками">Частые проблемы Civic EU1 и их связь с ошибками</a></li><li><a href="#вопросы-и-ответы-по-диагностике">Вопросы и ответы по диагностике</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владельцы легендарного седьмого поколения <em>Honda Civic</em> (кузов EU1/EP2) часто сталкиваются с необходимостью понять, что именно скрывает двигатель под капотом, когда загорается индикатор неисправности. Самодиагностика Хонда Цивик EU1 — это не просто миф, а реально работающий инструмент, позволяющий считать коды ошибок напрямую через сервисный разъем или диагностический порт OBD-II. Понимание этих кодов дает огромное преимущество при ремонте, позволяя отсеять лишние траты в автосервисе.</p>
+
+<p>Электронный блок управления (ЭБУ) в этих моделях, будь то двигатель D15B или D16Y7, постоянно мониторит состояние всех систем. При выходе параметров за допустимые пределы, система фиксирует ошибку и сохраняет её в памяти. Важно знать, что <strong>Check Engine</strong> может гореть по разным причинам: от некачественного бензина до серьезной поломки <em>VTEC</em> или лямбда-зонда. Игнорирование сигналов может привести к повышенному расходу топлива или даже повреждению катализатора.</p>
+
+<p>В этой статье мы подробно разберем, как провести самодиагностику без дорогостоящего сканера, используя перемычку или кнопку на приборной панели. Вы научитесь различать текущие и сохраненные ошибки, а также поймете, когда можно сбросить ошибку самостоятельно, а когда требуется вмешательство специалиста. <mark>Критически важным моментом для EU1 является правильное определение типа ЭБУ (P2J или P2C), так как от этого зависит метод считывания кодов.</mark></p>
+
+<h2 id="подготовка-к-диагностике-и-типы-разъемов">Подготовка к диагностике и типы разъемов</h2>
+
+<p>Прежде чем приступать к считыванию кодов, необходимо определить тип диагностического интерфейса вашего автомобиля. Модели <em>Honda Civic EU1</em> выпускались в переходный период, поэтому в них могут встречаться два типа разъемов. Первый вариант — это старый двухконтактный сервисный разъем (SCS), который обычно находится под бардачком или возле блока предохранителей. Второй — стандартный 16-контактный порт <strong>OBD-II</strong>, расположенный под рулевой колонкой.</p>
+
+<p>Для автомобилей с двухконтактным разъемом вам потребуется изготовить простую перемычку. Это может быть кусок провода с зачищенными концами или даже скрепка, согнутая соответствующим образом. Если же у вас более свежая версия с портом OBD-II, то для базовой диагностики часто достаточно просто замкнуть контакты 4 и 9 (или 4 и 10 в зависимости от протокола) или использовать кнопку <code>Maintenance</code> на приборной панели, если она предусмотрена комплектацией.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Перед подключением перемычки убедитесь, что зажигание выключено. Замыкание контактов при включенном зажигании может привести к скачку напряжения и повреждению ЭБУ.</p>
+</blockquote>
+
+<p>Процесс подготовки также включает визуальный осмотр проводки. Часто ошибки возникают из-за окислившихся контактов или перетертых проводов, идущих к датчикам кислорода. Убедитесь, что аккумуляторная батарея заряжена, так как низкое напряжение может исказить показания при диагностике.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Какой тип разъема у вашего Civic EU1?</strong><ul><li>Двухконтактный SCS</li><li>16-контактный OBD-II</li><li>Не знаю, буду искать</li><li>У меня стоит кнопка на панели</li></ul></div></div>
+
+<h2 id="алгоритм-считывания-кодов-через-scs-разъем">Алгоритм считывания кодов через SCS разъем</h2>
+
+<p>Если ваш <em>Civic</em> оснащен двухконтактным разъемом, процедура считывания кодов ошибок становится похожей на азбуку Морзе. Вам нужно замкнуть контакты разъема специальной перемычкой, после чего включить зажигание (двигатель запускать не нужно). Индикатор <strong>Check Engine</strong> на приборной панели начнет мигать определенным образом, передавая цифровые коды неисправностей.</p>
+
+<p>Длинная вспышка означает десятки, короткая — единицы. Например, одна длинная вспышка, пауза, и две короткие вспышки означают код 12. Между кодами разных ошибок обычно делается более длинная пауза. Если ошибок несколько, они будут выводиться последовательно от меньшего к большему. После вывода всех кодов цикл повторится.</p>
+
+<div class="checklist-block"><h4>☑️ Алгоритм действий</h4><label class="check-item"><input type="checkbox"><span>Найти 2-pin разъем (обычно желтый или зеленый)</span></label><label class="check-item"><input type="checkbox"><span>Изготовить перемычку из провода</span></label><label class="check-item"><input type="checkbox"><span>Замкнуть контакты при выключенном зажигании</span></label><label class="check-item"><input type="checkbox"><span>Включить зажигание и считать мигания лампочки</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Важно записывать все коды, которые вы видите. Даже если лампочка мигает хаотично, попробуйте отследить повторяющиеся паттерны. Некоторые коды могут указывать на временные сбои, которые уже устранены, но остались в памяти ЭБУ. Для точной диагностики лучше провести процедуру дважды.</p>
+
+<h2 id="диагностика-через-порт-obd-ii-и-кнопку-maintenance">Диагностика через порт OBD-II и кнопку Maintenance</h2>
+
+<p>Для более современных версий <em>Honda Civic EU1</em> с портом OBD-II метод может отличаться. В некоторых случаях для активации режима самодиагностики требуется замкнуть контакты 4 и 9 в разъеме OBD-II. Однако, существует и более простой способ для определенных модификаций — использование кнопки <code>Maintenance</code> или комбинации кнопок на приборной панели.</p>
+
+<p>Чтобы активировать этот режим, выключите зажигание. Зажмите кнопку сброса пробега (или специальную кнопку <em>Maintenance</em>, если она есть) и, не отпуская её, включите зажигание. Держите кнопку до тех пор, пока индикатор <strong>Check Engine</strong> не погаснет или не начнет мигать. Этот метод позволяет избежать возни с проводами под торпедой.</p>
+
+<details class="faq-item"><summary>Что делать, если лампочка горит постоянно?</summary><div class="faq-answer"><p>Если после замыкания контактов лампочка Check Engine горит ровным светом и не мигает, это может означать, что в памяти ЭБУ нет сохраненных ошибок, либо система диагностики не активировалась правильно. Проверьте целостность перемычки и правильность замкнутых контактов. Также возможно, что ЭБУ находится в режиме "защиты" из-за критической неисправности.</p>
+</details></p></div></details>
+
+<p>Использование порта OBD-II также открывает возможности для подключения бюджетных сканеров ELM327. Хотя встроенная система мигания лампой дает базовые коды, цифровой сканер может показать более детальную информацию, включая обрыв цепи или короткое замыкание, что критично для поиска неисправностей в проводке.</p>
+
+<h2 id="расшифровка-основных-кодов-ошибок-honda">Расшифровка основных кодов ошибок Honda</h2>
+
+<p>После успешного считывания кодов перед вами встанет задача их расшифровки. Коды Хонда обычно состоят из одной или двух цифр. Ниже приведена таблица наиболее распространенных ошибок, с которыми сталкиваются владельцы <em>Civic EU1</em>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Описание ошибки</th>
+<th>Вероятная причина</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Кислородный датчик (O2 Sensor)</td>
+<td>Неисправность лямбда-зонда, обрыв цепи</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Датчик положения дроссельной заслонки (TPS)</td>
+<td>Неверная регулировка, износ дорожки</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Датчик положения распредвала (CMP)</td>
+<td>Проблемы с проводкой датчика VTEC</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Датчик температуры всасываемого воздуха (IAT)</td>
+<td>Неисправность датчика, окисление контактов</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Датчик абсолютного давления (MAP)</td>
+<td>Подсос воздуха, неисправность датчика</td>
+</tr>
+</tbody>
+</table>
+
+<p>Код 1 (кислородный датчик) является одним из самых частых "гостей" на старых Хондах. Это не всегда означает смерть самого датчика; часто проблема кроется в плохом контакте или использовании некачественного топлива. Код 7 (TPS) часто требует не замены, а простой регулировки положения дроссельной заслонки.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Код 43 (неисправность системы подачи топлива) часто указывает на проблемы с форсунками или регулятором давления, но может быть вызван и слабым бензонасосом. Не спешите менять форсунки без замера давления в рампе.</p>
+</blockquote>
+
+<p>Понимание природы ошибки помогает сэкономить бюджет. Например, ошибки, связанные с системой <strong>VTEC</strong> (коды, начинающиеся с 10-х или 20-х), могут быть вызваны низким уровнем масла или забитым сетчатым фильтром соленоида, а не поломкой самого механизма.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При замене кислородного датчика используйте только оригинальные запчасти или качественные аналоги (Denso, NGK). Дешевые китайские датчики часто дают неверные показания или быстро выходят из строя, вызывая повторное появление ошибки.</p></div>
+
+<h2 id="сброс-ошибок-и-адаптация-эбу">Сброс ошибок и адаптация ЭБУ</h2>
+
+<p>После устранения неисправности необходимо сбросить ошибку из памяти ЭБУ, чтобы индикатор <strong>Check Engine</strong> погас. Самый простой способ — снять минусовую клемму с аккумуляторной батареи на 10-15 минут. Однако, на современных ЭБУ <em>Honda</em> этот метод может сбросить также настройки радио и часов, а иногда и адаптации топливной смеси.</p>
+
+<p>Более профессиональный метод — использование сканера или специального алгоритма через разъем. Для некоторых моделей достаточно трижды замкнуть и разомкнуть перемычку на диагностическом разъеме в определенной последовательности. Но чаще всего после ремонта ошибка исчезает сама после нескольких циклов прогрева двигателя, если проблема действительно решена.</p>
+
+<p>Если вы сбросили ошибку, но она появилась вновь через короткое время, значит, причина неисправности не устранена. В этом случае повторная <strong>самодиагностика</strong> обязательна. Не игнорируйте повторяющиеся коды, так как они могут указывать на развивающуюся проблему.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Сброс ошибки без устранения физической неисправности — это временное решение. ЭБУ снова зафиксирует отклонение параметров через несколько циклов работы двигателя.</p></div>
+
+<h2 id="частые-проблемы-civic-eu1-и-их-связь-с-ошибками">Частые проблемы Civic EU1 и их связь с ошибками</h2>
+
+<p>Владельцы <em>Honda Civic EU1</em> с двигателями серии D (D15B, D16Y7) хорошо знают о специфических "болезнях" этих моторов. Например, плавающие обороты холостого хода часто связаны с загрязнением регулятора холостого хода (IACV) или подсосом воздуха через прокладку впускного коллектора. Эти проблемы могут не всегда выдавать код ошибки сразу, но со временем ЭБУ зафиксирует бедную смесь.</p>
+
+<p>Еще одна распространенная проблема — система <em>VTEC</em>. Если вы не чувствуете переключения режима работы двигателя на высоких оборотах, а диагностика выдает ошибку по датчику давления масла или соленоиду VTEC, проверьте в первую очередь уровень масла и чистоту сеточки соленоида. Часто проблема решается простой чисткой.</p>
+
+<ul>
+<li>🔧 Плавающие обороты: проверьте чистоту дроссельной заслонки и клапана IACV.</li>
+<li>🔧 Троение двигателя: проверьте свечи, высоковольтные провода и катушку зажигания (особенно трещины на крышке распределителя).</li>
+<li>🔧 Высокий расход топлива: обратите внимание на лямбда-зонд и температурный датчик охлаждающей жидкости.</li>
+</ul>
+
+<p>Не стоит забывать и о состоянии топливной системы. Забитый топливный фильтр или сетка бензонасоса могут вызывать ошибки по бедной смеси или пропуски зажигания под нагрузкой. Регулярная замена фильтров — лучшая профилактика многих ошибок.</p>
+
+<h2 id="вопросы-и-ответы-по-диагностике">Вопросы и ответы по диагностике</h2>
+
+<details>
+<summary>Можно ли ездить с горящим Check Engine?</summary>
+<p>Если индикатор горит постоянно и поведение машины не изменилось, доехать до сервиса можно. Но если лампочка мигает, это сигнал о пропусках зажигания, которые могут быстро уничтожить катализатор. В таком случае движение лучше прекратить.</p>
+</details>
+
+<details>
+<summary>Почему после сброса аккумулятора ошибка появляется снова?</summary>
+<p>Это означает, что неисправность никуда не делась. ЭБУ Honda очень чувствителен и проводит тесты систем при каждом запуске. Если параметр выходит за рамки, ошибка записывается мгновенно или после нескольких циклов езды.</p>
+</details>
+
+<details>
+<summary>Нужен ли дорогой сканер для Civic EU1?</summary>
+<p>Для базовой диагностики и сброса ошибок достаточно простого адаптера ELM327 и смартфона. Встроенная система мигания лампочкой тоже дает всю необходимую информацию для первичного поиска неисправности.</p>
+</details>
+
+<details>
+<summary>Что означает код 0 или отсутствие мигания?</summary>
+<p>Если система диагностики активирована правильно, но кодов нет, лампочка может мигать равномерно (код 0) или просто гореть/не гореть в зависимости от модели ЭБУ. Это означает, что в памяти нет сохраненных ошибок.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#подготовка-к-диагностике-и-типы-разъемов">Подготовка к диагностике и типы разъемов</a></li><li><a href="#алгоритм-считывания-кодов-через-scs-разъем">Алгоритм считывания кодов через SCS разъем</a></li><li><a href="#диагностика-через-порт-obd-ii-и-кнопку-maintenance">Диагностика через порт OBD-II и кнопку Maintenance</a></li><li><a href="#расшифровка-основных-кодов-ошибок-honda">Расшифровка основных кодов ошибок Honda</a></li><li><a href="#сброс-ошибок-и-адаптация-эбу">Сброс ошибок и адаптация ЭБУ</a></li><li><a href="#частые-проблемы-civic-eu1-и-их-связь-с-ошибками">Частые проблемы Civic EU1 и их связь с ошибками</a></li><li><a href="#вопросы-и-ответы-по-диагностике">Вопросы и ответы по диагностике</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/kh/khonda-tsivik-universal-2000.html" class="related-card">Honda Civic универсал 2000: Обзор, характеристики и нюансы обслуживания</a></li><li><a href="/articles/k/kh/khonda-tsivik-5-pokoleniya-sedan.html" class="related-card">Хонда Цивик 5 (EG/EH) седан: Характеристики, двигатели и особенности</a></li><li><a href="/articles/k/kh/khonda-domani-metki-grm.html" class="related-card">Метки ГРМ Honda Domani: точная установка и нюансы замены</a></li><li><a href="/articles/t/te/test-drajv-khonda-tsivik.html" class="related-card">Тест драйв Honda Civic: Полное погружение в новый седан</a></li><li><a href="/articles/k/kh/khonda-tsivik-s-forsazha.html" class="related-card">Honda Civic из Форсажа: характеристики, тюнинг и легенда</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/kh/khonda-tsivik-universal-2000.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic универсал 2000: Обзор, характеристики и нюансы обслуживания</span><span class="related-bottom-desc">Полный разбор Honda Civic универсал 2000 года. Технические характеристики двигателей, особенности ку</span></a><a href="/articles/k/kh/khonda-tsivik-5-pokoleniya-sedan.html" class="related-bottom-card"><span class="related-bottom-title">Хонда Цивик 5 (EG/EH) седан: Характеристики, двигатели и особенности</span><span class="related-bottom-desc">Полный обзор Honda Civic 5 поколения седан (1991-1995). Двигатели D13-D16, кузовные слабые места, мо</span></a><a href="/articles/k/kh/khonda-domani-metki-grm.html" class="related-bottom-card"><span class="related-bottom-title">Метки ГРМ Honda Domani: точная установка и нюансы замены</span><span class="related-bottom-desc">Подробное руководство по меткам ГРМ на Honda Domani. Инструкция по замене ремня, совмещению меток на</span></a><a href="/articles/t/te/test-drajv-khonda-tsivik.html" class="related-bottom-card"><span class="related-bottom-title">Тест драйв Honda Civic: Полное погружение в новый седан</span><span class="related-bottom-desc">Подробный тест драйв Honda Civic 11-го поколения. Анализ динамических характеристик, комфорта, интер</span></a><a href="/articles/k/kh/khonda-tsivik-s-forsazha.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic из Форсажа: характеристики, тюнинг и легенда</span><span class="related-bottom-desc">Разбираем легендарную Honda Civic Si из фильма Форсаж. Технические характеристики, особенности тюнин</span></a><a href="/articles/h/ho/honda-civic-ferio-1997.html" class="related-bottom-card"><span class="related-bottom-title">Honda Civic Ferio 1997: Полный гид по модели, двигателю и ремонту</span><span class="related-bottom-desc">Узнайте всё о Honda Civic Ferio 1997 года. Обзор двигателей D15, D16, особенности седана, цены запча</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏎</text></svg>">
+    <title>Honda VFR 800 двигатель: устройство, проблемы и обслуживание — Honda Library</title>
+    <meta name="description" content="Полный разбор двигателя Honda VFR 800. Конструкция V-образной четверки, система VTEC, типичные неисправности и регламент технического обслуживания.">
+    <link rel="canonical" href="https://honda-library.vercel.app/articles/h/ho/honda-vfr-800-dvigatel.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Honda VFR 800 двигатель: устройство, проблемы и обслуживание">
+    <meta property="og:description" content="Полный разбор двигателя Honda VFR 800. Конструкция V-образной четверки, система VTEC, типичные неисправности и регламент технического обслуживания.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777019967">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏎</span>
+                <span>Honda Library</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/civic/" class="nav-link">📁 Civic</a>
+<a href="/category/cr-v/" class="nav-link">📁 Cr V</a>
+<a href="/category/accord/" class="nav-link">📁 Accord</a>
+<a href="/category/fit/" class="nav-link">📁 Fit</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/civic/" class="dropdown-item">📁 Civic</a>
+<a href="/category/cr-v/" class="dropdown-item">📁 Cr V</a>
+<a href="/category/accord/" class="dropdown-item">📁 Accord</a>
+<a href="/category/fit/" class="dropdown-item">📁 Fit</a>
+<a href="/category/hr-v/" class="dropdown-item">📁 Hr V</a>
+<a href="/category/авто/" class="dropdown-item">📁 Авто</a>
+<a href="/category/pilot/" class="dropdown-item">📁 Pilot</a>
+<a href="/category/odyssey/" class="dropdown-item">📁 Odyssey</a>
+<a href="/category/insight/" class="dropdown-item">📁 Insight</a>
+<a href="/category/jazz/" class="dropdown-item">📁 Jazz</a>
+<a href="/category/crosstour/" class="dropdown-item">📁 Crosstour</a>
+<a href="/category/prelude/" class="dropdown-item">📁 Prelude</a>
+<a href="/category/element/" class="dropdown-item">📁 Element</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/drugoe/">Другое</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Honda VFR 800 двигатель: устройство, проблемы и обслуживание</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Двигатель Honda VFR 800: инженерное совершенство и нюансы эксплуатации</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#конструктивные-особенности-v-образной-четверки">Конструктивные особенности V-образной «четверки»</a></li><li><a href="#система-vtec-как-это-работает">Система VTEC: как это работает</a></li><li><a href="#типичные-неисправности-и-их-устранение">Типичные неисправности и их устранение</a></li><li><a href="#регламент-технического-обслуживания">Регламент технического обслуживания</a></li><li><a href="#проблемы-системы-охлаждения">Проблемы системы охлаждения</a></li><li><a href="#специфика-эксплуатации-и-тюнинг">Специфика эксплуатации и тюнинг</a></li><li><a href="#заключение-по-надежности-агрегата">Заключение по надежности агрегата</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body"><p>Двигатель <em>Honda VFR 800</em> — это настоящая легенда в мире мотоциклетной инженерии, которая на протяжении десятилетий задавала стандарты для спорт-туреров. В основе конструкции лежит уникальная <strong>V-образная «четверка»</strong> с углом развала цилиндров 90 градусов, что обеспечивает исключительную балансировку и характерный звук выхлопа. Инженеры <em>Honda</em> сумели совместить высокую мощность спортивного мотоцикла с тяговитостью и надежностью, необходимыми для дальних путешествий.</p>
+
+<p>Этот силовой агрегат получил широкое признание благодаря внедрению системы <strong>VTEC</strong> (Variable Valve Timing and Lift Electronic Control) в мотоциклетную конструкцию. Такая технология позволяла мотору выдавать плавную тягу на низких оборотах и раскрывать весь потенциал мощности при достижении высоких показателей. Если вы планируете покупку подержанного экземпляра или владеете <em>VFR 800</em>, понимание устройства двигателя критически важно для его долгой и безотказной службы.</p>
+
+<h2 id="конструктивные-особенности-v-образной-четверки">Конструктивные особенности V-образной «четверки»</h2>
+
+<p>Сердцем мотоцикла является блок цилиндров, выполненный из легкого сплава с мокрыми гильзами, что упрощает процесс их замены при необходимости. Угол развала 90 градусов позволяет установить коленчатый вал с <strong>кривошипами</strong> под углом 270 градусов, что имитирует работу двухцилиндрового мотора, но без вибраций. Такая схема обеспечивает идеальный первичный баланс, избавляя водителя от лишней тряски на руле и подседельной трубе.</p>
+
+<p>Головки цилиндров оснащены двумя распределительными валами (DOHC) и четырьмя клапанами на цилиндр, что способствует эффективному газообмену. Система смазки выполнена по схеме «сухого картера», что позволяет снизить центр тяжести мотоцикла и избежать проблем с масляным голоданием при резких наклонах в поворотах. <strong>Регулярная проверка уровня масла</strong> обязательна, так как система чувствительна к его объему.</p>
+
+<p>Особое внимание стоит уделить системе охлаждения, которая объединяет жидкостный контур и воздушный поток.</p>
+<p>Радиатор расположен в передней части мотоцикла, защищенный пластиковым обтекателем, но доступ к нему затруднен.</p>
+<p>Необходимо следить за состоянием патрубков и термостата, чтобы избежать перегрева в пробках.</p>
+
+<ul>
+<li>🛠️ Угол развала 90 градусов обеспечивает идеальный баланс без вибраций.</li>
+<li>🛠️ Система сухого картера снижает центр тяжести и повышает надежность.</li>
+<li>🛠️ Блок цилиндров с мокрыми гильзами упрощает капитальный ремонт.</li>
+</ul>
+
+<h2 id="система-vtec-как-это-работает">Система VTEC: как это работает</h2>
+
+<p>Уникальной чертой мотора <em>Honda VFR 800</em> является применение технологии <strong>VTEC</strong>, заимствованной из автомобильного мира. На низких и средних оборотах двигатель работает в экономичном режиме, управляя клапанами через одни кулачки распределительного вала. При достижении определенного порога, обычно около 6800 об/мин, срабатывает электромагнитный клапан, и переключаются на более агрессивные кулачки, открывая клапаны шире и дольше.</p>
+
+<p>Этот переход сопровождается характерным изменением звука выхлопа и резким подхватом мощности, который многие райдеры называют «включением турбины». Механизм переключения управляется электронным блоком управления (ECU) на основе данных о <strong>частоте вращения коленвала</strong> и дроссельной заслонке. Для владельца это означает, что мотоцикл универсален: он спокоен в городе и агрессивен на трассе.</p>
+
+<p>Система требует особого внимания к состоянию масляного насоса, так как переключение осуществляется давлением масла.</p>
+<p>Низкое давление масла или грязная жидкость могут привести к тому, что механизм VTEC просто не сработает.</p>
+<p>При этом мотор продолжит работать, но потеряет значительную часть мощности на высоких оборотах.</p>
+
+<div class="attention-box attention-info"><div><strong>📊 Ваша оценка работы VTEC на Honda VFR 800</strong><ul><li>Не заметил разницы</li><li>Сработает плавно</li><li>Резкий переключатель</li><li>Слышу только звук</li></ul></div></div>
+
+<h2 id="типичные-неисправности-и-их-устранение">Типичные неисправности и их устранение</h2>
+
+<p>Несмотря на репутацию надежного агрегата, двигатель <em>Honda VFR 800</em> имеет ряд «болячек», характерных для больших пробегов. Одной из самых частых проблем является износ распредвалов и рокеров, особенно на ранних версиях до 2002 года выпуска. Это происходит из-за недостаточной смазки в зоне кулачков, что приводит к их «подъеданию» и потере фаз газораспределения.</p>
+
+<p>Другой распространенной проблемой является износ сальников клапанов, что ведет к повышенному расходу масла и образованию нагара на свечах зажигания. Также владельцы часто сталкиваются с утечками масла через прокладки крышек клапанов и сальники коленвала. Важно вовремя заметить эти признаки, так как игнорирование может привести к более серьезным поломкам, требующим <strong>разборки двигателя</strong>.</p>
+
+<ul>
+<li>🔧 Износ распредвалов и рокеров требует замены комплекта и притирки.</li>
+<li>🔧 Утечки масла через прокладки крышек решаются заменой на качественные аналоги.</li>
+<li>🔧 Свечи зажигания быстро загрязняются при износе маслосъемных колпачков.</li>
+</ul>
+
+<p>Если вы слышите металлический стук на холодном двигателе, это может быть признаком проблем с цепью ГРМ или натяжителем.</p>
+<p>Внимательно слушайте мотор при запуске и прогреве, чтобы не пропустить ранние признаки неисправности.</p>
+<p>Регулярная замена масла с использованием рекомендованной вязкости критична для продления жизни механизма.</p>
+
+<blockquote>⚠️ Внимание: Если при проверке масла вы видите стружку или металлическую пыль, немедленно прекратите эксплуатацию мотоцикла и проведите диагностику. Это верный признак разрушения внутренних узлов двигателя.</blockquote>
+
+<h2 id="регламент-технического-обслуживания">Регламент технического обслуживания</h2>
+
+<p>Для сохранения ресурсов двигателя <em>Honda VFR 800</em> необходимо строго соблюдать график технического обслуживания. Ключевым моментом является регулировка клапанов, которая должна проводиться каждые 12 000 – 24 000 км, в зависимости от года выпуска и стиля езды. Зазоры клапанов со временем меняются, и их неправильная настройка ведет к потере мощности и перегреву.</p>
+
+<p>Замена масла и масляного фильтра должна производиться каждые 6 000 – 10 000 км.</p>
+<p>Используйте только масла, соответствующие спецификации <code>JASO MA2</code>, чтобы обеспечить правильную работу мокрого сцепления.</p>
+<p>Свечи зажигания рекомендуется проверять и чистить, а при необходимости заменять на оригинальные или качественные аналоги.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист ТО двигателя</h4><label class="check-item"><input type="checkbox"><span>Замена масла и фильтра</span></label><label class="check-item"><input type="checkbox"><span>Проверка уровня охлаждающей жидкости</span></label><label class="check-item"><input type="checkbox"><span>Визуальный осмотр патрубков</span></label><label class="check-item"><input type="checkbox"><span>Проверка зазоров клапанов (при пробеге)>12000 км</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Интервал (км)</th>
+<th>Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Замена масла</td>
+<td>6 000 – 10 000</td>
+<td>Использовать 10W-40 или 10W-30 JASO MA2</td>
+</tr>
+<tr>
+<td>Регулировка клапанов</td>
+<td>12 000 – 24 000</td>
+<td>Критически важная процедура для VFR</td>
+</tr>
+<tr>
+<td>Замена воздушного фильтра</td>
+<td>24 000</td>
+<td>Очистка бумажного фильтра возможна</td>
+</tr>
+<tr>
+<td>Замена охлаждающей жидкости</td>
+<td>48 000</td>
+<td>Проверка уровня каждые 10 000 км</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При замене масла на VFR 800 обязательно прогрейте двигатель до рабочей температуры, чтобы слить весь осадок и старое масло. Оставляйте мотоцикл на боковой подставке, но лучше использовать центральную для полного слива.</p></div>
+
+<h2 id="проблемы-системы-охлаждения">Проблемы системы охлаждения</h2>
+
+<p>Система охлаждения двигателя <em>Honda VFR 800</em> достаточно надежна, но имеет свои нюансы. Радиатор расположен в зоне, подверженной попаданию грязи и насекомых, что может снизить эффективность теплообмена. Засорение сот радиатора — частая причина перегрева в летний период или при движении в плотном городском трафике.</p>
+
+<p>Термостат на этих моторах иногда заклинивает в закрытом положении, что приводит к быстрому перегреву.</p>
+<p>Вентилятор охлаждения должен включаться автоматически при достижении определенной температуры.</p>
+<p>Если вентилятор не работает, проверьте предохранитель и датчик температуры.</p>
+
+<p>Особое внимание уделяйте расширительному бачку: уровень жидкости не должен опускаться ниже отметки «MIN».</p>
+<p>Использование дистиллированной воды в системе недопустимо, так как это вызывает коррозию.</p>
+<p>Охлаждающая жидкость должна быть качественной и меняться согласно регламенту.</p>
+
+<details class="faq-item"><summary>Что делать при перегреве в пробке?</summary><div class="faq-answer"><p>Если температура растет, немедленно остановитесь. Не глушите двигатель сразу, дайте ему поработать на холостых, чтобы помпа продолжила циркуляцию. Если вентилятор не включается, аккуратно откройте капот и дайте радиатору остыть. Не открывайте крышку радиатора на горячем моторе!</p></div></details>
+
+<h2 id="специфика-эксплуатации-и-тюнинг">Специфика эксплуатации и тюнинг</h2>
+
+<p>Владельцы <em>Honda VFR 800</em> часто задаются вопросом о возможности повышения мощности двигателя. Стандартный мотор уже выдает отличные показатели, но тюнинг может раскрыть потенциал еще глубже. Установка прошивки ECU, изменение выхлопной системы и снятие ограничителей дроссельных заслонок — популярные методы доработки.</p>
+
+<p>Однако любые изменения должны быть сбалансированы с надежностью трансмиссии и тормозной системы.</p>
+<p>Увеличение мощности ведет к росту тепловыделения, поэтому модернизация охлаждения обязательна.</p>
+<p>Не рекомендуется превышать предельные обороты, так как это ускорит износ распредвалов.</p>
+
+<p>Для повседневной езды достаточно регулярного обслуживания без радикальных вмешательств.</p>
+<p>Мотоцикл отлично справляется с ролью универсального средства передвижения.</p>
+<p>Владельцы ценят его за комфорт и динамику одновременно.</p>
+
+<ul>
+<li>🚀 Чип-тюнинг может добавить 10-15% мощности при правильном подходе.</li>
+<li>🚀 Установка прямоточного выхлопа улучшает звук и сброс газов.</li>
+<li>🚀 Снятие ограничителей требует осторожности и настройки карбюраторов/инжектора.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Двигатель VFR 800 не требует радикального тюнинга для получения удовольствия от езды. Его главная сила — в надежности и универсальности, которые сохранятся только при бережной эксплуатации и регулярном ТО.</p></div>
+
+<h2 id="заключение-по-надежности-агрегата">Заключение по надежности агрегата</h2>
+
+<p>Двигатель <em>Honda VFR 800</em> остается одним из самых сбалансированных решений в классе спорт-туреров. Его конструкция продумана до мелочей, а ресурсы основных узлов при должном уходе исчисляются сотнями тысяч километров. Главное условие долголетия — это качественное масло, своевременная регулировка клапанов и контроль системы охлаждения.</p>
+
+<p>Если вы соблюдаете регламент обслуживания, этот мотор прослужит вам верой и правдой долгие годы.</p>
+<p>Не экономьте на запчастях, особенно на прокладках и сальниках.</p>
+<p>Используйте оригинальные расходники или проверенные аналоги.</p>
+
+<p>Многие владельцы отмечают, что характер мотора меняется по мере обкатки и становится еще более отзывчивым.</p>
+<p>Это тот случай, когда техника становится продолжением водителя.</p>
+<p>Наслаждайтесь каждой поездкой на этом уникальном мотоцикле.</p>
+
+<blockquote>⚠️ Внимание: При покупке подержанного VFR 800 обязательно проверьте историю обслуживания. Отсутствие записей о регулировке клапанов может означать скрытые проблемы с распредвалами, ремонт которых будет дорогостоящим.</blockquote>
+
+<details>
+<summary>Как часто нужно регулировать клапаны на Honda VFR 800?</summary>
+<p>Рекомендуемый интервал составляет от 12 000 до 24 000 км в зависимости от года выпуска. Для моделей до 2002 года лучше проводить проверку чаще, так как они более чувствительны к износу распредвалов.</p>
+</details>
+
+<details>
+<summary>Какое масло лучше использовать для двигателя VFR 800?</summary>
+<p>Необходимо использовать масло с классом вязкости 10W-40 или 10W-30 и спецификацией JASO MA2. Это обеспечит правильную работу мокрого сцепления и защиту деталей двигателя при высоких температурах.</p>
+</details>
+
+<details>
+<summary>Почему срабатывает VTEC на Honda VFR 800?</summary>
+<p>Система VTEC переключается на высокие обороты (обычно около 6800 об/мин) для увеличения мощности. Это происходит за счет изменения профиля кулачков распределительного вала, что требует достаточного давления масла.</p>
+</details>
+
+<details>
+<summary>Какие симптомы указывают на износ распредвалов?</summary>
+<p>Основные признаки включают металлический стук при запуске, потерю мощности на высоких оборотах и нестабильную работу двигателя. Также может наблюдаться повышенный расход масла и черный дым из выхлопной трубы.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#конструктивные-особенности-v-образной-четверки">Конструктивные особенности V-образной «четверки»</a></li><li><a href="#система-vtec-как-это-работает">Система VTEC: как это работает</a></li><li><a href="#типичные-неисправности-и-их-устранение">Типичные неисправности и их устранение</a></li><li><a href="#регламент-технического-обслуживания">Регламент технического обслуживания</a></li><li><a href="#проблемы-системы-охлаждения">Проблемы системы охлаждения</a></li><li><a href="#специфика-эксплуатации-и-тюнинг">Специфика эксплуатации и тюнинг</a></li><li><a href="#заключение-по-надежности-агрегата">Заключение по надежности агрегата</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/h/ho/honda-xr650r-tekhnicheskie-kharakteristiki.html" class="related-card">Honda XR650R: полные технические характеристики и обзор</a></li><li><a href="/articles/p/pr/prodazha-khonda-stepvagon-v-krasnoyarske.html" class="related-card">Продажа Honda Stepwgn в Красноярске: цены, выбор и советы эксперта</a></li><li><a href="/articles/h/ho/honda-stream-skolko-mest.html" class="related-card">Honda Stream: сколько мест в машине и как трансформируется салон</a></li><li><a href="/articles/k/kh/khonda-strim-2009-god.html" class="related-card">Honda Stream 2009: Полный обзор, характеристики и нюансы эксплуатации</a></li><li><a href="/articles/s/sa/salonnyj-filtr-khonda-avansir.html" class="related-card">Салонный фильтр Honda Avancier: выбор, замена и нюансы обслуживания</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/h/ho/honda-xr650r-tekhnicheskie-kharakteristiki.html" class="related-bottom-card"><span class="related-bottom-title">Honda XR650R: полные технические характеристики и обзор</span><span class="related-bottom-desc">Детальный разбор технических характеристик Honda XR650R. Двигатель, подвеска, вес, размеры и особенн</span></a><a href="/articles/p/pr/prodazha-khonda-stepvagon-v-krasnoyarske.html" class="related-bottom-card"><span class="related-bottom-title">Продажа Honda Stepwgn в Красноярске: цены, выбор и советы эксперта</span><span class="related-bottom-desc">Актуальная продажа Honda Stepwgn в Красноярске. Полный гид по рынкам, ценам на б/у авто, проверке яп</span></a><a href="/articles/h/ho/honda-stream-skolko-mest.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stream: сколько мест в машине и как трансформируется салон</span><span class="related-bottom-desc">Разбираем вместимость Honda Stream. Узнайте, сколько мест в стандартной и тюнингованной версии, как </span></a><a href="/articles/k/kh/khonda-strim-2009-god.html" class="related-bottom-card"><span class="related-bottom-title">Honda Stream 2009: Полный обзор, характеристики и нюансы эксплуатации</span><span class="related-bottom-desc">Подробный разбор Honda Stream 2009 года выпуска. Технические характеристики двигателей, коробка пере</span></a><a href="/articles/s/sa/salonnyj-filtr-khonda-avansir.html" class="related-bottom-card"><span class="related-bottom-title">Салонный фильтр Honda Avancier: выбор, замена и нюансы обслуживания</span><span class="related-bottom-desc">Полное руководство по замене салонного фильтра для Honda Avancier. Обзор аналогов, пошаговая инструк</span></a><a href="/articles/k/kh/khonda-dorozhnyj-mototsikl-modeli.html" class="related-bottom-card"><span class="related-bottom-title">Модели дорожных мотоциклов Honda: полный обзор серий CB, CBR и VFR</span><span class="related-bottom-desc">Подробный гид по дорожным мотоциклам Honda. Сравнение серий CB, CBR, VFR. Характеристики, особенност</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🏎 Honda Library</div>
+                    <p class="footer-about">Всё об автомобилях Honda: спортивный характер и бескомпромиссная надежность. Честные обзоры CR-V и Civic, знаменитые моторы VTEC и опыт реальных владельцев.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/civic/">📁 Civic</a></li>
+<li><a href="/category/cr-v/">📁 Cr V</a></li>
+<li><a href="/category/accord/">📁 Accord</a></li>
+<li><a href="/category/fit/">📁 Fit</a></li>
+<li><a href="/category/hr-v/">📁 Hr V</a></li>
+<li><a href="/category/авто/">📁 Авто</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Honda Library. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>
